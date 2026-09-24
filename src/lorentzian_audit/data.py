@@ -59,6 +59,7 @@ def aggregate_timeframe(
         low=("low", "min"),
         close=("close", "last"),
         spread_points=("spread", "first"),
+        spread_close_points=("spread", "last"),
         tick_volume=("tick_volume", "sum"),
         m1_rows=("close", "count"),
     )

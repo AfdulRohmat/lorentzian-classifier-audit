@@ -5,6 +5,12 @@ import pandas as pd
 
 from lorentzian_audit.backtest import event_windows, price_trade
 from lorentzian_audit.data import aggregate_timeframe
+from lorentzian_audit.runner import (
+    floor_volume,
+    proposed_trailing_stop,
+    stop_exit,
+    tighten_stop,
+)
 from lorentzian_audit.signals import (
     causal_knn_prediction_pair_batched,
     causal_knn_predictions,
@@ -71,6 +77,56 @@ def test_fast_feature_kernel_path_matches_pinned_upstream() -> None:
     fast = feature_kernel_outputs(bars, 100.0)
     for column in ("kernel", "f1", "f2", "f3", "f4", "f5"):
         np.testing.assert_allclose(fast[column], official[column], equal_nan=True)
+
+
+def test_position_size_floors_and_never_clamps_to_minimum() -> None:
+    spec = {"volume_min": 0.14, "volume_step": 0.01, "volume_max": 1000.0}
+    assert floor_volume(13.99, 100.0, spec) == 0.0
+    assert floor_volume(14.99, 100.0, spec) == 0.14
+    assert floor_volume(19.99, 100.0, spec) == 0.19
+
+
+def test_long_and_short_stop_execution_use_correct_quote_side() -> None:
+    profile = {
+        "spread_floor": 0.0,
+        "spread_multiplier": 1.0,
+        "slippage_side": 0.02,
+        "commission_round_trip_price": 0.07,
+    }
+    long_row = pd.Series({"open": 101.0, "high": 102.0, "low": 99.5, "spread": 20})
+    short_row = pd.Series({"open": 100.0, "high": 101.0, "low": 99.0, "spread": 20})
+    assert stop_exit(long_row, 1, 100.0, 0.01, profile) == (
+        99.98,
+        "STOP_INTRAMINUTE",
+    )
+    short_exit = stop_exit(short_row, -1, 100.1, 0.01, profile)
+    assert short_exit is not None
+    assert np.isclose(short_exit[0], 100.22)
+    assert short_exit[1] == "STOP_GAP"
+
+
+def test_trailing_stop_locks_requested_net_r_and_never_loosens() -> None:
+    profile = {"slippage_side": 0.02, "commission_round_trip_price": 0.08}
+    proposed = proposed_trailing_stop(
+        entry_fill=100.0,
+        side=1,
+        locked_net_r=1.5,
+        planned_risk_price=2.1,
+        profile=profile,
+    )
+    assert np.isclose(proposed, 103.25)
+    assert tighten_stop(99.0, proposed, 1) == proposed
+    assert tighten_stop(proposed, 102.0, 1) == proposed
+    short = proposed_trailing_stop(
+        entry_fill=100.0,
+        side=-1,
+        locked_net_r=1.5,
+        planned_risk_price=2.1,
+        profile=profile,
+    )
+    assert np.isclose(short, 96.75)
+    assert tighten_stop(101.0, short, -1) == short
+    assert tighten_stop(short, 98.0, -1) == short
 
 
 def test_event_window_enters_next_bar_and_holds_four_bars() -> None:
