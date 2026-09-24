@@ -32,6 +32,12 @@ cross-asset and concentration tests; XAUUSD M30 remains negative. See
 [`config/contract_v3_atr_runner_sizing.json`](config/contract_v3_atr_runner_sizing.json)
 and [`docs/RESULT_V3_ATR_RUNNER_SIZING.md`](docs/RESULT_V3_ATR_RUNNER_SIZING.md).
 
+The v4 SP500 M30 tail audit replaces the overly blunt top-ten deletion with
+winner caps, annual tail distribution, adverse tail-miss Monte Carlo and a new
+September extension. Historical tail structure is supported, but the edge is
+not confirmed: the available new holdout is negative and contains only nine
+trades. See [`docs/RESULT_V4_TAIL_ROBUSTNESS.md`](docs/RESULT_V4_TAIL_ROBUSTNESS.md).
+
 ## Reproduce
 
 From this directory, using the existing shared research environment:
@@ -46,9 +52,12 @@ $env:PYTHONPATH='src;vendor'
 & '..\mt5-ea-research-lab\.venv\Scripts\python.exe' -m lorentzian_audit.validate_v2
 & '..\mt5-ea-research-lab\.venv\Scripts\python.exe' -m lorentzian_audit.run_v3
 & '..\mt5-ea-research-lab\.venv\Scripts\python.exe' -m lorentzian_audit.validate_v3
+& '..\mt5-ea-research-lab\.venv\Scripts\python.exe' -m lorentzian_audit.run_v4
+& '..\mt5-ea-research-lab\.venv\Scripts\python.exe' -m lorentzian_audit.validate_v4
 ```
 
 Evidence is stored under `evidence/v1/`, `evidence/v2_lower_timeframes/`, and
 `evidence/v3_atr_runner_sizing/`.
+V4 tail evidence is stored under `evidence/v4_tail_robustness/`.
 Complete replays produced identical SHA-256 hashes for every result artifact.
 

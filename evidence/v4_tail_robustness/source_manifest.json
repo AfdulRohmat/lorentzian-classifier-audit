@@ -1,0 +1,422 @@
+{
+  "base_history": {
+    "asset": "sp500",
+    "duplicate_rows_removed": 37,
+    "file_count": 56,
+    "files": [
+      {
+        "bytes": 725370,
+        "name": "2022-01.parquet",
+        "path": "E:\\PEKERJAAN\\TRADING-BACKTEST-STRATEGY\\mt5-ea-research-lab\\data\\sp500_exness\\raw\\m1\\2022-01.parquet",
+        "rows": 26844,
+        "sha256": "c5d25404a9c5447ce49798e51f2b93016f21064b96acce8401905ed3ae27108c"
+      },
+      {
+        "bytes": 681120,
+        "name": "2022-02.parquet",
+        "path": "E:\\PEKERJAAN\\TRADING-BACKTEST-STRATEGY\\mt5-ea-research-lab\\data\\sp500_exness\\raw\\m1\\2022-02.parquet",
+        "rows": 24991,
+        "sha256": "a24a89a0ec536797515cbb2d62572288b71a76f10bed946809960056fa7459e5"
+      },
+      {
+        "bytes": 813485,
+        "name": "2022-03.parquet",
+        "path": "E:\\PEKERJAAN\\TRADING-BACKTEST-STRATEGY\\mt5-ea-research-lab\\data\\sp500_exness\\raw\\m1\\2022-03.parquet",
+        "rows": 29645,
+        "sha256": "608a7d58ec06ef746d69b207a292d0db2587d2e13d21f2da9fcf20a9833f827c"
+      },
+      {
+        "bytes": 670764,
+        "name": "2022-04.parquet",
+        "path": "E:\\PEKERJAAN\\TRADING-BACKTEST-STRATEGY\\mt5-ea-research-lab\\data\\sp500_exness\\raw\\m1\\2022-04.parquet",
+        "rows": 25489,
+        "sha256": "94001a17f1b5569ba534e4392377502b37bfd735a5c9c97a3623ba2ef1e17555"
+      },
+      {
+        "bytes": 759048,
+        "name": "2022-05.parquet",
+        "path": "E:\\PEKERJAAN\\TRADING-BACKTEST-STRATEGY\\mt5-ea-research-lab\\data\\sp500_exness\\raw\\m1\\2022-05.parquet",
+        "rows": 28260,
+        "sha256": "6c721c9fcc7c2301faf23e7e8a16d0a6fac43d14696341b31a3cba92bdfd2ee0"
+      },
+      {
+        "bytes": 739975,
+        "name": "2022-06.parquet",
+        "path": "E:\\PEKERJAAN\\TRADING-BACKTEST-STRATEGY\\mt5-ea-research-lab\\data\\sp500_exness\\raw\\m1\\2022-06.parquet",
+        "rows": 28069,
+        "sha256": "0893c35c5182e1b5433f362334d548ac80ee580e5d6975efee19fb7a345bc292"
+      },
+      {
+        "bytes": 672423,
+        "name": "2022-07.parquet",
+        "path": "E:\\PEKERJAAN\\TRADING-BACKTEST-STRATEGY\\mt5-ea-research-lab\\data\\sp500_exness\\raw\\m1\\2022-07.parquet",
+        "rows": 26833,
+        "sha256": "d079a5e4977874fc30eec52d27dc8f9d159e154013cb129b843027bee05ccdf2"
+      },
+      {
+        "bytes": 737634,
+        "name": "2022-08.parquet",
+        "path": "E:\\PEKERJAAN\\TRADING-BACKTEST-STRATEGY\\mt5-ea-research-lab\\data\\sp500_exness\\raw\\m1\\2022-08.parquet",
+        "rows": 29381,
+        "sha256": "c310fe4a56deeae3513f76b9c2708173fda33a070be80fb128ca41374888adb8"
+      },
+      {
+        "bytes": 769916,
+        "name": "2022-09.parquet",
+        "path": "E:\\PEKERJAAN\\TRADING-BACKTEST-STRATEGY\\mt5-ea-research-lab\\data\\sp500_exness\\raw\\m1\\2022-09.parquet",
+        "rows": 28051,
+        "sha256": "0dc7b89bfbffc63c981f54c7e57de5badd16311c7b5e622c45f238f64ad7d254"
+      },
+      {
+        "bytes": 736170,
+        "name": "2022-10.parquet",
+        "path": "E:\\PEKERJAAN\\TRADING-BACKTEST-STRATEGY\\mt5-ea-research-lab\\data\\sp500_exness\\raw\\m1\\2022-10.parquet",
+        "rows": 27144,
+        "sha256": "a2a98b8c1d5f0229e407e933162072efd6a0bb2dead0ebc95c390ef67e9d949e"
+      },
+      {
+        "bytes": 703642,
+        "name": "2022-11.parquet",
+        "path": "E:\\PEKERJAAN\\TRADING-BACKTEST-STRATEGY\\mt5-ea-research-lab\\data\\sp500_exness\\raw\\m1\\2022-11.parquet",
+        "rows": 27828,
+        "sha256": "fb4cab8157736448cfb1523c0c878c59af47aafbdf7c40d90fdf8b654e5059cb"
+      },
+      {
+        "bytes": 697333,
+        "name": "2022-12.parquet",
+        "path": "E:\\PEKERJAAN\\TRADING-BACKTEST-STRATEGY\\mt5-ea-research-lab\\data\\sp500_exness\\raw\\m1\\2022-12.parquet",
+        "rows": 26919,
+        "sha256": "8d25f28aa9d0f17e3c74611a033e6f5c7509d2a6e981285a0295426a8f2accf7"
+      },
+      {
+        "bytes": 674600,
+        "name": "2023-01.parquet",
+        "path": "E:\\PEKERJAAN\\TRADING-BACKTEST-STRATEGY\\mt5-ea-research-lab\\data\\sp500_exness\\raw\\m1\\2023-01.parquet",
+        "rows": 26688,
+        "sha256": "6f06a03216721e53c6c307b3737847e5c23d218967bbcada6596237cbdad4273"
+      },
+      {
+        "bytes": 618467,
+        "name": "2023-02.parquet",
+        "path": "E:\\PEKERJAAN\\TRADING-BACKTEST-STRATEGY\\mt5-ea-research-lab\\data\\sp500_exness\\raw\\m1\\2023-02.parquet",
+        "rows": 25365,
+        "sha256": "6c9e7d4fbc8635e8630d1d391e45c36cda071cf6a462ad3ca1baf6a6caf2200a"
+      },
+      {
+        "bytes": 723752,
+        "name": "2023-03.parquet",
+        "path": "E:\\PEKERJAAN\\TRADING-BACKTEST-STRATEGY\\mt5-ea-research-lab\\data\\sp500_exness\\raw\\m1\\2023-03.parquet",
+        "rows": 29262,
+        "sha256": "71993eef2bbf0d3a547fe6b9d00c2f0db6fb7f25c5beea94c8e8c1e67edb26a1"
+      },
+      {
+        "bytes": 530989,
+        "name": "2023-04.parquet",
+        "path": "E:\\PEKERJAAN\\TRADING-BACKTEST-STRATEGY\\mt5-ea-research-lab\\data\\sp500_exness\\raw\\m1\\2023-04.parquet",
+        "rows": 24392,
+        "sha256": "9a3df89181345f2dac119047a6d50d3bc21ecb7b5a0b4a2958ddb72b08336010"
+      },
+      {
+        "bytes": 658903,
+        "name": "2023-05.parquet",
+        "path": "E:\\PEKERJAAN\\TRADING-BACKTEST-STRATEGY\\mt5-ea-research-lab\\data\\sp500_exness\\raw\\m1\\2023-05.parquet",
+        "rows": 28664,
+        "sha256": "043bf207c2476dfa13d545b9fdd022ed514106b4ef2374dcf665898a40820bca"
+      },
+      {
+        "bytes": 683527,
+        "name": "2023-06.parquet",
+        "path": "E:\\PEKERJAAN\\TRADING-BACKTEST-STRATEGY\\mt5-ea-research-lab\\data\\sp500_exness\\raw\\m1\\2023-06.parquet",
+        "rows": 28784,
+        "sha256": "bca4c1e3ccf1e53b6a9e32e68657d09f0962f8f1a804bf6a4b61b063258f7040"
+      },
+      {
+        "bytes": 648811,
+        "name": "2023-07.parquet",
+        "path": "E:\\PEKERJAAN\\TRADING-BACKTEST-STRATEGY\\mt5-ea-research-lab\\data\\sp500_exness\\raw\\m1\\2023-07.parquet",
+        "rows": 27510,
+        "sha256": "11b768a7beb5decb31801ec70485e21ee238264361f27b2ddca458388ca5561b"
+      },
+      {
+        "bytes": 745290,
+        "name": "2023-08.parquet",
+        "path": "E:\\PEKERJAAN\\TRADING-BACKTEST-STRATEGY\\mt5-ea-research-lab\\data\\sp500_exness\\raw\\m1\\2023-08.parquet",
+        "rows": 31145,
+        "sha256": "ca728a906940b6f8cbb7f04ce63627e597bf16b4b085608de8261049b38d2b83"
+      },
+      {
+        "bytes": 655685,
+        "name": "2023-09.parquet",
+        "path": "E:\\PEKERJAAN\\TRADING-BACKTEST-STRATEGY\\mt5-ea-research-lab\\data\\sp500_exness\\raw\\m1\\2023-09.parquet",
+        "rows": 27794,
+        "sha256": "88d6da9af2da2394417c3449f7e38e0536f993ad595fcd2fdd0a06a68775d2cc"
+      },
+      {
+        "bytes": 753387,
+        "name": "2023-10.parquet",
+        "path": "E:\\PEKERJAAN\\TRADING-BACKTEST-STRATEGY\\mt5-ea-research-lab\\data\\sp500_exness\\raw\\m1\\2023-10.parquet",
+        "rows": 29976,
+        "sha256": "f3cd2651887856cdbce29eef2eb4a76ffbce7dd48ab0154733f00c4eef6bd51d"
+      },
+      {
+        "bytes": 679428,
+        "name": "2023-11.parquet",
+        "path": "E:\\PEKERJAAN\\TRADING-BACKTEST-STRATEGY\\mt5-ea-research-lab\\data\\sp500_exness\\raw\\m1\\2023-11.parquet",
+        "rows": 29318,
+        "sha256": "e0edaa51f80c4b1307d8f19566d03663cfb1d16a78887bb011614ae15139fc5a"
+      },
+      {
+        "bytes": 620436,
+        "name": "2023-12.parquet",
+        "path": "E:\\PEKERJAAN\\TRADING-BACKTEST-STRATEGY\\mt5-ea-research-lab\\data\\sp500_exness\\raw\\m1\\2023-12.parquet",
+        "rows": 26802,
+        "sha256": "31606519b5655bed71614756aa067c0bd74420699b752ca815328094068fc3e0"
+      },
+      {
+        "bytes": 699006,
+        "name": "2024-01.parquet",
+        "path": "E:\\PEKERJAAN\\TRADING-BACKTEST-STRATEGY\\mt5-ea-research-lab\\data\\sp500_exness\\raw\\m1\\2024-01.parquet",
+        "rows": 29729,
+        "sha256": "4b7057919fd8e477a29fcd0d0416b6b87abee05e75f99ac79d349467e40dfaf9"
+      },
+      {
+        "bytes": 664555,
+        "name": "2024-02.parquet",
+        "path": "E:\\PEKERJAAN\\TRADING-BACKTEST-STRATEGY\\mt5-ea-research-lab\\data\\sp500_exness\\raw\\m1\\2024-02.parquet",
+        "rows": 28161,
+        "sha256": "373329b194f5480440da20ce9e3dce3ece3b47f0f61d1dfa00377dc40e13350e"
+      },
+      {
+        "bytes": 625130,
+        "name": "2024-03.parquet",
+        "path": "E:\\PEKERJAAN\\TRADING-BACKTEST-STRATEGY\\mt5-ea-research-lab\\data\\sp500_exness\\raw\\m1\\2024-03.parquet",
+        "rows": 27202,
+        "sha256": "01bf0d935316fa0402bbb68422f16de8e01b2d0129c493b8c40ba2789896a151"
+      },
+      {
+        "bytes": 752475,
+        "name": "2024-04.parquet",
+        "path": "E:\\PEKERJAAN\\TRADING-BACKTEST-STRATEGY\\mt5-ea-research-lab\\data\\sp500_exness\\raw\\m1\\2024-04.parquet",
+        "rows": 29987,
+        "sha256": "9c558196d9d7420846b878f25d73ac893c2a698870c3374dcd2dae74c863cf4b"
+      },
+      {
+        "bytes": 727634,
+        "name": "2024-05.parquet",
+        "path": "E:\\PEKERJAAN\\TRADING-BACKTEST-STRATEGY\\mt5-ea-research-lab\\data\\sp500_exness\\raw\\m1\\2024-05.parquet",
+        "rows": 30857,
+        "sha256": "ab54ffb839214689e95d151bfcfc7a364a481fd59747fa3835dc30152b60d958"
+      },
+      {
+        "bytes": 636085,
+        "name": "2024-06.parquet",
+        "path": "E:\\PEKERJAAN\\TRADING-BACKTEST-STRATEGY\\mt5-ea-research-lab\\data\\sp500_exness\\raw\\m1\\2024-06.parquet",
+        "rows": 27149,
+        "sha256": "9d6d46686848598b08b8fe1bc20c5022439b978413f715632fa4e5b2eb057632"
+      },
+      {
+        "bytes": 750387,
+        "name": "2024-07.parquet",
+        "path": "E:\\PEKERJAAN\\TRADING-BACKTEST-STRATEGY\\mt5-ea-research-lab\\data\\sp500_exness\\raw\\m1\\2024-07.parquet",
+        "rows": 30835,
+        "sha256": "417934505ef349104b5f62190bd4f082d257934cb4870783e02f4ad3bdc5798c"
+      },
+      {
+        "bytes": 800393,
+        "name": "2024-08.parquet",
+        "path": "E:\\PEKERJAAN\\TRADING-BACKTEST-STRATEGY\\mt5-ea-research-lab\\data\\sp500_exness\\raw\\m1\\2024-08.parquet",
+        "rows": 29697,
+        "sha256": "1aa665206034a0c54db651eabbde4e36a61f570d29c0a0e8e6d0fcf8c0856ae2"
+      },
+      {
+        "bytes": 729689,
+        "name": "2024-09.parquet",
+        "path": "E:\\PEKERJAAN\\TRADING-BACKTEST-STRATEGY\\mt5-ea-research-lab\\data\\sp500_exness\\raw\\m1\\2024-09.parquet",
+        "rows": 28563,
+        "sha256": "20d1dbf1aab2bc21f7e84c22a2bccee5d01c702e0988675be10f47e8f96eda8f"
+      },
+      {
+        "bytes": 718341,
+        "name": "2024-10.parquet",
+        "path": "E:\\PEKERJAAN\\TRADING-BACKTEST-STRATEGY\\mt5-ea-research-lab\\data\\sp500_exness\\raw\\m1\\2024-10.parquet",
+        "rows": 31449,
+        "sha256": "486f2ae97f6e24a88f118dd4a4bcd208a23f7a87c141ff2125f3b6267818a39a"
+      },
+      {
+        "bytes": 678896,
+        "name": "2024-11.parquet",
+        "path": "E:\\PEKERJAAN\\TRADING-BACKTEST-STRATEGY\\mt5-ea-research-lab\\data\\sp500_exness\\raw\\m1\\2024-11.parquet",
+        "rows": 28101,
+        "sha256": "b9af2d8ab6c9a3b396a44afc4d4e3d297a5c1f26427d1f590a74a900aa306a8f"
+      },
+      {
+        "bytes": 649059,
+        "name": "2024-12.parquet",
+        "path": "E:\\PEKERJAAN\\TRADING-BACKTEST-STRATEGY\\mt5-ea-research-lab\\data\\sp500_exness\\raw\\m1\\2024-12.parquet",
+        "rows": 28444,
+        "sha256": "eae7f22b19744424db4f7de84791dee45ce8eb636957cc9e86937cc0f733fc6a"
+      },
+      {
+        "bytes": 744071,
+        "name": "2025-01.parquet",
+        "path": "E:\\PEKERJAAN\\TRADING-BACKTEST-STRATEGY\\mt5-ea-research-lab\\data\\sp500_exness\\raw\\m1\\2025-01.parquet",
+        "rows": 29308,
+        "sha256": "a6820124537d0f32faa3e0b99a72ce8ed233ceffa59c916d68c615f9089b1bf2"
+      },
+      {
+        "bytes": 650852,
+        "name": "2025-02.parquet",
+        "path": "E:\\PEKERJAAN\\TRADING-BACKTEST-STRATEGY\\mt5-ea-research-lab\\data\\sp500_exness\\raw\\m1\\2025-02.parquet",
+        "rows": 27081,
+        "sha256": "3f831f5a32af8497c5f8d99444f09f988449d7758a68bd9c261d97d7a7352ee2"
+      },
+      {
+        "bytes": 771878,
+        "name": "2025-03.parquet",
+        "path": "E:\\PEKERJAAN\\TRADING-BACKTEST-STRATEGY\\mt5-ea-research-lab\\data\\sp500_exness\\raw\\m1\\2025-03.parquet",
+        "rows": 28845,
+        "sha256": "b6ee9172a6a083a1fe0bcf632432dff2491ea718b209c27837d24fdd02e24cae"
+      },
+      {
+        "bytes": 860508,
+        "name": "2025-04.parquet",
+        "path": "E:\\PEKERJAAN\\TRADING-BACKTEST-STRATEGY\\mt5-ea-research-lab\\data\\sp500_exness\\raw\\m1\\2025-04.parquet",
+        "rows": 28772,
+        "sha256": "acf8805fbf242e89a5b224379fb48cce2149d882ec8f279ef85659a22f2c466e"
+      },
+      {
+        "bytes": 771869,
+        "name": "2025-05.parquet",
+        "path": "E:\\PEKERJAAN\\TRADING-BACKTEST-STRATEGY\\mt5-ea-research-lab\\data\\sp500_exness\\raw\\m1\\2025-05.parquet",
+        "rows": 29852,
+        "sha256": "ee026e871f445a02804a585feaeb9dd5fc1a5087a460f205b593a2ca0497a748"
+      },
+      {
+        "bytes": 710120,
+        "name": "2025-06.parquet",
+        "path": "E:\\PEKERJAAN\\TRADING-BACKTEST-STRATEGY\\mt5-ea-research-lab\\data\\sp500_exness\\raw\\m1\\2025-06.parquet",
+        "rows": 28785,
+        "sha256": "3140a2660048636fb5725dcff4cf59665aae7fabba4f8f0ad1cf5a68c673abc7"
+      },
+      {
+        "bytes": 726389,
+        "name": "2025-07.parquet",
+        "path": "E:\\PEKERJAAN\\TRADING-BACKTEST-STRATEGY\\mt5-ea-research-lab\\data\\sp500_exness\\raw\\m1\\2025-07.parquet",
+        "rows": 31108,
+        "sha256": "221f171d94b20eceb7452992aad67602bae2f3f2df6cfa74f5df0e90bc5a7547"
+      },
+      {
+        "bytes": 698700,
+        "name": "2025-08.parquet",
+        "path": "E:\\PEKERJAAN\\TRADING-BACKTEST-STRATEGY\\mt5-ea-research-lab\\data\\sp500_exness\\raw\\m1\\2025-08.parquet",
+        "rows": 28882,
+        "sha256": "da48c93d67fcd8f23d01f2d3c3dff3bb8f5ef970c1081fc46453659357af9cd9"
+      },
+      {
+        "bytes": 733431,
+        "name": "2025-09.parquet",
+        "path": "E:\\PEKERJAAN\\TRADING-BACKTEST-STRATEGY\\mt5-ea-research-lab\\data\\sp500_exness\\raw\\m1\\2025-09.parquet",
+        "rows": 29977,
+        "sha256": "a28af6e6d10f975f75fe3cbe8e0449033fde4450a9ecc5e62ecd0e993a878713"
+      },
+      {
+        "bytes": 783254,
+        "name": "2025-10.parquet",
+        "path": "E:\\PEKERJAAN\\TRADING-BACKTEST-STRATEGY\\mt5-ea-research-lab\\data\\sp500_exness\\raw\\m1\\2025-10.parquet",
+        "rows": 31524,
+        "sha256": "9dad669aeb4407b03156ff5e600734c5792ad56da003b45ec7db566b4aad61f4"
+      },
+      {
+        "bytes": 708178,
+        "name": "2025-11.parquet",
+        "path": "E:\\PEKERJAAN\\TRADING-BACKTEST-STRATEGY\\mt5-ea-research-lab\\data\\sp500_exness\\raw\\m1\\2025-11.parquet",
+        "rows": 26523,
+        "sha256": "5710ac267c03d4d8e01665d0ba1a6fd6de79a609b32812e3f78e285a1c44a27e"
+      },
+      {
+        "bytes": 699384,
+        "name": "2025-12.parquet",
+        "path": "E:\\PEKERJAAN\\TRADING-BACKTEST-STRATEGY\\mt5-ea-research-lab\\data\\sp500_exness\\raw\\m1\\2025-12.parquet",
+        "rows": 29999,
+        "sha256": "790832fe3642ddad26b3110cccb1c8cf0cefd033c708b298b1a1b87af7a1dca7"
+      },
+      {
+        "bytes": 682807,
+        "name": "2026-01.parquet",
+        "path": "E:\\PEKERJAAN\\TRADING-BACKTEST-STRATEGY\\mt5-ea-research-lab\\data\\sp500_exness\\raw\\m1\\2026-01.parquet",
+        "rows": 28679,
+        "sha256": "87a618f67b287a9ee999faa2c193f1c68780859cd4a3d8fa43da78e838bcafdf"
+      },
+      {
+        "bytes": 689990,
+        "name": "2026-02.parquet",
+        "path": "E:\\PEKERJAAN\\TRADING-BACKTEST-STRATEGY\\mt5-ea-research-lab\\data\\sp500_exness\\raw\\m1\\2026-02.parquet",
+        "rows": 27336,
+        "sha256": "acd24ee3ae6c9160392e11cd5071dd1034da9226188ce0784953af1b1a703bc3"
+      },
+      {
+        "bytes": 878882,
+        "name": "2026-03.parquet",
+        "path": "E:\\PEKERJAAN\\TRADING-BACKTEST-STRATEGY\\mt5-ea-research-lab\\data\\sp500_exness\\raw\\m1\\2026-03.parquet",
+        "rows": 30461,
+        "sha256": "862bd207b4fad4d5c15e1f0ebbc349a06cc31fc268c7b58351fd843bb260653c"
+      },
+      {
+        "bytes": 805517,
+        "name": "2026-04.parquet",
+        "path": "E:\\PEKERJAAN\\TRADING-BACKTEST-STRATEGY\\mt5-ea-research-lab\\data\\sp500_exness\\raw\\m1\\2026-04.parquet",
+        "rows": 29873,
+        "sha256": "0d26cf409b7cb2a3f9052e1cc4edc9590eddbde967b030f14c2c429497b8812f"
+      },
+      {
+        "bytes": 757463,
+        "name": "2026-05.parquet",
+        "path": "E:\\PEKERJAAN\\TRADING-BACKTEST-STRATEGY\\mt5-ea-research-lab\\data\\sp500_exness\\raw\\m1\\2026-05.parquet",
+        "rows": 28707,
+        "sha256": "00807de20b1f2fd76d657a5a1879332499b76ec5f952d40e80c8bea7c544a23e"
+      },
+      {
+        "bytes": 819454,
+        "name": "2026-06.parquet",
+        "path": "E:\\PEKERJAAN\\TRADING-BACKTEST-STRATEGY\\mt5-ea-research-lab\\data\\sp500_exness\\raw\\m1\\2026-06.parquet",
+        "rows": 30104,
+        "sha256": "8b903df9566efaf9f4d89b66dce82e2a448d4d18ffd188e610244edf86ebc195"
+      },
+      {
+        "bytes": 740119,
+        "name": "2026-07.parquet",
+        "path": "E:\\PEKERJAAN\\TRADING-BACKTEST-STRATEGY\\mt5-ea-research-lab\\data\\sp500_exness\\raw\\m1\\2026-07.parquet",
+        "rows": 31354,
+        "sha256": "16223d0888815faff886fe06a52fea4c180b730859f2847ab24dd10423338c95"
+      },
+      {
+        "bytes": 576636,
+        "name": "2026-08.parquet",
+        "path": "E:\\PEKERJAAN\\TRADING-BACKTEST-STRATEGY\\mt5-ea-research-lab\\data\\sp500_exness\\raw\\m1\\2026-08.parquet",
+        "rows": 29081,
+        "sha256": "7f9cb5eed585cd536e59f0f48e380f871b0536b840d7fba02994507b7f7c70b3"
+      }
+    ],
+    "first_minute": "2022-01-02T00:00:00+00:00",
+    "invalid_rows_removed": 0,
+    "last_minute": "2026-08-31T23:59:00+00:00",
+    "minute_rows": 1601541,
+    "raw_rows": 1601579,
+    "source_path": "E:\\PEKERJAAN\\TRADING-BACKTEST-STRATEGY\\mt5-ea-research-lab\\data\\sp500_exness\\raw\\m1"
+  },
+  "extension": {
+    "causal_label_diagnostic": {
+      "maximum_selected_label_maturity_minus_decision": 0,
+      "prediction_rows": 54044
+    },
+    "duplicate_rows_removed_when_combined": 0,
+    "first_bar": "2026-09-01T00:00:00+00:00",
+    "last_bar": "2026-09-10T00:00:00+00:00",
+    "path": "E:\\PEKERJAAN\\TRADING-BACKTEST-STRATEGY\\mt5-ea-research-lab\\data\\sp500_exness\\raw\\m1\\2026-09.parquet",
+    "rows_in_requested_window": 9415,
+    "scored_end_exclusive": "2026-09-10T00:00:00+00:00",
+    "scored_start": "2026-09-01T00:00:00+00:00",
+    "sha256": "407ac6e9f528e2d337ef4492ec2438e55e3c754c9a8b9f9a6d2e445bc0a7b00e",
+    "status": "PARTIAL_CACHE_AFTER_MT5_IPC_TIMEOUT"
+  }
+}

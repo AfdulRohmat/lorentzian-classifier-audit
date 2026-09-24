@@ -287,6 +287,24 @@ def main() -> None:
     ].copy()
     historical = _historical_analysis(selected, contract)
     holdout_trades, holdout, source_manifest = _new_holdout(contract)
+    if not holdout_trades.empty:
+        window_size = len(holdout_trades)
+        rolling = selected.net_r.rolling(window_size).sum().dropna().to_numpy(dtype=float)
+        observed = float(holdout_trades.net_r.sum())
+        holdout["posthoc_same_length_historical_context"] = {
+            "label": "POSTHOC_NOT_A_GATE",
+            "window_trades": window_size,
+            "historical_windows": len(rolling),
+            "historical_median_total_r": float(np.median(rolling)),
+            "historical_ci95_total_r": [
+                float(np.quantile(rolling, 0.025)),
+                float(np.quantile(rolling, 0.975)),
+            ],
+            "fraction_historical_windows_at_or_below_holdout": float(
+                (rolling <= observed).mean()
+            ),
+            "fraction_historical_windows_positive": float((rolling > 0).mean()),
+        }
     output = {
         "study": contract["study"],
         "contract_sha256": _sha256(contract_path),

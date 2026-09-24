@@ -1,0 +1,20 @@
+{
+  "all_pass": true,
+  "checks": {
+    "assessment_matches_gates": true,
+    "base_total_reconciles": true,
+    "cap_totals_reconcile": true,
+    "concentration_reconciles": true,
+    "extension_hash_matches": true,
+    "holdout_causal_labels_mature": true,
+    "holdout_entries_after_signals": true,
+    "holdout_positions_do_not_overlap": true,
+    "holdout_summary_reconciles": true,
+    "input_ledger_hash_matches": true,
+    "monte_carlo_replays_exactly": true,
+    "posthoc_window_context_reconciles": true,
+    "small_holdout_not_overclaimed": true
+  },
+  "passed": 13,
+  "total": 13
+}

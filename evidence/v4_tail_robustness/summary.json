@@ -1,0 +1,245 @@
+{
+  "contract_sha256": "be5d7eb46a9a02907eadddd479129007f2e6c712c7d81626876ac364aace8658",
+  "historical": {
+    "assessment": "TAIL_STRUCTURE_SUPPORTED_EDGE_UNCONFIRMED",
+    "assessment_gates": {
+      "all_pass": true,
+      "cap_5r_positive": true,
+      "retrospective_2026_positive": true,
+      "tail_winners_in_every_year": true,
+      "ten_percent_tail_miss_positive_probability_at_least_80pct": true
+    },
+    "base": {
+      "max_drawdown_r": 27.223103012996436,
+      "mean_r": 0.10576568338945204,
+      "median_r": -1.000000000000013,
+      "profit_factor": 1.1722625876511348,
+      "total_r": 72.766790171943,
+      "total_r_ex_top10": -14.640498813114784,
+      "trades": 688,
+      "trades_per_week": 4.944558521560575,
+      "win_rate": 0.3851744186046512
+    },
+    "caps": {
+      "cap_3r": {
+        "annual": {
+          "2024": -18.89487147099173,
+          "2025": 1.5728729388526599,
+          "2026": -16.77344061972296
+        },
+        "mean_r": -0.04955732434863668,
+        "profit_factor": 0.9192850397616386,
+        "total_r": -34.09543915186204
+      },
+      "cap_5r": {
+        "annual": {
+          "2024": 10.073701926952813,
+          "2025": 22.806233554273046,
+          "2026": -2.637185950014036
+        },
+        "mean_r": 0.043957484783738114,
+        "profit_factor": 1.0715943946355408,
+        "total_r": 30.24274953121182
+      }
+    },
+    "concentration": {
+      "top_1": {
+        "share_of_net_percent": 21.93943413330664,
+        "sum_r": 15.964622000694884,
+        "total_without_r": 56.80216817124811
+      },
+      "top_10": {
+        "share_of_net_percent": 120.11975350090376,
+        "sum_r": 87.40728898505779,
+        "total_without_r": -14.640498813114789
+      },
+      "top_3": {
+        "share_of_net_percent": 49.13446987488974,
+        "sum_r": 35.75357659595756,
+        "total_without_r": 37.01321357598544
+      },
+      "top_5": {
+        "share_of_net_percent": 73.67215587453059,
+        "sum_r": 53.608863080366454,
+        "total_without_r": 19.157927091576546
+      }
+    },
+    "monte_carlo": [
+      {
+        "missed_tail_count_ci95_median": [
+          0.0,
+          2.0,
+          6.0
+        ],
+        "one_percent_final_equity_multiple_ci95_median": [
+          1.3344764060936611,
+          1.6378456069325307,
+          1.8418036814040248
+        ],
+        "one_percent_max_drawdown_fraction_ci95_median": [
+          0.24533361977196427,
+          0.2505650472992389,
+          0.30852775961187284
+        ],
+        "probability_total_r_positive": 1.0,
+        "replicates": 20000,
+        "tail_miss_probability": 0.05,
+        "tail_trades": 53,
+        "total_r_ci95_median": [
+          39.350985530643534,
+          60.74756749646741,
+          72.766790171943
+        ]
+      },
+      {
+        "missed_tail_count_ci95_median": [
+          2.0,
+          5.0,
+          10.0
+        ],
+        "one_percent_final_equity_multiple_ci95_median": [
+          1.1066377238529659,
+          1.4374234194041104,
+          1.724951139118555
+        ],
+        "one_percent_max_drawdown_fraction_ci95_median": [
+          0.24533361977196427,
+          0.2738249334996616,
+          0.34715800247330797
+        ],
+        "probability_total_r_positive": 0.9991,
+        "replicates": 20000,
+        "tail_miss_probability": 0.1,
+        "tail_trades": 53,
+        "total_r_ci95_median": [
+          19.978579360917557,
+          47.27318783256125,
+          66.1033656127312
+        ]
+      },
+      {
+        "missed_tail_count_ci95_median": [
+          5.0,
+          10.0,
+          17.0
+        ],
+        "one_percent_final_equity_multiple_ci95_median": [
+          0.7928531371165002,
+          1.1066880751438095,
+          1.4551060341807582
+        ],
+        "one_percent_max_drawdown_fraction_ci95_median": [
+          0.2505650472992384,
+          0.32120547053566006,
+          0.427157707242586
+        ],
+        "probability_total_r_positive": 0.88255,
+        "replicates": 20000,
+        "tail_miss_probability": 0.2,
+        "tail_trades": 53,
+        "total_r_ci95_median": [
+          -14.420432588843601,
+          20.308741020984186,
+          48.59598872463496
+        ]
+      },
+      {
+        "missed_tail_count_ci95_median": [
+          10.0,
+          16.0,
+          23.0
+        ],
+        "one_percent_final_equity_multiple_ci95_median": [
+          0.593042156039595,
+          0.8547092892692293,
+          1.1858656014804527
+        ],
+        "one_percent_max_drawdown_fraction_ci95_median": [
+          0.28470335752720455,
+          0.38895172555793145,
+          0.5137500658568925
+        ],
+        "probability_total_r_positive": 0.36255,
+        "replicates": 20000,
+        "tail_miss_probability": 0.3,
+        "tail_trades": 53,
+        "total_r_ci95_median": [
+          -44.33687122952373,
+          -6.278703037982851,
+          27.58037595660463
+        ]
+      }
+    ],
+    "partitions": {
+      "development": {
+        "max_drawdown_r": 27.223103012996436,
+        "mean_r": 0.10394394089268431,
+        "median_r": -1.0000000000000142,
+        "profit_factor": 1.1715034979692287,
+        "total_r": 55.090288673122686,
+        "total_r_ex_top10": -15.870980455408066,
+        "trades": 530,
+        "trades_per_week": 5.075239398084816,
+        "win_rate": 0.39245283018867927
+      },
+      "retrospective_holdout": {
+        "max_drawdown_r": 24.832932084376502,
+        "mean_r": 0.11187659176468549,
+        "median_r": -1.0000000000000102,
+        "profit_factor": 1.1746720618848485,
+        "total_r": 17.676501498820308,
+        "total_r_ex_top10": -46.68033313214715,
+        "trades": 158,
+        "trades_per_week": 4.5514403292181065,
+        "win_rate": 0.36075949367088606
+      }
+    },
+    "tail_by_year": {
+      "2024": {
+        "sum_r": 105.34950901575671,
+        "trades": 21
+      },
+      "2025": {
+        "sum_r": 93.06277818950504,
+        "trades": 21
+      },
+      "2026": {
+        "sum_r": 67.44994211854328,
+        "trades": 11
+      }
+    },
+    "tail_sum_r": 265.862229323805,
+    "tail_threshold_r": 3.0,
+    "tail_trades": 53
+  },
+  "interpretation": "Historical tail structure passes the declared diagnostics, but the edge remains unconfirmed.",
+  "new_holdout": {
+    "annualized_interpretation_forbidden": true,
+    "metrics": {
+      "max_drawdown_r": 4.818663571672646,
+      "mean_r": -0.435281108309552,
+      "median_r": -1.0000000000000226,
+      "profit_factor": 0.4403528607448835,
+      "total_r": -3.917529974785968,
+      "total_r_ex_top10": 0.0,
+      "trades": 9,
+      "trades_per_week": 6.999999999999999,
+      "win_rate": 0.2222222222222222
+    },
+    "posthoc_same_length_historical_context": {
+      "fraction_historical_windows_at_or_below_holdout": 0.1676470588235294,
+      "fraction_historical_windows_positive": 0.5205882352941177,
+      "historical_ci95_total_r": [
+        -6.808662995727158,
+        14.197875538254246
+      ],
+      "historical_median_total_r": 0.1521782808254687,
+      "historical_windows": 680,
+      "label": "POSTHOC_NOT_A_GATE",
+      "window_trades": 9
+    },
+    "sample_status": "INSUFFICIENT_SAMPLE"
+  },
+  "study": "SP500_M30_RUNNER_TAIL_ROBUSTNESS_V4",
+  "v3_trade_ledger_sha256": "20e8819c7ca94bd3217ac63dba0b5504c75810ab39dc189f19fda1666b72287d"
+}

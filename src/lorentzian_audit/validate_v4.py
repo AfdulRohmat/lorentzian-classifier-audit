@@ -96,6 +96,17 @@ def main() -> None:
         and holdout_summary["sample_status"] == "INSUFFICIENT_SAMPLE"
         and holdout_summary["annualized_interpretation_forbidden"]
     )
+    context = holdout_summary["posthoc_same_length_historical_context"]
+    rolling = trades.net_r.rolling(len(holdout)).sum().dropna().to_numpy(dtype=float)
+    checks["posthoc_window_context_reconciles"] = (
+        context["label"] == "POSTHOC_NOT_A_GATE"
+        and len(rolling) == context["historical_windows"]
+        and np.isclose(
+            (rolling <= holdout.net_r.sum()).mean(),
+            context["fraction_historical_windows_at_or_below_holdout"],
+            atol=1e-12,
+        )
+    )
     declared = summary["historical"]["assessment_gates"]
     checks["assessment_matches_gates"] = (
         summary["historical"]["assessment"]
