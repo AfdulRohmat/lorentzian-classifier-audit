@@ -8,11 +8,13 @@ checkout without adding a plotting dependency to the research environment.
 from __future__ import annotations
 
 import json
+import math
 from dataclasses import dataclass
 from datetime import UTC, datetime
 from html import escape
 from pathlib import Path
 
+import numpy as np
 import pandas as pd
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -423,9 +425,201 @@ def generate_monte_carlo() -> Path:
     return target
 
 
+def generate_monte_carlo_paths() -> Path:
+    """Render representative paths from the frozen 10% tail-miss experiment."""
+
+    trade_source = ROOT / "evidence" / "v3_atr_runner_sizing" / "trades.csv.gz"
+    trades = pd.read_csv(trade_source)
+    trades = trades[(trades["asset"] == "sp500") & (trades["timeframe"] == "30min")]
+    values = trades["net_r"].to_numpy(dtype=float)
+    if len(values) != 688:
+        raise RuntimeError(f"Expected 688 SP500 M30 trades, found {len(values)}")
+
+    contract = json.loads(
+        (ROOT / "config" / "contract_v4_tail_robustness.json").read_text(encoding="utf-8")
+    )
+    summary = json.loads(
+        (ROOT / "evidence" / "v4_tail_robustness" / "summary.json").read_text(encoding="utf-8")
+    )
+    probabilities = contract["monte_carlo"]["independent_tail_miss_probabilities"]
+    probability = 0.10
+    probability_index = probabilities.index(probability)
+    replicates = int(contract["monte_carlo"]["replicates"])
+    seed = int(contract["monte_carlo"]["seed"]) + probability_index
+    threshold = float(contract["tail_diagnostics"]["tail_threshold_r"])
+
+    tail_positions = np.flatnonzero(values > threshold)
+    tail_column = {position: column for column, position in enumerate(tail_positions)}
+    rng = np.random.default_rng(seed)
+    missed = rng.random((replicates, len(tail_positions))) < probability
+
+    representative_count = 180
+    representative_indices = np.linspace(0, replicates - 1, representative_count, dtype=int)
+    representative_equity = np.empty((representative_count, len(values) + 1))
+    representative_equity[:, 0] = 500.0
+    all_equity = np.full(replicates, 500.0)
+    quantiles = np.empty((3, len(values) + 1))
+    quantiles[:, 0] = 500.0
+
+    for position, outcome in enumerate(values):
+        if position in tail_column:
+            applied = np.where(missed[:, tail_column[position]], 0.0, outcome)
+        else:
+            applied = outcome
+        all_equity *= 1.0 + 0.01 * applied
+        representative_equity[:, position + 1] = all_equity[representative_indices]
+        quantiles[:, position + 1] = np.quantile(all_equity, [0.025, 0.5, 0.975])
+
+    expected = next(
+        row
+        for row in summary["historical"]["monte_carlo"]
+        if float(row["tail_miss_probability"]) == probability
+    )["one_percent_final_equity_multiple_ci95_median"]
+    reproduced = (quantiles[:, -1] / 500.0).tolist()
+    if not np.allclose(reproduced, expected, rtol=0.0, atol=1e-12):
+        raise RuntimeError("Path simulation does not reconcile with frozen v4 summary")
+
+    no_miss_equity = np.r_[500.0, 500.0 * np.cumprod(1.0 + 0.01 * values)]
+    left, right = 145.0, 1525.0
+    top, bottom = 195.0, 765.0
+    x_scale = Scale(0.0, float(len(values)), left, right)
+    plotted_min = min(float(representative_equity.min()), float(quantiles[0].min()))
+    plotted_max = max(
+        float(representative_equity.max()),
+        float(quantiles[2].max()),
+        float(no_miss_equity.max()),
+    )
+    y_floor = math.floor((plotted_min - 30.0) / 100.0) * 100.0
+    y_ceiling = math.ceil((plotted_max + 30.0) / 100.0) * 100.0
+    y_scale = Scale(y_floor, y_ceiling, bottom, top)
+
+    body = [
+        _text(80, 68, "SP500 M30 Monte Carlo equity paths", size=38, weight=700),
+        _text(
+            80,
+            108,
+            "10% chance of missing each >3R winner · 1% fixed-fraction risk · $500 start",
+            size=23,
+            color=MUTED,
+        ),
+        f'<rect x="{left}" y="{top}" width="{right - left}" height="{bottom - top}" '
+        f'rx="10" fill="{PANEL}"/>',
+    ]
+
+    for value in np.arange(y_floor, y_ceiling + 1.0, 100.0):
+        y = y_scale(float(value))
+        body.extend(
+            [
+                f'<line x1="{left}" y1="{y:.2f}" x2="{right}" y2="{y:.2f}" '
+                f'stroke="{GRID}" stroke-width="1"/>',
+                _text(left - 18, y + 8, f"${value:,.0f}", size=20, color=MUTED, anchor="end"),
+            ]
+        )
+
+    x_values = np.arange(len(values) + 1, dtype=float)
+    upper_points = [
+        (x_scale(float(index)), y_scale(float(value)))
+        for index, value in enumerate(quantiles[2])
+    ]
+    lower_points = [
+        (x_scale(float(index)), y_scale(float(value)))
+        for index, value in reversed(list(enumerate(quantiles[0])))
+    ]
+    polygon = " ".join(f"{x:.2f},{y:.2f}" for x, y in [*upper_points, *lower_points])
+    body.append(f'<polygon points="{polygon}" fill="{BLUE_LIGHT}" opacity="0.38"/>')
+
+    for path in representative_equity:
+        points = list(
+            zip(
+                (x_scale(value) for value in x_values),
+                (y_scale(float(value)) for value in path),
+                strict=True,
+            )
+        )
+        line = _line(points, BLUE, 1.0)
+        body.append(line.replace("/>", ' opacity="0.10"/>'))
+
+    median_points = list(
+        zip(
+            (x_scale(value) for value in x_values),
+            (y_scale(float(value)) for value in quantiles[1]),
+            strict=True,
+        )
+    )
+    no_miss_points = list(
+        zip(
+            (x_scale(value) for value in x_values),
+            (y_scale(float(value)) for value in no_miss_equity),
+            strict=True,
+        )
+    )
+    body.extend(
+        [
+            _line(median_points, INK, 4.0),
+            _line(no_miss_points, TEAL, 3.5).replace("/>", ' stroke-dasharray="10 8"/>'),
+        ]
+    )
+
+    x_ticks = [0, 172, 344, 516, 688]
+    for tick in x_ticks:
+        x = x_scale(float(tick))
+        body.extend(
+            [
+                f'<line x1="{x:.2f}" y1="{top}" x2="{x:.2f}" y2="{bottom}" '
+                f'stroke="{GRID}" stroke-width="1" stroke-dasharray="5 7"/>',
+                _text(x, 808, f"Trade {tick}", size=19, color=MUTED, anchor="middle"),
+            ]
+        )
+
+    body.extend(
+        [
+            f'<line x1="{left}" y1="{154}" x2="{left + 75}" y2="{154}" '
+            f'stroke="{BLUE}" stroke-width="2" opacity="0.25"/>',
+            _text(left + 88, 162, "180 representative paths", size=19, color=MUTED),
+            f'<line x1="{left + 420}" y1="{154}" x2="{left + 495}" y2="{154}" '
+            f'stroke="{INK}" stroke-width="4"/>',
+            _text(left + 508, 162, "median", size=19, color=MUTED),
+            f'<line x1="{left + 660}" y1="{154}" x2="{left + 735}" y2="{154}" '
+            f'stroke="{TEAL}" stroke-width="3.5" stroke-dasharray="10 8"/>',
+            _text(left + 748, 162, "no-miss historical path", size=19, color=MUTED),
+            _text(
+                80,
+                866,
+                "95% band and paths are drawn from the same frozen 20,000 simulations",
+                size=20,
+                color=MUTED,
+            ),
+            _text(
+                1520,
+                866,
+                "Fixed trade order; broker minimum lot not modeled",
+                size=19,
+                color=MUTED,
+                anchor="end",
+            ),
+        ]
+    )
+
+    target = ASSET_DIR / "sp500_m30_monte_carlo_paths.svg"
+    target.write_text(
+        _svg_document(
+            body,
+            "SP500 M30 Monte Carlo equity paths",
+            "Representative one-percent-risk equity paths when each greater-than-three-R "
+            "winner has a ten-percent independent chance of being missed.",
+        ),
+        encoding="utf-8",
+    )
+    return target
+
+
 def main() -> None:
     ASSET_DIR.mkdir(parents=True, exist_ok=True)
-    outputs = [generate_equity_curve(), generate_monte_carlo()]
+    outputs = [
+        generate_equity_curve(),
+        generate_monte_carlo_paths(),
+        generate_monte_carlo(),
+    ]
     now = datetime.now(UTC).isoformat(timespec="seconds")
     for output in outputs:
         print(f"generated {output.relative_to(ROOT)} at {now}")

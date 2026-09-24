@@ -9,7 +9,7 @@ machine. The canonical branch is `main`; the full v4 history is also retained on
 - source code, frozen contracts, unit tests and the pinned upstream snapshot;
 - compressed trade/account evidence and all summary/validation artifacts;
 - complete v1-v4 technical plans and result reports;
-- reproducible README equity and Monte Carlo figures.
+- three reproducible README equity and Monte Carlo figures.
 
 ## What GitHub intentionally does not contain
 

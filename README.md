@@ -49,6 +49,18 @@ each winner above `+3R` with a 5%-30% independent probability while retaining
 every losing trade. This asks whether imperfect live execution can miss the
 rare moves on which the runner depends.
 
+The path view below shows 180 representative trajectories from the frozen
+20,000-run **10% tail-miss** scenario. Every line starts at USD 500 and risks 1%
+of current equity. The dark line is the simulation median, the blue area is the
+95% cross-sectional band, and the dashed line is the historical path if no tail
+winner is missed. The trade order is unchanged; this is an execution-miss stress
+test, not a shuffled-return forecast.
+
+![SP500 M30 Monte Carlo equity paths](docs/assets/sp500_m30_monte_carlo_paths.svg)
+
+The following plot summarizes all four miss-probability scenarios and makes the
+failure boundary easier to compare.
+
 ![SP500 M30 tail-miss Monte Carlo](docs/assets/sp500_m30_tail_monte_carlo.svg)
 
 At a 10% tail-miss rate, 99.91% of 20,000 simulations remained positive. At
@@ -57,7 +69,7 @@ Operationally, cutting winners early or frequently missing entries can destroy
 the historical expectancy even though the strategy tolerates many ordinary
 losses.
 
-Both figures are generated from committed evidence by
+All three figures are generated from committed evidence by
 [`scripts/generate_readme_figures.py`](scripts/generate_readme_figures.py).
 
 ## Research question and data
