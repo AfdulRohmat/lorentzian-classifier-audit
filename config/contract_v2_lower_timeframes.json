@@ -1,0 +1,117 @@
+{
+  "study": "LORENTZIAN_LOWER_TIMEFRAME_CROSS_ASSET_AUDIT_V2",
+  "registered_date": "2026-09-25",
+  "status": "FROZEN_BEFORE_V2_OUTCOME_INSPECTION",
+  "question": "Does Lorentzian Classification provide causal after-cost edge at the higher-frequency M15, M30, or H1 horizons suggested by TradingView, and does it add value beyond Euclidean KNN, momentum, and kernel-only controls?",
+  "relationship_to_v1": "New hypothesis prompted by observed TradingView signal frequency; v1 H4 results remain immutable and cannot be pooled into v2",
+  "upstream": {
+    "repository": "https://github.com/artificial-intelligence-edge/lorentzian-classification",
+    "commit": "27776bd51cbd3e07b6383cfa468d4d33f4b50297",
+    "python_port_license": "MIT"
+  },
+  "data": {
+    "primary_timeframe": "30min",
+    "sensitivity_timeframes": ["15min", "1h"],
+    "timeframe_order": ["15min", "30min", "1h"],
+    "bar_alignment": "UTC boundaries, left-closed and left-labelled",
+    "minimum_m1_rows_per_bar": 1,
+    "source_start": "2022-01-01T00:00:00Z",
+    "source_end_exclusive": "2026-09-01T00:00:00Z",
+    "evaluation_start": "2024-01-01T00:00:00Z",
+    "evaluation_end_exclusive": "2026-09-01T00:00:00Z",
+    "assets": {
+      "sp500": {
+        "instrument": "Exness US500 CFD",
+        "path": "../mt5-ea-research-lab/data/sp500_exness/raw/m1",
+        "point": 0.01,
+        "price_scale": 100.0
+      },
+      "xauusd": {
+        "instrument": "Exness XAUUSD CFD",
+        "path": "../xauusd-opening-range-compression-research/data/exness/XAUUSD",
+        "point": 0.001,
+        "price_scale": 1000.0
+      }
+    }
+  },
+  "official_defaults": {
+    "source": "close",
+    "neighbors_count": 8,
+    "max_bars_back": 2000,
+    "feature_count": 5,
+    "features": ["RSI:14:1", "WT:10:11", "CCI:20:1", "ADX:20:2", "RSI:9:1"],
+    "volatility_filter": true,
+    "regime_filter": true,
+    "regime_threshold": -0.1,
+    "adx_filter": false,
+    "ema_filter": false,
+    "sma_filter": false,
+    "kernel_filter": true,
+    "kernel_smoothing": false,
+    "dynamic_exits": false
+  },
+  "official_recent_diagnostic": {
+    "total_input_bars": 2500,
+    "context_bars": 500,
+    "scored_bars": 2000,
+    "role": "Replicate the short recent-window behavior represented by TradingView trade stats; cannot satisfy the multi-year promotion gate"
+  },
+  "full_history_variants": {
+    "causal_lorentzian": "Exact rolling 8-NN, Lorentzian distance, feature at j labelled by close j to j+4 and eligible only from j+4",
+    "causal_euclidean": "Identical causal KNN with Euclidean distance",
+    "simple_momentum4": "Sign of known prior four-bar return with identical filters",
+    "filter_only_kernel": "Kernel-slope direction with identical volatility and regime filters and no classifier"
+  },
+  "candidate_spacing": "Historical candidate j is eligible when j modulo 4 is nonzero, matching the pinned source condition",
+  "execution": {
+    "signal": "completed timeframe candle close",
+    "entry": "next available timeframe Bid open",
+    "exit": "next open after four signal bars, or next open after an earlier qualified opposite start",
+    "nominal_holding_horizon": {"15min": "60 minutes", "30min": "120 minutes", "1h": "240 minutes"},
+    "overlap": "one position at a time; direct opposite flip allowed at one shared execution open",
+    "end_of_sample": "exclude positions without an executable exit"
+  },
+  "costs": {
+    "sp500": {
+      "base": {"spread_floor": 0.10, "spread_multiplier": 1.0, "slippage_side": 0.02, "commission_round_trip_price": 0.25},
+      "stress": {"spread_floor": 0.50, "spread_multiplier": 1.5, "slippage_side": 0.10, "commission_round_trip_price": 0.25}
+    },
+    "xauusd": {
+      "base": {"spread_floor": 0.0, "spread_multiplier": 1.0, "slippage_side": 0.02, "commission_round_trip_price": 0.07},
+      "stress": {"spread_floor": 0.0, "spread_multiplier": 1.5, "slippage_side": 0.05, "commission_round_trip_price": 0.14}
+    }
+  },
+  "controls": ["opposite_direction_same_windows", "always_long_same_windows", "always_short_same_windows", "deterministic_random_direction_same_windows"],
+  "statistics": {
+    "monthly_block_bootstrap_replicates": 5000,
+    "random_direction_replicates": 2000,
+    "seed": 20260925,
+    "top_trades_removed": 10,
+    "year_blocks": [["2024-01-01", "2024-12-31"], ["2025-01-01", "2025-12-31"], ["2026-01-01", "2026-08-31"]]
+  },
+  "primary_m30_promotion_gate": [
+    "causal Lorentzian base-cost net bps positive and PF at least 1.10 on both assets",
+    "causal Lorentzian exceeds causal Euclidean, simple momentum4, and filter-only kernel net bps on both assets",
+    "causal Lorentzian has at least 500 trades per asset",
+    "all three frozen year blocks positive on both assets",
+    "net bps remains positive after removing ten best trades on both assets",
+    "monthly-bootstrap 95 percent lower bound exceeds zero on both assets",
+    "stress-cost net bps remains positive on both assets",
+    "same-window random-direction one-sided p is below 0.05 on both assets"
+  ],
+  "sensitivity_rule": "M15 and H1 are reported completely but cannot rescue a failed M30 primary; any selected winner becomes a new hypothesis",
+  "verdicts": {
+    "pass": "ROBUST_M30_CROSS_ASSET_LORENTZIAN_EDGE_SUPPORTED",
+    "fail": "NO_ROBUST_M30_CROSS_ASSET_LORENTZIAN_EDGE"
+  },
+  "forbidden": [
+    "parameter or timeframe selection after outcome inspection",
+    "pooling the H4 v1 result with v2",
+    "using recent official diagnostic as multi-year evidence",
+    "same-bar close fills",
+    "using an unmatured future-four-bar label",
+    "calling TradingView win-loss count ratio a profit factor",
+    "placing MT5 orders or pushing a remote"
+  ]
+}
+
