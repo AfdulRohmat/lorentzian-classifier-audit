@@ -22,7 +22,9 @@ def _month_in_scope(path: Path, start: pd.Timestamp, end: pd.Timestamp) -> bool:
         month = pd.Period(path.stem, freq="M")
     except ValueError:
         return False
-    return month >= start.to_period("M") and month < end.to_period("M")
+    naive_start = start.tz_localize(None) if start.tzinfo is not None else start
+    naive_end = end.tz_localize(None) if end.tzinfo is not None else end
+    return month >= naive_start.to_period("M") and month < naive_end.to_period("M")
 
 
 def normalise_minutes(frame: pd.DataFrame) -> tuple[pd.DataFrame, dict[str, int]]:

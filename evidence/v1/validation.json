@@ -1,0 +1,17 @@
+{
+  "all_pass": true,
+  "checks": {
+    "all_exits_after_entry": true,
+    "all_fills_after_signal": true,
+    "all_source_hashes_match": true,
+    "base_bps_reconciliation": true,
+    "base_cost_reconciliation": true,
+    "causal_labels_mature": true,
+    "positions_do_not_overlap": true,
+    "trade_counts_match_summary": true,
+    "trade_totals_match_summary": true,
+    "verdict_matches_gates": true
+  },
+  "passed": 10,
+  "total": 10
+}

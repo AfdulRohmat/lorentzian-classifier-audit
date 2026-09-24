@@ -91,6 +91,31 @@ def _blocks(trades: pd.DataFrame, blocks: list[list[str]]) -> list[dict]:
     return output
 
 
+def _execution_diagnostics(trades: pd.DataFrame, bars: pd.DataFrame) -> dict:
+    if trades.empty:
+        return {
+            "first_entry": None,
+            "last_entry": None,
+            "median_holding_hours": None,
+            "maximum_holding_hours": None,
+            "signal_bars_under_180_minutes": 0,
+            "entry_bars_under_180_minutes": 0,
+            "exit_bars_under_180_minutes": 0,
+        }
+    signals = bars["m1_rows"].reindex(pd.DatetimeIndex(trades["signal_time"]))
+    entries = bars["m1_rows"].reindex(pd.DatetimeIndex(trades["entry_time"]))
+    exits = bars["m1_rows"].reindex(pd.DatetimeIndex(trades["exit_time"]))
+    return {
+        "first_entry": trades["entry_time"].min().isoformat(),
+        "last_entry": trades["entry_time"].max().isoformat(),
+        "median_holding_hours": float(trades["holding_hours"].median()),
+        "maximum_holding_hours": float(trades["holding_hours"].max()),
+        "signal_bars_under_180_minutes": int((signals < 180).sum()),
+        "entry_bars_under_180_minutes": int((entries < 180).sum()),
+        "exit_bars_under_180_minutes": int((exits < 180).sum()),
+    }
+
+
 def _gate(summary_data: dict, contract: dict) -> dict:
     assets = tuple(contract["data"]["assets"])
     gate: dict[str, bool] = {}
@@ -225,6 +250,7 @@ def main() -> None:
                     trades.loc[trades["direction"] == -1, "base_net_bps"].sum()
                 ),
                 "positive_month_fraction": float((monthly["net_bps"] > 0).mean()),
+                "execution_diagnostics": _execution_diagnostics(trades, bars),
                 "monthly_bootstrap": bootstrap_months(
                     monthly["net_bps"].to_numpy(dtype=float),
                     int(contract["statistics"]["monthly_block_bootstrap_replicates"]),

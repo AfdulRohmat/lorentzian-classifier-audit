@@ -1,0 +1,2121 @@
+{
+  "assets": {
+    "sp500": {
+      "signal_diagnostics": {
+        "causal_euclidean": {
+          "maximum_selected_label_maturity_minus_decision": 0,
+          "prediction_rows": 7335
+        },
+        "causal_lorentzian": {
+          "maximum_selected_label_maturity_minus_decision": 0,
+          "prediction_rows": 7335
+        },
+        "filter_mask": {
+          "passing_bars": 1018,
+          "total_bars": 7380
+        }
+      },
+      "source": {
+        "asset": "sp500",
+        "duplicate_rows_removed": 37,
+        "file_count": 56,
+        "files": [
+          {
+            "bytes": 725370,
+            "name": "2022-01.parquet",
+            "path": "E:\\PEKERJAAN\\TRADING-BACKTEST-STRATEGY\\mt5-ea-research-lab\\data\\sp500_exness\\raw\\m1\\2022-01.parquet",
+            "rows": 26844,
+            "sha256": "c5d25404a9c5447ce49798e51f2b93016f21064b96acce8401905ed3ae27108c"
+          },
+          {
+            "bytes": 681120,
+            "name": "2022-02.parquet",
+            "path": "E:\\PEKERJAAN\\TRADING-BACKTEST-STRATEGY\\mt5-ea-research-lab\\data\\sp500_exness\\raw\\m1\\2022-02.parquet",
+            "rows": 24991,
+            "sha256": "a24a89a0ec536797515cbb2d62572288b71a76f10bed946809960056fa7459e5"
+          },
+          {
+            "bytes": 813485,
+            "name": "2022-03.parquet",
+            "path": "E:\\PEKERJAAN\\TRADING-BACKTEST-STRATEGY\\mt5-ea-research-lab\\data\\sp500_exness\\raw\\m1\\2022-03.parquet",
+            "rows": 29645,
+            "sha256": "608a7d58ec06ef746d69b207a292d0db2587d2e13d21f2da9fcf20a9833f827c"
+          },
+          {
+            "bytes": 670764,
+            "name": "2022-04.parquet",
+            "path": "E:\\PEKERJAAN\\TRADING-BACKTEST-STRATEGY\\mt5-ea-research-lab\\data\\sp500_exness\\raw\\m1\\2022-04.parquet",
+            "rows": 25489,
+            "sha256": "94001a17f1b5569ba534e4392377502b37bfd735a5c9c97a3623ba2ef1e17555"
+          },
+          {
+            "bytes": 759048,
+            "name": "2022-05.parquet",
+            "path": "E:\\PEKERJAAN\\TRADING-BACKTEST-STRATEGY\\mt5-ea-research-lab\\data\\sp500_exness\\raw\\m1\\2022-05.parquet",
+            "rows": 28260,
+            "sha256": "6c721c9fcc7c2301faf23e7e8a16d0a6fac43d14696341b31a3cba92bdfd2ee0"
+          },
+          {
+            "bytes": 739975,
+            "name": "2022-06.parquet",
+            "path": "E:\\PEKERJAAN\\TRADING-BACKTEST-STRATEGY\\mt5-ea-research-lab\\data\\sp500_exness\\raw\\m1\\2022-06.parquet",
+            "rows": 28069,
+            "sha256": "0893c35c5182e1b5433f362334d548ac80ee580e5d6975efee19fb7a345bc292"
+          },
+          {
+            "bytes": 672423,
+            "name": "2022-07.parquet",
+            "path": "E:\\PEKERJAAN\\TRADING-BACKTEST-STRATEGY\\mt5-ea-research-lab\\data\\sp500_exness\\raw\\m1\\2022-07.parquet",
+            "rows": 26833,
+            "sha256": "d079a5e4977874fc30eec52d27dc8f9d159e154013cb129b843027bee05ccdf2"
+          },
+          {
+            "bytes": 737634,
+            "name": "2022-08.parquet",
+            "path": "E:\\PEKERJAAN\\TRADING-BACKTEST-STRATEGY\\mt5-ea-research-lab\\data\\sp500_exness\\raw\\m1\\2022-08.parquet",
+            "rows": 29381,
+            "sha256": "c310fe4a56deeae3513f76b9c2708173fda33a070be80fb128ca41374888adb8"
+          },
+          {
+            "bytes": 769916,
+            "name": "2022-09.parquet",
+            "path": "E:\\PEKERJAAN\\TRADING-BACKTEST-STRATEGY\\mt5-ea-research-lab\\data\\sp500_exness\\raw\\m1\\2022-09.parquet",
+            "rows": 28051,
+            "sha256": "0dc7b89bfbffc63c981f54c7e57de5badd16311c7b5e622c45f238f64ad7d254"
+          },
+          {
+            "bytes": 736170,
+            "name": "2022-10.parquet",
+            "path": "E:\\PEKERJAAN\\TRADING-BACKTEST-STRATEGY\\mt5-ea-research-lab\\data\\sp500_exness\\raw\\m1\\2022-10.parquet",
+            "rows": 27144,
+            "sha256": "a2a98b8c1d5f0229e407e933162072efd6a0bb2dead0ebc95c390ef67e9d949e"
+          },
+          {
+            "bytes": 703642,
+            "name": "2022-11.parquet",
+            "path": "E:\\PEKERJAAN\\TRADING-BACKTEST-STRATEGY\\mt5-ea-research-lab\\data\\sp500_exness\\raw\\m1\\2022-11.parquet",
+            "rows": 27828,
+            "sha256": "fb4cab8157736448cfb1523c0c878c59af47aafbdf7c40d90fdf8b654e5059cb"
+          },
+          {
+            "bytes": 697333,
+            "name": "2022-12.parquet",
+            "path": "E:\\PEKERJAAN\\TRADING-BACKTEST-STRATEGY\\mt5-ea-research-lab\\data\\sp500_exness\\raw\\m1\\2022-12.parquet",
+            "rows": 26919,
+            "sha256": "8d25f28aa9d0f17e3c74611a033e6f5c7509d2a6e981285a0295426a8f2accf7"
+          },
+          {
+            "bytes": 674600,
+            "name": "2023-01.parquet",
+            "path": "E:\\PEKERJAAN\\TRADING-BACKTEST-STRATEGY\\mt5-ea-research-lab\\data\\sp500_exness\\raw\\m1\\2023-01.parquet",
+            "rows": 26688,
+            "sha256": "6f06a03216721e53c6c307b3737847e5c23d218967bbcada6596237cbdad4273"
+          },
+          {
+            "bytes": 618467,
+            "name": "2023-02.parquet",
+            "path": "E:\\PEKERJAAN\\TRADING-BACKTEST-STRATEGY\\mt5-ea-research-lab\\data\\sp500_exness\\raw\\m1\\2023-02.parquet",
+            "rows": 25365,
+            "sha256": "6c9e7d4fbc8635e8630d1d391e45c36cda071cf6a462ad3ca1baf6a6caf2200a"
+          },
+          {
+            "bytes": 723752,
+            "name": "2023-03.parquet",
+            "path": "E:\\PEKERJAAN\\TRADING-BACKTEST-STRATEGY\\mt5-ea-research-lab\\data\\sp500_exness\\raw\\m1\\2023-03.parquet",
+            "rows": 29262,
+            "sha256": "71993eef2bbf0d3a547fe6b9d00c2f0db6fb7f25c5beea94c8e8c1e67edb26a1"
+          },
+          {
+            "bytes": 530989,
+            "name": "2023-04.parquet",
+            "path": "E:\\PEKERJAAN\\TRADING-BACKTEST-STRATEGY\\mt5-ea-research-lab\\data\\sp500_exness\\raw\\m1\\2023-04.parquet",
+            "rows": 24392,
+            "sha256": "9a3df89181345f2dac119047a6d50d3bc21ecb7b5a0b4a2958ddb72b08336010"
+          },
+          {
+            "bytes": 658903,
+            "name": "2023-05.parquet",
+            "path": "E:\\PEKERJAAN\\TRADING-BACKTEST-STRATEGY\\mt5-ea-research-lab\\data\\sp500_exness\\raw\\m1\\2023-05.parquet",
+            "rows": 28664,
+            "sha256": "043bf207c2476dfa13d545b9fdd022ed514106b4ef2374dcf665898a40820bca"
+          },
+          {
+            "bytes": 683527,
+            "name": "2023-06.parquet",
+            "path": "E:\\PEKERJAAN\\TRADING-BACKTEST-STRATEGY\\mt5-ea-research-lab\\data\\sp500_exness\\raw\\m1\\2023-06.parquet",
+            "rows": 28784,
+            "sha256": "bca4c1e3ccf1e53b6a9e32e68657d09f0962f8f1a804bf6a4b61b063258f7040"
+          },
+          {
+            "bytes": 648811,
+            "name": "2023-07.parquet",
+            "path": "E:\\PEKERJAAN\\TRADING-BACKTEST-STRATEGY\\mt5-ea-research-lab\\data\\sp500_exness\\raw\\m1\\2023-07.parquet",
+            "rows": 27510,
+            "sha256": "11b768a7beb5decb31801ec70485e21ee238264361f27b2ddca458388ca5561b"
+          },
+          {
+            "bytes": 745290,
+            "name": "2023-08.parquet",
+            "path": "E:\\PEKERJAAN\\TRADING-BACKTEST-STRATEGY\\mt5-ea-research-lab\\data\\sp500_exness\\raw\\m1\\2023-08.parquet",
+            "rows": 31145,
+            "sha256": "ca728a906940b6f8cbb7f04ce63627e597bf16b4b085608de8261049b38d2b83"
+          },
+          {
+            "bytes": 655685,
+            "name": "2023-09.parquet",
+            "path": "E:\\PEKERJAAN\\TRADING-BACKTEST-STRATEGY\\mt5-ea-research-lab\\data\\sp500_exness\\raw\\m1\\2023-09.parquet",
+            "rows": 27794,
+            "sha256": "88d6da9af2da2394417c3449f7e38e0536f993ad595fcd2fdd0a06a68775d2cc"
+          },
+          {
+            "bytes": 753387,
+            "name": "2023-10.parquet",
+            "path": "E:\\PEKERJAAN\\TRADING-BACKTEST-STRATEGY\\mt5-ea-research-lab\\data\\sp500_exness\\raw\\m1\\2023-10.parquet",
+            "rows": 29976,
+            "sha256": "f3cd2651887856cdbce29eef2eb4a76ffbce7dd48ab0154733f00c4eef6bd51d"
+          },
+          {
+            "bytes": 679428,
+            "name": "2023-11.parquet",
+            "path": "E:\\PEKERJAAN\\TRADING-BACKTEST-STRATEGY\\mt5-ea-research-lab\\data\\sp500_exness\\raw\\m1\\2023-11.parquet",
+            "rows": 29318,
+            "sha256": "e0edaa51f80c4b1307d8f19566d03663cfb1d16a78887bb011614ae15139fc5a"
+          },
+          {
+            "bytes": 620436,
+            "name": "2023-12.parquet",
+            "path": "E:\\PEKERJAAN\\TRADING-BACKTEST-STRATEGY\\mt5-ea-research-lab\\data\\sp500_exness\\raw\\m1\\2023-12.parquet",
+            "rows": 26802,
+            "sha256": "31606519b5655bed71614756aa067c0bd74420699b752ca815328094068fc3e0"
+          },
+          {
+            "bytes": 699006,
+            "name": "2024-01.parquet",
+            "path": "E:\\PEKERJAAN\\TRADING-BACKTEST-STRATEGY\\mt5-ea-research-lab\\data\\sp500_exness\\raw\\m1\\2024-01.parquet",
+            "rows": 29729,
+            "sha256": "4b7057919fd8e477a29fcd0d0416b6b87abee05e75f99ac79d349467e40dfaf9"
+          },
+          {
+            "bytes": 664555,
+            "name": "2024-02.parquet",
+            "path": "E:\\PEKERJAAN\\TRADING-BACKTEST-STRATEGY\\mt5-ea-research-lab\\data\\sp500_exness\\raw\\m1\\2024-02.parquet",
+            "rows": 28161,
+            "sha256": "373329b194f5480440da20ce9e3dce3ece3b47f0f61d1dfa00377dc40e13350e"
+          },
+          {
+            "bytes": 625130,
+            "name": "2024-03.parquet",
+            "path": "E:\\PEKERJAAN\\TRADING-BACKTEST-STRATEGY\\mt5-ea-research-lab\\data\\sp500_exness\\raw\\m1\\2024-03.parquet",
+            "rows": 27202,
+            "sha256": "01bf0d935316fa0402bbb68422f16de8e01b2d0129c493b8c40ba2789896a151"
+          },
+          {
+            "bytes": 752475,
+            "name": "2024-04.parquet",
+            "path": "E:\\PEKERJAAN\\TRADING-BACKTEST-STRATEGY\\mt5-ea-research-lab\\data\\sp500_exness\\raw\\m1\\2024-04.parquet",
+            "rows": 29987,
+            "sha256": "9c558196d9d7420846b878f25d73ac893c2a698870c3374dcd2dae74c863cf4b"
+          },
+          {
+            "bytes": 727634,
+            "name": "2024-05.parquet",
+            "path": "E:\\PEKERJAAN\\TRADING-BACKTEST-STRATEGY\\mt5-ea-research-lab\\data\\sp500_exness\\raw\\m1\\2024-05.parquet",
+            "rows": 30857,
+            "sha256": "ab54ffb839214689e95d151bfcfc7a364a481fd59747fa3835dc30152b60d958"
+          },
+          {
+            "bytes": 636085,
+            "name": "2024-06.parquet",
+            "path": "E:\\PEKERJAAN\\TRADING-BACKTEST-STRATEGY\\mt5-ea-research-lab\\data\\sp500_exness\\raw\\m1\\2024-06.parquet",
+            "rows": 27149,
+            "sha256": "9d6d46686848598b08b8fe1bc20c5022439b978413f715632fa4e5b2eb057632"
+          },
+          {
+            "bytes": 750387,
+            "name": "2024-07.parquet",
+            "path": "E:\\PEKERJAAN\\TRADING-BACKTEST-STRATEGY\\mt5-ea-research-lab\\data\\sp500_exness\\raw\\m1\\2024-07.parquet",
+            "rows": 30835,
+            "sha256": "417934505ef349104b5f62190bd4f082d257934cb4870783e02f4ad3bdc5798c"
+          },
+          {
+            "bytes": 800393,
+            "name": "2024-08.parquet",
+            "path": "E:\\PEKERJAAN\\TRADING-BACKTEST-STRATEGY\\mt5-ea-research-lab\\data\\sp500_exness\\raw\\m1\\2024-08.parquet",
+            "rows": 29697,
+            "sha256": "1aa665206034a0c54db651eabbde4e36a61f570d29c0a0e8e6d0fcf8c0856ae2"
+          },
+          {
+            "bytes": 729689,
+            "name": "2024-09.parquet",
+            "path": "E:\\PEKERJAAN\\TRADING-BACKTEST-STRATEGY\\mt5-ea-research-lab\\data\\sp500_exness\\raw\\m1\\2024-09.parquet",
+            "rows": 28563,
+            "sha256": "20d1dbf1aab2bc21f7e84c22a2bccee5d01c702e0988675be10f47e8f96eda8f"
+          },
+          {
+            "bytes": 718341,
+            "name": "2024-10.parquet",
+            "path": "E:\\PEKERJAAN\\TRADING-BACKTEST-STRATEGY\\mt5-ea-research-lab\\data\\sp500_exness\\raw\\m1\\2024-10.parquet",
+            "rows": 31449,
+            "sha256": "486f2ae97f6e24a88f118dd4a4bcd208a23f7a87c141ff2125f3b6267818a39a"
+          },
+          {
+            "bytes": 678896,
+            "name": "2024-11.parquet",
+            "path": "E:\\PEKERJAAN\\TRADING-BACKTEST-STRATEGY\\mt5-ea-research-lab\\data\\sp500_exness\\raw\\m1\\2024-11.parquet",
+            "rows": 28101,
+            "sha256": "b9af2d8ab6c9a3b396a44afc4d4e3d297a5c1f26427d1f590a74a900aa306a8f"
+          },
+          {
+            "bytes": 649059,
+            "name": "2024-12.parquet",
+            "path": "E:\\PEKERJAAN\\TRADING-BACKTEST-STRATEGY\\mt5-ea-research-lab\\data\\sp500_exness\\raw\\m1\\2024-12.parquet",
+            "rows": 28444,
+            "sha256": "eae7f22b19744424db4f7de84791dee45ce8eb636957cc9e86937cc0f733fc6a"
+          },
+          {
+            "bytes": 744071,
+            "name": "2025-01.parquet",
+            "path": "E:\\PEKERJAAN\\TRADING-BACKTEST-STRATEGY\\mt5-ea-research-lab\\data\\sp500_exness\\raw\\m1\\2025-01.parquet",
+            "rows": 29308,
+            "sha256": "a6820124537d0f32faa3e0b99a72ce8ed233ceffa59c916d68c615f9089b1bf2"
+          },
+          {
+            "bytes": 650852,
+            "name": "2025-02.parquet",
+            "path": "E:\\PEKERJAAN\\TRADING-BACKTEST-STRATEGY\\mt5-ea-research-lab\\data\\sp500_exness\\raw\\m1\\2025-02.parquet",
+            "rows": 27081,
+            "sha256": "3f831f5a32af8497c5f8d99444f09f988449d7758a68bd9c261d97d7a7352ee2"
+          },
+          {
+            "bytes": 771878,
+            "name": "2025-03.parquet",
+            "path": "E:\\PEKERJAAN\\TRADING-BACKTEST-STRATEGY\\mt5-ea-research-lab\\data\\sp500_exness\\raw\\m1\\2025-03.parquet",
+            "rows": 28845,
+            "sha256": "b6ee9172a6a083a1fe0bcf632432dff2491ea718b209c27837d24fdd02e24cae"
+          },
+          {
+            "bytes": 860508,
+            "name": "2025-04.parquet",
+            "path": "E:\\PEKERJAAN\\TRADING-BACKTEST-STRATEGY\\mt5-ea-research-lab\\data\\sp500_exness\\raw\\m1\\2025-04.parquet",
+            "rows": 28772,
+            "sha256": "acf8805fbf242e89a5b224379fb48cce2149d882ec8f279ef85659a22f2c466e"
+          },
+          {
+            "bytes": 771869,
+            "name": "2025-05.parquet",
+            "path": "E:\\PEKERJAAN\\TRADING-BACKTEST-STRATEGY\\mt5-ea-research-lab\\data\\sp500_exness\\raw\\m1\\2025-05.parquet",
+            "rows": 29852,
+            "sha256": "ee026e871f445a02804a585feaeb9dd5fc1a5087a460f205b593a2ca0497a748"
+          },
+          {
+            "bytes": 710120,
+            "name": "2025-06.parquet",
+            "path": "E:\\PEKERJAAN\\TRADING-BACKTEST-STRATEGY\\mt5-ea-research-lab\\data\\sp500_exness\\raw\\m1\\2025-06.parquet",
+            "rows": 28785,
+            "sha256": "3140a2660048636fb5725dcff4cf59665aae7fabba4f8f0ad1cf5a68c673abc7"
+          },
+          {
+            "bytes": 726389,
+            "name": "2025-07.parquet",
+            "path": "E:\\PEKERJAAN\\TRADING-BACKTEST-STRATEGY\\mt5-ea-research-lab\\data\\sp500_exness\\raw\\m1\\2025-07.parquet",
+            "rows": 31108,
+            "sha256": "221f171d94b20eceb7452992aad67602bae2f3f2df6cfa74f5df0e90bc5a7547"
+          },
+          {
+            "bytes": 698700,
+            "name": "2025-08.parquet",
+            "path": "E:\\PEKERJAAN\\TRADING-BACKTEST-STRATEGY\\mt5-ea-research-lab\\data\\sp500_exness\\raw\\m1\\2025-08.parquet",
+            "rows": 28882,
+            "sha256": "da48c93d67fcd8f23d01f2d3c3dff3bb8f5ef970c1081fc46453659357af9cd9"
+          },
+          {
+            "bytes": 733431,
+            "name": "2025-09.parquet",
+            "path": "E:\\PEKERJAAN\\TRADING-BACKTEST-STRATEGY\\mt5-ea-research-lab\\data\\sp500_exness\\raw\\m1\\2025-09.parquet",
+            "rows": 29977,
+            "sha256": "a28af6e6d10f975f75fe3cbe8e0449033fde4450a9ecc5e62ecd0e993a878713"
+          },
+          {
+            "bytes": 783254,
+            "name": "2025-10.parquet",
+            "path": "E:\\PEKERJAAN\\TRADING-BACKTEST-STRATEGY\\mt5-ea-research-lab\\data\\sp500_exness\\raw\\m1\\2025-10.parquet",
+            "rows": 31524,
+            "sha256": "9dad669aeb4407b03156ff5e600734c5792ad56da003b45ec7db566b4aad61f4"
+          },
+          {
+            "bytes": 708178,
+            "name": "2025-11.parquet",
+            "path": "E:\\PEKERJAAN\\TRADING-BACKTEST-STRATEGY\\mt5-ea-research-lab\\data\\sp500_exness\\raw\\m1\\2025-11.parquet",
+            "rows": 26523,
+            "sha256": "5710ac267c03d4d8e01665d0ba1a6fd6de79a609b32812e3f78e285a1c44a27e"
+          },
+          {
+            "bytes": 699384,
+            "name": "2025-12.parquet",
+            "path": "E:\\PEKERJAAN\\TRADING-BACKTEST-STRATEGY\\mt5-ea-research-lab\\data\\sp500_exness\\raw\\m1\\2025-12.parquet",
+            "rows": 29999,
+            "sha256": "790832fe3642ddad26b3110cccb1c8cf0cefd033c708b298b1a1b87af7a1dca7"
+          },
+          {
+            "bytes": 682807,
+            "name": "2026-01.parquet",
+            "path": "E:\\PEKERJAAN\\TRADING-BACKTEST-STRATEGY\\mt5-ea-research-lab\\data\\sp500_exness\\raw\\m1\\2026-01.parquet",
+            "rows": 28679,
+            "sha256": "87a618f67b287a9ee999faa2c193f1c68780859cd4a3d8fa43da78e838bcafdf"
+          },
+          {
+            "bytes": 689990,
+            "name": "2026-02.parquet",
+            "path": "E:\\PEKERJAAN\\TRADING-BACKTEST-STRATEGY\\mt5-ea-research-lab\\data\\sp500_exness\\raw\\m1\\2026-02.parquet",
+            "rows": 27336,
+            "sha256": "acd24ee3ae6c9160392e11cd5071dd1034da9226188ce0784953af1b1a703bc3"
+          },
+          {
+            "bytes": 878882,
+            "name": "2026-03.parquet",
+            "path": "E:\\PEKERJAAN\\TRADING-BACKTEST-STRATEGY\\mt5-ea-research-lab\\data\\sp500_exness\\raw\\m1\\2026-03.parquet",
+            "rows": 30461,
+            "sha256": "862bd207b4fad4d5c15e1f0ebbc349a06cc31fc268c7b58351fd843bb260653c"
+          },
+          {
+            "bytes": 805517,
+            "name": "2026-04.parquet",
+            "path": "E:\\PEKERJAAN\\TRADING-BACKTEST-STRATEGY\\mt5-ea-research-lab\\data\\sp500_exness\\raw\\m1\\2026-04.parquet",
+            "rows": 29873,
+            "sha256": "0d26cf409b7cb2a3f9052e1cc4edc9590eddbde967b030f14c2c429497b8812f"
+          },
+          {
+            "bytes": 757463,
+            "name": "2026-05.parquet",
+            "path": "E:\\PEKERJAAN\\TRADING-BACKTEST-STRATEGY\\mt5-ea-research-lab\\data\\sp500_exness\\raw\\m1\\2026-05.parquet",
+            "rows": 28707,
+            "sha256": "00807de20b1f2fd76d657a5a1879332499b76ec5f952d40e80c8bea7c544a23e"
+          },
+          {
+            "bytes": 819454,
+            "name": "2026-06.parquet",
+            "path": "E:\\PEKERJAAN\\TRADING-BACKTEST-STRATEGY\\mt5-ea-research-lab\\data\\sp500_exness\\raw\\m1\\2026-06.parquet",
+            "rows": 30104,
+            "sha256": "8b903df9566efaf9f4d89b66dce82e2a448d4d18ffd188e610244edf86ebc195"
+          },
+          {
+            "bytes": 740119,
+            "name": "2026-07.parquet",
+            "path": "E:\\PEKERJAAN\\TRADING-BACKTEST-STRATEGY\\mt5-ea-research-lab\\data\\sp500_exness\\raw\\m1\\2026-07.parquet",
+            "rows": 31354,
+            "sha256": "16223d0888815faff886fe06a52fea4c180b730859f2847ab24dd10423338c95"
+          },
+          {
+            "bytes": 576636,
+            "name": "2026-08.parquet",
+            "path": "E:\\PEKERJAAN\\TRADING-BACKTEST-STRATEGY\\mt5-ea-research-lab\\data\\sp500_exness\\raw\\m1\\2026-08.parquet",
+            "rows": 29081,
+            "sha256": "7f9cb5eed585cd536e59f0f48e380f871b0536b840d7fba02994507b7f7c70b3"
+          }
+        ],
+        "first_h4": "2022-01-02T00:00:00+00:00",
+        "first_minute": "2022-01-02T00:00:00+00:00",
+        "h4_bars": 7380,
+        "h4_m1_rows_max": 240,
+        "h4_m1_rows_median": 240.0,
+        "h4_m1_rows_min": 1,
+        "invalid_rows_removed": 0,
+        "last_h4": "2026-08-31T20:00:00+00:00",
+        "last_minute": "2026-08-31T23:59:00+00:00",
+        "minute_rows": 1601541,
+        "raw_rows": 1601579,
+        "source_path": "E:\\PEKERJAAN\\TRADING-BACKTEST-STRATEGY\\mt5-ea-research-lab\\data\\sp500_exness\\raw\\m1"
+      },
+      "variants": {
+        "causal_euclidean": {
+          "base": {
+            "max_drawdown_bps": 537.149166773788,
+            "mean_bps": -0.3581162441458522,
+            "median_bps": -5.891961073777232,
+            "net_bps": -29.723648264105734,
+            "net_bps_ex_top5": -713.398946364514,
+            "profit_factor": 0.9852085074243291,
+            "trades": 83,
+            "trades_per_week": 0.5965092402464066,
+            "win_rate": 0.4457831325301205
+          },
+          "blocks": [
+            {
+              "end": "2025-12-31",
+              "net_bps": 320.9606529410551,
+              "start": "2024-01-01",
+              "trades": 60
+            },
+            {
+              "end": "2026-08-31",
+              "net_bps": -350.6843012051608,
+              "start": "2026-01-01",
+              "trades": 23
+            }
+          ],
+          "execution_diagnostics": {
+            "entry_bars_under_180_minutes": 16,
+            "exit_bars_under_180_minutes": 4,
+            "first_entry": "2024-01-02T12:00:00+00:00",
+            "last_entry": "2026-07-29T20:00:00+00:00",
+            "maximum_holding_hours": 64.0,
+            "median_holding_hours": 16.0,
+            "signal_bars_under_180_minutes": 6
+          },
+          "gross": {
+            "max_drawdown_bps": 524.4730441001112,
+            "mean_bps": 0.5506235024124424,
+            "median_bps": -4.842297199980779,
+            "net_bps": 45.70175070023272,
+            "net_bps_ex_top5": -643.8475603888442,
+            "profit_factor": 1.02322311184739,
+            "trades": 83,
+            "trades_per_week": 0.5965092402464066,
+            "win_rate": 0.4457831325301205
+          },
+          "long_base_net_bps": 87.10675619137304,
+          "monthly_bootstrap": {
+            "ci95": [
+              -29.090581373573134,
+              29.61178497335958
+            ],
+            "mean_monthly_bps": -0.9288640082533042
+          },
+          "positive_month_fraction": 0.375,
+          "same_window_controls": {
+            "actual": {
+              "max_drawdown_bps": 537.149166773788,
+              "mean_bps": -0.3581162441458522,
+              "median_bps": -5.891961073777232,
+              "net_bps": -29.723648264105734,
+              "net_bps_ex_top5": -713.398946364514,
+              "profit_factor": 0.9852085074243291,
+              "trades": 83,
+              "trades_per_week": 0.5965092402464066,
+              "win_rate": 0.4457831325301205
+            },
+            "always_long": {
+              "max_drawdown_bps": 530.2702534522778,
+              "mean_bps": 1.3259500578508603,
+              "median_bps": 8.35701415822724,
+              "net_bps": 110.05385480162141,
+              "net_bps_ex_top5": -540.5488725869338,
+              "profit_factor": 1.056919226680646,
+              "trades": 83,
+              "trades_per_week": 0.5965092402464066,
+              "win_rate": 0.5301204819277109
+            },
+            "always_short": {
+              "max_drawdown_bps": 424.1072554368096,
+              "mean_bps": -3.1379893148923994,
+              "median_bps": -10.553880622282213,
+              "net_bps": -260.45311313606913,
+              "net_bps_ex_top5": -981.3502455510913,
+              "profit_factor": 0.877330135781161,
+              "trades": 83,
+              "trades_per_week": 0.5965092402464066,
+              "win_rate": 0.4578313253012048
+            },
+            "opposite": {
+              "max_drawdown_bps": 764.056903313093,
+              "mean_bps": -1.4539230128956877,
+              "median_bps": 3.600682533318842,
+              "net_bps": -120.67561007034209,
+              "net_bps_ex_top5": -808.5001717735112,
+              "profit_factor": 0.9410534315315098,
+              "trades": 83,
+              "trades_per_week": 0.5965092402464066,
+              "win_rate": 0.5421686746987951
+            },
+            "random_direction": {
+              "actual_percentile": 0.518,
+              "ci95_net_bps": [
+                -1237.1389971574986,
+                1084.8160246907185
+              ],
+              "median_net_bps": -57.84104879792112,
+              "one_sided_p_random_at_least_actual": 0.48225887056471767,
+              "replicates": 2000
+            }
+          },
+          "short_base_net_bps": -116.83040445547883,
+          "stress": {
+            "max_drawdown_bps": 553.1990523045881,
+            "mean_bps": -1.172785626865256,
+            "median_bps": -6.757931257116339,
+            "net_bps": -97.34120702981623,
+            "net_bps_ex_top5": -776.719316867312,
+            "profit_factor": 0.9524229322699928,
+            "trades": 83,
+            "trades_per_week": 0.5965092402464066,
+            "win_rate": 0.4457831325301205
+          }
+        },
+        "causal_lorentzian": {
+          "base": {
+            "max_drawdown_bps": 561.4116196408371,
+            "mean_bps": 3.091758652880523,
+            "median_bps": -6.101649219023601,
+            "net_bps": 275.16652010636653,
+            "net_bps_ex_top5": -733.6566938531314,
+            "profit_factor": 1.1280297382093594,
+            "trades": 89,
+            "trades_per_week": 0.6396303901437372,
+            "win_rate": 0.47191011235955055
+          },
+          "blocks": [
+            {
+              "end": "2025-12-31",
+              "net_bps": 328.3501128583755,
+              "start": "2024-01-01",
+              "trades": 66
+            },
+            {
+              "end": "2026-08-31",
+              "net_bps": -53.18359275200888,
+              "start": "2026-01-01",
+              "trades": 23
+            }
+          ],
+          "execution_diagnostics": {
+            "entry_bars_under_180_minutes": 20,
+            "exit_bars_under_180_minutes": 3,
+            "first_entry": "2024-01-02T12:00:00+00:00",
+            "last_entry": "2026-08-13T20:00:00+00:00",
+            "maximum_holding_hours": 64.0,
+            "median_holding_hours": 16.0,
+            "signal_bars_under_180_minutes": 5
+          },
+          "gross": {
+            "max_drawdown_bps": 549.3169963921146,
+            "mean_bps": 4.047874287874501,
+            "median_bps": -5.253665290784705,
+            "net_bps": 360.2608116208306,
+            "net_bps_ex_top5": -653.9568139735366,
+            "profit_factor": 1.1712288169890868,
+            "trades": 89,
+            "trades_per_week": 0.6396303901437372,
+            "win_rate": 0.47191011235955055
+          },
+          "long_base_net_bps": 58.41636058859693,
+          "monthly_bootstrap": {
+            "ci95": [
+              -32.44536644490349,
+              46.6012667067912
+            ],
+            "mean_monthly_bps": 8.598953753323956
+          },
+          "positive_month_fraction": 0.46875,
+          "same_window_controls": {
+            "actual": {
+              "max_drawdown_bps": 561.4116196408371,
+              "mean_bps": 3.091758652880523,
+              "median_bps": -6.101649219023601,
+              "net_bps": 275.16652010636653,
+              "net_bps_ex_top5": -733.6566938531314,
+              "profit_factor": 1.1280297382093594,
+              "trades": 89,
+              "trades_per_week": 0.6396303901437372,
+              "win_rate": 0.47191011235955055
+            },
+            "always_long": {
+              "max_drawdown_bps": 835.8528053003938,
+              "mean_bps": -2.9277251560339077,
+              "median_bps": 10.891376564132068,
+              "net_bps": -260.5675388870178,
+              "net_bps_ex_top5": -945.3407230360701,
+              "profit_factor": 0.8918735299994308,
+              "trades": 89,
+              "trades_per_week": 0.6396303901437372,
+              "win_rate": 0.5730337078651685
+            },
+            "always_short": {
+              "max_drawdown_bps": 423.27526195014065,
+              "mean_bps": 1.018302340668312,
+              "median_bps": -12.142521441896818,
+              "net_bps": 90.62890831947976,
+              "net_bps_ex_top5": -955.4161399546324,
+              "profit_factor": 1.0403984053752204,
+              "trades": 89,
+              "trades_per_week": 0.6396303901437372,
+              "win_rate": 0.4157303370786517
+            },
+            "opposite": {
+              "max_drawdown_bps": 1031.0565765141948,
+              "mean_bps": -5.0011814682461235,
+              "median_bps": 4.6153695077921775,
+              "net_bps": -445.10515067390503,
+              "net_bps_ex_top5": -1167.100169137571,
+              "profit_factor": 0.8222409095396034,
+              "trades": 89,
+              "trades_per_week": 0.6396303901437372,
+              "win_rate": 0.5168539325842697
+            },
+            "random_direction": {
+              "actual_percentile": 0.6925,
+              "ci95_net_bps": [
+                -1492.860089288826,
+                1303.968993072969
+              ],
+              "median_net_bps": -92.19097030209873,
+              "one_sided_p_random_at_least_actual": 0.3078460769615192,
+              "replicates": 2000
+            }
+          },
+          "short_base_net_bps": 216.75015951776976,
+          "stress": {
+            "max_drawdown_bps": 578.7782581518233,
+            "mean_bps": 2.279645918458936,
+            "median_bps": -6.808488351920348,
+            "net_bps": 202.88848674284532,
+            "net_bps_ex_top5": -801.1774412958681,
+            "profit_factor": 1.0927592083373945,
+            "trades": 89,
+            "trades_per_week": 0.6396303901437372,
+            "win_rate": 0.47191011235955055
+          }
+        },
+        "filter_only_kernel": {
+          "base": {
+            "max_drawdown_bps": 954.2776355590997,
+            "mean_bps": 0.6494249407071979,
+            "median_bps": 0.4900390806168065,
+            "net_bps": 94.1666164025437,
+            "net_bps_ex_top5": -918.0251195509798,
+            "profit_factor": 1.0248079306646096,
+            "trades": 145,
+            "trades_per_week": 1.042094455852156,
+            "win_rate": 0.503448275862069
+          },
+          "blocks": [
+            {
+              "end": "2025-12-31",
+              "net_bps": 239.33014440356126,
+              "start": "2024-01-01",
+              "trades": 108
+            },
+            {
+              "end": "2026-08-31",
+              "net_bps": -145.1635280010177,
+              "start": "2026-01-01",
+              "trades": 37
+            }
+          ],
+          "execution_diagnostics": {
+            "entry_bars_under_180_minutes": 30,
+            "exit_bars_under_180_minutes": 5,
+            "first_entry": "2024-01-08T20:00:00+00:00",
+            "last_entry": "2026-08-27T00:00:00+00:00",
+            "maximum_holding_hours": 64.0,
+            "median_holding_hours": 16.0,
+            "signal_bars_under_180_minutes": 12
+          },
+          "gross": {
+            "max_drawdown_bps": 924.17245017382,
+            "mean_bps": 1.5072819500204544,
+            "median_bps": 1.1725935143328954,
+            "net_bps": 218.55588275296589,
+            "net_bps_ex_top5": -797.0824060292707,
+            "profit_factor": 1.058455102132225,
+            "trades": 145,
+            "trades_per_week": 1.042094455852156,
+            "win_rate": 0.503448275862069
+          },
+          "long_base_net_bps": 217.49892097909455,
+          "monthly_bootstrap": {
+            "ci95": [
+              -39.90980086600618,
+              46.66370073952285
+            ],
+            "mean_monthly_bps": 2.9427067625794887
+          },
+          "positive_month_fraction": 0.53125,
+          "same_window_controls": {
+            "actual": {
+              "max_drawdown_bps": 954.2776355590997,
+              "mean_bps": 0.6494249407071979,
+              "median_bps": 0.4900390806168065,
+              "net_bps": 94.1666164025437,
+              "net_bps_ex_top5": -918.0251195509798,
+              "profit_factor": 1.0248079306646096,
+              "trades": 145,
+              "trades_per_week": 1.042094455852156,
+              "win_rate": 0.503448275862069
+            },
+            "always_long": {
+              "max_drawdown_bps": 672.5813407464583,
+              "mean_bps": 1.5055104639155124,
+              "median_bps": 7.623342024484124,
+              "net_bps": 218.2990172677493,
+              "net_bps_ex_top5": -721.5948603645212,
+              "profit_factor": 1.0585340301170412,
+              "trades": 145,
+              "trades_per_week": 1.042094455852156,
+              "win_rate": 0.5724137931034483
+            },
+            "always_short": {
+              "max_drawdown_bps": 843.598531998431,
+              "mean_bps": -3.21566553380348,
+              "median_bps": -9.77615625724415,
+              "net_bps": -466.2715024015046,
+              "net_bps_ex_top5": -1555.9714214056744,
+              "profit_factor": 0.8860194239312943,
+              "trades": 145,
+              "trades_per_week": 1.042094455852156,
+              "win_rate": 0.4206896551724138
+            },
+            "opposite": {
+              "max_drawdown_bps": 1027.0924513547136,
+              "mean_bps": -2.3595800105951654,
+              "median_bps": -1.8551479480489845,
+              "net_bps": -342.139101536299,
+              "net_bps_ex_top5": -1359.541162219216,
+              "profit_factor": 0.9149840018179632,
+              "trades": 145,
+              "trades_per_week": 1.042094455852156,
+              "win_rate": 0.4896551724137931
+            },
+            "random_direction": {
+              "actual_percentile": 0.6115,
+              "ci95_net_bps": [
+                -1920.579728264482,
+                1743.7041343887806
+              ],
+              "median_net_bps": -185.66011124492235,
+              "one_sided_p_random_at_least_actual": 0.3888055972013993,
+              "replicates": 2000
+            }
+          },
+          "short_base_net_bps": -123.332304576551,
+          "stress": {
+            "max_drawdown_bps": 1006.5920147106078,
+            "mean_bps": -0.17111129382950555,
+            "median_bps": -0.4900390806165518,
+            "net_bps": -24.811137605278304,
+            "net_bps_ex_top5": -1032.5797362167787,
+            "profit_factor": 0.9935644891036962,
+            "trades": 145,
+            "trades_per_week": 1.042094455852156,
+            "win_rate": 0.496551724137931
+          }
+        },
+        "official_original": {
+          "base": {
+            "max_drawdown_bps": 933.5680660648782,
+            "mean_bps": -5.960688129789399,
+            "median_bps": -11.58045145082539,
+            "net_bps": -399.3661046958897,
+            "net_bps_ex_top5": -1061.5615605472747,
+            "profit_factor": 0.7930175453281839,
+            "trades": 67,
+            "trades_per_week": 0.4815195071868583,
+            "win_rate": 0.4626865671641791
+          },
+          "blocks": [
+            {
+              "end": "2025-12-31",
+              "net_bps": -450.7881996572194,
+              "start": "2024-01-01",
+              "trades": 34
+            },
+            {
+              "end": "2026-08-31",
+              "net_bps": 51.422094961329684,
+              "start": "2026-01-01",
+              "trades": 33
+            }
+          ],
+          "execution_diagnostics": {
+            "entry_bars_under_180_minutes": 10,
+            "exit_bars_under_180_minutes": 3,
+            "first_entry": "2025-06-03T16:00:00+00:00",
+            "last_entry": "2026-08-27T00:00:00+00:00",
+            "maximum_holding_hours": 60.0,
+            "median_holding_hours": 16.0,
+            "signal_bars_under_180_minutes": 3
+          },
+          "gross": {
+            "max_drawdown_bps": 905.9358263803132,
+            "mean_bps": -5.346044130273902,
+            "median_bps": -10.97341165703214,
+            "net_bps": -358.18495672835144,
+            "net_bps_ex_top5": -1023.4574202255433,
+            "profit_factor": 0.8122257215051676,
+            "trades": 67,
+            "trades_per_week": 0.4815195071868583,
+            "win_rate": 0.4626865671641791
+          },
+          "long_base_net_bps": -66.03872879296732,
+          "monthly_bootstrap": {
+            "ci95": [
+              -34.4034351351101,
+              7.495469389819425
+            ],
+            "mean_monthly_bps": -12.48019077174655
+          },
+          "positive_month_fraction": 0.15625,
+          "same_window_controls": {
+            "actual": {
+              "max_drawdown_bps": 933.5680660648782,
+              "mean_bps": -5.960688129789399,
+              "median_bps": -11.58045145082539,
+              "net_bps": -399.3661046958897,
+              "net_bps_ex_top5": -1061.5615605472747,
+              "profit_factor": 0.7930175453281839,
+              "trades": 67,
+              "trades_per_week": 0.4815195071868583,
+              "win_rate": 0.4626865671641791
+            },
+            "always_long": {
+              "max_drawdown_bps": 615.4986297762711,
+              "mean_bps": 3.3850062145413506,
+              "median_bps": 14.551065144240685,
+              "net_bps": 226.7954163742705,
+              "net_bps_ex_top5": -401.7518284011309,
+              "profit_factor": 1.1408149601137918,
+              "trades": 67,
+              "trades_per_week": 0.4815195071868583,
+              "win_rate": 0.5970149253731343
+            },
+            "always_short": {
+              "max_drawdown_bps": 602.8919306644308,
+              "mean_bps": -4.61067756908469,
+              "median_bps": -15.774107257657452,
+              "net_bps": -308.9153971286743,
+              "net_bps_ex_top5": -1210.8336927959738,
+              "profit_factor": 0.8363085907397991,
+              "trades": 67,
+              "trades_per_week": 0.4815195071868583,
+              "win_rate": 0.40298507462686567
+            },
+            "opposite": {
+              "max_drawdown_bps": 611.6382373558249,
+              "mean_bps": 4.735016775246057,
+              "median_bps": 10.366371863238887,
+              "net_bps": 317.2461239414858,
+              "net_bps_ex_top5": -551.02396064983,
+              "profit_factor": 1.2022860038079748,
+              "trades": 67,
+              "trades_per_week": 0.4815195071868583,
+              "win_rate": 0.5373134328358209
+            },
+            "random_direction": {
+              "actual_percentile": 0.2875,
+              "ci95_net_bps": [
+                -1258.842706318408,
+                1144.2106781943132
+              ],
+              "median_net_bps": -51.18730426947691,
+              "one_sided_p_random_at_least_actual": 0.7126436781609196,
+              "replicates": 2000
+            }
+          },
+          "short_base_net_bps": -333.3273759029223,
+          "stress": {
+            "max_drawdown_bps": 973.245128176048,
+            "mean_bps": -6.749814375451687,
+            "median_bps": -12.452098334220828,
+            "net_bps": -452.23756315526305,
+            "net_bps_ex_top5": -1110.7031258315374,
+            "profit_factor": 0.7690542556088708,
+            "trades": 67,
+            "trades_per_week": 0.4815195071868583,
+            "win_rate": 0.4626865671641791
+          }
+        },
+        "simple_momentum4": {
+          "base": {
+            "max_drawdown_bps": 864.8181863267455,
+            "mean_bps": 0.3206100328165075,
+            "median_bps": -0.7411397644972685,
+            "net_bps": 47.12967482402661,
+            "net_bps_ex_top5": -933.6583071368782,
+            "profit_factor": 1.012493424818943,
+            "trades": 147,
+            "trades_per_week": 1.0564681724845997,
+            "win_rate": 0.4965986394557823
+          },
+          "blocks": [
+            {
+              "end": "2025-12-31",
+              "net_bps": 432.17004511706534,
+              "start": "2024-01-01",
+              "trades": 109
+            },
+            {
+              "end": "2026-08-31",
+              "net_bps": -385.04037029303873,
+              "start": "2026-01-01",
+              "trades": 38
+            }
+          ],
+          "execution_diagnostics": {
+            "entry_bars_under_180_minutes": 30,
+            "exit_bars_under_180_minutes": 5,
+            "first_entry": "2024-01-08T20:00:00+00:00",
+            "last_entry": "2026-08-27T00:00:00+00:00",
+            "maximum_holding_hours": 64.0,
+            "median_holding_hours": 16.0,
+            "signal_bars_under_180_minutes": 13
+          },
+          "gross": {
+            "max_drawdown_bps": 835.9069888710118,
+            "mean_bps": 1.1872136051361717,
+            "median_bps": 0.6507568663898214,
+            "net_bps": 174.52039995501724,
+            "net_bps_ex_top5": -809.6440833362407,
+            "profit_factor": 1.0470006401140552,
+            "trades": 147,
+            "trades_per_week": 1.0564681724845997,
+            "win_rate": 0.5034013605442177
+          },
+          "long_base_net_bps": 425.2286363601072,
+          "monthly_bootstrap": {
+            "ci95": [
+              -44.891981143008074,
+              44.60107117804126
+            ],
+            "mean_monthly_bps": 1.4728023382508333
+          },
+          "positive_month_fraction": 0.53125,
+          "same_window_controls": {
+            "actual": {
+              "max_drawdown_bps": 864.8181863267455,
+              "mean_bps": 0.3206100328165075,
+              "median_bps": -0.7411397644972685,
+              "net_bps": 47.12967482402661,
+              "net_bps_ex_top5": -933.6583071368782,
+              "profit_factor": 1.012493424818943,
+              "trades": 147,
+              "trades_per_week": 1.0564681724845997,
+              "win_rate": 0.4965986394557823
+            },
+            "always_long": {
+              "max_drawdown_bps": 464.0002547130235,
+              "mean_bps": 4.554499255415833,
+              "median_bps": 7.623342024484124,
+              "net_bps": 669.5113905461275,
+              "net_bps_ex_top5": -285.13053341060845,
+              "profit_factor": 1.193700488279753,
+              "trades": 147,
+              "trades_per_week": 1.0564681724845997,
+              "win_rate": 0.5782312925170068
+            },
+            "always_short": {
+              "max_drawdown_bps": 1208.8467653638168,
+              "mean_bps": -6.282183890422763,
+              "median_bps": -9.77615625724415,
+              "net_bps": -923.4810318921461,
+              "net_bps_ex_top5": -1872.1792527260588,
+              "profit_factor": 0.783832202731841,
+              "trades": 147,
+              "trades_per_week": 1.0564681724845997,
+              "win_rate": 0.40816326530612246
+            },
+            "opposite": {
+              "max_drawdown_bps": 911.6786293213594,
+              "mean_bps": -2.0482946678234404,
+              "median_bps": -1.8551479480489845,
+              "net_bps": -301.0993161700457,
+              "net_bps_ex_top5": -1197.6399950585364,
+              "profit_factor": 0.9238903253967883,
+              "trades": 147,
+              "trades_per_week": 1.0564681724845997,
+              "win_rate": 0.4897959183673469
+            },
+            "random_direction": {
+              "actual_percentile": 0.5785,
+              "ci95_net_bps": [
+                -1837.3806438806603,
+                1648.608418780893
+              ],
+              "median_net_bps": -125.37178171682706,
+              "one_sided_p_random_at_least_actual": 0.4217891054472764,
+              "replicates": 2000
+            }
+          },
+          "short_base_net_bps": -378.0989615360806,
+          "stress": {
+            "max_drawdown_bps": 916.066492009237,
+            "mean_bps": -0.4998374433976738,
+            "median_bps": -1.4642029493736788,
+            "net_bps": -73.47610417945805,
+            "net_bps_ex_top5": -1049.415776537805,
+            "profit_factor": 0.9808327529326971,
+            "trades": 147,
+            "trades_per_week": 1.0564681724845997,
+            "win_rate": 0.4897959183673469
+          }
+        }
+      }
+    },
+    "xauusd": {
+      "signal_diagnostics": {
+        "causal_euclidean": {
+          "maximum_selected_label_maturity_minus_decision": 0,
+          "prediction_rows": 7438
+        },
+        "causal_lorentzian": {
+          "maximum_selected_label_maturity_minus_decision": 0,
+          "prediction_rows": 7438
+        },
+        "filter_mask": {
+          "passing_bars": 1183,
+          "total_bars": 7483
+        }
+      },
+      "source": {
+        "asset": "xauusd",
+        "duplicate_rows_removed": 37,
+        "file_count": 56,
+        "files": [
+          {
+            "bytes": 886182,
+            "name": "2022-01.parquet",
+            "path": "E:\\PEKERJAAN\\TRADING-BACKTEST-STRATEGY\\xauusd-opening-range-compression-research\\data\\exness\\XAUUSD\\2022-01.parquet",
+            "rows": 28839,
+            "sha256": "309b7224c677660e50962371160653bcd837a31b91399dd24d6cf197127630ee"
+          },
+          {
+            "bytes": 867552,
+            "name": "2022-02.parquet",
+            "path": "E:\\PEKERJAAN\\TRADING-BACKTEST-STRATEGY\\xauusd-opening-range-compression-research\\data\\exness\\XAUUSD\\2022-02.parquet",
+            "rows": 26601,
+            "sha256": "e6c4e24737ae65dabf0158fcd3f7712fb0da283f5979808da81d52ae1e326c7c"
+          },
+          {
+            "bytes": 1027459,
+            "name": "2022-03.parquet",
+            "path": "E:\\PEKERJAAN\\TRADING-BACKTEST-STRATEGY\\xauusd-opening-range-compression-research\\data\\exness\\XAUUSD\\2022-03.parquet",
+            "rows": 31757,
+            "sha256": "6749034abafe60a00b3b01066903c39e2b4a4052967ab18a13d92bdaa826dab5"
+          },
+          {
+            "bytes": 891903,
+            "name": "2022-04.parquet",
+            "path": "E:\\PEKERJAAN\\TRADING-BACKTEST-STRATEGY\\xauusd-opening-range-compression-research\\data\\exness\\XAUUSD\\2022-04.parquet",
+            "rows": 27429,
+            "sha256": "5e709269cb0e52f5c5f4534033d4b27d10d5185dfab40b8a6cd0b979ab5d1f00"
+          },
+          {
+            "bytes": 951736,
+            "name": "2022-05.parquet",
+            "path": "E:\\PEKERJAAN\\TRADING-BACKTEST-STRATEGY\\xauusd-opening-range-compression-research\\data\\exness\\XAUUSD\\2022-05.parquet",
+            "rows": 30200,
+            "sha256": "e646dc6014352018c1a81be6db5f0e81d6b3d73643b261dd907644a77d46cd71"
+          },
+          {
+            "bytes": 914764,
+            "name": "2022-06.parquet",
+            "path": "E:\\PEKERJAAN\\TRADING-BACKTEST-STRATEGY\\xauusd-opening-range-compression-research\\data\\exness\\XAUUSD\\2022-06.parquet",
+            "rows": 30082,
+            "sha256": "e9c25fd40855398e7b3c256f68e6418359433d194e507b4d71daaa7acf840dd3"
+          },
+          {
+            "bytes": 915320,
+            "name": "2022-07.parquet",
+            "path": "E:\\PEKERJAAN\\TRADING-BACKTEST-STRATEGY\\xauusd-opening-range-compression-research\\data\\exness\\XAUUSD\\2022-07.parquet",
+            "rows": 28697,
+            "sha256": "46cef31b7e41119411455ca79e91c06683caeb6bb8181fd4542f07da6510c38c"
+          },
+          {
+            "bytes": 988209,
+            "name": "2022-08.parquet",
+            "path": "E:\\PEKERJAAN\\TRADING-BACKTEST-STRATEGY\\xauusd-opening-range-compression-research\\data\\exness\\XAUUSD\\2022-08.parquet",
+            "rows": 31679,
+            "sha256": "6a8cf457266c5d7f3772e367ea35a373487111c9233cff3ba055a772c2ca6479"
+          },
+          {
+            "bytes": 964372,
+            "name": "2022-09.parquet",
+            "path": "E:\\PEKERJAAN\\TRADING-BACKTEST-STRATEGY\\xauusd-opening-range-compression-research\\data\\exness\\XAUUSD\\2022-09.parquet",
+            "rows": 29957,
+            "sha256": "1b1a8d59314c62949da949291fceea878130ae158bc5ceed56db583e222e7f71"
+          },
+          {
+            "bytes": 924200,
+            "name": "2022-10.parquet",
+            "path": "E:\\PEKERJAAN\\TRADING-BACKTEST-STRATEGY\\xauusd-opening-range-compression-research\\data\\exness\\XAUUSD\\2022-10.parquet",
+            "rows": 29037,
+            "sha256": "bad345ab5613926db8a7b7b062f4f5d6af8d4b699b4f0c8346c2f231869ffe70"
+          },
+          {
+            "bytes": 960405,
+            "name": "2022-11.parquet",
+            "path": "E:\\PEKERJAAN\\TRADING-BACKTEST-STRATEGY\\xauusd-opening-range-compression-research\\data\\exness\\XAUUSD\\2022-11.parquet",
+            "rows": 29862,
+            "sha256": "2b0e088f8dce92934c8b8a50ad9f3127732fbc0419e2cde56ebbc0a002004696"
+          },
+          {
+            "bytes": 881461,
+            "name": "2022-12.parquet",
+            "path": "E:\\PEKERJAAN\\TRADING-BACKTEST-STRATEGY\\xauusd-opening-range-compression-research\\data\\exness\\XAUUSD\\2022-12.parquet",
+            "rows": 28846,
+            "sha256": "3cb362d290814bb4bea0eacd56d42fc11966cadd3e5d2eb037d7e72dd301a1c5"
+          },
+          {
+            "bytes": 926596,
+            "name": "2023-01.parquet",
+            "path": "E:\\PEKERJAAN\\TRADING-BACKTEST-STRATEGY\\xauusd-opening-range-compression-research\\data\\exness\\XAUUSD\\2023-01.parquet",
+            "rows": 28809,
+            "sha256": "a7775f87b8d9a3416c75cab9192b159bf3e6fd03dabcc32b23c00e5e0e148404"
+          },
+          {
+            "bytes": 888168,
+            "name": "2023-02.parquet",
+            "path": "E:\\PEKERJAAN\\TRADING-BACKTEST-STRATEGY\\xauusd-opening-range-compression-research\\data\\exness\\XAUUSD\\2023-02.parquet",
+            "rows": 27362,
+            "sha256": "3a5ee38ca3d9bc26b248888c400cb5a0dd5658fc25ef348e62d5a61047534ac3"
+          },
+          {
+            "bytes": 1040633,
+            "name": "2023-03.parquet",
+            "path": "E:\\PEKERJAAN\\TRADING-BACKTEST-STRATEGY\\xauusd-opening-range-compression-research\\data\\exness\\XAUUSD\\2023-03.parquet",
+            "rows": 31415,
+            "sha256": "82e1f66f4b9f8923ceea521c564d2c74db05330a3cec930399c98e1fcad31cf3"
+          },
+          {
+            "bytes": 826880,
+            "name": "2023-04.parquet",
+            "path": "E:\\PEKERJAAN\\TRADING-BACKTEST-STRATEGY\\xauusd-opening-range-compression-research\\data\\exness\\XAUUSD\\2023-04.parquet",
+            "rows": 26256,
+            "sha256": "65c598484b60c9e7a9f2a10f97ebc3d4b1acf2c55727919f645c76373015d618"
+          },
+          {
+            "bytes": 1008842,
+            "name": "2023-05.parquet",
+            "path": "E:\\PEKERJAAN\\TRADING-BACKTEST-STRATEGY\\xauusd-opening-range-compression-research\\data\\exness\\XAUUSD\\2023-05.parquet",
+            "rows": 31431,
+            "sha256": "15ad44f4838e529509a536e90cdc6ffa1b73d50f55ff53a1b1466675377154fb"
+          },
+          {
+            "bytes": 919935,
+            "name": "2023-06.parquet",
+            "path": "E:\\PEKERJAAN\\TRADING-BACKTEST-STRATEGY\\xauusd-opening-range-compression-research\\data\\exness\\XAUUSD\\2023-06.parquet",
+            "rows": 29932,
+            "sha256": "708856670b2b0dad4e2bcbf7461e470b818cf3083a9384dc6031a984cd513f1a"
+          },
+          {
+            "bytes": 878528,
+            "name": "2023-07.parquet",
+            "path": "E:\\PEKERJAAN\\TRADING-BACKTEST-STRATEGY\\xauusd-opening-range-compression-research\\data\\exness\\XAUUSD\\2023-07.parquet",
+            "rows": 28852,
+            "sha256": "bc06b4c49754ab4a0a4145e3b5a85120629fcf85fde50c5f9f411f9144d08f07"
+          },
+          {
+            "bytes": 951132,
+            "name": "2023-08.parquet",
+            "path": "E:\\PEKERJAAN\\TRADING-BACKTEST-STRATEGY\\xauusd-opening-range-compression-research\\data\\exness\\XAUUSD\\2023-08.parquet",
+            "rows": 31656,
+            "sha256": "96aa8e87660cf5d4e503eec399df3c9ee568aba375b296add6049465b5c361c6"
+          },
+          {
+            "bytes": 857858,
+            "name": "2023-09.parquet",
+            "path": "E:\\PEKERJAAN\\TRADING-BACKTEST-STRATEGY\\xauusd-opening-range-compression-research\\data\\exness\\XAUUSD\\2023-09.parquet",
+            "rows": 28557,
+            "sha256": "8fb6600d2c6f326c3617831519727a2de6a5adc3f20a12a92de0d0b2181f9a05"
+          },
+          {
+            "bytes": 996548,
+            "name": "2023-10.parquet",
+            "path": "E:\\PEKERJAAN\\TRADING-BACKTEST-STRATEGY\\xauusd-opening-range-compression-research\\data\\exness\\XAUUSD\\2023-10.parquet",
+            "rows": 30394,
+            "sha256": "42c5af19fccdd365cd9c8a4af405de991c059b03cd72d9663c4e3941c9817755"
+          },
+          {
+            "bytes": 937779,
+            "name": "2023-11.parquet",
+            "path": "E:\\PEKERJAAN\\TRADING-BACKTEST-STRATEGY\\xauusd-opening-range-compression-research\\data\\exness\\XAUUSD\\2023-11.parquet",
+            "rows": 29786,
+            "sha256": "4d272cfb495a8ce953b091e31d448367558281fdb39fd33637d007b53d15c779"
+          },
+          {
+            "bytes": 874409,
+            "name": "2023-12.parquet",
+            "path": "E:\\PEKERJAAN\\TRADING-BACKTEST-STRATEGY\\xauusd-opening-range-compression-research\\data\\exness\\XAUUSD\\2023-12.parquet",
+            "rows": 27457,
+            "sha256": "df143125a52a46eaf10183f8e3a0d410ecd346dce35f429359ba0111b59fdf6a"
+          },
+          {
+            "bytes": 909785,
+            "name": "2024-01.parquet",
+            "path": "E:\\PEKERJAAN\\TRADING-BACKTEST-STRATEGY\\xauusd-opening-range-compression-research\\data\\exness\\XAUUSD\\2024-01.parquet",
+            "rows": 30162,
+            "sha256": "ebb20978c15d7552262ad5b260e080ec9b39871743832ed8ea4627086bb8613e"
+          },
+          {
+            "bytes": 836012,
+            "name": "2024-02.parquet",
+            "path": "E:\\PEKERJAAN\\TRADING-BACKTEST-STRATEGY\\xauusd-opening-range-compression-research\\data\\exness\\XAUUSD\\2024-02.parquet",
+            "rows": 28696,
+            "sha256": "7e7dc818dd0429fdc0f488bdbe3b1f3e9839934bfd8bc7a3cfe4cb6a71c2a4e5"
+          },
+          {
+            "bytes": 903192,
+            "name": "2024-03.parquet",
+            "path": "E:\\PEKERJAAN\\TRADING-BACKTEST-STRATEGY\\xauusd-opening-range-compression-research\\data\\exness\\XAUUSD\\2024-03.parquet",
+            "rows": 27535,
+            "sha256": "9e6dc17c41fca06a6d40d71622188b9c30499d4a7dd897ba4abd61917014f134"
+          },
+          {
+            "bytes": 1037176,
+            "name": "2024-04.parquet",
+            "path": "E:\\PEKERJAAN\\TRADING-BACKTEST-STRATEGY\\xauusd-opening-range-compression-research\\data\\exness\\XAUUSD\\2024-04.parquet",
+            "rows": 30246,
+            "sha256": "e35c669f4f0e8f3369d9328ccba3a1255a028377fe4b1754064bf2562d759f9c"
+          },
+          {
+            "bytes": 1061384,
+            "name": "2024-05.parquet",
+            "path": "E:\\PEKERJAAN\\TRADING-BACKTEST-STRATEGY\\xauusd-opening-range-compression-research\\data\\exness\\XAUUSD\\2024-05.parquet",
+            "rows": 31309,
+            "sha256": "2739f52b4a879dc490aa3cf35fea44864661e5e52a8f7010fad6272309e74393"
+          },
+          {
+            "bytes": 887352,
+            "name": "2024-06.parquet",
+            "path": "E:\\PEKERJAAN\\TRADING-BACKTEST-STRATEGY\\xauusd-opening-range-compression-research\\data\\exness\\XAUUSD\\2024-06.parquet",
+            "rows": 27408,
+            "sha256": "0d00277c20fdfa8b8d933c626f81c0d478d1adb8568fe07166e448b9e4744c3c"
+          },
+          {
+            "bytes": 1062803,
+            "name": "2024-07.parquet",
+            "path": "E:\\PEKERJAAN\\TRADING-BACKTEST-STRATEGY\\xauusd-opening-range-compression-research\\data\\exness\\XAUUSD\\2024-07.parquet",
+            "rows": 31429,
+            "sha256": "40547caef57780c4b87f669f3908269dc7eb2b1fa363dc3d2bf9f5d72c7294d0"
+          },
+          {
+            "bytes": 1023644,
+            "name": "2024-08.parquet",
+            "path": "E:\\PEKERJAAN\\TRADING-BACKTEST-STRATEGY\\xauusd-opening-range-compression-research\\data\\exness\\XAUUSD\\2024-08.parquet",
+            "rows": 30090,
+            "sha256": "0fdc9b678ce30588bc36edbce774225a98cdaf369a9cf7d9e9e9c34f5471417f"
+          },
+          {
+            "bytes": 987391,
+            "name": "2024-09.parquet",
+            "path": "E:\\PEKERJAAN\\TRADING-BACKTEST-STRATEGY\\xauusd-opening-range-compression-research\\data\\exness\\XAUUSD\\2024-09.parquet",
+            "rows": 28805,
+            "sha256": "a99ddb35aec2d347aaccb2d9b4b3079c164d5b9f1af207f8691106d8d27f579f"
+          },
+          {
+            "bytes": 1075561,
+            "name": "2024-10.parquet",
+            "path": "E:\\PEKERJAAN\\TRADING-BACKTEST-STRATEGY\\xauusd-opening-range-compression-research\\data\\exness\\XAUUSD\\2024-10.parquet",
+            "rows": 31656,
+            "sha256": "add4b16b15c1c6cf0ccaf5431c5bada061ef0202ec0c26180a44175fbc2fc3a3"
+          },
+          {
+            "bytes": 992118,
+            "name": "2024-11.parquet",
+            "path": "E:\\PEKERJAAN\\TRADING-BACKTEST-STRATEGY\\xauusd-opening-range-compression-research\\data\\exness\\XAUUSD\\2024-11.parquet",
+            "rows": 28347,
+            "sha256": "f222adc5ed0f31fab543aa63ad467fd38ea7fa1ed77510f2c4217a4c64cac331"
+          },
+          {
+            "bytes": 965116,
+            "name": "2024-12.parquet",
+            "path": "E:\\PEKERJAAN\\TRADING-BACKTEST-STRATEGY\\xauusd-opening-range-compression-research\\data\\exness\\XAUUSD\\2024-12.parquet",
+            "rows": 28676,
+            "sha256": "36455c7e05f6ada7a7b17400b15059768051f85b8729aac54c299689b8bddbd3"
+          },
+          {
+            "bytes": 1035618,
+            "name": "2025-01.parquet",
+            "path": "E:\\PEKERJAAN\\TRADING-BACKTEST-STRATEGY\\xauusd-opening-range-compression-research\\data\\exness\\XAUUSD\\2025-01.parquet",
+            "rows": 30013,
+            "sha256": "bfcb63dcfac7d5b7a79d60d63d67e933498a24397308e955dc922a345ceabe47"
+          },
+          {
+            "bytes": 943706,
+            "name": "2025-02.parquet",
+            "path": "E:\\PEKERJAAN\\TRADING-BACKTEST-STRATEGY\\xauusd-opening-range-compression-research\\data\\exness\\XAUUSD\\2025-02.parquet",
+            "rows": 27351,
+            "sha256": "d30bb48236a21166e58eca08c017224bbd422c2713527e24483e020dbd015e1b"
+          },
+          {
+            "bytes": 1001350,
+            "name": "2025-03.parquet",
+            "path": "E:\\PEKERJAAN\\TRADING-BACKTEST-STRATEGY\\xauusd-opening-range-compression-research\\data\\exness\\XAUUSD\\2025-03.parquet",
+            "rows": 29015,
+            "sha256": "c59f251b5cc802f69d4385925baf2d8c69e446029d69a8f9454045817348d4dd"
+          },
+          {
+            "bytes": 1045196,
+            "name": "2025-04.parquet",
+            "path": "E:\\PEKERJAAN\\TRADING-BACKTEST-STRATEGY\\xauusd-opening-range-compression-research\\data\\exness\\XAUUSD\\2025-04.parquet",
+            "rows": 28846,
+            "sha256": "d0d09e04623a3031bbb68fcd251dabd4dafa8c5e0773a20a4a579b083c5a065d"
+          },
+          {
+            "bytes": 1058384,
+            "name": "2025-05.parquet",
+            "path": "E:\\PEKERJAAN\\TRADING-BACKTEST-STRATEGY\\xauusd-opening-range-compression-research\\data\\exness\\XAUUSD\\2025-05.parquet",
+            "rows": 29985,
+            "sha256": "326af197c909f14a78d66bac87b09896f2c11009659b836ec49acb080033c910"
+          },
+          {
+            "bytes": 996714,
+            "name": "2025-06.parquet",
+            "path": "E:\\PEKERJAAN\\TRADING-BACKTEST-STRATEGY\\xauusd-opening-range-compression-research\\data\\exness\\XAUUSD\\2025-06.parquet",
+            "rows": 28781,
+            "sha256": "db94341c9220f8d58bf7d83155c918736fb89105d587c3b319d36a02489ff56c"
+          },
+          {
+            "bytes": 1053945,
+            "name": "2025-07.parquet",
+            "path": "E:\\PEKERJAAN\\TRADING-BACKTEST-STRATEGY\\xauusd-opening-range-compression-research\\data\\exness\\XAUUSD\\2025-07.parquet",
+            "rows": 31384,
+            "sha256": "97b9d12658e03d35aa4ac29aea80b451e247f117c235eb080f5fe75a64a07227"
+          },
+          {
+            "bytes": 971500,
+            "name": "2025-08.parquet",
+            "path": "E:\\PEKERJAAN\\TRADING-BACKTEST-STRATEGY\\xauusd-opening-range-compression-research\\data\\exness\\XAUUSD\\2025-08.parquet",
+            "rows": 28882,
+            "sha256": "87f7b0da958b26b04604b7f88dc3eba439a12e855d1ffbe7d1ddfd1386b9d7f3"
+          },
+          {
+            "bytes": 1060373,
+            "name": "2025-09.parquet",
+            "path": "E:\\PEKERJAAN\\TRADING-BACKTEST-STRATEGY\\xauusd-opening-range-compression-research\\data\\exness\\XAUUSD\\2025-09.parquet",
+            "rows": 30098,
+            "sha256": "0f2c71a5c0b71e2caa7cce66402cb108ff3c4eaeca1c70b9dfdd52661a8adf02"
+          },
+          {
+            "bytes": 1150430,
+            "name": "2025-10.parquet",
+            "path": "E:\\PEKERJAAN\\TRADING-BACKTEST-STRATEGY\\xauusd-opening-range-compression-research\\data\\exness\\XAUUSD\\2025-10.parquet",
+            "rows": 31518,
+            "sha256": "8ffd53038ea8dac0ee381b3b04e5e65bb86acb32e57c87e01c944356a994a57d"
+          },
+          {
+            "bytes": 984098,
+            "name": "2025-11.parquet",
+            "path": "E:\\PEKERJAAN\\TRADING-BACKTEST-STRATEGY\\xauusd-opening-range-compression-research\\data\\exness\\XAUUSD\\2025-11.parquet",
+            "rows": 27281,
+            "sha256": "f4bf181d2e42e50a8b0bcacf38755c3dc3e62ab32198b4d5bca08f138960304c"
+          },
+          {
+            "bytes": 1076343,
+            "name": "2025-12.parquet",
+            "path": "E:\\PEKERJAAN\\TRADING-BACKTEST-STRATEGY\\xauusd-opening-range-compression-research\\data\\exness\\XAUUSD\\2025-12.parquet",
+            "rows": 29982,
+            "sha256": "b4a55cba8915b82d8fc62ec79333d57a1daa23d4a659851ff5beaeb334d64575"
+          },
+          {
+            "bytes": 1070237,
+            "name": "2026-01.parquet",
+            "path": "E:\\PEKERJAAN\\TRADING-BACKTEST-STRATEGY\\xauusd-opening-range-compression-research\\data\\exness\\XAUUSD\\2026-01.parquet",
+            "rows": 28729,
+            "sha256": "14ebce6c69450e91f74fae871821c0edd23901640533108e0fda61a8c88ecaf3"
+          },
+          {
+            "bytes": 1015977,
+            "name": "2026-02.parquet",
+            "path": "E:\\PEKERJAAN\\TRADING-BACKTEST-STRATEGY\\xauusd-opening-range-compression-research\\data\\exness\\XAUUSD\\2026-02.parquet",
+            "rows": 27379,
+            "sha256": "91985a82f55b840f99240b594bc10c58442abeac8aadb6a305df207ef8acf985"
+          },
+          {
+            "bytes": 1137798,
+            "name": "2026-03.parquet",
+            "path": "E:\\PEKERJAAN\\TRADING-BACKTEST-STRATEGY\\xauusd-opening-range-compression-research\\data\\exness\\XAUUSD\\2026-03.parquet",
+            "rows": 30407,
+            "sha256": "d7e02666c0e664382c171eecdaa277651b8e178e4893ea7bdd3f51de18967444"
+          },
+          {
+            "bytes": 1052365,
+            "name": "2026-04.parquet",
+            "path": "E:\\PEKERJAAN\\TRADING-BACKTEST-STRATEGY\\xauusd-opening-range-compression-research\\data\\exness\\XAUUSD\\2026-04.parquet",
+            "rows": 28899,
+            "sha256": "5cdadf5efea66a61a4b6b899ce32f50b25e2105b7f60e366c679b177bcd1acf0"
+          },
+          {
+            "bytes": 1038423,
+            "name": "2026-05.parquet",
+            "path": "E:\\PEKERJAAN\\TRADING-BACKTEST-STRATEGY\\xauusd-opening-range-compression-research\\data\\exness\\XAUUSD\\2026-05.parquet",
+            "rows": 28774,
+            "sha256": "d43a1d20f1769b8a389b3f84ed535453c5ea119d6cc44a251bd6c251c59a80c8"
+          },
+          {
+            "bytes": 1101939,
+            "name": "2026-06.parquet",
+            "path": "E:\\PEKERJAAN\\TRADING-BACKTEST-STRATEGY\\xauusd-opening-range-compression-research\\data\\exness\\XAUUSD\\2026-06.parquet",
+            "rows": 30074,
+            "sha256": "4c47934db8cc619f955c09692cd71ae4691d62d3268656c5ce79276187005b92"
+          },
+          {
+            "bytes": 1106910,
+            "name": "2026-07.parquet",
+            "path": "E:\\PEKERJAAN\\TRADING-BACKTEST-STRATEGY\\xauusd-opening-range-compression-research\\data\\exness\\XAUUSD\\2026-07.parquet",
+            "rows": 31332,
+            "sha256": "de768452d41bfd06016cb3f806c0bbee42a18787697ab7b938ceabcfa049552a"
+          },
+          {
+            "bytes": 1066263,
+            "name": "2026-08.parquet",
+            "path": "E:\\PEKERJAAN\\TRADING-BACKTEST-STRATEGY\\xauusd-opening-range-compression-research\\data\\exness\\XAUUSD\\2026-08.parquet",
+            "rows": 29050,
+            "sha256": "1cc27ee5d1ae19f7a4817e987a3fde042543ac0782517a9b548b9bfac1ed6cbc"
+          }
+        ],
+        "first_h4": "2022-01-02T00:00:00+00:00",
+        "first_minute": "2022-01-02T00:00:00+00:00",
+        "h4_bars": 7483,
+        "h4_m1_rows_max": 240,
+        "h4_m1_rows_median": 240.0,
+        "h4_m1_rows_min": 1,
+        "invalid_rows_removed": 0,
+        "last_h4": "2026-08-31T20:00:00+00:00",
+        "last_minute": "2026-08-31T23:59:00+00:00",
+        "minute_rows": 1646994,
+        "raw_rows": 1647032,
+        "source_path": "E:\\PEKERJAAN\\TRADING-BACKTEST-STRATEGY\\xauusd-opening-range-compression-research\\data\\exness\\XAUUSD"
+      },
+      "variants": {
+        "causal_euclidean": {
+          "base": {
+            "max_drawdown_bps": 1118.0420290076304,
+            "mean_bps": 0.6718961361963546,
+            "median_bps": -2.4136149512383906,
+            "net_bps": 70.54909430061723,
+            "net_bps_ex_top5": -855.0678801797458,
+            "profit_factor": 1.0189945497747541,
+            "trades": 105,
+            "trades_per_week": 0.7546201232032854,
+            "win_rate": 0.4857142857142857
+          },
+          "blocks": [
+            {
+              "end": "2025-12-31",
+              "net_bps": 509.56463993203226,
+              "start": "2024-01-01",
+              "trades": 83
+            },
+            {
+              "end": "2026-08-31",
+              "net_bps": -439.01554563141497,
+              "start": "2026-01-01",
+              "trades": 22
+            }
+          ],
+          "execution_diagnostics": {
+            "entry_bars_under_180_minutes": 17,
+            "exit_bars_under_180_minutes": 17,
+            "first_entry": "2024-01-03T12:00:00+00:00",
+            "last_entry": "2026-08-19T16:00:00+00:00",
+            "maximum_holding_hours": 60.0,
+            "median_holding_hours": 16.0,
+            "signal_bars_under_180_minutes": 10
+          },
+          "gross": {
+            "max_drawdown_bps": 1112.5565498206358,
+            "mean_bps": 1.2026800837716793,
+            "median_bps": -1.8646346503755291,
+            "net_bps": 126.28140879602633,
+            "net_bps_ex_top5": -801.2251697060957,
+            "profit_factor": 1.0342586907889515,
+            "trades": 105,
+            "trades_per_week": 0.7546201232032854,
+            "win_rate": 0.4857142857142857
+          },
+          "long_base_net_bps": 1272.7948140906722,
+          "monthly_bootstrap": {
+            "ci95": [
+              -50.426415899551074,
+              55.630859683743
+            ],
+            "mean_monthly_bps": 2.204659196894287
+          },
+          "positive_month_fraction": 0.53125,
+          "same_window_controls": {
+            "actual": {
+              "max_drawdown_bps": 1118.0420290076304,
+              "mean_bps": 0.6718961361963546,
+              "median_bps": -2.4136149512383906,
+              "net_bps": 70.54909430061723,
+              "net_bps_ex_top5": -855.0678801797458,
+              "profit_factor": 1.0189945497747541,
+              "trades": 105,
+              "trades_per_week": 0.7546201232032854,
+              "win_rate": 0.4857142857142857
+            },
+            "always_long": {
+              "max_drawdown_bps": 261.67380779382506,
+              "mean_bps": 23.206068574538175,
+              "median_bps": 19.287983756498438,
+              "net_bps": 2436.6372003265083,
+              "net_bps_ex_top5": 1068.3443351750022,
+              "profit_factor": 1.964661808210155,
+              "trades": 105,
+              "trades_per_week": 0.7546201232032854,
+              "win_rate": 0.6095238095238096
+            },
+            "always_short": {
+              "max_drawdown_bps": 2710.3141367013436,
+              "mean_bps": -24.271376838714122,
+              "median_bps": -20.151624820222224,
+              "net_bps": -2548.494568064983,
+              "net_bps_ex_top5": -3366.8283953587006,
+              "profit_factor": 0.49320476258626816,
+              "trades": 105,
+              "trades_per_week": 0.7546201232032854,
+              "win_rate": 0.3904761904761905
+            },
+            "opposite": {
+              "max_drawdown_bps": 1036.7738514447092,
+              "mean_bps": -1.737204400372302,
+              "median_bps": 1.428167622341875,
+              "net_bps": -182.4064620390917,
+              "net_bps_ex_top5": -1456.5142165092657,
+              "profit_factor": 0.9525028892806492,
+              "trades": 105,
+              "trades_per_week": 0.7546201232032854,
+              "win_rate": 0.5142857142857142
+            },
+            "random_direction": {
+              "actual_percentile": 0.5605,
+              "ci95_net_bps": [
+                -2035.3240195920002,
+                1955.7251326269318
+              ],
+              "median_net_bps": -78.56697391603538,
+              "one_sided_p_random_at_least_actual": 0.4397801099450275,
+              "replicates": 2000
+            }
+          },
+          "short_base_net_bps": -1202.245719790055,
+          "stress": {
+            "max_drawdown_bps": 1122.702179707545,
+            "mean_bps": 0.1592714580126724,
+            "median_bps": -3.205044701033528,
+            "net_bps": 16.723503091330603,
+            "net_bps_ex_top5": -907.1248128926804,
+            "profit_factor": 1.0044700316448558,
+            "trades": 105,
+            "trades_per_week": 0.7546201232032854,
+            "win_rate": 0.4857142857142857
+          }
+        },
+        "causal_lorentzian": {
+          "base": {
+            "max_drawdown_bps": 1085.1959065309686,
+            "mean_bps": 2.9426211487584406,
+            "median_bps": 5.426529427868992,
+            "net_bps": 317.8030840659116,
+            "net_bps_ex_top5": -633.9059250912204,
+            "profit_factor": 1.0891284423844494,
+            "trades": 108,
+            "trades_per_week": 0.7761806981519508,
+            "win_rate": 0.5277777777777778
+          },
+          "blocks": [
+            {
+              "end": "2025-12-31",
+              "net_bps": 753.4224869554578,
+              "start": "2024-01-01",
+              "trades": 86
+            },
+            {
+              "end": "2026-08-31",
+              "net_bps": -435.6194028895461,
+              "start": "2026-01-01",
+              "trades": 22
+            }
+          ],
+          "execution_diagnostics": {
+            "entry_bars_under_180_minutes": 19,
+            "exit_bars_under_180_minutes": 16,
+            "first_entry": "2024-01-17T08:00:00+00:00",
+            "last_entry": "2026-08-21T12:00:00+00:00",
+            "maximum_holding_hours": 84.0,
+            "median_holding_hours": 16.0,
+            "signal_bars_under_180_minutes": 13
+          },
+          "gross": {
+            "max_drawdown_bps": 1079.7543257721698,
+            "mean_bps": 3.452502420367973,
+            "median_bps": 6.060314327480734,
+            "net_bps": 372.8702613997411,
+            "net_bps_ex_top5": -580.7871021002136,
+            "profit_factor": 1.105328455679115,
+            "trades": 108,
+            "trades_per_week": 0.7761806981519508,
+            "win_rate": 0.5277777777777778
+          },
+          "long_base_net_bps": 1882.475909435698,
+          "monthly_bootstrap": {
+            "ci95": [
+              -37.84727437746414,
+              57.802559732046
+            ],
+            "mean_monthly_bps": 9.931346377059747
+          },
+          "positive_month_fraction": 0.5625,
+          "same_window_controls": {
+            "actual": {
+              "max_drawdown_bps": 1085.1959065309686,
+              "mean_bps": 2.9426211487584406,
+              "median_bps": 5.426529427868992,
+              "net_bps": 317.8030840659116,
+              "net_bps_ex_top5": -633.9059250912204,
+              "profit_factor": 1.0891284423844494,
+              "trades": 108,
+              "trades_per_week": 0.7761806981519508,
+              "win_rate": 0.5277777777777778
+            },
+            "always_long": {
+              "max_drawdown_bps": 379.90912175356834,
+              "mean_bps": 31.516949122191154,
+              "median_bps": 32.75145766537015,
+              "net_bps": 3403.8305051966445,
+              "net_bps_ex_top5": 2009.445605368369,
+              "profit_factor": 2.6894330176184584,
+              "trades": 108,
+              "trades_per_week": 0.7761806981519508,
+              "win_rate": 0.6944444444444444
+            },
+            "always_short": {
+              "max_drawdown_bps": 3594.999635866523,
+              "mean_bps": -32.54152765680984,
+              "median_bps": -33.79873651411275,
+              "net_bps": -3514.484986935463,
+              "net_bps_ex_top5": -4387.902681288362,
+              "profit_factor": 0.3602879959628858,
+              "trades": 108,
+              "trades_per_week": 0.7761806981519508,
+              "win_rate": 0.3055555555555556
+            },
+            "opposite": {
+              "max_drawdown_bps": 1359.211700386796,
+              "mean_bps": -3.9671996833771344,
+              "median_bps": -6.577467636837749,
+              "net_bps": -428.4575658047305,
+              "net_bps_ex_top5": -1763.8986992239343,
+              "profit_factor": 0.8913359654743634,
+              "trades": 108,
+              "trades_per_week": 0.7761806981519508,
+              "win_rate": 0.4722222222222222
+            },
+            "random_direction": {
+              "actual_percentile": 0.656,
+              "ci95_net_bps": [
+                -2068.843244206448,
+                1885.8183129559197
+              ],
+              "median_net_bps": -100.72459133052944,
+              "one_sided_p_random_at_least_actual": 0.344327836081959,
+              "replicates": 2000
+            }
+          },
+          "short_base_net_bps": -1564.6728253697863,
+          "stress": {
+            "max_drawdown_bps": 1089.9218204475733,
+            "mean_bps": 2.4450252240912196,
+            "median_bps": 4.849147347405339,
+            "net_bps": 264.0627242018517,
+            "net_bps_ex_top5": -685.7529051438703,
+            "profit_factor": 1.0735407749249075,
+            "trades": 108,
+            "trades_per_week": 0.7761806981519508,
+            "win_rate": 0.5277777777777778
+          }
+        },
+        "filter_only_kernel": {
+          "base": {
+            "max_drawdown_bps": 402.6859400504754,
+            "mean_bps": 19.850951494474334,
+            "median_bps": 2.2140290545694903,
+            "net_bps": 2521.0708397982403,
+            "net_bps_ex_top5": 735.3453086825727,
+            "profit_factor": 1.7674248922939861,
+            "trades": 127,
+            "trades_per_week": 0.9127310061601643,
+            "win_rate": 0.5118110236220472
+          },
+          "blocks": [
+            {
+              "end": "2025-12-31",
+              "net_bps": 1476.1106940367458,
+              "start": "2024-01-01",
+              "trades": 93
+            },
+            {
+              "end": "2026-08-31",
+              "net_bps": 1044.960145761495,
+              "start": "2026-01-01",
+              "trades": 34
+            }
+          ],
+          "execution_diagnostics": {
+            "entry_bars_under_180_minutes": 17,
+            "exit_bars_under_180_minutes": 20,
+            "first_entry": "2024-01-03T12:00:00+00:00",
+            "last_entry": "2026-08-28T16:00:00+00:00",
+            "maximum_holding_hours": 60.0,
+            "median_holding_hours": 16.0,
+            "signal_bars_under_180_minutes": 12
+          },
+          "gross": {
+            "max_drawdown_bps": 395.7900104663187,
+            "mean_bps": 20.38465514952183,
+            "median_bps": 3.062164906208834,
+            "net_bps": 2588.8512039892726,
+            "net_bps_ex_top5": 800.8848278227384,
+            "profit_factor": 1.7960373780225038,
+            "trades": 127,
+            "trades_per_week": 0.9127310061601643,
+            "win_rate": 0.5118110236220472
+          },
+          "long_base_net_bps": 1081.3222643937872,
+          "monthly_bootstrap": {
+            "ci95": [
+              18.10017181398515,
+              152.91347467413772
+            ],
+            "mean_monthly_bps": 78.783463743695
+          },
+          "positive_month_fraction": 0.59375,
+          "same_window_controls": {
+            "actual": {
+              "max_drawdown_bps": 402.6859400504754,
+              "mean_bps": 19.850951494474334,
+              "median_bps": 2.2140290545694903,
+              "net_bps": 2521.0708397982403,
+              "net_bps_ex_top5": 735.3453086825727,
+              "profit_factor": 1.7674248922939861,
+              "trades": 127,
+              "trades_per_week": 0.9127310061601643,
+              "win_rate": 0.5118110236220472
+            },
+            "always_long": {
+              "max_drawdown_bps": 1368.2902364614938,
+              "mean_bps": -3.360120771344027,
+              "median_bps": 11.446005387852193,
+              "net_bps": -426.7353379606914,
+              "net_bps_ex_top5": -1338.4760879183286,
+              "profit_factor": 0.910253136938841,
+              "trades": 127,
+              "trades_per_week": 0.9127310061601643,
+              "win_rate": 0.5748031496062992
+            },
+            "always_short": {
+              "max_drawdown_bps": 1668.693265262199,
+              "mean_bps": 2.293116430739271,
+              "median_bps": -12.638711749906955,
+              "net_bps": 291.2257867038874,
+              "net_bps_ex_top5": -1413.4234806360764,
+              "profit_factor": 1.0660995194961889,
+              "trades": 127,
+              "trades_per_week": 0.9127310061601643,
+              "win_rate": 0.4251968503937008
+            },
+            "opposite": {
+              "max_drawdown_bps": 2714.2227369408542,
+              "mean_bps": -20.917955835079095,
+              "median_bps": -3.910300757848178,
+              "net_bps": -2656.580391055045,
+              "net_bps_ex_top5": -3336.397427873129,
+              "profit_factor": 0.5478654792390127,
+              "trades": 127,
+              "trades_per_week": 0.9127310061601643,
+              "win_rate": 0.4881889763779528
+            },
+            "random_direction": {
+              "actual_percentile": 0.9785,
+              "ci95_net_bps": [
+                -2553.3573050010395,
+                2425.1628110182533
+              ],
+              "median_net_bps": -62.79999787394431,
+              "one_sided_p_random_at_least_actual": 0.021989005497251374,
+              "replicates": 2000
+            }
+          },
+          "short_base_net_bps": 1439.7485754044528,
+          "stress": {
+            "max_drawdown_bps": 409.46000884558373,
+            "mean_bps": 19.341127071887612,
+            "median_bps": 1.4201344492559198,
+            "net_bps": 2456.323138129727,
+            "net_bps_ex_top5": 672.6689413306278,
+            "profit_factor": 1.7406083575455644,
+            "trades": 127,
+            "trades_per_week": 0.9127310061601643,
+            "win_rate": 0.5039370078740157
+          }
+        },
+        "official_original": {
+          "base": {
+            "max_drawdown_bps": 226.67725119733086,
+            "mean_bps": 22.16279005305647,
+            "median_bps": 5.1785378928594135,
+            "net_bps": 1307.6046131303317,
+            "net_bps_ex_top5": 135.17008166858204,
+            "profit_factor": 1.789903414557099,
+            "trades": 59,
+            "trades_per_week": 0.42402464065708423,
+            "win_rate": 0.5254237288135594
+          },
+          "blocks": [
+            {
+              "end": "2025-12-31",
+              "net_bps": 870.9439657195493,
+              "start": "2024-01-01",
+              "trades": 26
+            },
+            {
+              "end": "2026-08-31",
+              "net_bps": 436.66064741078213,
+              "start": "2026-01-01",
+              "trades": 33
+            }
+          ],
+          "execution_diagnostics": {
+            "entry_bars_under_180_minutes": 7,
+            "exit_bars_under_180_minutes": 13,
+            "first_entry": "2025-06-02T08:00:00+00:00",
+            "last_entry": "2026-08-28T16:00:00+00:00",
+            "maximum_holding_hours": 60.0,
+            "median_holding_hours": 16.0,
+            "signal_bars_under_180_minutes": 8
+          },
+          "gross": {
+            "max_drawdown_bps": 220.12621507711867,
+            "mean_bps": 22.590899743953702,
+            "median_bps": 5.609042850217585,
+            "net_bps": 1332.8630848932685,
+            "net_bps_ex_top5": 158.48580797763628,
+            "profit_factor": 1.8110408033519214,
+            "trades": 59,
+            "trades_per_week": 0.42402464065708423,
+            "win_rate": 0.5254237288135594
+          },
+          "long_base_net_bps": 946.2059733763112,
+          "monthly_bootstrap": {
+            "ci95": [
+              8.150188724707348,
+              78.24362663657779
+            ],
+            "mean_monthly_bps": 40.86264416032286
+          },
+          "positive_month_fraction": 0.34375,
+          "same_window_controls": {
+            "actual": {
+              "max_drawdown_bps": 226.67725119733086,
+              "mean_bps": 22.16279005305647,
+              "median_bps": 5.1785378928594135,
+              "net_bps": 1307.6046131303317,
+              "net_bps_ex_top5": 135.17008166858204,
+              "profit_factor": 1.789903414557099,
+              "trades": 59,
+              "trades_per_week": 0.42402464065708423,
+              "win_rate": 0.5254237288135594
+            },
+            "always_long": {
+              "max_drawdown_bps": 690.2635808014734,
+              "mean_bps": 9.488606225769256,
+              "median_bps": 22.04907829596601,
+              "net_bps": 559.8277673203861,
+              "net_bps_ex_top5": -323.05186195173195,
+              "profit_factor": 1.2760668942224422,
+              "trades": 59,
+              "trades_per_week": 0.42402464065708423,
+              "win_rate": 0.576271186440678
+            },
+            "always_short": {
+              "max_drawdown_bps": 840.8456984232507,
+              "mean_bps": -10.346362690630468,
+              "median_bps": -22.982424597900586,
+              "net_bps": -610.4353987471976,
+              "net_bps_ex_top5": -1593.8015222966385,
+              "profit_factor": 0.7667385797801783,
+              "trades": 59,
+              "trades_per_week": 0.42402464065708423,
+              "win_rate": 0.423728813559322
+            },
+            "opposite": {
+              "max_drawdown_bps": 1358.212244557143,
+              "mean_bps": -23.020546517917687,
+              "median_bps": -6.039547807575756,
+              "net_bps": -1358.2122445571435,
+              "net_bps_ex_top5": -1929.9740905767865,
+              "profit_factor": 0.5456618201786732,
+              "trades": 59,
+              "trades_per_week": 0.42402464065708423,
+              "win_rate": 0.4745762711864407
+            },
+            "random_direction": {
+              "actual_percentile": 0.958,
+              "ci95_net_bps": [
+                -1529.4529437878105,
+                1470.4082670227408
+              ],
+              "median_net_bps": -14.5432025277576,
+              "one_sided_p_random_at_least_actual": 0.04247876061969016,
+              "replicates": 2000
+            }
+          },
+          "short_base_net_bps": 361.39863975402034,
+          "stress": {
+            "max_drawdown_bps": 232.48503067675904,
+            "mean_bps": 21.765144183011607,
+            "median_bps": 4.807305357166496,
+            "net_bps": 1284.1435067976847,
+            "net_bps_ex_top5": 113.55863675705058,
+            "profit_factor": 1.7705077726158338,
+            "trades": 59,
+            "trades_per_week": 0.42402464065708423,
+            "win_rate": 0.5084745762711864
+          }
+        },
+        "simple_momentum4": {
+          "base": {
+            "max_drawdown_bps": 466.04006566287137,
+            "mean_bps": 14.041973397551258,
+            "median_bps": 3.1310958402855227,
+            "net_bps": 1769.2886480914585,
+            "net_bps_ex_top5": 491.41447879270584,
+            "profit_factor": 1.5296635310299018,
+            "trades": 126,
+            "trades_per_week": 0.9055441478439425,
+            "win_rate": 0.5158730158730159
+          },
+          "blocks": [
+            {
+              "end": "2025-12-31",
+              "net_bps": 1325.3136545442471,
+              "start": "2024-01-01",
+              "trades": 90
+            },
+            {
+              "end": "2026-08-31",
+              "net_bps": 443.97499354721117,
+              "start": "2026-01-01",
+              "trades": 36
+            }
+          ],
+          "execution_diagnostics": {
+            "entry_bars_under_180_minutes": 18,
+            "exit_bars_under_180_minutes": 21,
+            "first_entry": "2024-01-03T12:00:00+00:00",
+            "last_entry": "2026-08-28T16:00:00+00:00",
+            "maximum_holding_hours": 60.0,
+            "median_holding_hours": 16.0,
+            "signal_bars_under_180_minutes": 11
+          },
+          "gross": {
+            "max_drawdown_bps": 452.6062832958954,
+            "mean_bps": 14.569288974184117,
+            "median_bps": 3.916681923775034,
+            "net_bps": 1835.7304107471987,
+            "net_bps_ex_top5": 555.5877199840808,
+            "profit_factor": 1.5548537482829012,
+            "trades": 126,
+            "trades_per_week": 0.9055441478439425,
+            "win_rate": 0.5158730158730159
+          },
+          "long_base_net_bps": 1086.3959266028294,
+          "monthly_bootstrap": {
+            "ci95": [
+              -1.581826143074019,
+              109.60125634912671
+            ],
+            "mean_monthly_bps": 55.29027025285807
+          },
+          "positive_month_fraction": 0.625,
+          "same_window_controls": {
+            "actual": {
+              "max_drawdown_bps": 466.04006566287137,
+              "mean_bps": 14.041973397551258,
+              "median_bps": 3.1310958402855227,
+              "net_bps": 1769.2886480914585,
+              "net_bps_ex_top5": 491.41447879270584,
+              "profit_factor": 1.5296635310299018,
+              "trades": 126,
+              "trades_per_week": 0.9055441478439425,
+              "win_rate": 0.5158730158730159
+            },
+            "always_long": {
+              "max_drawdown_bps": 1047.274835764377,
+              "mean_bps": 2.6815439521972544,
+              "median_bps": 12.940224513540802,
+              "net_bps": 337.87453797685407,
+              "net_bps_ex_top5": -573.866211980783,
+              "profit_factor": 1.0833823567626641,
+              "trades": 126,
+              "trades_per_week": 0.9055441478439425,
+              "win_rate": 0.5793650793650794
+            },
+            "always_short": {
+              "max_drawdown_bps": 1887.8230926555032,
+              "mean_bps": -3.7363245487477394,
+              "median_bps": -14.266790725729173,
+              "net_bps": -470.77689314221516,
+              "net_bps_ex_top5": -1667.5747986652639,
+              "profit_factor": 0.8946093730179681,
+              "trades": 126,
+              "trades_per_week": 0.9055441478439425,
+              "win_rate": 0.42063492063492064
+            },
+            "opposite": {
+              "max_drawdown_bps": 2008.0073719190632,
+              "mean_bps": -15.096753994101737,
+              "median_bps": -4.7022680072645455,
+              "net_bps": -1902.191003256819,
+              "net_bps_ex_top5": -2624.255891261142,
+              "profit_factor": 0.6326881114422761,
+              "trades": 126,
+              "trades_per_week": 0.9055441478439425,
+              "win_rate": 0.48412698412698413
+            },
+            "random_direction": {
+              "actual_percentile": 0.962,
+              "ci95_net_bps": [
+                -2070.497271564312,
+                1896.0153727883157
+              ],
+              "median_net_bps": -36.42079635423326,
+              "one_sided_p_random_at_least_actual": 0.0384807596201899,
+              "replicates": 2000
+            }
+          },
+          "short_base_net_bps": 682.8927214886288,
+          "stress": {
+            "max_drawdown_bps": 478.95171735041083,
+            "mean_bps": 13.538821675199488,
+            "median_bps": 2.3957507272517375,
+            "net_bps": 1705.8915310751354,
+            "net_bps_ex_top5": 430.1326261180173,
+            "profit_factor": 1.5060649082190332,
+            "trades": 126,
+            "trades_per_week": 0.9055441478439425,
+            "win_rate": 0.5079365079365079
+          }
+        }
+      }
+    }
+  },
+  "contract_sha256": "d294cc74fbf2561dd52fe7703ba78c77a210b47e17817ddfb45a3cb9e3f58d06",
+  "evaluation": {
+    "end_exclusive": "2026-09-01 00:00:00+00:00",
+    "start": "2024-01-01 00:00:00+00:00",
+    "weeks": 139.14285714285714
+  },
+  "gates": {
+    "all_pass": false,
+    "beats_euclidean_and_momentum_both": false,
+    "bootstrap_lower_bound_positive_both": false,
+    "both_blocks_positive_both_assets": false,
+    "causal_positive_both": true,
+    "minimum_100_trades_both": false,
+    "official_positive_both": false,
+    "positive_ex_top5_both": false,
+    "stress_positive_both": true
+  },
+  "study": "LORENTZIAN_CLASSIFIER_CROSS_ASSET_AUDIT_V1",
+  "verdict": "NO_ROBUST_CROSS_ASSET_LORENTZIAN_EDGE"
+}
