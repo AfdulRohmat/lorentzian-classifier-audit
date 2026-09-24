@@ -1,0 +1,106 @@
+{
+  "study": "LORENTZIAN_ATR_RUNNER_AND_SMALL_ACCOUNT_SIZING_V3",
+  "registered_date": "2026-09-25",
+  "status": "FROZEN_BEFORE_V3_EXIT_OUTCOME_INSPECTION",
+  "question": "Can a causal ATR stop with an uncapped trailing runner improve the frozen Lorentzian entries, and are the resulting positions executable on USD 500 or USD 1000 accounts at one through five percent risk?",
+  "relationship_to_v2": "Entry signals, data, features, costs and primary M30 declaration are unchanged; only position exit and account sizing are new",
+  "data": {
+    "primary_timeframe": "30min",
+    "sensitivity_timeframes": ["15min", "1h"],
+    "timeframe_order": ["15min", "30min", "1h"],
+    "minimum_m1_rows_per_bar": 1,
+    "source_start": "2022-01-01T00:00:00Z",
+    "source_end_exclusive": "2026-09-01T00:00:00Z",
+    "evaluation_start": "2024-01-01T00:00:00Z",
+    "evaluation_end_exclusive": "2026-09-01T00:00:00Z",
+    "assets": {
+      "sp500": {
+        "instrument": "Exness US500 CFD",
+        "path": "../mt5-ea-research-lab/data/sp500_exness/raw/m1",
+        "point": 0.01,
+        "price_scale": 100.0,
+        "contract_size": 1.0,
+        "volume_min": 0.14,
+        "volume_step": 0.01,
+        "volume_max": 1000.0
+      },
+      "xauusd": {
+        "instrument": "Exness XAUUSD CFD",
+        "path": "../xauusd-opening-range-compression-research/data/exness/XAUUSD",
+        "point": 0.001,
+        "price_scale": 1000.0,
+        "contract_size": 100.0,
+        "volume_min": 0.01,
+        "volume_step": 0.01,
+        "volume_max": 200.0
+      }
+    }
+  },
+  "signal": {
+    "variant": "causal_lorentzian",
+    "neighbors_count": 8,
+    "max_bars_back": 2000,
+    "label_horizon_bars": 4,
+    "entry": "next timeframe Bid open after a completed start event"
+  },
+  "exit": {
+    "atr_period": 14,
+    "initial_stop_atr": 1.0,
+    "fixed_take_profit": null,
+    "trail_observation": "completed signal-timeframe close, effective from the next M1 bar",
+    "trail_activation_net_r": 1.0,
+    "trail_distance_net_r": 1.0,
+    "opposite_signal": "exit and reverse at the next timeframe open when executable",
+    "maximum_holding_hours": 24,
+    "stop_execution": "M1 Bid for long and effective Ask for short; gap exits at M1 open, otherwise stop trigger, then adverse slippage",
+    "same_m1_ambiguity": "stop check precedes any close-boundary trailing update"
+  },
+  "costs": {
+    "sp500": {
+      "spread_floor": 0.10,
+      "spread_multiplier": 1.0,
+      "slippage_side": 0.02,
+      "commission_round_trip_price": 0.25
+    },
+    "xauusd": {
+      "spread_floor": 0.0,
+      "spread_multiplier": 1.0,
+      "slippage_side": 0.02,
+      "commission_round_trip_price": 0.07
+    }
+  },
+  "account_simulation": {
+    "initial_balances_usd": [500, 1000],
+    "risk_percent_before_trade": [1, 2, 3, 4, 5],
+    "sizing": "floor current-equity risk budget to broker lot step using planned initial-stop loss including exit slippage and round-trip commission",
+    "minimum_lot_rule": "skip, never clamp upward",
+    "compounding": true,
+    "margin_model": "not modelled; report as an execution limitation",
+    "swap_model": "not modelled; maximum hold is 24 hours but positions may cross rollover"
+  },
+  "comparisons": {
+    "unchanged_v2_four_bar_exit": "reported from v2 only as context",
+    "runner_primary": "one ATR initial stop, one R activation, one R completed-close trail, no fixed target"
+  },
+  "promotion_gate": [
+    "M30 runner net R and profit factor exceed the unchanged four-bar exit on both assets",
+    "M30 runner profit factor is at least 1.10 on both assets",
+    "M30 runner is positive in 2024, 2025 and 2026 on both assets",
+    "M30 runner remains positive after removing ten best trades on both assets",
+    "M30 runner monthly bootstrap lower bound is above zero on both assets",
+    "at USD 500 and one percent risk at least half of candidate trades are executable on both assets",
+    "no account scenario reaches zero or negative equity"
+  ],
+  "verdicts": {
+    "pass": "ATR_RUNNER_SMALL_ACCOUNT_CANDIDATE_SUPPORTED",
+    "fail": "ATR_RUNNER_DOES_NOT_RESCUE_LORENTZIAN_ENTRIES"
+  },
+  "forbidden": [
+    "changing entries or classifier parameters after exit results",
+    "selecting a sensitivity timeframe to rescue failed M30",
+    "using intrabar future information to update a stop",
+    "rounding sub-minimum position sizes upward",
+    "claiming margin or swap feasibility from this simulation",
+    "placing MT5 orders"
+  ]
+}
