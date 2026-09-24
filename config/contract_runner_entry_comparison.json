@@ -1,0 +1,16 @@
+{
+  "study": "RUNNER_ENTRY_INCREMENTAL_VALUE",
+  "status": "FROZEN_BEFORE_NEW_RUNNER_CONTROL_RESULTS_NOT_UNSEEN",
+  "parent_v3_sha256": "873a16495f7e0b2bb4fb8e45c253d974e7051eb147d6512764b63d6e88ba3872",
+  "parent_v2_sha256": "2a2e25807218a7875973d148ee0e347473791ddb96d12779a2034e433a7be0bf",
+  "timeframe": "30min",
+  "primary_asset": "sp500",
+  "secondary_asset": "xauusd",
+  "variants": ["causal_lorentzian", "causal_euclidean", "simple_momentum4", "filter_only_kernel"],
+  "cost_profiles": ["base", "stress"],
+  "account": {"initial_balance_usd": 3000, "risk_percent": 1},
+  "bootstrap": {"replicates": 10000, "seed": 20260926, "circular_block_months": 3, "primary_comparisons": 3},
+  "comparison": "Paired monthly realized R at exit month including zero-trade months. Same exit algorithm, not forced same entry dates, holding periods or exits. Annual attribution also uses exit time.",
+  "decision": "Historical incremental support requires base Lorentzian total R and PF greater than all three controls and each Bonferroni-adjusted primary interval lower bound above zero. Otherwise incremental value is unconfirmed. Secondary asset and stress profiles are descriptive only.",
+  "limitations": ["Previously inspected 2024-2026 sample; no pristine holdout or live claim", "Signal variants also change opposite-signal exits", "Different activity and exposure; report per-trade and per-calendar metrics", "No margin or swap model; no orders; no parameter optimization", "Bootstrap intervals conditional on chosen sample, variants and block length, not all historical research trials"]
+}

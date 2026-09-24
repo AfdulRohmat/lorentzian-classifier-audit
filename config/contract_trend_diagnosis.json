@@ -1,0 +1,24 @@
+{
+  "study": "XAUUSD_LOSS_DIRECTIONAL_TREND_DIAGNOSIS",
+  "status": "FROZEN_BEFORE_NEW_REGIME_REPLAY_RESULTS_RETROSPECTIVE",
+  "parent_v3_sha256": "873a16495f7e0b2bb4fb8e45c253d974e7051eb147d6512764b63d6e88ba3872",
+  "primary_asset": "xauusd",
+  "secondary_asset": "sp500",
+  "timeframe": "30min",
+  "trend": {"daily_boundary": "UTC", "ema_span": 200, "minimum_observed_days": 200, "slope_observed_days": 20, "bull": "last completed daily close > EMA and EMA > its value 20 observed days ago", "bear": "inverse strict inequalities", "mixed": "all other mature observations", "availability": "daily bar end <= completed signal bar end"},
+  "policies": ["baseline", "long_only", "short_only", "trend_aligned"],
+  "execution": "v3 runner unchanged; eligible entry on original start event only; ALL original opposite starts remain exits even if reverse entry is rejected; trend flips alone neither close nor open trades",
+  "cost_profiles": ["base", "stress"],
+  "account": {"balance": 3000, "risk_percent": 1},
+  "matched_controls": {
+    "asset": "xauusd", "policy": "long_only", "cost": "base", "schedules": 20, "seed": 20260927,
+    "anchors": "executed candidate trades from replayed base long-only policy, not small-account subset",
+    "matching": "same UTC calendar month, America/New_York hour, causal daily regime; relative ATR14/price within 25 percent of anchor; exclude original long and short starts; no repeated entry bar within a schedule",
+    "schedule": "one random eligible control bar per matchable anchor, outcome-blind seeded sampling; draw schedule before replay; original short signals remain exits; one position at a time; overlaps suppress entries",
+    "missing": "report unmatched anchors and candidates; no relaxed matching fallback",
+    "interpretation": "conditional diagnostic of entry timing under shared classifier exit policy, not independent deployable random strategy; future-aware matching to observed trade distribution, not a causal trading rule"
+  },
+  "statistics": {"bootstrap_replicates": 10000, "month_block": 3, "seed": 20260927, "family_comparisons": 3, "small_cell_warning_below": 30},
+  "decision": "Descriptive decomposition and paired monthly differences versus baseline. No economic-causality, pristine holdout or live-promotion verdict. If bearish-trend shorts have little support, answer is inconclusive rather than short edge disproven. Controls are a 20-schedule diagnostic, not a calibrated significance test.",
+  "forbidden": ["optimizing EMA, slope, timeframe, stops or classifier", "choosing filters after seeing PnL", "deleting previous evidence", "merging into main or placing orders"]
+}

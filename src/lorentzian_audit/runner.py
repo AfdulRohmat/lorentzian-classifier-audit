@@ -149,7 +149,13 @@ def build_runner_trades(
     exit_config: dict,
     evaluation_start: pd.Timestamp,
     evaluation_end: pd.Timestamp,
+    entry_mask: pd.Series | None = None,
 ) -> pd.DataFrame:
+    # Entry gating must not remove opposite starts from the exit event stream.
+    if entry_mask is not None and (
+        not entry_mask.index.equals(bars.index) or entry_mask.isna().any()
+    ):
+        raise ValueError("Entry mask must cover every bar without missing values")
     events = _entry_events(
         bars, signals, minutes, int(exit_config["atr_period"])
     )
@@ -177,6 +183,9 @@ def build_runner_trades(
 
     while pointer < len(events):
         event = events[pointer]
+        if entry_mask is not None and not bool(entry_mask.loc[event["signal_time"]]):
+            pointer += 1
+            continue
         entry_time = event["entry_time"]
         if entry_time >= evaluation_end:
             break

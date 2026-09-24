@@ -1,0 +1,30 @@
+{
+  "sp500": {
+    "causal_lorentzian": {
+      "prediction_rows": 53729,
+      "maximum_selected_label_maturity_minus_decision": 0
+    },
+    "causal_euclidean": {
+      "prediction_rows": 53729,
+      "maximum_selected_label_maturity_minus_decision": 0
+    },
+    "filter_mask": {
+      "passing_bars": 8602,
+      "total_bars": 53774
+    }
+  },
+  "xauusd": {
+    "causal_lorentzian": {
+      "prediction_rows": 55070,
+      "maximum_selected_label_maturity_minus_decision": 0
+    },
+    "causal_euclidean": {
+      "prediction_rows": 55070,
+      "maximum_selected_label_maturity_minus_decision": 0
+    },
+    "filter_mask": {
+      "passing_bars": 9149,
+      "total_bars": 55115
+    }
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "passed": true,
+  "unchanged_original_trades": 1433,
+  "shadow_rows": 4299,
+  "scope": "Saved evidence parity, bounds, accounting, coverage and summaries; raw-path reconstruction verified by the audit runner"
+}

@@ -1,0 +1,10 @@
+{
+  "sp500_source_parity": true,
+  "sp500_v3_ledger_parity": true,
+  "xauusd_source_parity": true,
+  "xauusd_v3_ledger_parity": true,
+  "cell_count_16": true,
+  "all_calendars_32_months": true,
+  "trade_invariants_and_account_reconciliation": true,
+  "causal_label_maturity": true
+}

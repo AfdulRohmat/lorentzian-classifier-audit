@@ -35,6 +35,68 @@ The honest verdict is therefore:
 
 `TAIL_STRUCTURE_SUPPORTED_EDGE_UNCONFIRMED`
 
+## Same-runner entry comparison
+
+The retrospective M30 comparison now holds the ATR runner constant and replaces
+the signal policy. January 2024-August 2026, after modeled base costs:
+
+| Signal | SP500 trades | SP500 net R / PF | XAUUSD trades | XAUUSD net R / PF |
+|---|---:|---:|---:|---:|
+| Lorentzian KNN | 688 | +72.77 / 1.172 | 745 | -32.48 / 0.927 |
+| Euclidean KNN | 703 | +72.55 / 1.165 | 758 | -18.07 / 0.960 |
+| Momentum4 + common filters | 968 | -2.74 / 0.996 | 1,029 | -23.56 / 0.963 |
+| Kernel-only + common filters | 974 | -7.13 / 0.988 | 1,024 | -26.82 / 0.958 |
+
+The positive SP500 result is **not unique to Lorentzian distance**. Both KNN
+policies outperform the simple controls in observed totals, but all three paired
+monthly difference intervals include zero, even before multiplicity adjustment.
+Verdict: `LORENTZIAN_INCREMENTAL_VALUE_UNCONFIRMED`, not proof of equivalence or
+proof that the historical SP500 profit disappeared. All XAUUSD policies lose.
+
+Lorentzian remains positive under the frozen stress costs (+31.81R, PF 1.073).
+At USD 3,000 and 1% compounded risk on regular US500, Lorentzian ends at
+USD 5,525.57 versus Euclidean USD 5,488.06; respective closed-balance drawdowns
+are 24.49% and 28.56%. These are historical simulations excluding margin/swap.
+
+Same exit algorithm does not mean identical exit times: each signal policy
+also supplies its own opposite-signal exits. This uses already-inspected data,
+not a new holdout, and does not replace the frozen demo candidate.
+
+See the [full comparison report](docs/RESULT_RUNNER_ENTRY_COMPARISON.md),
+[frozen plan](docs/RUNNER_ENTRY_COMPARISON_PLAN.md), and
+[evidence](evidence/runner_entry_comparison/summary.json). All 16 cells reproduce
+successfully; both Lorentzian base ledgers match v3, 22 tests pass, and the saved
+artifact validator reconciles accounting, calendars, sizing and bootstraps.
+
+## Why XAUUSD differs: frozen-trade path audit
+
+The next diagnostic reconstructs all 1,433 original M30 trade paths without
+changing the strategy. Gold's weaker payoff is mainly associated with smaller
+favorable excursions, especially on shorts, not dramatically larger giveback:
+
+| Mean per trade | SP500 | XAUUSD |
+|---|---:|---:|
+| Favorable peak before exit, conservative M1 measure | 1.580R | 1.448R |
+| Giveback from peak to exit | 1.474R | 1.492R |
+| Realized net | +0.106R | -0.044R |
+| Short-only contribution: favorable peak | 1.518R | 1.314R |
+| Short-only contribution: giveback | 1.525R | 1.525R |
+
+The smaller-peak term accounts for about 88% of the arithmetic average-result
+gap, **not 88% of an identified causal effect**. Gold short contributions are
+negative in each year. Intrabar +1R touches without trailing activation are
+less frequent in gold (8.6% versus 10.8%). Recovery to +1R after an initial stop,
+within eligible two-hour windows, is also less frequent (12.1% versus 18.8%).
+These findings do not support blindly widening gold stops or speeding up its
+trailing clock. Signal/payoff alignment and long/short asymmetry are better
+motivated questions for a separately contracted experiment, not confirmed fixes.
+
+MFE is hindsight, exit-minute ordering is unknown, entry samples are not matched,
+and fixed-window coverage differs across assets. No gold strategy is promoted.
+See the [path-audit report](docs/RESULT_TRADE_PATH_AUDIT.md) and
+[diagnostic plan](docs/TRADE_PATH_AUDIT_PLAN.md). All 26 tests, original-ledger
+parity, source hashes, completed-close reconstruction and artifact validation pass.
+
 ## Historical equity and tail-risk stress
 
 The equity chart below is the frozen SP500 M30 runner applied to a USD 500
@@ -378,6 +440,8 @@ evidence/v3_atr_runner_sizing/  Runner trades, account ledger, monthly results
 evidence/v4_tail_robustness/    Tail diagnostics and September extension
 evidence/us500_x100_sizing/    Contract-sizing accounts and margin sensitivities
 evidence/xauusd_capital_sizing/ XAUUSD M30 accounts including USD 3,000
+evidence/runner_entry_comparison/ Same-runner four-policy comparison, both assets
+evidence/trade_path_audit/       Frozen-trade excursions, timing and shadow windows
 scripts/                        Portable figure generator
 src/lorentzian_audit/           Research, execution, sizing and validation code
 tests/                          Unit and invariant tests

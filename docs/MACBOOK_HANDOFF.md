@@ -72,6 +72,22 @@ after its outcomes are known.
 
 ## Current scientific boundary
 
+Latest diagnostic: `docs/RESULT_TRADE_PATH_AUDIT.md` reconstructs the original
+SP500/XAUUSD M30 paths. Gold shorts have smaller favorable excursions, with
+nearly identical mean giveback to index shorts. This motivates examining
+signal/payoff alignment, not an automatic stop/trailing adjustment. Run
+`python -m lorentzian_audit.validate_trade_paths` without raw data, or
+`python -m lorentzian_audit.audit_trade_paths` with the original raw archives.
+No strategy rules were changed or new gold candidate promoted.
+
+Read `docs/RESULT_RUNNER_ENTRY_COMPARISON.md` for the latest same-runner signal
+comparison. Euclidean nearly matches Lorentzian on SP500 at base costs; all
+four policies lose on XAUUSD. Incremental Lorentzian value is unconfirmed,
+without replacing the frozen demo candidate. Run
+`python -m lorentzian_audit.validate_entry_comparison` using saved evidence only;
+full `run_entry_comparison` requires the original raw archives. This diagnostic
+uses inspected history, not a new unseen extension.
+
 XAUUSD's capital extension (USD 500/1,000/3,000; 1%-5%) is in
 `docs/RESULT_XAUUSD_CAPITAL_SIZING.md`. All 15 M30 account scenarios lose money;
 this does not alter the SP500 candidate. Its committed account/calendar evidence

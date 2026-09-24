@@ -1,0 +1,6 @@
+{
+  "passed": true,
+  "cells_reconciled": 16,
+  "comparisons_replayed": 6,
+  "scope": "Saved-artifact accounting, calendar, sizing and bootstrap reconciliation; source hashes and original ledger parity checked during full replay"
+}

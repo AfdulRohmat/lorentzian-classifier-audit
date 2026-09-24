@@ -1,0 +1,8 @@
+{
+  "passed": true,
+  "trades": 1433,
+  "shadow_windows": 4299,
+  "source_hashes_match": true,
+  "completed_close_peaks_match_ledger": true,
+  "excursion_bounds_and_decomposition": true
+}
