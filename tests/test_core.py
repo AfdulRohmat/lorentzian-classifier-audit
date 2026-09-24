@@ -5,6 +5,7 @@ import pandas as pd
 
 from lorentzian_audit.backtest import event_windows, price_trade
 from lorentzian_audit.data import aggregate_timeframe
+from lorentzian_audit.run_v4 import tail_miss_simulation
 from lorentzian_audit.runner import (
     floor_volume,
     proposed_trailing_stop,
@@ -127,6 +128,16 @@ def test_trailing_stop_locks_requested_net_r_and_never_loosens() -> None:
     assert np.isclose(short, 96.75)
     assert tighten_stop(101.0, short, -1) == short
     assert tighten_stop(short, 98.0, -1) == short
+
+
+def test_tail_miss_simulation_removes_only_declared_tail() -> None:
+    values = np.array([-1.0, -1.0, 2.0, 4.0, 6.0])
+    none_missed = tail_miss_simulation(values, 3.0, 0.0, 100, 1)
+    all_missed = tail_miss_simulation(values, 3.0, 1.0, 100, 1)
+    assert none_missed["total_r_ci95_median"] == [10.0, 10.0, 10.0]
+    assert none_missed["probability_total_r_positive"] == 1.0
+    assert all_missed["total_r_ci95_median"] == [0.0, 0.0, 0.0]
+    assert all_missed["missed_tail_count_ci95_median"] == [2.0, 2.0, 2.0]
 
 
 def test_event_window_enters_next_bar_and_holds_four_bars() -> None:
