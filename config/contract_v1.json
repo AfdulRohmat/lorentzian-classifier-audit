@@ -1,0 +1,107 @@
+{
+  "study": "LORENTZIAN_CLASSIFIER_CROSS_ASSET_AUDIT_V1",
+  "registered_date": "2026-09-25",
+  "status": "FROZEN_BEFORE_OUTCOME_INSPECTION",
+  "question": "Does the open-source Lorentzian classifier add causal, after-cost directional edge on SP500 and XAUUSD beyond Euclidean KNN and simple price-only controls?",
+  "upstream": {
+    "repository": "https://github.com/artificial-intelligence-edge/lorentzian-classification",
+    "commit": "27776bd51cbd3e07b6383cfa468d4d33f4b50297",
+    "python_port_license": "MIT",
+    "implementation_role": "Exact original-parity signal variant and shared feature/kernel calculations"
+  },
+  "data": {
+    "timeframe": "4h",
+    "bar_alignment": "UTC boundaries, left-closed and left-labelled",
+    "minimum_m1_rows_per_bar": 1,
+    "source_start": "2022-01-01T00:00:00Z",
+    "source_end_exclusive": "2026-09-01T00:00:00Z",
+    "evaluation_start": "2024-01-01T00:00:00Z",
+    "evaluation_end_exclusive": "2026-09-01T00:00:00Z",
+    "assets": {
+      "sp500": {
+        "instrument": "Exness US500 CFD",
+        "path": "../mt5-ea-research-lab/data/sp500_exness/raw/m1",
+        "point": 0.01,
+        "price_scale": 100.0
+      },
+      "xauusd": {
+        "instrument": "Exness XAUUSD CFD",
+        "path": "../xauusd-opening-range-compression-research/data/exness/XAUUSD",
+        "point": 0.001,
+        "price_scale": 1000.0
+      }
+    }
+  },
+  "official_defaults": {
+    "source": "close",
+    "neighbors_count": 8,
+    "max_bars_back": 2000,
+    "feature_count": 5,
+    "features": ["RSI:14:1", "WT:10:11", "CCI:20:1", "ADX:20:2", "RSI:9:1"],
+    "volatility_filter": true,
+    "regime_filter": true,
+    "regime_threshold": -0.1,
+    "adx_filter": false,
+    "ema_filter": false,
+    "sma_filter": false,
+    "kernel_filter": true,
+    "kernel_smoothing": false,
+    "dynamic_exits": false
+  },
+  "variants": {
+    "official_original": "Pinned upstream implementation, including original label alignment and greedy ANN",
+    "causal_lorentzian": "Exact 8-NN, Lorentzian distance, feature at j labelled by close j to j+4 and eligible only from j+4",
+    "causal_euclidean": "Identical causal 8-NN and features with Euclidean distance",
+    "simple_momentum4": "Sign of the prior four-bar return with identical default filters",
+    "filter_only_kernel": "Kernel slope direction with identical volatility and regime filters, no classifier"
+  },
+  "candidate_spacing": "Causal KNN candidates use historical indices j where j modulo 4 is nonzero, matching the pinned source condition",
+  "execution": {
+    "signal": "completed H4 close",
+    "entry": "next available H4 Bid open",
+    "exit": "next H4 Bid open after four signal bars, or next open after an earlier opposite qualified start",
+    "overlap": "one position at a time; direct opposite flip is allowed at one shared execution open",
+    "end_of_sample": "open positions without a scheduled executable exit are excluded"
+  },
+  "costs": {
+    "sp500": {
+      "base": {"spread_floor": 0.10, "spread_multiplier": 1.0, "slippage_side": 0.02, "commission_round_trip_price": 0.25},
+      "stress": {"spread_floor": 0.50, "spread_multiplier": 1.5, "slippage_side": 0.10, "commission_round_trip_price": 0.25}
+    },
+    "xauusd": {
+      "base": {"spread_floor": 0.0, "spread_multiplier": 1.0, "slippage_side": 0.02, "commission_round_trip_price": 0.07},
+      "stress": {"spread_floor": 0.0, "spread_multiplier": 1.5, "slippage_side": 0.05, "commission_round_trip_price": 0.14}
+    }
+  },
+  "controls": ["opposite_direction_same_windows", "always_long_same_windows", "always_short_same_windows", "deterministic_random_direction_same_windows"],
+  "statistics": {
+    "monthly_block_bootstrap_replicates": 5000,
+    "random_direction_replicates": 2000,
+    "seed": 20260925,
+    "top_trades_removed": 5,
+    "blocks": [["2024-01-01", "2025-12-31"], ["2026-01-01", "2026-08-31"]]
+  },
+  "promotion_gate": [
+    "official_original base-cost net bps positive and PF above one on both assets",
+    "causal_lorentzian base-cost net bps positive and PF above one on both assets",
+    "causal_lorentzian exceeds causal_euclidean and simple_momentum4 net bps on both assets",
+    "causal_lorentzian has at least 100 trades per asset",
+    "causal_lorentzian is positive in both frozen evaluation blocks on both assets",
+    "causal_lorentzian remains positive after removing its five best trades on both assets",
+    "causal_lorentzian monthly-bootstrap 95 percent lower bound exceeds zero on both assets",
+    "causal_lorentzian remains positive under stress costs on both assets"
+  ],
+  "verdicts": {
+    "pass": "ROBUST_CROSS_ASSET_LORENTZIAN_EDGE_SUPPORTED",
+    "fail": "NO_ROBUST_CROSS_ASSET_LORENTZIAN_EDGE"
+  },
+  "forbidden": [
+    "parameter tuning after outcome inspection",
+    "selecting a winning asset, year, direction, or variant as the headline",
+    "same-bar close fills",
+    "using labels whose four-bar outcome was unavailable at prediction time",
+    "calling upstream parity validation evidence of profitability",
+    "placing MT5 orders or pushing a remote"
+  ]
+}
+
