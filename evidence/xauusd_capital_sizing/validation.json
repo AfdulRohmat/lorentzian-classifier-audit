@@ -1,0 +1,16 @@
+{
+  "checks": {
+    "input_and_contract_hashes": true,
+    "full_grid": true,
+    "unique_rows": true,
+    "risk_and_volume": true,
+    "cashflow_and_compounding": true,
+    "same_fills_and_returns": true,
+    "summaries_and_drawdowns": true,
+    "calendar_returns": true,
+    "ten_original_accounts_match": true
+  },
+  "passed": 9,
+  "total": 9,
+  "all_pass": true
+}

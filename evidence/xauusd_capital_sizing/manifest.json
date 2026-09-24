@@ -1,0 +1,33 @@
+{
+  "baseline_contract_sha256": "873a16495f7e0b2bb4fb8e45c253d974e7051eb147d6512764b63d6e88ba3872",
+  "contract_sha256": "1ab6eec935402389c2397db8ac896379be5c503b289dac72aad5bdf8fdc52b24",
+  "costs": {
+    "commission_round_trip_price": 0.07,
+    "slippage_side": 0.02,
+    "spread_floor": 0.0,
+    "spread_multiplier": 1.0
+  },
+  "evaluation_end_exclusive": "2026-09-01T00:00:00+00:00",
+  "evaluation_start": "2024-01-01T00:00:00+00:00",
+  "limitations": [
+    "No margin, swap or intratrade equity/stop-out model",
+    "No live symbol-specification refresh",
+    "Skipped trades do not permit alternative entries",
+    "Observed history is not a new holdout",
+    "No strategy changes or parameter optimization"
+  ],
+  "scenarios": 15,
+  "source_ledger_sha256": "20e8819c7ca94bd3217ac63dba0b5504c75810ab39dc189f19fda1666b72287d",
+  "source_trades": 745,
+  "spec": {
+    "contract_size": 100.0,
+    "instrument": "Exness XAUUSD CFD",
+    "path": "../xauusd-opening-range-compression-research/data/exness/XAUUSD",
+    "point": 0.001,
+    "price_scale": 1000.0,
+    "volume_max": 200.0,
+    "volume_min": 0.01,
+    "volume_step": 0.01
+  },
+  "study": "XAUUSD_M30_CAPITAL_SIZING_EXTENSION"
+}

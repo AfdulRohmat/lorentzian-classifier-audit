@@ -1,0 +1,18 @@
+{
+  "study": "XAUUSD_M30_CAPITAL_SIZING_EXTENSION",
+  "registered_date": "2026-09-25",
+  "status": "KNOWN_V3_500_AND_1000_RESULTS_NEW_3000_GRID_FROZEN_BEFORE_INSPECTION",
+  "input": "evidence/v3_atr_runner_sizing/trades.csv.gz",
+  "input_sha256": "20e8819c7ca94bd3217ac63dba0b5504c75810ab39dc189f19fda1666b72287d",
+  "baseline_contract": "config/contract_v3_atr_runner_sizing.json",
+  "baseline_contract_sha256": "873a16495f7e0b2bb4fb8e45c253d974e7051eb147d6512764b63d6e88ba3872",
+  "asset": "xauusd",
+  "timeframe": "30min",
+  "balances_usd": [500, 1000, 3000],
+  "risk_percents": [1, 2, 3, 4, 5],
+  "scope": "Reuse frozen v3 XAUUSD M30 entries, costs, exits and symbol assumptions; add capital only. Not x100 multiplication or new directional evidence.",
+  "sizing": "Existing v3 simulate_account: compound closed balance, floor volume to step, skip minimum lot if it exceeds planned risk, never clamp upward",
+  "expected_candidate_trades": 745,
+  "expected_months": 32,
+  "limitations": ["No margin, swap or intratrade equity/stop-out model", "No live symbol-specification refresh", "Skipped trades do not permit alternative entries", "Observed history is not a new holdout", "No strategy changes or parameter optimization"]
+}

@@ -298,6 +298,54 @@ All 75 account scenarios, including regular-US500 controls, are available in the
 [technical plan](docs/TECHNICAL_PLAN_US500_X100.md).
 The evidence is under `evidence/us500_x100_sizing/`.
 
+## XAUUSD M30 capital-sizing supplement
+
+The same frozen ATR runner was replayed on XAUUSD with USD 500/1,000/3,000
+and 1%-5% compounded risk, using the v3 contract, costs and minimum-lot rules.
+Evaluation is January 2024-August 2026: 32 months and 745 candidate trades.
+**All 15 scenarios lose money.** The new capital level improves lot feasibility
+but does not repair negative expectancy in this XAUUSD M30 implementation.
+
+| Start | Risk cap | Executed / skipped | Final balance | Total return | Mean monthly | Max balance DD |
+|---:|---:|---:|---:|---:|---:|---:|
+| $500 | 1% | 171 / 574 | $445.84 | -10.83% | -0.32% | 24.66% |
+| $500 | 2% | 394 / 351 | $381.21 | -23.76% | -0.54% | 42.98% |
+| $500 | 3% | 407 / 338 | $265.92 | -46.82% | -1.23% | 66.10% |
+| $500 | 4% | 468 / 277 | $307.31 | -38.54% | +0.04% | 76.35% |
+| $500 | 5% | 469 / 276 | $241.92 | -51.62% | +0.15% | 81.53% |
+| $1,000 | 1% | 424 / 321 | $777.46 | -22.25% | -0.71% | 30.21% |
+| $1,000 | 2% | 589 / 156 | $638.18 | -36.18% | -0.79% | 52.10% |
+| $1,000 | 3% | 520 / 225 | $414.46 | -58.55% | -1.67% | 77.43% |
+| $1,000 | 4% | 498 / 247 | $310.08 | -68.99% | -1.73% | 84.63% |
+| $1,000 | 5% | 478 / 267 | $242.18 | -75.78% | -1.87% | 90.15% |
+| $3,000 | 1% | 720 / 25 | $2,190.02 | -27.00% | -0.78% | 35.37% |
+| $3,000 | 2% | 734 / 11 | $1,353.62 | -54.88% | -1.66% | 64.62% |
+| $3,000 | 3% | 724 / 21 | $721.53 | -75.95% | -2.52% | 82.36% |
+| $3,000 | 4% | 655 / 90 | $328.08 | -89.06% | -4.20% | 91.80% |
+| $3,000 | 5% | 593 / 152 | $230.63 | -92.31% | -4.35% | 94.23% |
+
+Monthly means are arithmetic across all 32 months; two small positive means
+above coexist with total losses due to compounding drag. Drawdown is based on
+closed balances. Margin, swap and floating-equity stop-outs are not modeled.
+No new market holdout or live specification audit is introduced.
+
+USD 3,000/1% executes 720 trades (5.17/week; 22.50/month), including **all 33
+winners above +3R**, yet loses 27.00%. Its geometric monthly return is -0.98%,
+with 12 positive and 20 negative months.
+
+| Period, USD 3,000 / 1% | Start balance | End balance | Return | Executed trades |
+|---|---:|---:|---:|---:|
+| 2024 | $3,000.00 | $2,484.46 | -17.18% | 285 |
+| 2025 | $2,484.46 | $2,403.26 | -3.27% | 281 |
+| Jan-Aug 2026 | $2,403.26 | $2,190.02 | -8.87% | 154 |
+
+See the [full report](docs/RESULT_XAUUSD_CAPITAL_SIZING.md),
+[technical plan](docs/TECHNICAL_PLAN_XAUUSD_CAPITAL_SIZING.md),
+[contract](config/contract_xauusd_capital_sizing.json),
+[account summary](evidence/xauusd_capital_sizing/account_summary.csv),
+[monthly](evidence/xauusd_capital_sizing/monthly.csv) and
+[annual](evidence/xauusd_capital_sizing/annual.csv) tables.
+
 ## What the result does and does not mean
 
 Supported by the current evidence:
@@ -329,6 +377,7 @@ evidence/v2_lower_timeframes/   M15/M30/H1 evidence
 evidence/v3_atr_runner_sizing/  Runner trades, account ledger, monthly results
 evidence/v4_tail_robustness/    Tail diagnostics and September extension
 evidence/us500_x100_sizing/    Contract-sizing accounts and margin sensitivities
+evidence/xauusd_capital_sizing/ XAUUSD M30 accounts including USD 3,000
 scripts/                        Portable figure generator
 src/lorentzian_audit/           Research, execution, sizing and validation code
 tests/                          Unit and invariant tests

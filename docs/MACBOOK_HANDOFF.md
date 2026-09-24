@@ -72,6 +72,12 @@ after its outcomes are known.
 
 ## Current scientific boundary
 
+XAUUSD's capital extension (USD 500/1,000/3,000; 1%-5%) is in
+`docs/RESULT_XAUUSD_CAPITAL_SIZING.md`. All 15 M30 account scenarios lose money;
+this does not alter the SP500 candidate. Its committed account/calendar evidence
+can be regenerated and validated without MT5 using
+`python -m lorentzian_audit.run_xau_sizing`.
+
 The additional US500_x100 sizing study is in
 `docs/RESULT_US500_X100_SIZING.md`. Its 75 scenario ledgers are committed and
 can be regenerated with `python -m lorentzian_audit.run_x100` and checked with
