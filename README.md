@@ -25,6 +25,13 @@ See [`config/contract_v2_lower_timeframes.json`](config/contract_v2_lower_timefr
 [`docs/TECHNICAL_PLAN_V2_LOWER_TIMEFRAMES.md`](docs/TECHNICAL_PLAN_V2_LOWER_TIMEFRAMES.md)
 and [`docs/RESULT_V2_LOWER_TIMEFRAMES.md`](docs/RESULT_V2_LOWER_TIMEFRAMES.md).
 
+The v3 ATR-runner study keeps the entries unchanged, replaces the four-bar exit
+with a one-ATR initial stop and uncapped completed-bar trailing stop, and models
+USD 500/USD 1,000 accounts at 1%-5% risk. It improves SP500 M30 but fails
+cross-asset and concentration tests; XAUUSD M30 remains negative. See
+[`config/contract_v3_atr_runner_sizing.json`](config/contract_v3_atr_runner_sizing.json)
+and [`docs/RESULT_V3_ATR_RUNNER_SIZING.md`](docs/RESULT_V3_ATR_RUNNER_SIZING.md).
+
 ## Reproduce
 
 From this directory, using the existing shared research environment:
@@ -37,8 +44,11 @@ $env:PYTHONPATH='src;vendor'
 & '..\mt5-ea-research-lab\.venv\Scripts\python.exe' -m lorentzian_audit.validate
 & '..\mt5-ea-research-lab\.venv\Scripts\python.exe' -m lorentzian_audit.run_v2
 & '..\mt5-ea-research-lab\.venv\Scripts\python.exe' -m lorentzian_audit.validate_v2
+& '..\mt5-ea-research-lab\.venv\Scripts\python.exe' -m lorentzian_audit.run_v3
+& '..\mt5-ea-research-lab\.venv\Scripts\python.exe' -m lorentzian_audit.validate_v3
 ```
 
-Evidence is stored under `evidence/v1/` and `evidence/v2_lower_timeframes/`.
+Evidence is stored under `evidence/v1/`, `evidence/v2_lower_timeframes/`, and
+`evidence/v3_atr_runner_sizing/`.
 Complete replays produced identical SHA-256 hashes for every result artifact.
 

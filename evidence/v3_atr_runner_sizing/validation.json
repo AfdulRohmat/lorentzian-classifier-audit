@@ -1,0 +1,21 @@
+{
+  "all_pass": true,
+  "checks": {
+    "account_ledgers_reconcile": true,
+    "broker_volume_rules_hold": true,
+    "causal_labels_mature": true,
+    "entries_after_signals": true,
+    "exits_after_entries": true,
+    "minimum_lot_is_skipped_not_clamped": true,
+    "planned_risk_reconciles": true,
+    "positions_do_not_overlap": true,
+    "sizing_never_exceeds_budget": true,
+    "source_hashes_match": true,
+    "trade_pnl_reconciles": true,
+    "trade_summary_matches": true,
+    "trailing_stop_never_loosened": true,
+    "verdict_matches_gates": true
+  },
+  "passed": 14,
+  "total": 14
+}

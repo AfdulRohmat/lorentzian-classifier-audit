@@ -1,0 +1,1336 @@
+{
+  "assets": {
+    "sp500": {
+      "timeframes": {
+        "15min": {
+          "accounts": [
+            {
+              "candidate_trades": 1323,
+              "executable_fraction": 0.9954648526077098,
+              "executed_trades": 1317,
+              "final_balance_usd": 514.4316965579619,
+              "initial_balance_usd": 500.0,
+              "maximum_balance_drawdown_percent": 41.74754172081933,
+              "mean_monthly_return_percent": 0.632577482902283,
+              "return_percent": 2.8863393115923897,
+              "risk_budget_breaches": 25,
+              "risk_percent": 1.0,
+              "ruined": false,
+              "skipped_min_lot": 6,
+              "worst_realized_loss_over_budget": 1.7014554992383155
+            },
+            {
+              "candidate_trades": 1323,
+              "executable_fraction": 0.999244142101285,
+              "executed_trades": 1322,
+              "final_balance_usd": 346.87149517488007,
+              "initial_balance_usd": 500.0,
+              "maximum_balance_drawdown_percent": 72.13135985812792,
+              "mean_monthly_return_percent": 1.0110358470967327,
+              "return_percent": -30.625700965023984,
+              "risk_budget_breaches": 24,
+              "risk_percent": 2.0,
+              "ruined": false,
+              "skipped_min_lot": 1,
+              "worst_realized_loss_over_budget": 1.7057485918802235
+            },
+            {
+              "candidate_trades": 1323,
+              "executable_fraction": 1.0,
+              "executed_trades": 1323,
+              "final_balance_usd": 185.58726844250694,
+              "initial_balance_usd": 500.0,
+              "maximum_balance_drawdown_percent": 87.50794068801414,
+              "mean_monthly_return_percent": 1.626691689669179,
+              "return_percent": -62.88254631149861,
+              "risk_budget_breaches": 25,
+              "risk_percent": 3.0,
+              "ruined": false,
+              "skipped_min_lot": 0,
+              "worst_realized_loss_over_budget": 1.6891212950967454
+            },
+            {
+              "candidate_trades": 1323,
+              "executable_fraction": 0.9931972789115646,
+              "executed_trades": 1314,
+              "final_balance_usd": 90.30588203615541,
+              "initial_balance_usd": 500.0,
+              "maximum_balance_drawdown_percent": 94.23809363318041,
+              "mean_monthly_return_percent": 2.9387344732333616,
+              "return_percent": -81.93882359276891,
+              "risk_budget_breaches": 24,
+              "risk_percent": 4.0,
+              "ruined": false,
+              "skipped_min_lot": 9,
+              "worst_realized_loss_over_budget": 1.669166095256641
+            },
+            {
+              "candidate_trades": 1323,
+              "executable_fraction": 0.7437641723356009,
+              "executed_trades": 984,
+              "final_balance_usd": 12.995932192361126,
+              "initial_balance_usd": 500.0,
+              "maximum_balance_drawdown_percent": 98.04867347315788,
+              "mean_monthly_return_percent": 0.06910346127958178,
+              "return_percent": -97.40081356152778,
+              "risk_budget_breaches": 23,
+              "risk_percent": 5.0,
+              "ruined": false,
+              "skipped_min_lot": 339,
+              "worst_realized_loss_over_budget": 1.6618830690862758
+            },
+            {
+              "candidate_trades": 1323,
+              "executable_fraction": 0.999244142101285,
+              "executed_trades": 1322,
+              "final_balance_usd": 978.7425457062249,
+              "initial_balance_usd": 1000.0,
+              "maximum_balance_drawdown_percent": 44.19599868868355,
+              "mean_monthly_return_percent": 0.48716210383659564,
+              "return_percent": -2.1257454293775124,
+              "risk_budget_breaches": 25,
+              "risk_percent": 1.0,
+              "ruined": false,
+              "skipped_min_lot": 1,
+              "worst_realized_loss_over_budget": 1.7012402497766939
+            },
+            {
+              "candidate_trades": 1323,
+              "executable_fraction": 1.0,
+              "executed_trades": 1323,
+              "final_balance_usd": 699.9812825963338,
+              "initial_balance_usd": 1000.0,
+              "maximum_balance_drawdown_percent": 72.02904174743749,
+              "mean_monthly_return_percent": 1.0489882964002153,
+              "return_percent": -30.001871740366614,
+              "risk_budget_breaches": 25,
+              "risk_percent": 2.0,
+              "ruined": false,
+              "skipped_min_lot": 0,
+              "worst_realized_loss_over_budget": 1.7059481385498891
+            },
+            {
+              "candidate_trades": 1323,
+              "executable_fraction": 1.0,
+              "executed_trades": 1323,
+              "final_balance_usd": 366.70320249654304,
+              "initial_balance_usd": 1000.0,
+              "maximum_balance_drawdown_percent": 87.6198549944337,
+              "mean_monthly_return_percent": 1.6197703697599057,
+              "return_percent": -63.32967975034569,
+              "risk_budget_breaches": 25,
+              "risk_percent": 3.0,
+              "ruined": false,
+              "skipped_min_lot": 0,
+              "worst_realized_loss_over_budget": 1.707879728096087
+            },
+            {
+              "candidate_trades": 1323,
+              "executable_fraction": 1.0,
+              "executed_trades": 1323,
+              "final_balance_usd": 146.7835714108773,
+              "initial_balance_usd": 1000.0,
+              "maximum_balance_drawdown_percent": 94.9964630123622,
+              "mean_monthly_return_percent": 2.2701477806995096,
+              "return_percent": -85.32164285891227,
+              "risk_budget_breaches": 25,
+              "risk_percent": 4.0,
+              "ruined": false,
+              "skipped_min_lot": 0,
+              "worst_realized_loss_over_budget": 1.7091924911386593
+            },
+            {
+              "candidate_trades": 1323,
+              "executable_fraction": 0.9848828420256992,
+              "executed_trades": 1303,
+              "final_balance_usd": 57.48723364317462,
+              "initial_balance_usd": 1000.0,
+              "maximum_balance_drawdown_percent": 97.81773392675767,
+              "mean_monthly_return_percent": 3.938160506689363,
+              "return_percent": -94.25127663568253,
+              "risk_budget_breaches": 25,
+              "risk_percent": 5.0,
+              "ruined": false,
+              "skipped_min_lot": 20,
+              "worst_realized_loss_over_budget": 1.645564524851294
+            }
+          ],
+          "annual": [
+            {
+              "total_r": 33.32401252482969,
+              "trades": 458,
+              "year": 2024
+            },
+            {
+              "total_r": -44.71265174181302,
+              "trades": 507,
+              "year": 2025
+            },
+            {
+              "total_r": 26.43809737313031,
+              "trades": 358,
+              "year": 2026
+            }
+          ],
+          "causal_label_diagnostic": {
+            "maximum_selected_label_maturity_minus_decision": 0,
+            "prediction_rows": 107442
+          },
+          "exit_reasons": {
+            "OPPOSITE": 8,
+            "STOP_GAP": 25,
+            "STOP_INTRAMINUTE": 768,
+            "TIME_24H": 8,
+            "TRAIL_STOP_GAP": 12,
+            "TRAIL_STOP_INTRAMINUTE": 502
+          },
+          "four_bar_baseline": {
+            "max_drawdown_r": 143.5206165677859,
+            "mean_r": -0.09781822790599606,
+            "median_r": -0.11098684674357494,
+            "profit_factor": 0.8640166154979159,
+            "total_r": -132.25024412890667,
+            "total_r_ex_top10": -216.8431733817445,
+            "trades": 1352,
+            "trades_per_week": 9.716632443531827,
+            "win_rate": 0.46375739644970415
+          },
+          "long_total_r": 46.46104711808046,
+          "median_holding_hours": 0.8,
+          "monthly_bootstrap": {
+            "ci95": [
+              -3.171591056467635,
+              4.340228718805932
+            ],
+            "mean_monthly_bps": 0.470295567379593
+          },
+          "positive_month_fraction": 0.4375,
+          "runner": {
+            "max_drawdown_r": 53.412281132991346,
+            "mean_r": 0.0113752518187052,
+            "median_r": -1.0000000000000167,
+            "profit_factor": 1.0187733368872536,
+            "total_r": 15.04945815614698,
+            "total_r_ex_top10": -66.67678911732122,
+            "trades": 1323,
+            "trades_per_week": 9.508213552361397,
+            "win_rate": 0.3930461073318216
+          },
+          "short_total_r": -31.411588961933486,
+          "trail_activation_fraction": 0.3892668178382464
+        },
+        "1h": {
+          "accounts": [
+            {
+              "candidate_trades": 338,
+              "executable_fraction": 0.9822485207100592,
+              "executed_trades": 332,
+              "final_balance_usd": 574.0045674736319,
+              "initial_balance_usd": 500.0,
+              "maximum_balance_drawdown_percent": 19.36509305994676,
+              "mean_monthly_return_percent": 0.521209788625041,
+              "return_percent": 14.800913494726387,
+              "risk_budget_breaches": 2,
+              "risk_percent": 1.0,
+              "ruined": false,
+              "skipped_min_lot": 6,
+              "worst_realized_loss_over_budget": 2.707719274870878
+            },
+            {
+              "candidate_trades": 338,
+              "executable_fraction": 1.0,
+              "executed_trades": 338,
+              "final_balance_usd": 610.5713263648049,
+              "initial_balance_usd": 500.0,
+              "maximum_balance_drawdown_percent": 36.008105113079985,
+              "mean_monthly_return_percent": 0.9711294618471955,
+              "return_percent": 22.114265272960985,
+              "risk_budget_breaches": 2,
+              "risk_percent": 2.0,
+              "ruined": false,
+              "skipped_min_lot": 0,
+              "worst_realized_loss_over_budget": 2.779730362801562
+            },
+            {
+              "candidate_trades": 338,
+              "executable_fraction": 1.0,
+              "executed_trades": 338,
+              "final_balance_usd": 594.3427594205691,
+              "initial_balance_usd": 500.0,
+              "maximum_balance_drawdown_percent": 49.52756506297201,
+              "mean_monthly_return_percent": 1.301179732018527,
+              "return_percent": 18.868551884113828,
+              "risk_budget_breaches": 3,
+              "risk_percent": 3.0,
+              "ruined": false,
+              "skipped_min_lot": 0,
+              "worst_realized_loss_over_budget": 2.7960764114701613
+            },
+            {
+              "candidate_trades": 338,
+              "executable_fraction": 1.0,
+              "executed_trades": 338,
+              "final_balance_usd": 526.609142987571,
+              "initial_balance_usd": 500.0,
+              "maximum_balance_drawdown_percent": 60.49261110881159,
+              "mean_monthly_return_percent": 1.4723970233628045,
+              "return_percent": 5.3218285975142,
+              "risk_budget_breaches": 3,
+              "risk_percent": 4.0,
+              "ruined": false,
+              "skipped_min_lot": 0,
+              "worst_realized_loss_over_budget": 2.793098032087576
+            },
+            {
+              "candidate_trades": 338,
+              "executable_fraction": 1.0,
+              "executed_trades": 338,
+              "final_balance_usd": 429.1615894909694,
+              "initial_balance_usd": 500.0,
+              "maximum_balance_drawdown_percent": 70.12394561249228,
+              "mean_monthly_return_percent": 1.5088697353092013,
+              "return_percent": -14.167682101806122,
+              "risk_budget_breaches": 3,
+              "risk_percent": 5.0,
+              "ruined": false,
+              "skipped_min_lot": 0,
+              "worst_realized_loss_over_budget": 2.8001945304440237
+            },
+            {
+              "candidate_trades": 338,
+              "executable_fraction": 0.9970414201183432,
+              "executed_trades": 337,
+              "final_balance_usd": 1173.5747635535688,
+              "initial_balance_usd": 1000.0,
+              "maximum_balance_drawdown_percent": 19.58916855203571,
+              "mean_monthly_return_percent": 0.5913473749252914,
+              "return_percent": 17.357476355356873,
+              "risk_budget_breaches": 2,
+              "risk_percent": 1.0,
+              "ruined": false,
+              "skipped_min_lot": 1,
+              "worst_realized_loss_over_budget": 2.7863117565036597
+            },
+            {
+              "candidate_trades": 338,
+              "executable_fraction": 1.0,
+              "executed_trades": 338,
+              "final_balance_usd": 1228.7434409078203,
+              "initial_balance_usd": 1000.0,
+              "maximum_balance_drawdown_percent": 36.144669890379475,
+              "mean_monthly_return_percent": 0.9935977520628435,
+              "return_percent": 22.87434409078204,
+              "risk_budget_breaches": 3,
+              "risk_percent": 2.0,
+              "ruined": false,
+              "skipped_min_lot": 0,
+              "worst_realized_loss_over_budget": 2.7932244926822203
+            },
+            {
+              "candidate_trades": 338,
+              "executable_fraction": 1.0,
+              "executed_trades": 338,
+              "final_balance_usd": 1183.5423702443206,
+              "initial_balance_usd": 1000.0,
+              "maximum_balance_drawdown_percent": 49.64894471734428,
+              "mean_monthly_return_percent": 1.2883770690528835,
+              "return_percent": 18.354237024432063,
+              "risk_budget_breaches": 3,
+              "risk_percent": 3.0,
+              "ruined": false,
+              "skipped_min_lot": 0,
+              "worst_realized_loss_over_budget": 2.803247861493866
+            },
+            {
+              "candidate_trades": 338,
+              "executable_fraction": 1.0,
+              "executed_trades": 338,
+              "final_balance_usd": 1052.91953531912,
+              "initial_balance_usd": 1000.0,
+              "maximum_balance_drawdown_percent": 60.61033575335699,
+              "mean_monthly_return_percent": 1.4752250798074003,
+              "return_percent": 5.291953531912008,
+              "risk_budget_breaches": 3,
+              "risk_percent": 4.0,
+              "ruined": false,
+              "skipped_min_lot": 0,
+              "worst_realized_loss_over_budget": 2.805178855974036
+            },
+            {
+              "candidate_trades": 338,
+              "executable_fraction": 1.0,
+              "executed_trades": 338,
+              "final_balance_usd": 859.1952776232201,
+              "initial_balance_usd": 1000.0,
+              "maximum_balance_drawdown_percent": 70.16987550089324,
+              "mean_monthly_return_percent": 1.5171698038882002,
+              "return_percent": -14.080472237677988,
+              "risk_budget_breaches": 3,
+              "risk_percent": 5.0,
+              "ruined": false,
+              "skipped_min_lot": 0,
+              "worst_realized_loss_over_budget": 2.8131978282714045
+            }
+          ],
+          "annual": [
+            {
+              "total_r": -2.723995944561283,
+              "trades": 125,
+              "year": 2024
+            },
+            {
+              "total_r": 26.948632991125688,
+              "trades": 129,
+              "year": 2025
+            },
+            {
+              "total_r": -3.9875027267193364,
+              "trades": 84,
+              "year": 2026
+            }
+          ],
+          "causal_label_diagnostic": {
+            "maximum_selected_label_maturity_minus_decision": 0,
+            "prediction_rows": 27051
+          },
+          "exit_reasons": {
+            "STOP_GAP": 2,
+            "STOP_INTRAMINUTE": 196,
+            "TIME_24H": 25,
+            "TRAIL_STOP_GAP": 5,
+            "TRAIL_STOP_INTRAMINUTE": 110
+          },
+          "four_bar_baseline": {
+            "max_drawdown_r": 52.579733011162475,
+            "mean_r": -0.09626753306860414,
+            "median_r": -0.037512326416295205,
+            "profit_factor": 0.8647867134011703,
+            "total_r": -32.923496309462614,
+            "total_r_ex_top10": -75.99978392015268,
+            "trades": 342,
+            "trades_per_week": 2.457905544147844,
+            "win_rate": 0.47953216374269003
+          },
+          "long_total_r": 8.518497857664403,
+          "median_holding_hours": 3.158333333333333,
+          "monthly_bootstrap": {
+            "ci95": [
+              -1.0411659296993503,
+              2.4771483813305917
+            ],
+            "mean_monthly_bps": 0.6324104474951583
+          },
+          "positive_month_fraction": 0.5625,
+          "runner": {
+            "max_drawdown_r": 21.627267243037448,
+            "mean_r": 0.05987317846108008,
+            "median_r": -1.0000000000000084,
+            "profit_factor": 1.099607498113415,
+            "total_r": 20.23713431984507,
+            "total_r_ex_top10": -49.4106959197579,
+            "trades": 338,
+            "trades_per_week": 2.4291581108829567,
+            "win_rate": 0.39644970414201186
+          },
+          "short_total_r": 11.718636462180676,
+          "trail_activation_fraction": 0.3757396449704142
+        },
+        "30min": {
+          "accounts": [
+            {
+              "candidate_trades": 688,
+              "executable_fraction": 0.9898255813953488,
+              "executed_trades": 681,
+              "final_balance_usd": 922.8542113160437,
+              "initial_balance_usd": 500.0,
+              "maximum_balance_drawdown_percent": 23.641995618056132,
+              "mean_monthly_return_percent": 2.231864304155743,
+              "return_percent": 84.57084226320875,
+              "risk_budget_breaches": 6,
+              "risk_percent": 1.0,
+              "ruined": false,
+              "skipped_min_lot": 7,
+              "worst_realized_loss_over_budget": 1.183769817243878
+            },
+            {
+              "candidate_trades": 688,
+              "executable_fraction": 0.9956395348837209,
+              "executed_trades": 685,
+              "final_balance_usd": 1348.7217147620213,
+              "initial_balance_usd": 500.0,
+              "maximum_balance_drawdown_percent": 43.94469634672834,
+              "mean_monthly_return_percent": 4.3297306255815,
+              "return_percent": 169.74434295240422,
+              "risk_budget_breaches": 7,
+              "risk_percent": 2.0,
+              "ruined": false,
+              "skipped_min_lot": 3,
+              "worst_realized_loss_over_budget": 1.1852767547625847
+            },
+            {
+              "candidate_trades": 688,
+              "executable_fraction": 1.0,
+              "executed_trades": 688,
+              "final_balance_usd": 1637.105000325233,
+              "initial_balance_usd": 500.0,
+              "maximum_balance_drawdown_percent": 59.08904536776186,
+              "mean_monthly_return_percent": 6.395698526225767,
+              "return_percent": 227.4210000650466,
+              "risk_budget_breaches": 8,
+              "risk_percent": 3.0,
+              "ruined": false,
+              "skipped_min_lot": 0,
+              "worst_realized_loss_over_budget": 1.1852748886931583
+            },
+            {
+              "candidate_trades": 688,
+              "executable_fraction": 1.0,
+              "executed_trades": 688,
+              "final_balance_usd": 1645.9561687909197,
+              "initial_balance_usd": 500.0,
+              "maximum_balance_drawdown_percent": 71.926826397559,
+              "mean_monthly_return_percent": 8.372777451431242,
+              "return_percent": 229.19123375818393,
+              "risk_budget_breaches": 8,
+              "risk_percent": 4.0,
+              "ruined": false,
+              "skipped_min_lot": 0,
+              "worst_realized_loss_over_budget": 1.1853206336334225
+            },
+            {
+              "candidate_trades": 688,
+              "executable_fraction": 1.0,
+              "executed_trades": 688,
+              "final_balance_usd": 1377.846654666394,
+              "initial_balance_usd": 500.0,
+              "maximum_balance_drawdown_percent": 81.59192587458844,
+              "mean_monthly_return_percent": 10.234524204193724,
+              "return_percent": 175.56933093327876,
+              "risk_budget_breaches": 8,
+              "risk_percent": 5.0,
+              "ruined": false,
+              "skipped_min_lot": 0,
+              "worst_realized_loss_over_budget": 1.1849133273890862
+            },
+            {
+              "candidate_trades": 688,
+              "executable_fraction": 0.9956395348837209,
+              "executed_trades": 685,
+              "final_balance_usd": 1830.3728526404334,
+              "initial_balance_usd": 1000.0,
+              "maximum_balance_drawdown_percent": 24.35516470025119,
+              "mean_monthly_return_percent": 2.2055261778756656,
+              "return_percent": 83.03728526404335,
+              "risk_budget_breaches": 7,
+              "risk_percent": 1.0,
+              "ruined": false,
+              "skipped_min_lot": 3,
+              "worst_realized_loss_over_budget": 1.1814840700774343
+            },
+            {
+              "candidate_trades": 688,
+              "executable_fraction": 1.0,
+              "executed_trades": 688,
+              "final_balance_usd": 2716.5787111239974,
+              "initial_balance_usd": 1000.0,
+              "maximum_balance_drawdown_percent": 43.99351905745898,
+              "mean_monthly_return_percent": 4.356819431092465,
+              "return_percent": 171.65787111239976,
+              "risk_budget_breaches": 7,
+              "risk_percent": 2.0,
+              "ruined": false,
+              "skipped_min_lot": 0,
+              "worst_realized_loss_over_budget": 1.1850505657584527
+            },
+            {
+              "candidate_trades": 688,
+              "executable_fraction": 1.0,
+              "executed_trades": 688,
+              "final_balance_usd": 3281.391917606082,
+              "initial_balance_usd": 1000.0,
+              "maximum_balance_drawdown_percent": 59.16103618184517,
+              "mean_monthly_return_percent": 6.4074410628633185,
+              "return_percent": 228.13919176060824,
+              "risk_budget_breaches": 8,
+              "risk_percent": 3.0,
+              "ruined": false,
+              "skipped_min_lot": 0,
+              "worst_realized_loss_over_budget": 1.185045423975683
+            },
+            {
+              "candidate_trades": 688,
+              "executable_fraction": 1.0,
+              "executed_trades": 688,
+              "final_balance_usd": 3293.6340048409697,
+              "initial_balance_usd": 1000.0,
+              "maximum_balance_drawdown_percent": 71.99856558249827,
+              "mean_monthly_return_percent": 8.38140923960212,
+              "return_percent": 229.36340048409699,
+              "risk_budget_breaches": 8,
+              "risk_percent": 4.0,
+              "ruined": false,
+              "skipped_min_lot": 0,
+              "worst_realized_loss_over_budget": 1.1849292438641965
+            },
+            {
+              "candidate_trades": 688,
+              "executable_fraction": 1.0,
+              "executed_trades": 688,
+              "final_balance_usd": 2762.8260390824653,
+              "initial_balance_usd": 1000.0,
+              "maximum_balance_drawdown_percent": 81.62203297645905,
+              "mean_monthly_return_percent": 10.25465291527842,
+              "return_percent": 176.28260390824653,
+              "risk_budget_breaches": 8,
+              "risk_percent": 5.0,
+              "ruined": false,
+              "skipped_min_lot": 0,
+              "worst_realized_loss_over_budget": 1.1851953871290528
+            }
+          ],
+          "annual": [
+            {
+              "total_r": 23.454637544764992,
+              "trades": 265,
+              "year": 2024
+            },
+            {
+              "total_r": 31.635651128357697,
+              "trades": 265,
+              "year": 2025
+            },
+            {
+              "total_r": 17.676501498820304,
+              "trades": 158,
+              "year": 2026
+            }
+          ],
+          "causal_label_diagnostic": {
+            "maximum_selected_label_maturity_minus_decision": 0,
+            "prediction_rows": 53729
+          },
+          "exit_reasons": {
+            "OPPOSITE": 2,
+            "STOP_GAP": 8,
+            "STOP_INTRAMINUTE": 412,
+            "TIME_24H": 14,
+            "TRAIL_STOP_GAP": 8,
+            "TRAIL_STOP_INTRAMINUTE": 244
+          },
+          "four_bar_baseline": {
+            "max_drawdown_r": 24.46948202842641,
+            "mean_r": 0.026184400900951765,
+            "median_r": 0.0278564423239304,
+            "profit_factor": 1.0375028476730022,
+            "total_r": 18.041052220755766,
+            "total_r_ex_top10": -50.8252784440863,
+            "trades": 689,
+            "trades_per_week": 4.9517453798767965,
+            "win_rate": 0.5094339622641509
+          },
+          "long_total_r": 75.32972228618186,
+          "median_holding_hours": 1.3916666666666666,
+          "monthly_bootstrap": {
+            "ci95": [
+              -0.3687848328165475,
+              4.920496967961931
+            ],
+            "mean_monthly_bps": 2.2739621928732183
+          },
+          "positive_month_fraction": 0.5625,
+          "runner": {
+            "max_drawdown_r": 27.223103012996447,
+            "mean_r": 0.10576568338945201,
+            "median_r": -1.0000000000000133,
+            "profit_factor": 1.1722625876511348,
+            "total_r": 72.76679017194299,
+            "total_r_ex_top10": -14.640498813114794,
+            "trades": 688,
+            "trades_per_week": 4.944558521560575,
+            "win_rate": 0.3851744186046512
+          },
+          "short_total_r": -2.5629321142388903,
+          "trail_activation_fraction": 0.37790697674418605
+        }
+      }
+    },
+    "xauusd": {
+      "timeframes": {
+        "15min": {
+          "accounts": [
+            {
+              "candidate_trades": 1511,
+              "executable_fraction": 0.4956982131039047,
+              "executed_trades": 749,
+              "final_balance_usd": 475.5961848026649,
+              "initial_balance_usd": 500.0,
+              "maximum_balance_drawdown_percent": 32.88179573402091,
+              "mean_monthly_return_percent": -0.055939394450838745,
+              "return_percent": -4.880763039467029,
+              "risk_budget_breaches": 2,
+              "risk_percent": 1.0,
+              "ruined": false,
+              "skipped_min_lot": 762,
+              "worst_realized_loss_over_budget": 1.3803753011305189
+            },
+            {
+              "candidate_trades": 1511,
+              "executable_fraction": 0.7551290536068829,
+              "executed_trades": 1141,
+              "final_balance_usd": 515.9437534782111,
+              "initial_balance_usd": 500.0,
+              "maximum_balance_drawdown_percent": 64.39969786457873,
+              "mean_monthly_return_percent": 1.1622174464386807,
+              "return_percent": 3.1887506956422174,
+              "risk_budget_breaches": 4,
+              "risk_percent": 2.0,
+              "ruined": false,
+              "skipped_min_lot": 370,
+              "worst_realized_loss_over_budget": 3.6482893278195143
+            },
+            {
+              "candidate_trades": 1511,
+              "executable_fraction": 0.7650562541363336,
+              "executed_trades": 1156,
+              "final_balance_usd": 347.5426780974008,
+              "initial_balance_usd": 500.0,
+              "maximum_balance_drawdown_percent": 82.273353180436,
+              "mean_monthly_return_percent": 1.3632038422343857,
+              "return_percent": -30.49146438051984,
+              "risk_budget_breaches": 3,
+              "risk_percent": 3.0,
+              "ruined": false,
+              "skipped_min_lot": 355,
+              "worst_realized_loss_over_budget": 3.3363726537384375
+            },
+            {
+              "candidate_trades": 1511,
+              "executable_fraction": 0.7074784910655195,
+              "executed_trades": 1069,
+              "final_balance_usd": 205.5200404106883,
+              "initial_balance_usd": 500.0,
+              "maximum_balance_drawdown_percent": 91.3423965374036,
+              "mean_monthly_return_percent": 0.5226450319509932,
+              "return_percent": -58.89599191786235,
+              "risk_budget_breaches": 4,
+              "risk_percent": 4.0,
+              "ruined": false,
+              "skipped_min_lot": 442,
+              "worst_realized_loss_over_budget": 1.8460980076049658
+            },
+            {
+              "candidate_trades": 1511,
+              "executable_fraction": 0.45069490403706153,
+              "executed_trades": 681,
+              "final_balance_usd": 61.30560190715648,
+              "initial_balance_usd": 500.0,
+              "maximum_balance_drawdown_percent": 96.44789861141336,
+              "mean_monthly_return_percent": -2.9132119394057012,
+              "return_percent": -87.7388796185687,
+              "risk_budget_breaches": 4,
+              "risk_percent": 5.0,
+              "ruined": false,
+              "skipped_min_lot": 830,
+              "worst_realized_loss_over_budget": 1.9075903462349832
+            },
+            {
+              "candidate_trades": 1511,
+              "executable_fraction": 0.8418266048974189,
+              "executed_trades": 1272,
+              "final_balance_usd": 1058.6652170750729,
+              "initial_balance_usd": 1000.0,
+              "maximum_balance_drawdown_percent": 32.33401296367166,
+              "mean_monthly_return_percent": 0.3947838600723459,
+              "return_percent": 5.866521707507277,
+              "risk_budget_breaches": 4,
+              "risk_percent": 1.0,
+              "ruined": false,
+              "skipped_min_lot": 239,
+              "worst_realized_loss_over_budget": 3.574189811519213
+            },
+            {
+              "candidate_trades": 1511,
+              "executable_fraction": 0.9669093315684977,
+              "executed_trades": 1461,
+              "final_balance_usd": 930.8715363886503,
+              "initial_balance_usd": 1000.0,
+              "maximum_balance_drawdown_percent": 66.45880800194783,
+              "mean_monthly_return_percent": 0.9948586115604798,
+              "return_percent": -6.912846361134973,
+              "risk_budget_breaches": 6,
+              "risk_percent": 2.0,
+              "ruined": false,
+              "skipped_min_lot": 50,
+              "worst_realized_loss_over_budget": 3.929469415988001
+            },
+            {
+              "candidate_trades": 1511,
+              "executable_fraction": 0.9589675711449371,
+              "executed_trades": 1449,
+              "final_balance_usd": 534.4870796373528,
+              "initial_balance_usd": 1000.0,
+              "maximum_balance_drawdown_percent": 83.28283005823177,
+              "mean_monthly_return_percent": 0.24454715581593156,
+              "return_percent": -46.55129203626471,
+              "risk_budget_breaches": 6,
+              "risk_percent": 3.0,
+              "ruined": false,
+              "skipped_min_lot": 62,
+              "worst_realized_loss_over_budget": 4.215415186206732
+            },
+            {
+              "candidate_trades": 1511,
+              "executable_fraction": 0.9556585043017869,
+              "executed_trades": 1444,
+              "final_balance_usd": 374.7060184861285,
+              "initial_balance_usd": 1000.0,
+              "maximum_balance_drawdown_percent": 91.27257452009657,
+              "mean_monthly_return_percent": 1.143252739327285,
+              "return_percent": -62.52939815138715,
+              "risk_budget_breaches": 6,
+              "risk_percent": 4.0,
+              "ruined": false,
+              "skipped_min_lot": 67,
+              "worst_realized_loss_over_budget": 4.014578955255599
+            },
+            {
+              "candidate_trades": 1511,
+              "executable_fraction": 0.7048312375909993,
+              "executed_trades": 1065,
+              "final_balance_usd": 162.29405808106804,
+              "initial_balance_usd": 1000.0,
+              "maximum_balance_drawdown_percent": 96.64006331637579,
+              "mean_monthly_return_percent": 0.002290488946804725,
+              "return_percent": -83.7705941918932,
+              "risk_budget_breaches": 5,
+              "risk_percent": 5.0,
+              "ruined": false,
+              "skipped_min_lot": 446,
+              "worst_realized_loss_over_budget": 2.0922657710958066
+            }
+          ],
+          "annual": [
+            {
+              "total_r": 2.1350754382372195,
+              "trades": 566,
+              "year": 2024
+            },
+            {
+              "total_r": 21.813657050505093,
+              "trades": 570,
+              "year": 2025
+            },
+            {
+              "total_r": 24.66391822354698,
+              "trades": 375,
+              "year": 2026
+            }
+          ],
+          "causal_label_diagnostic": {
+            "maximum_selected_label_maturity_minus_decision": 0,
+            "prediction_rows": 110108
+          },
+          "exit_reasons": {
+            "OPPOSITE": 1,
+            "STOP_GAP": 8,
+            "STOP_INTRAMINUTE": 884,
+            "TIME_24H": 10,
+            "TRAIL_STOP_GAP": 2,
+            "TRAIL_STOP_INTRAMINUTE": 606
+          },
+          "four_bar_baseline": {
+            "max_drawdown_r": 115.2969964297705,
+            "mean_r": -0.030636067599572072,
+            "median_r": -0.07300345158414714,
+            "profit_factor": 0.9503268272116631,
+            "total_r": -46.56682275134955,
+            "total_r_ex_top10": -116.04130189778296,
+            "trades": 1520,
+            "trades_per_week": 10.924024640657084,
+            "win_rate": 0.4743421052631579
+          },
+          "long_total_r": 151.34606702216232,
+          "median_holding_hours": 0.8166666666666667,
+          "monthly_bootstrap": {
+            "ci95": [
+              -1.6914804928440734,
+              4.68493243175003
+            ],
+            "mean_monthly_bps": 1.51914533475904
+          },
+          "positive_month_fraction": 0.46875,
+          "runner": {
+            "max_drawdown_r": 48.250922361171625,
+            "mean_r": 0.03217250212593598,
+            "median_r": -0.9999999999999648,
+            "profit_factor": 1.0539470918268707,
+            "total_r": 48.61265071228927,
+            "total_r_ex_top10": -28.475358518348962,
+            "trades": 1511,
+            "trades_per_week": 10.859342915811089,
+            "win_rate": 0.4070152217074785
+          },
+          "short_total_r": -102.73341630987306,
+          "trail_activation_fraction": 0.40502978160158837
+        },
+        "1h": {
+          "accounts": [
+            {
+              "candidate_trades": 363,
+              "executable_fraction": 0.07713498622589532,
+              "executed_trades": 28,
+              "final_balance_usd": 487.7238577359119,
+              "initial_balance_usd": 500.0,
+              "maximum_balance_drawdown_percent": 8.141378202687994,
+              "mean_monthly_return_percent": -0.07111660612008949,
+              "return_percent": -2.455228452817615,
+              "risk_budget_breaches": 0,
+              "risk_percent": 1.0,
+              "ruined": false,
+              "skipped_min_lot": 335,
+              "worst_realized_loss_over_budget": 0.9866980207759742
+            },
+            {
+              "candidate_trades": 363,
+              "executable_fraction": 0.6198347107438017,
+              "executed_trades": 225,
+              "final_balance_usd": 634.3638517422523,
+              "initial_balance_usd": 500.0,
+              "maximum_balance_drawdown_percent": 19.97848484775185,
+              "mean_monthly_return_percent": 0.9678029854328978,
+              "return_percent": 26.87277034845046,
+              "risk_budget_breaches": 1,
+              "risk_percent": 2.0,
+              "ruined": false,
+              "skipped_min_lot": 138,
+              "worst_realized_loss_over_budget": 1.7390641304110679
+            },
+            {
+              "candidate_trades": 363,
+              "executable_fraction": 0.953168044077135,
+              "executed_trades": 346,
+              "final_balance_usd": 844.0222848977622,
+              "initial_balance_usd": 500.0,
+              "maximum_balance_drawdown_percent": 45.2224096391041,
+              "mean_monthly_return_percent": 2.7503643441772203,
+              "return_percent": 68.80445697955244,
+              "risk_budget_breaches": 1,
+              "risk_percent": 3.0,
+              "ruined": false,
+              "skipped_min_lot": 17,
+              "worst_realized_loss_over_budget": 1.6997213253680068
+            },
+            {
+              "candidate_trades": 363,
+              "executable_fraction": 0.9807162534435262,
+              "executed_trades": 356,
+              "final_balance_usd": 830.3107672838546,
+              "initial_balance_usd": 500.0,
+              "maximum_balance_drawdown_percent": 57.968811028744064,
+              "mean_monthly_return_percent": 3.632515763121911,
+              "return_percent": 66.06215345677091,
+              "risk_budget_breaches": 1,
+              "risk_percent": 4.0,
+              "ruined": false,
+              "skipped_min_lot": 7,
+              "worst_realized_loss_over_budget": 1.965703103835877
+            },
+            {
+              "candidate_trades": 363,
+              "executable_fraction": 0.9862258953168044,
+              "executed_trades": 358,
+              "final_balance_usd": 902.2629302033698,
+              "initial_balance_usd": 500.0,
+              "maximum_balance_drawdown_percent": 68.05649333896599,
+              "mean_monthly_return_percent": 4.935810870821044,
+              "return_percent": 80.45258604067396,
+              "risk_budget_breaches": 1,
+              "risk_percent": 5.0,
+              "ruined": false,
+              "skipped_min_lot": 5,
+              "worst_realized_loss_over_budget": 1.986458939764891
+            },
+            {
+              "candidate_trades": 363,
+              "executable_fraction": 0.6005509641873278,
+              "executed_trades": 218,
+              "final_balance_usd": 1206.2169606314949,
+              "initial_balance_usd": 1000.0,
+              "maximum_balance_drawdown_percent": 9.824699342339564,
+              "mean_monthly_return_percent": 0.6382918425812061,
+              "return_percent": 20.621696063149496,
+              "risk_budget_breaches": 1,
+              "risk_percent": 1.0,
+              "ruined": false,
+              "skipped_min_lot": 145,
+              "worst_realized_loss_over_budget": 1.9825327186685673
+            },
+            {
+              "candidate_trades": 363,
+              "executable_fraction": 0.9641873278236914,
+              "executed_trades": 350,
+              "final_balance_usd": 1415.538657820171,
+              "initial_balance_usd": 1000.0,
+              "maximum_balance_drawdown_percent": 31.773011462280206,
+              "mean_monthly_return_percent": 1.4764540960873138,
+              "return_percent": 41.5538657820171,
+              "risk_budget_breaches": 1,
+              "risk_percent": 2.0,
+              "ruined": false,
+              "skipped_min_lot": 13,
+              "worst_realized_loss_over_budget": 1.6728737229892339
+            },
+            {
+              "candidate_trades": 363,
+              "executable_fraction": 0.9889807162534435,
+              "executed_trades": 359,
+              "final_balance_usd": 1692.8100381931606,
+              "initial_balance_usd": 1000.0,
+              "maximum_balance_drawdown_percent": 49.38059725529008,
+              "mean_monthly_return_percent": 2.8931749701231633,
+              "return_percent": 69.28100381931606,
+              "risk_budget_breaches": 1,
+              "risk_percent": 3.0,
+              "ruined": false,
+              "skipped_min_lot": 4,
+              "worst_realized_loss_over_budget": 2.356080470544728
+            },
+            {
+              "candidate_trades": 363,
+              "executable_fraction": 0.9944903581267218,
+              "executed_trades": 361,
+              "final_balance_usd": 1634.266637729607,
+              "initial_balance_usd": 1000.0,
+              "maximum_balance_drawdown_percent": 64.68228788137499,
+              "mean_monthly_return_percent": 3.8654984154505696,
+              "return_percent": 63.42666377296071,
+              "risk_budget_breaches": 1,
+              "risk_percent": 4.0,
+              "ruined": false,
+              "skipped_min_lot": 2,
+              "worst_realized_loss_over_budget": 2.271781374027136
+            },
+            {
+              "candidate_trades": 363,
+              "executable_fraction": 0.9944903581267218,
+              "executed_trades": 361,
+              "final_balance_usd": 1718.076224129334,
+              "initial_balance_usd": 1000.0,
+              "maximum_balance_drawdown_percent": 74.38256904855407,
+              "mean_monthly_return_percent": 5.786041805792093,
+              "return_percent": 71.8076224129334,
+              "risk_budget_breaches": 1,
+              "risk_percent": 5.0,
+              "ruined": false,
+              "skipped_min_lot": 2,
+              "worst_realized_loss_over_budget": 2.294111928908896
+            }
+          ],
+          "annual": [
+            {
+              "total_r": 25.5453303956022,
+              "trades": 135,
+              "year": 2024
+            },
+            {
+              "total_r": 12.534204411125831,
+              "trades": 156,
+              "year": 2025
+            },
+            {
+              "total_r": -7.132828545124436,
+              "trades": 72,
+              "year": 2026
+            }
+          ],
+          "causal_label_diagnostic": {
+            "maximum_selected_label_maturity_minus_decision": 0,
+            "prediction_rows": 27546
+          },
+          "exit_reasons": {
+            "OPPOSITE": 1,
+            "STOP_GAP": 1,
+            "STOP_INTRAMINUTE": 189,
+            "TIME_24H": 33,
+            "TRAIL_STOP_GAP": 2,
+            "TRAIL_STOP_INTRAMINUTE": 137
+          },
+          "four_bar_baseline": {
+            "max_drawdown_r": 19.035151628348345,
+            "mean_r": 0.0765546133528286,
+            "median_r": 0.023887921076302464,
+            "profit_factor": 1.1550629503644807,
+            "total_r": 27.712770033723952,
+            "total_r_ex_top10": -10.724746488578871,
+            "trades": 362,
+            "trades_per_week": 2.6016427104722792,
+            "win_rate": 0.5082872928176796
+          },
+          "long_total_r": 35.07390853368521,
+          "median_holding_hours": 3.95,
+          "monthly_bootstrap": {
+            "ci95": [
+              -0.8915153450146355,
+              3.199386012010679
+            ],
+            "mean_monthly_bps": 0.9670845706751124
+          },
+          "positive_month_fraction": 0.53125,
+          "runner": {
+            "max_drawdown_r": 25.447164721482938,
+            "mean_r": 0.08525263432948652,
+            "median_r": -0.9999999999999722,
+            "profit_factor": 1.1592620356803154,
+            "total_r": 30.946706261603605,
+            "total_r_ex_top10": -24.801690173722474,
+            "trades": 363,
+            "trades_per_week": 2.6088295687885013,
+            "win_rate": 0.4380165289256198
+          },
+          "short_total_r": -4.127202272081613,
+          "trail_activation_fraction": 0.41597796143250687
+        },
+        "30min": {
+          "accounts": [
+            {
+              "candidate_trades": 745,
+              "executable_fraction": 0.2295302013422819,
+              "executed_trades": 171,
+              "final_balance_usd": 445.8379326375124,
+              "initial_balance_usd": 500.0,
+              "maximum_balance_drawdown_percent": 24.658993424177844,
+              "mean_monthly_return_percent": -0.3242732925144628,
+              "return_percent": -10.832413472497526,
+              "risk_budget_breaches": 1,
+              "risk_percent": 1.0,
+              "ruined": false,
+              "skipped_min_lot": 574,
+              "worst_realized_loss_over_budget": 1.171523872862727
+            },
+            {
+              "candidate_trades": 745,
+              "executable_fraction": 0.5288590604026846,
+              "executed_trades": 394,
+              "final_balance_usd": 381.21104865607714,
+              "initial_balance_usd": 500.0,
+              "maximum_balance_drawdown_percent": 42.98355808851691,
+              "mean_monthly_return_percent": -0.5350391327595079,
+              "return_percent": -23.757790268784575,
+              "risk_budget_breaches": 1,
+              "risk_percent": 2.0,
+              "ruined": false,
+              "skipped_min_lot": 351,
+              "worst_realized_loss_over_budget": 1.2446310803892606
+            },
+            {
+              "candidate_trades": 745,
+              "executable_fraction": 0.5463087248322148,
+              "executed_trades": 407,
+              "final_balance_usd": 265.92364826957413,
+              "initial_balance_usd": 500.0,
+              "maximum_balance_drawdown_percent": 66.09860411788571,
+              "mean_monthly_return_percent": -1.2268584417523423,
+              "return_percent": -46.81527034608517,
+              "risk_budget_breaches": 1,
+              "risk_percent": 3.0,
+              "ruined": false,
+              "skipped_min_lot": 338,
+              "worst_realized_loss_over_budget": 1.716759165951916
+            },
+            {
+              "candidate_trades": 745,
+              "executable_fraction": 0.6281879194630873,
+              "executed_trades": 468,
+              "final_balance_usd": 307.3088536756709,
+              "initial_balance_usd": 500.0,
+              "maximum_balance_drawdown_percent": 76.34505365168084,
+              "mean_monthly_return_percent": 0.03883095639220968,
+              "return_percent": -38.53822926486582,
+              "risk_budget_breaches": 1,
+              "risk_percent": 4.0,
+              "ruined": false,
+              "skipped_min_lot": 277,
+              "worst_realized_loss_over_budget": 1.7045599347554943
+            },
+            {
+              "candidate_trades": 745,
+              "executable_fraction": 0.6295302013422819,
+              "executed_trades": 469,
+              "final_balance_usd": 241.92493149001075,
+              "initial_balance_usd": 500.0,
+              "maximum_balance_drawdown_percent": 81.52544714413469,
+              "mean_monthly_return_percent": 0.14662346077660182,
+              "return_percent": -51.61501370199786,
+              "risk_budget_breaches": 1,
+              "risk_percent": 5.0,
+              "ruined": false,
+              "skipped_min_lot": 276,
+              "worst_realized_loss_over_budget": 1.5551335333495355
+            },
+            {
+              "candidate_trades": 745,
+              "executable_fraction": 0.5691275167785235,
+              "executed_trades": 424,
+              "final_balance_usd": 777.4616512764894,
+              "initial_balance_usd": 1000.0,
+              "maximum_balance_drawdown_percent": 30.21242736538929,
+              "mean_monthly_return_percent": -0.7089923911481326,
+              "return_percent": -22.253834872351053,
+              "risk_budget_breaches": 1,
+              "risk_percent": 1.0,
+              "ruined": false,
+              "skipped_min_lot": 321,
+              "worst_realized_loss_over_budget": 1.7923694676800777
+            },
+            {
+              "candidate_trades": 745,
+              "executable_fraction": 0.7906040268456376,
+              "executed_trades": 589,
+              "final_balance_usd": 638.1789500518686,
+              "initial_balance_usd": 1000.0,
+              "maximum_balance_drawdown_percent": 52.10371726184712,
+              "mean_monthly_return_percent": -0.7905456232776417,
+              "return_percent": -36.182104994813145,
+              "risk_budget_breaches": 1,
+              "risk_percent": 2.0,
+              "ruined": false,
+              "skipped_min_lot": 156,
+              "worst_realized_loss_over_budget": 1.5667201608485157
+            },
+            {
+              "candidate_trades": 745,
+              "executable_fraction": 0.697986577181208,
+              "executed_trades": 520,
+              "final_balance_usd": 414.4585674613126,
+              "initial_balance_usd": 1000.0,
+              "maximum_balance_drawdown_percent": 77.42949892419873,
+              "mean_monthly_return_percent": -1.6678202221656397,
+              "return_percent": -58.55414325386874,
+              "risk_budget_breaches": 1,
+              "risk_percent": 3.0,
+              "ruined": false,
+              "skipped_min_lot": 225,
+              "worst_realized_loss_over_budget": 1.7709588726857033
+            },
+            {
+              "candidate_trades": 745,
+              "executable_fraction": 0.6684563758389261,
+              "executed_trades": 498,
+              "final_balance_usd": 310.07702687295154,
+              "initial_balance_usd": 1000.0,
+              "maximum_balance_drawdown_percent": 84.62655657890765,
+              "mean_monthly_return_percent": -1.734744995944567,
+              "return_percent": -68.99229731270484,
+              "risk_budget_breaches": 1,
+              "risk_percent": 4.0,
+              "ruined": false,
+              "skipped_min_lot": 247,
+              "worst_realized_loss_over_budget": 1.639416232536274
+            },
+            {
+              "candidate_trades": 745,
+              "executable_fraction": 0.6416107382550336,
+              "executed_trades": 478,
+              "final_balance_usd": 242.18433994870173,
+              "initial_balance_usd": 1000.0,
+              "maximum_balance_drawdown_percent": 90.14595181715788,
+              "mean_monthly_return_percent": -1.8671023858859637,
+              "return_percent": -75.78156600512983,
+              "risk_budget_breaches": 1,
+              "risk_percent": 5.0,
+              "ruined": false,
+              "skipped_min_lot": 267,
+              "worst_realized_loss_over_budget": 1.6787085341065646
+            }
+          ],
+          "annual": [
+            {
+              "total_r": -15.8051886975163,
+              "trades": 286,
+              "year": 2024
+            },
+            {
+              "total_r": -7.2852302473517785,
+              "trades": 281,
+              "year": 2025
+            },
+            {
+              "total_r": -9.388574625187717,
+              "trades": 178,
+              "year": 2026
+            }
+          ],
+          "causal_label_diagnostic": {
+            "maximum_selected_label_maturity_minus_decision": 0,
+            "prediction_rows": 55070
+          },
+          "exit_reasons": {
+            "STOP_GAP": 3,
+            "STOP_INTRAMINUTE": 442,
+            "TIME_24H": 13,
+            "TRAIL_STOP_GAP": 2,
+            "TRAIL_STOP_INTRAMINUTE": 285
+          },
+          "four_bar_baseline": {
+            "max_drawdown_r": 60.2676243869554,
+            "mean_r": -0.03538428320055418,
+            "median_r": -0.07105282206921193,
+            "profit_factor": 0.9399281786979575,
+            "total_r": -26.67974953321785,
+            "total_r_ex_top10": -82.65202572770589,
+            "trades": 754,
+            "trades_per_week": 5.418891170431212,
+            "win_rate": 0.4761273209549072
+          },
+          "long_total_r": 42.61768472667703,
+          "median_holding_hours": 1.7833333333333334,
+          "monthly_bootstrap": {
+            "ci95": [
+              -3.5904188597427673,
+              1.5994088676773222
+            ],
+            "mean_monthly_bps": -1.0149685490642437
+          },
+          "positive_month_fraction": 0.375,
+          "runner": {
+            "max_drawdown_r": 46.78740824732137,
+            "mean_r": -0.043595964523564824,
+            "median_r": -0.9999999999999765,
+            "profit_factor": 0.9274649770392287,
+            "total_r": -32.47899357005579,
+            "total_r_ex_top10": -98.89537317780659,
+            "trades": 745,
+            "trades_per_week": 5.354209445585216,
+            "win_rate": 0.3959731543624161
+          },
+          "short_total_r": -75.09667829673282,
+          "trail_activation_fraction": 0.3906040268456376
+        }
+      }
+    }
+  },
+  "contract_sha256": "873a16495f7e0b2bb4fb8e45c253d974e7051eb147d6512764b63d6e88ba3872",
+  "evaluation": {
+    "end_exclusive": "2026-09-01T00:00:00+00:00",
+    "start": "2024-01-01T00:00:00+00:00",
+    "weeks": 139.14285714285714
+  },
+  "gates": {
+    "all_pass": false,
+    "all_years_positive_both": false,
+    "bootstrap_lower_positive_both": false,
+    "no_account_ruin": true,
+    "positive_ex_top10_both": false,
+    "runner_beats_four_bar_total_r_and_pf_both": false,
+    "runner_pf_at_least_1_10_both": false,
+    "usd500_risk1_half_executable_both": false
+  },
+  "limitations": [
+    "Historical margin availability is not modelled.",
+    "Swap is not modelled for trades crossing rollover.",
+    "Account sizing filters a frozen theoretical trade ledger; a skipped trade does not create an alternate re-entry path."
+  ],
+  "study": "LORENTZIAN_ATR_RUNNER_AND_SMALL_ACCOUNT_SIZING_V3",
+  "v2_trade_ledger_sha256": "865cf6493d3aca48ede2fcf4b72909a7955ee2368ab1150fb4075c78fcf9532b",
+  "verdict": "ATR_RUNNER_DOES_NOT_RESCUE_LORENTZIAN_ENTRIES"
+}
