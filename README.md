@@ -208,6 +208,33 @@ change the strategy into a losing one.
 
 Full report: [`docs/RESULT_V4_TAIL_ROBUSTNESS.md`](docs/RESULT_V4_TAIL_ROBUSTNESS.md).
 
+## US500_x100 sizing supplement
+
+The same SP500 M30 ledger was simulated with USD 500, USD 1,000 and USD 3,000
+at 1%-5% compounded risk. The x100 contract is 100 index units per lot; it does
+not multiply equal-risk account returns by 100. Its 0.03 minimum lot gives a
+three-unit minimum exposure, compared with 0.14 units for regular US500.
+
+| Start, 1% risk | Regular US500 final / trades | US500_x100 final / trades | x100 max balance DD |
+|---|---:|---:|---:|
+| $500 | $922.85 / 681 | $500.00 / 0 | 0.00% |
+| $1,000 | $1,830.37 / 685 | $1,009.61 / 6 | 2.75% |
+| $3,000 | $5,525.57 / 688 | $5,854.98 / 548 | 18.21% |
+
+The USD 3,000/1% case averages 3.94 trades/week and +2.35% arithmetic monthly
+return (+2.11% geometric). Returns for 2024/2025/Jan-Aug 2026 are
++23.91%/+30.79%/+20.43%. This is historical sizing sensitivity, not new holdout
+evidence or proof that x100 improves the signal.
+
+**Conditional result:** MT5 connection timed out. Contract size/minimum/maximum
+volume and margin rates come from current official Exness documentation;
+0.01 lot step, quote equivalence and commission scaling remain assumptions.
+All 15 primary scenarios and high-margin sensitivities are in the
+[full x100 report](docs/RESULT_US500_X100_SIZING.md), with the
+[frozen contract](config/contract_us500_x100_sizing.json) and
+[technical plan](docs/TECHNICAL_PLAN_US500_X100.md).
+The evidence is under `evidence/us500_x100_sizing/`.
+
 ## What the result does and does not mean
 
 Supported by the current evidence:
@@ -298,7 +325,7 @@ checklist and the MT5/macOS boundary.
 The next phase should validate, not optimize, the current candidate.
 
 1. **Migrate and verify.** Clone `main` on the MacBook, run tests, regenerate
-   both figures and compare repository status. Transfer raw M1 archives outside
+   all three figures and compare repository status. Transfer raw M1 archives outside
    Git only if full replay is needed.
 2. **Freeze a v5 demo-forward contract.** Keep SP500 M30 entries, 1-ATR stop,
    +1R activation, 1R completed-close trail, no target and 24-hour limit. Do not

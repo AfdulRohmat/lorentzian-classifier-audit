@@ -1,0 +1,35 @@
+{
+  "contract_sha256": "7298ddf898d19b788dbc7288c7737a6294af6e637a735db7c95c3ccef94c63d5",
+  "limitations": [
+    "No native x100 historical quotes or live symbol_info verification",
+    "Margin stress is constant, not historically timed",
+    "No swap or dividends",
+    "No alternative re-entry path after a skipped frozen-ledger trade",
+    "No live orders; no strategy changes; no promotion verdict"
+  ],
+  "scenarios": 75,
+  "source_ledger_sha256": "20e8819c7ca94bd3217ac63dba0b5504c75810ab39dc189f19fda1666b72287d",
+  "source_trades": 688,
+  "specification_source": {
+    "accessed_date": "2026-09-25",
+    "live_mt5_status": "Both sandbox and external read-only initialization failed with IPC timeout (-10005)",
+    "official_current_fields": [
+      "contract_size",
+      "volume_min",
+      "US500_x100 volume_max",
+      "normal margin rate 0.0025",
+      "high margin rates 0.01 to 0.02"
+    ],
+    "page_updated_date": "2026-09-17",
+    "unverified_assumptions": [
+      "US500_x100 volume_step is 0.01",
+      "current contract rules apply to all historical candidates",
+      "same price path, spread and slippage as US500",
+      "same commission per unit of index exposure: 0.25 USD round trip for US500, 25 USD per x100 lot",
+      "US500 reference maximum volume remains the frozen v3 value"
+    ],
+    "url": "https://get.exness.help/hc/en-us/articles/17854383867548-Indices"
+  },
+  "status": "CONDITIONAL_SIZING_ONLY_LIVE_SPEC_UNVERIFIED",
+  "study": "US500_X100_CONDITIONAL_CONTRACT_SIZING"
+}

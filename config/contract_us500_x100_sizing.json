@@ -1,0 +1,35 @@
+{
+  "study": "US500_X100_CONDITIONAL_CONTRACT_SIZING",
+  "registered_date": "2026-09-25",
+  "status": "FROZEN_BEFORE_X100_ACCOUNT_OUTCOME_INSPECTION",
+  "scope": "Translate the frozen SP500 M30 v3 ledger into contract exposures; not a native US500_x100 price-feed backtest or new edge test",
+  "input": "evidence/v3_atr_runner_sizing/trades.csv.gz",
+  "input_sha256": "20e8819c7ca94bd3217ac63dba0b5504c75810ab39dc189f19fda1666b72287d",
+  "evaluation_start": "2024-01-01T00:00:00Z",
+  "evaluation_end_exclusive": "2026-09-01T00:00:00Z",
+  "asset": "sp500",
+  "timeframe": "30min",
+  "balances_usd": [500, 1000, 3000],
+  "risk_percents": [1, 2, 3, 4, 5],
+  "symbols": {
+    "US500": {"contract_size": 1.0, "volume_min": 0.14, "volume_step": 0.01, "volume_max": 1000.0},
+    "US500_x100": {"contract_size": 100.0, "volume_min": 0.03, "volume_step": 0.01, "volume_max": 20.0}
+  },
+  "specification_source": {
+    "url": "https://get.exness.help/hc/en-us/articles/17854383867548-Indices",
+    "accessed_date": "2026-09-25",
+    "page_updated_date": "2026-09-17",
+    "official_current_fields": ["contract_size", "volume_min", "US500_x100 volume_max", "normal margin rate 0.0025", "high margin rates 0.01 to 0.02"],
+    "live_mt5_status": "Both sandbox and external read-only initialization failed with IPC timeout (-10005)",
+    "unverified_assumptions": ["US500_x100 volume_step is 0.01", "current contract rules apply to all historical candidates", "same price path, spread and slippage as US500", "same commission per unit of index exposure: 0.25 USD round trip for US500, 25 USD per x100 lot", "US500 reference maximum volume remains the frozen v3 value"]
+  },
+  "scenarios": {
+    "US500": {"risk_only": null},
+    "US500_x100": {"risk_only": null, "margin_400": 0.0025, "margin_100": 0.01, "margin_50": 0.02}
+  },
+  "sizing": "Floor current closed-equity risk budget divided by planned loss per lot to volume_step, cap at volume_max, skip below volume_min; never round upward",
+  "margin_policy": "Static entry-margin sensitivity: entry_fill times contract_size times lots times margin_rate. Skip if margin plus modeled round-trip commission exceeds equity. Do not downsize. No maintenance/stop-out simulation.",
+  "commission_round_trip_index_price": 0.25,
+  "report": ["executed and skipped trades", "trades per week and month", "final balance and return", "closed-balance drawdown", "arithmetic and geometric monthly return", "calendar annual returns", "actual risk utilization", "gap loss breaches", "tail winners executed and skipped"],
+  "limitations": ["No native x100 historical quotes or live symbol_info verification", "Margin stress is constant, not historically timed", "No swap or dividends", "No alternative re-entry path after a skipped frozen-ledger trade", "No live orders; no strategy changes; no promotion verdict"]
+}

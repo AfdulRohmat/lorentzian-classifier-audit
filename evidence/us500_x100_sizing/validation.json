@@ -1,0 +1,19 @@
+{
+  "all_pass": true,
+  "checks": {
+    "cashflow_and_compounding": true,
+    "contract_and_source_hashes": true,
+    "full_scenario_grid": true,
+    "monthly_and_annual": true,
+    "next_bar_chronological_source": true,
+    "planned_risk_cap": true,
+    "risk_sizing_and_skip_rules": true,
+    "summary_totals_and_drawdowns": true,
+    "tail_capture_accounting": true,
+    "unchanged_price_returns": true,
+    "unique_scenarios_and_trades": true,
+    "v3_reference_account_parity": true
+  },
+  "passed": 12,
+  "total": 12
+}

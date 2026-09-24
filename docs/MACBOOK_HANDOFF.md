@@ -72,6 +72,13 @@ after its outcomes are known.
 
 ## Current scientific boundary
 
+The additional US500_x100 sizing study is in
+`docs/RESULT_US500_X100_SIZING.md`. Its 75 scenario ledgers are committed and
+can be regenerated with `python -m lorentzian_audit.run_x100` and checked with
+`python -m lorentzian_audit.validate_x100` after installing the project. It needs
+no raw market data. Verify its explicit contract/commission assumptions from a
+live terminal before using x100 for demo execution; the study had IPC timeouts.
+
 The repository does not contain a validated live strategy. It contains one
 historically interesting SP500 M30 runner and negative evidence for the broader
 Lorentzian/cross-asset claim. The September extension is negative and only nine
