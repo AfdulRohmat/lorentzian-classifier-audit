@@ -1,0 +1,14 @@
+{
+  "passed": true,
+  "policy_cells": 16,
+  "control_schedules": 20,
+  "checks": [
+    "accounting",
+    "calendar",
+    "eligibility",
+    "nonoverlap",
+    "daily availability",
+    "seeded outcome-blind match regeneration",
+    "bootstrap reproduction"
+  ]
+}

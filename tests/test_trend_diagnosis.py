@@ -49,6 +49,17 @@ def test_policy_rejects_mixed_and_does_not_change_signals():
     assert s.start_short.tolist() == [False, False, True, True]
 
 
+def test_bear_mixed_and_unavailable_are_distinct():
+    prices = np.linspace(500.0, 250.0, 250)
+    m = minutes_fixture(pd.date_range("2023-01-01", periods=250, freq="D", tz="UTC"), prices)
+    trend = daily_trend(m)
+    assert trend.regime.iloc[:219].eq("unavailable").all()
+    assert trend.regime.iloc[-1] == "bear"
+    m.loc[m.index[-1], ["open", "high", "low", "close"]] = [999.0, 1001.0, 997.0, 999.0]
+    changed = daily_trend(m)
+    assert changed.regime.iloc[-1] == "mixed"
+
+
 def test_rejected_short_entry_still_closes_long():
     m = minutes_fixture(
         pd.date_range("2024-01-01", periods=2400, freq="min", tz="UTC"), np.full(2400, 100.0)

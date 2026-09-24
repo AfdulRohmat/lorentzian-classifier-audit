@@ -1,0 +1,6 @@
+# Preserve byte-level contract/plan hashes across Windows and macOS checkouts.
+*.json text eol=lf
+*.md text eol=lf
+*.py text eol=lf
+*.csv text eol=lf
+*.gz -text

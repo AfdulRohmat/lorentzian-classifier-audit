@@ -9,8 +9,9 @@ robustness.
 
 > **Current status:** historical SP500 M30 runner candidate found, but the edge
 > is **not confirmed**. It may continue as a frozen demo-forward experiment; it
-> is not approved for live money. XAUUSD and the original cross-asset Lorentzian
-> claim failed.
+> is not approved for live money. The original two-sided XAUUSD and cross-asset
+> claims failed. On `research/xauusd-loss-diagnostics`, gold long-only is positive
+> retrospectively, but incremental entry edge is unconfirmed. No new promotion.
 
 ## Executive conclusion
 
@@ -34,6 +35,44 @@ pocket on SP500 M30:
 The honest verdict is therefore:
 
 `TAIL_STRUCTURE_SUPPORTED_EDGE_UNCONFIRMED`
+
+## Gold loss diagnosis branch: trend and matched entries
+
+All investigations into the gold/index gap are collected on
+`research/xauusd-loss-diagnostics`: same-runner entry comparisons, path audit,
+and now the frozen daily-trend experiment. **Main and the SP500 baseline are
+not replaced or merged by this research.**
+
+Gold is classified bull on 91.44% of evaluation M30 decisions by the causal
+completed-D1 EMA200/slope20 rule. In the original gold ledger, 325 short-bull
+trades contribute **-82.82R**, versus **+4.81R** from only 21 bear-short trades.
+The latter is a small 2026-only cell, not proof of a bear-short edge.
+
+| XAUUSD M30 policy | Trades | /week | Base net R | Base PF | Stress net R |
+|---|---:|---:|---:|---:|---:|
+| Original two-sided | 745 | 5.35 | -32.48 | 0.927 | -61.61 |
+| Long-only | 390 | 2.80 | **+42.62** | **1.197** | **+30.42** |
+| Short-only | 355 | 2.55 | -75.10 | 0.676 | -92.03 |
+| Daily-trend aligned | 377 | 2.71 | +39.16 | 1.187 | +27.23 |
+
+Long-only is positive in each annual block and improves over the bad baseline
+under the frozen paired-month comparison, but **does not establish classifier
+edge**. Of 20 random-long schedules matched on month, NY hour, daily regime and
+relative ATR, 14 are positive; 5 beat Lorentzian total R and 7 beat R/trade.
+Median control total is +21.85R; the range is -36.32R to +85.49R. Controls retain
+the original classifier short exits and have fewer executed trades, so they
+are conditional entry diagnostics, not deployable random strategies or p-values.
+
+At USD3,000 / 1% compounded risk, gold long-only finishes at USD4,356.89 (+45.23%),
+arithmetic mean month +1.26%, closed-balance DD10.53%; stress finishes USD3,780.61.
+Margin and swap are unmodeled. These are inspected historical results, not forecasts.
+
+Verdict: `RETROSPECTIVE_TREND_DIAGNOSIS_NO_PROMOTION`. The slow trend filter does
+not beat simple long-only here; no parameter tuning or new deployment follows.
+See [technical plan](docs/TECHNICAL_PLAN_TREND_DIAGNOSIS.md),
+[contract](config/contract_trend_diagnosis.json), and
+[full result](docs/RESULT_TREND_DIAGNOSIS.md). All 31 tests, baseline parity,
+source checks, causal availability and deterministic match validation pass.
 
 ## Same-runner entry comparison
 
@@ -442,6 +481,7 @@ evidence/us500_x100_sizing/    Contract-sizing accounts and margin sensitivities
 evidence/xauusd_capital_sizing/ XAUUSD M30 accounts including USD 3,000
 evidence/runner_entry_comparison/ Same-runner four-policy comparison, both assets
 evidence/trade_path_audit/       Frozen-trade excursions, timing and shadow windows
+evidence/trend_diagnosis/        Causal daily trend, directional replay, matched controls
 scripts/                        Portable figure generator
 src/lorentzian_audit/           Research, execution, sizing and validation code
 tests/                          Unit and invariant tests

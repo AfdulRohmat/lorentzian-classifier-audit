@@ -4,6 +4,22 @@ This document is the operational handoff for continuing the research on a new
 machine. The canonical branch is `main`; the full v4 history is also retained on
 `research/tail-robustness-v4`.
 
+The complete gold-loss investigation is on **`research/xauusd-loss-diagnostics`**,
+not merged into main. To continue that work after cloning:
+
+```bash
+git fetch origin
+git switch --track origin/research/xauusd-loss-diagnostics
+```
+
+Read `docs/RESULT_TREND_DIAGNOSIS.md` first. Gold long-only is retrospectively
+positive, but matched controls do not establish incremental entry edge. The
+original SP500 demo candidate remains unchanged. The entry-mask addition to
+the runner defaults to unrestricted and preserves all original opposite exits.
+The validator `python -m lorentzian_audit.validate_trend_diagnosis` works without
+raw archives; full replay requires them. Contract/plan line endings are pinned
+to LF for reproducible hashes across Windows and macOS.
+
 ## What GitHub contains
 
 - source code, frozen contracts, unit tests and the pinned upstream snapshot;
