@@ -215,21 +215,84 @@ at 1%-5% compounded risk. The x100 contract is 100 index units per lot; it does
 not multiply equal-risk account returns by 100. Its 0.03 minimum lot gives a
 three-unit minimum exposure, compared with 0.14 units for regular US500.
 
+**Conditional result:** MT5 connection timed out. Contract size/minimum/maximum
+volume and margin rates come from current official Exness documentation;
+0.01 lot step, quote equivalence and commission scaling remain assumptions.
+These are converted US500 account simulations, not native x100 quote backtests.
+
+### All capital and risk variations
+
+Evaluation: January 2024-August 2026, **32 months and 688 candidate trades**.
+Risk compounds from the closed account balance. Positions below minimum lot
+are skipped. The table includes the modeled spread, slippage and commission;
+swap and dividends are excluded. Normal 1:400 entry-margin screening produces
+the same results as the risk-only comparison below.
+
+| Start | Risk cap | Executed / skipped | Final balance | Total return | Mean monthly | Max balance DD |
+|---:|---:|---:|---:|---:|---:|---:|
+| $500 | 1% | 0 / 688 | $500.00 | 0.00% | 0.00% | 0.00% |
+| $500 | 2% | 6 / 682 | $509.61 | +1.92% | +0.07% | 5.30% |
+| $500 | 3% | 194 / 494 | $1,140.02 | +128.00% | +3.36% | 42.57% |
+| $500 | 4% | 572 / 116 | $3,006.69 | +501.34% | +8.95% | 61.38% |
+| $500 | 5% | 182 / 506 | $293.08 | -41.38% | -0.91% | 69.98% |
+| $1,000 | 1% | 6 / 682 | $1,009.61 | +0.96% | +0.03% | 2.75% |
+| $1,000 | 2% | 489 / 199 | $3,741.79 | +274.18% | +5.10% | 36.32% |
+| $1,000 | 3% | 603 / 85 | $3,639.91 | +263.99% | +6.26% | 50.40% |
+| $1,000 | 4% | 613 / 75 | $2,746.24 | +174.62% | +7.14% | 68.22% |
+| $1,000 | 5% | 640 / 48 | $2,809.30 | +180.93% | +9.39% | 75.76% |
+| $3,000 | 1% | 548 / 140 | $5,854.98 | +95.17% | +2.35% | 18.21% |
+| $3,000 | 2% | 670 / 18 | $8,267.67 | +175.59% | +4.26% | 38.28% |
+| $3,000 | 3% | 679 / 9 | $9,260.36 | +208.68% | +6.05% | 56.67% |
+| $3,000 | 4% | 680 / 8 | $9,645.97 | +221.53% | +8.09% | 69.24% |
+| $3,000 | 5% | 679 / 9 | $8,223.46 | +174.12% | +9.96% | 79.15% |
+
+Monthly returns are arithmetic means across all 32 months, including inactive
+months. Drawdown is measured on closed balances, not intratrade floating equity.
+The USD 500/4% gain is accompanied by 61.38% drawdown; increasing risk to 5%
+changes the affordable trade sequence and produces a loss. These outcomes are
+strongly dependent on which trades survive the minimum-lot constraint.
+
+### Comparison with regular US500 at 1% risk
+
 | Start, 1% risk | Regular US500 final / trades | US500_x100 final / trades | x100 max balance DD |
 |---|---:|---:|---:|
 | $500 | $922.85 / 681 | $500.00 / 0 | 0.00% |
 | $1,000 | $1,830.37 / 685 | $1,009.61 / 6 | 2.75% |
 | $3,000 | $5,525.57 / 688 | $5,854.98 / 548 | 18.21% |
 
-The USD 3,000/1% case averages 3.94 trades/week and +2.35% arithmetic monthly
-return (+2.11% geometric). Returns for 2024/2025/Jan-Aug 2026 are
-+23.91%/+30.79%/+20.43%. This is historical sizing sensitivity, not new holdout
-evidence or proof that x100 improves the signal.
+### USD 3,000 at 1%: annual detail
 
-**Conditional result:** MT5 connection timed out. Contract size/minimum/maximum
-volume and margin rates come from current official Exness documentation;
-0.01 lot step, quote equivalence and commission scaling remain assumptions.
-All 15 primary scenarios and high-margin sensitivities are in the
+This case averages **3.94 trades/week and 17.13 trades/month**, with +2.35%
+arithmetic monthly return and +2.11% geometric monthly growth. It captures 46
+of the original 53 winners above +3R, with 19 positive and 13 negative months.
+
+| Period | Start balance | End balance | Return | Executed trades |
+|---|---:|---:|---:|---:|
+| 2024 | $3,000.00 | $3,717.17 | +23.91% | 229 |
+| 2025 | $3,717.17 | $4,861.61 | +30.79% | 188 |
+| Jan-Aug 2026 | $4,861.61 | $5,854.98 | +20.43% | 131 |
+
+The partial 2026 result is not a full-year return. These are historical sizing
+sensitivities, not new holdout evidence or proof that x100 improves the signal.
+
+### High-margin sensitivity
+
+Selected scenarios below show the effect of screening every entry at constant
+1:400, 1:100 or 1:50 leverage. A position is skipped if proxy margin plus the
+modeled round-trip commission exceeds the balance. This does not reconstruct
+historical high-margin windows or model intratrade stop-outs.
+
+| Capital / risk | Final at 1:400 | Final at 1:100 | Final at 1:50 | Margin skips at 1:50 |
+|---|---:|---:|---:|---:|
+| $500 / 4% | $3,006.69 | $3,006.69 | $406.53 | 24 |
+| $1,000 / 5% | $2,809.30 | $2,088.26 | $400.15 | 89 |
+| $3,000 / 1% | $5,854.98 | $5,854.98 | $5,854.98 | 0 |
+| $3,000 / 5% | $8,223.46 | $7,900.28 | $1,600.22 | 108 |
+
+All 75 account scenarios, including regular-US500 controls, are available in the
+[account summary](evidence/us500_x100_sizing/account_summary.csv), with
+[monthly results](evidence/us500_x100_sizing/monthly.csv) and
+[annual results](evidence/us500_x100_sizing/annual.csv). See the
 [full x100 report](docs/RESULT_US500_X100_SIZING.md), with the
 [frozen contract](config/contract_us500_x100_sizing.json) and
 [technical plan](docs/TECHNICAL_PLAN_US500_X100.md).
@@ -265,6 +328,7 @@ evidence/v1/                    H4 ledgers, summaries, manifests, validation
 evidence/v2_lower_timeframes/   M15/M30/H1 evidence
 evidence/v3_atr_runner_sizing/  Runner trades, account ledger, monthly results
 evidence/v4_tail_robustness/    Tail diagnostics and September extension
+evidence/us500_x100_sizing/    Contract-sizing accounts and margin sensitivities
 scripts/                        Portable figure generator
 src/lorentzian_audit/           Research, execution, sizing and validation code
 tests/                          Unit and invariant tests
