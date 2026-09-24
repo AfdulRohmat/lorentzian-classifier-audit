@@ -1,0 +1,62 @@
+{
+  "study": "SP500_M30_RUNNER_TAIL_ROBUSTNESS_V4",
+  "registered_date": "2026-09-25",
+  "status": "PARTIALLY_POSTHOC_DIAGNOSTIC_WITH_PREREGISTERED_NEW_SEPTEMBER_HOLDOUT",
+  "scope": "SP500 M30 ATR runner from v3 only; no parameter, signal, cost or exit changes",
+  "disclosure": "The aggregate v3 result, top-ten removal, and 3R/5R cap totals were inspected before this contract. Concentration detail, declared Monte Carlo outcomes, retrospective partition detail, and new Exness September holdout were not used to select parameters.",
+  "inputs": {
+    "v3_trade_ledger": "evidence/v3_atr_runner_sizing/trades.csv.gz",
+    "v3_trade_ledger_sha256": "20e8819c7ca94bd3217ac63dba0b5504c75810ab39dc189f19fda1666b72287d",
+    "asset": "sp500",
+    "timeframe": "30min"
+  },
+  "tail_diagnostics": {
+    "winner_caps_r": [3, 5],
+    "top_n_concentration": [1, 3, 5, 10],
+    "tail_threshold_r": 3.0,
+    "annual_groups": [2024, 2025, 2026]
+  },
+  "monte_carlo": {
+    "replicates": 20000,
+    "seed": 20260925,
+    "tail_definition": "trade net R strictly greater than 3R",
+    "independent_tail_miss_probabilities": [0.05, 0.10, 0.20, 0.30],
+    "non_tail_trades": "always retained",
+    "outputs": [
+      "median and 95 percent interval of total R",
+      "probability total R remains positive",
+      "median and 95 percent interval of missed tail count",
+      "one-percent fixed-fraction final-equity multiple and maximum drawdown"
+    ]
+  },
+  "temporal_partitions": {
+    "development": ["2024-01-01T00:00:00Z", "2026-01-01T00:00:00Z"],
+    "retrospective_holdout": ["2026-01-01T00:00:00Z", "2026-09-01T00:00:00Z"],
+    "new_exness_holdout": ["2026-09-01T00:00:00Z", "2026-09-24T00:00:00Z"],
+    "new_holdout_role": "Pristine post-v3 SP500 exit outcome diagnostic; too short to confirm or reject edge alone"
+  },
+  "new_holdout": {
+    "symbol": "US500",
+    "terminal": "C:/Program Files/MetaTrader 5/terminal64.exe",
+    "local_cache": "local_data/exness_us500_2026-09-01_2026-09-24_m1.parquet",
+    "history_source": "existing 2022-08/2026 Exness M1 cache plus read-only MT5 September extension",
+    "entry_and_exit": "unchanged v3 causal Lorentzian M30 and ATR runner",
+    "minimum_trade_interpretation": "report all trades; no pass/fail conclusion from fewer than 30"
+  },
+  "assessment": {
+    "tail_structure_supported_if": [
+      "5R-capped total remains positive",
+      "greater-than-3R winners occur in every annual group",
+      "under ten-percent independent tail miss probability at least 80 percent of simulations remain positive",
+      "retrospective 2026 holdout total remains positive"
+    ],
+    "unseen_holdout": "reported separately and never allowed to override the historical tail assessment"
+  },
+  "forbidden": [
+    "changing the 1ATR stop or 1R-by-1R trail",
+    "selecting a different timeframe",
+    "reclassifying the posthoc cap diagnostic as preregistered",
+    "treating September fewer-than-30 trades as confirmation",
+    "placing MT5 orders"
+  ]
+}
