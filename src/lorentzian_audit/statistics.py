@@ -17,6 +17,7 @@ def max_drawdown(values: np.ndarray) -> float:
 
 
 def summary(values: np.ndarray, weeks: float, top_n: int = 5) -> dict:
+    concentration_key = f"net_bps_ex_top{top_n}"
     if len(values) == 0:
         return {
             "trades": 0,
@@ -26,7 +27,7 @@ def summary(values: np.ndarray, weeks: float, top_n: int = 5) -> dict:
             "win_rate": None,
             "profit_factor": None,
             "max_drawdown_bps": 0.0,
-            "net_bps_ex_top5": 0.0,
+            concentration_key: 0.0,
         }
     remove = min(top_n, len(values))
     top_indices = np.argsort(values)[-remove:]
@@ -41,7 +42,7 @@ def summary(values: np.ndarray, weeks: float, top_n: int = 5) -> dict:
         "win_rate": float((values > 0).mean()),
         "profit_factor": profit_factor(values),
         "max_drawdown_bps": max_drawdown(values),
-        "net_bps_ex_top5": float(values[keep].sum()),
+        concentration_key: float(values[keep].sum()),
     }
 
 

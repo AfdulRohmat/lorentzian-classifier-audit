@@ -48,8 +48,12 @@ def normalise_minutes(frame: pd.DataFrame) -> tuple[pd.DataFrame, dict[str, int]
     }
 
 
-def aggregate_h4(minutes: pd.DataFrame, minimum_rows: int = 1) -> pd.DataFrame:
-    bars = minutes.resample("4h", label="left", closed="left", origin="epoch").agg(
+def aggregate_timeframe(
+    minutes: pd.DataFrame, timeframe: str, minimum_rows: int = 1
+) -> pd.DataFrame:
+    bars = minutes.resample(
+        timeframe, label="left", closed="left", origin="epoch"
+    ).agg(
         open=("open", "first"),
         high=("high", "max"),
         low=("low", "min"),
@@ -60,11 +64,11 @@ def aggregate_h4(minutes: pd.DataFrame, minimum_rows: int = 1) -> pd.DataFrame:
     )
     bars = bars.loc[bars["m1_rows"] >= minimum_rows].copy()
     bars.index.name = "time"
-    bars["bar_end"] = bars.index + pd.Timedelta(hours=4)
+    bars["bar_end"] = bars.index + pd.Timedelta(timeframe)
     return bars
 
 
-def load_asset_h4(
+def load_asset_minutes(
     root: Path, asset: str, asset_config: dict, data_config: dict
 ) -> tuple[pd.DataFrame, dict]:
     source = (root / asset_config["path"]).resolve()
@@ -96,7 +100,6 @@ def load_asset_h4(
 
     minutes, cleaning = normalise_minutes(pd.concat(frames, ignore_index=True))
     minutes = minutes.loc[(minutes.index >= start) & (minutes.index < end)]
-    h4 = aggregate_h4(minutes, int(data_config["minimum_m1_rows_per_bar"]))
     diagnostics = {
         "asset": asset,
         "source_path": str(source),
@@ -106,12 +109,26 @@ def load_asset_h4(
         "minute_rows": len(minutes),
         "first_minute": minutes.index.min().isoformat(),
         "last_minute": minutes.index.max().isoformat(),
-        "h4_bars": len(h4),
-        "first_h4": h4.index.min().isoformat(),
-        "last_h4": h4.index.max().isoformat(),
-        "h4_m1_rows_min": int(h4["m1_rows"].min()),
-        "h4_m1_rows_median": float(h4["m1_rows"].median()),
-        "h4_m1_rows_max": int(h4["m1_rows"].max()),
         **cleaning,
     }
+    return minutes, diagnostics
+
+
+def load_asset_h4(
+    root: Path, asset: str, asset_config: dict, data_config: dict
+) -> tuple[pd.DataFrame, dict]:
+    minutes, diagnostics = load_asset_minutes(root, asset, asset_config, data_config)
+    h4 = aggregate_timeframe(
+        minutes, "4h", int(data_config["minimum_m1_rows_per_bar"])
+    )
+    diagnostics.update(
+        {
+            "h4_bars": len(h4),
+            "first_h4": h4.index.min().isoformat(),
+            "last_h4": h4.index.max().isoformat(),
+            "h4_m1_rows_min": int(h4["m1_rows"].min()),
+            "h4_m1_rows_median": float(h4["m1_rows"].median()),
+            "h4_m1_rows_max": int(h4["m1_rows"].max()),
+        }
+    )
     return h4, diagnostics

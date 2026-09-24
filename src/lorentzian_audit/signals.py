@@ -5,7 +5,12 @@ import math
 import numpy as np
 import pandas as pd
 from lorentzian_classification import Bar, Settings, calculate
-from lorentzian_classification.core import calc_atr, calc_regime_filter
+from lorentzian_classification.core import (
+    calc_atr,
+    calc_feature,
+    calc_regime_filter,
+    kernel_rational_quadratic,
+)
 
 FEATURE_COLUMNS = ["f1", "f2", "f3", "f4", "f5"]
 
@@ -36,6 +41,35 @@ def official_outputs(bars: pd.DataFrame, price_scale: float) -> pd.DataFrame:
             "f3": [row.f3 for row in results],
             "f4": [row.f4 for row in results],
             "f5": [row.f5 for row in results],
+        },
+        index=bars.index,
+    )
+
+
+def feature_kernel_outputs(bars: pd.DataFrame, price_scale: float) -> pd.DataFrame:
+    close = bars["close"].astype(float).tolist()
+    high = bars["high"].astype(float).tolist()
+    low = bars["low"].astype(float).tolist()
+    hlc3 = [(high[i] + low[i] + close[i]) / 3.0 for i in range(len(bars))]
+    settings = Settings()
+    specs = [settings.f1, settings.f2, settings.f3, settings.f4, settings.f5]
+    features = [
+        calc_feature(spec, close, high, low, hlc3, price_scale) for spec in specs
+    ]
+    kernel = [
+        kernel_rational_quadratic(
+            close, i, settings.kernel_h, settings.kernel_r, settings.kernel_x
+        )
+        for i in range(len(bars))
+    ]
+    return pd.DataFrame(
+        {
+            "kernel": kernel,
+            "f1": features[0],
+            "f2": features[1],
+            "f3": features[2],
+            "f4": features[3],
+            "f5": features[4],
         },
         index=bars.index,
     )
@@ -103,6 +137,110 @@ def causal_knn_predictions(
         "prediction_rows": prediction_rows,
         "maximum_selected_label_maturity_minus_decision": max_maturity_lag,
     }
+
+
+def causal_knn_prediction_pair_batched(
+    features: np.ndarray,
+    close: np.ndarray,
+    neighbors: int = 8,
+    max_bars_back: int = 2000,
+    batch_size: int = 128,
+) -> tuple[dict[str, np.ndarray], dict[str, dict[str, int]]]:
+    count = len(close)
+    predictions = {
+        "lorentzian": np.zeros(count, dtype=np.int16),
+        "euclidean": np.zeros(count, dtype=np.int16),
+    }
+    labels = np.zeros(count, dtype=np.int8)
+    labels[:-4] = np.sign(close[4:] - close[:-4]).astype(np.int8)
+    offsets = np.arange(4, max_bars_back + 1, dtype=np.int32)
+    finite_features = np.isfinite(features).all(axis=1)
+    prediction_rows = {"lorentzian": 0, "euclidean": 0}
+    maximum_maturity = {"lorentzian": -(10**9), "euclidean": -(10**9)}
+
+    for batch_start in range(0, count, batch_size):
+        current = np.arange(
+            batch_start, min(batch_start + batch_size, count), dtype=np.int32
+        )
+        candidate = current[:, None] - offsets[None, :]
+        safe_candidate = np.clip(candidate, 0, count - 1)
+        valid = candidate >= 0
+        valid &= safe_candidate % 4 != 0
+        valid &= finite_features[safe_candidate]
+        valid &= finite_features[current, None]
+        delta = np.abs(features[safe_candidate] - features[current, None, :])
+        distances = {
+            "lorentzian": np.log1p(delta).sum(axis=2),
+            "euclidean": np.sqrt(np.square(delta).sum(axis=2)),
+        }
+        enough = valid.sum(axis=1) >= neighbors
+        for metric, values in distances.items():
+            values[~valid] = np.inf
+            nearest_positions = np.argpartition(
+                values, kth=neighbors - 1, axis=1
+            )[:, :neighbors]
+            selected = np.take_along_axis(
+                safe_candidate, nearest_positions, axis=1
+            )
+            batch_prediction = labels[selected].sum(axis=1, dtype=np.int16)
+            predictions[metric][current[enough]] = batch_prediction[enough]
+            if enough.any():
+                maturity = selected[enough] + 4 - current[enough, None]
+                maximum_maturity[metric] = max(
+                    maximum_maturity[metric], int(maturity.max())
+                )
+                prediction_rows[metric] += int(enough.sum())
+    diagnostics = {
+        metric: {
+            "prediction_rows": prediction_rows[metric],
+            "maximum_selected_label_maturity_minus_decision": maximum_maturity[
+                metric
+            ],
+        }
+        for metric in predictions
+    }
+    return predictions, diagnostics
+
+
+def build_full_history_variants(
+    bars: pd.DataFrame, feature_kernel: pd.DataFrame
+) -> tuple[dict[str, pd.DataFrame], dict[str, dict]]:
+    features = feature_kernel[FEATURE_COLUMNS].to_numpy(dtype=float)
+    close = bars["close"].to_numpy(dtype=float)
+    kernel = feature_kernel["kernel"].to_numpy(dtype=float)
+    filters = default_filter_mask(bars)
+    prediction_pair, pair_diagnostics = causal_knn_prediction_pair_batched(
+        features, close
+    )
+    variants: dict[str, pd.DataFrame] = {}
+    diagnostics: dict[str, dict] = {}
+    for name, metric in (
+        ("causal_lorentzian", "lorentzian"),
+        ("causal_euclidean", "euclidean"),
+    ):
+        frame = start_events_from_predictions(
+            prediction_pair[metric], filters, kernel
+        )
+        frame.index = bars.index
+        variants[name] = frame
+        diagnostics[name] = pair_diagnostics[metric]
+
+    momentum = np.zeros(len(bars), dtype=np.int16)
+    momentum[4:] = np.sign(close[4:] - close[:-4]).astype(np.int16)
+    momentum_frame = start_events_from_predictions(momentum, filters, kernel)
+    momentum_frame.index = bars.index
+    variants["simple_momentum4"] = momentum_frame
+
+    kernel_direction = np.zeros(len(bars), dtype=np.int16)
+    kernel_direction[1:] = np.sign(kernel[1:] - kernel[:-1]).astype(np.int16)
+    kernel_frame = start_events_from_predictions(kernel_direction, filters, kernel)
+    kernel_frame.index = bars.index
+    variants["filter_only_kernel"] = kernel_frame
+    diagnostics["filter_mask"] = {
+        "passing_bars": int(filters.sum()),
+        "total_bars": len(filters),
+    }
+    return variants, diagnostics
 
 
 def start_events_from_predictions(
