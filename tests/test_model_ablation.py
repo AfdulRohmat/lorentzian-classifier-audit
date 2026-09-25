@@ -3,6 +3,7 @@ import json
 import numpy as np
 import pandas as pd
 
+from lorentzian_audit.finalize_model_ablation import annual_statistics
 from lorentzian_audit.model_ablation import (
     brier,
     classification_metrics,
@@ -124,3 +125,19 @@ def test_nan_feature_is_not_imputed_from_future_and_one_class_up():
     for p in probabilities.values():
         assert np.isnan(p[60]).all()
         np.testing.assert_array_equal(p[diagnostics[:, 0] >= 12, 2], 1)
+
+
+def test_annual_frequency_uses_year_not_full_study_denominator():
+    trades = pd.DataFrame(
+        {
+            "asset": ["xauusd", "xauusd"],
+            "cost": "base",
+            "model": "logistic",
+            "exit_time": pd.to_datetime(["2024-02-01T00:00Z", "2026-02-01T00:00Z"]),
+            "net_r": [1.0, -1.0],
+        }
+    )
+    annual = annual_statistics(
+        trades, pd.Timestamp("2024-01-01T00:00Z"), pd.Timestamp("2026-09-01T00:00Z")
+    )
+    np.testing.assert_allclose(annual.trades_per_week, [7 / 366, 7 / 243])

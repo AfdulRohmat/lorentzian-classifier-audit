@@ -1,0 +1,34 @@
+{
+  "inputs": {
+    "config/contract_model_ablation.json": "fbf804bd619c26f62eefa0356d04db693e3ccdd7f5e86d38046888f0d0259f76",
+    "config/contract_v3_atr_runner_sizing.json": "873a16495f7e0b2bb4fb8e45c253d974e7051eb147d6512764b63d6e88ba3872",
+    "config/contract_v2_lower_timeframes.json": "2a2e25807218a7875973d148ee0e347473791ddb96d12779a2034e433a7be0bf",
+    "evidence/v3_atr_runner_sizing/trades.csv.gz": "20e8819c7ca94bd3217ac63dba0b5504c75810ab39dc189f19fda1666b72287d",
+    "src/lorentzian_audit/model_ablation.py": "83a904a4d03004f7ad5ec60b9ac6228a039542713cdee89ad1c6cb0922536779",
+    "src/lorentzian_audit/signals.py": "5ee5e8d402f933a70d8127bb0be53e1c1ce5a1b882e6a528d9ce7d87239455e7",
+    "src/lorentzian_audit/runner.py": "5ad5b5da8c5b7ab9b7cfc6602d8b16c2eb0327aaa25dbbfaf1bf8338c51a893c",
+    "src/lorentzian_audit/finalize_model_ablation.py": "83679b4e00b37cf01feb5c42a50379e7f216b28a69c610a53d9dbb4c79f203f4"
+  },
+  "outputs": {
+    "accounts.csv.gz": "a7074340f9f35be4247c3d18af9d452ca18cb7e5a4e07720dbab49a737ab9773",
+    "account_summary.csv": "9dc954fc9865af6466853c8f55c785fc3580379c16b20e1a336e12d7e533a1c1",
+    "annual.csv": "002ca8cbc667c6d4bfb6c3b80702495c1e68d7c5e331ea2dddd5ff8729465d0c",
+    "classification.csv": "c61c41f089b8bb2465d8b80a1f21db82db090a3ebb42861c81820a682fde0af0",
+    "coefficients_monthly.csv": "09f780b527ec720f1a4176c6f3eadca751d43cbf3b6d4fd6005b6bf74e570ac1",
+    "confusion.csv": "b523a787c2bdd21d2785cc754fdf8d8ad0056a89cf38bb0ca3a082105a1aedf5",
+    "matched_cohorts.csv": "0033db4921d770501496b495d9358f6b49ba6f794a501e79ef852529027c6278",
+    "metrics.csv": "3ea9bffa96652597c5a81b663823ca9522a4937692046a61979496916581b387",
+    "monthly.csv": "44bca7cd231d28fe4207f2a19c940be6ec1b9db902445b527d6b65d8b0f08615",
+    "observations.csv.gz": "3d88e582db2baa19b308aa5be991da1b30f46ce71ed772d5d02e0af5e27b2c8a",
+    "pnl_quadrants.csv": "09396adab0096858acce2ff37cbe60775777b7c78314e929b1e4205f09302cfa",
+    "reliability.csv": "753006ba39a728868021d5c9288f612601cfebd7c5d0956bdad0690cc537b9ad",
+    "source_manifest.json": "401d75369e685aef05e977f43f58b888a9c9a11fc051674501c56524d0ae5bcf",
+    "summary.json": "a09be95d3f646594ab03a49bd63c78bc878663c9042577a2e200daebb90145a8",
+    "trades.csv.gz": "9f960b45fb34b8b814fa0a283b7bc59c76224a8a86ecb7174f0da43b8295262c"
+  },
+  "reporting_finalization": {
+    "annual_frequency": "per-year calendar exposure, partial 2026 through August",
+    "text_format": "UTF-8 LF, portable hash agreement with Git checkout",
+    "forecast_and_trade_ledger_bytes_unchanged": true
+  }
+}

@@ -12,7 +12,16 @@ git fetch origin
 git switch --track origin/research/xauusd-loss-diagnostics
 ```
 
-Read `docs/RESULT_PREDICTION_AUDIT.md` and `docs/RESULT_TREND_DIAGNOSIS.md` first.
+Read `docs/RESULT_MODEL_ABLATION.md` first, then the prediction and trend reports.
+The same-feature logistic comparison did not establish improvement over a class
+prior: gold +4.59R base becomes -5.85R under stress and the $3,000/1% executable
+account loses. SP500 logistic is also negative. No replacement is promoted.
+Install `.[dev,research]` and run
+`python -m lorentzian_audit.validate_model_ablation` without raw data or MT5.
+The full `model_ablation` command requires the raw archives; it includes annual
+reporting finalization and portable LF/POSIX-path manifest hashes. 43 tests pass.
+
+Read `docs/RESULT_PREDICTION_AUDIT.md` and `docs/RESULT_TREND_DIAGNOSIS.md` next.
 The direct-label audit finds weak gold-short precision versus a causal majority
 baseline, plus a distinct endpoint-label/PnL mismatch. No classifier changes
 were made. `python -m lorentzian_audit.validate_predictions` checks the saved
@@ -54,7 +63,7 @@ python3 --version
 python3 -m venv .venv
 source .venv/bin/activate
 python -m pip install --upgrade pip
-python -m pip install -e '.[dev]'
+python -m pip install -e '.[dev,research]'
 PYTHONPATH=src:vendor python -m pytest
 python -m ruff check src tests scripts
 python scripts/generate_readme_figures.py
@@ -93,7 +102,7 @@ after its outcomes are known.
 
 ## Current scientific boundary
 
-Latest diagnostic: `docs/RESULT_TRADE_PATH_AUDIT.md` reconstructs the original
+Earlier path diagnostic: `docs/RESULT_TRADE_PATH_AUDIT.md` reconstructs the original
 SP500/XAUUSD M30 paths. Gold shorts have smaller favorable excursions, with
 nearly identical mean giveback to index shorts. This motivates examining
 signal/payoff alignment, not an automatic stop/trailing adjustment. Run
@@ -101,7 +110,7 @@ signal/payoff alignment, not an automatic stop/trailing adjustment. Run
 `python -m lorentzian_audit.audit_trade_paths` with the original raw archives.
 No strategy rules were changed or new gold candidate promoted.
 
-Read `docs/RESULT_RUNNER_ENTRY_COMPARISON.md` for the latest same-runner signal
+Read `docs/RESULT_RUNNER_ENTRY_COMPARISON.md` for the earlier same-runner signal
 comparison. Euclidean nearly matches Lorentzian on SP500 at base costs; all
 four policies lose on XAUUSD. Incremental Lorentzian value is unconfirmed,
 without replacing the frozen demo candidate. Run

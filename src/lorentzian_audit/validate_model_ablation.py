@@ -7,6 +7,7 @@ import json
 import numpy as np
 import pandas as pd
 
+from .finalize_model_ablation import annual_statistics
 from .model_ablation import MODELS, comparisons_from_saved
 from .run_v3 import ROOT, _describe, _sha256
 from .runner import simulate_account
@@ -44,6 +45,7 @@ def main():
         parse_dates=["signal_time", "entry_time", "exit_time"],
     )
     monthly = pd.read_csv(out / "monthly.csv")
+    annual = pd.read_csv(out / "annual.csv")
     metrics = pd.read_csv(out / "metrics.csv")
     classes = pd.read_csv(out / "classification.csv")
     confusion = pd.read_csv(out / "confusion.csv")
@@ -57,6 +59,14 @@ def main():
         for key in ("evaluation_start", "evaluation_end_exclusive")
     )
     weeks = (end - start).total_seconds() / (7 * 86400)
+    pd.testing.assert_frame_equal(
+        annual,
+        annual_statistics(trades, start, end),
+        check_dtype=False,
+        check_exact=False,
+        rtol=1e-9,
+        atol=1e-9,
+    )
     assert len(metrics) == 12 and len(monthly) == 12 * 32
     assert not observations.duplicated(["asset", "signal_time"]).any()
     scored = observations.loc[observations.scoreable]
@@ -200,7 +210,9 @@ def main():
         "paired_block_comparisons_recomputed": True,
         "untouched_holdout": False,
     }
-    (out / "validation.json").write_text(json.dumps(checks, indent=2) + "\n", encoding="utf-8")
+    (out / "validation.json").write_text(
+        json.dumps(checks, indent=2) + "\n", encoding="utf-8", newline="\n"
+    )
     print(json.dumps(checks, indent=2))
 
 

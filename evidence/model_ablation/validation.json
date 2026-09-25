@@ -1,0 +1,11 @@
+{
+  "manifest_hashes": true,
+  "matured_labels": true,
+  "probability_and_loss_recomputation": true,
+  "class_counts_and_recall": true,
+  "all_12_trade_ledgers_and_calendars": true,
+  "original_1433_trades_preserved": true,
+  "account_replay": true,
+  "paired_block_comparisons_recomputed": true,
+  "untouched_holdout": false
+}

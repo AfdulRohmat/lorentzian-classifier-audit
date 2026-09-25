@@ -14,6 +14,7 @@ from threadpoolctl import threadpool_limits
 
 from .audit_predictions import block_ratio_interval, calendar_counts, targets
 from .data import aggregate_timeframe, load_asset_minutes
+from .finalize_model_ablation import main as finalize_evidence
 from .run import _json_default
 from .run_entry_comparison import paired_blocks
 from .run_v3 import ROOT, _describe, _sha256
@@ -486,7 +487,7 @@ def main():
         )
     manifest = {
         "inputs": {
-            str(p.relative_to(ROOT)): _sha256(p)
+            p.relative_to(ROOT).as_posix(): _sha256(p)
             for p in (
                 path,
                 parent_path,
@@ -504,6 +505,7 @@ def main():
         },
     }
     (out / "manifest.json").write_text(json.dumps(manifest, indent=2) + "\n", encoding="utf-8")
+    finalize_evidence()
     print(json.dumps(summary, indent=2), flush=True)
 
 

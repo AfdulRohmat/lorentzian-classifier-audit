@@ -36,6 +36,40 @@ The honest verdict is therefore:
 
 `TAIL_STRUCTURE_SUPPORTED_EDGE_UNCONFIRMED`
 
+## Same-feature model comparison: replacing the learner did not repair gold
+
+The newest diagnostic freezes features, target, training eligibility and runner,
+then compares Lorentzian, regularized logistic regression and an empirical
+historical class prior. January 2024-August 2026 remains inspected history.
+
+| XAUUSD M30 | Trades | Trades/week | Base R | Base PF | Stress R |
+|---|---:|---:|---:|---:|---:|
+| Original Lorentzian | 745 | 5.35 | -32.48 | 0.927 | -61.61 |
+| Logistic regression | 207 | 1.49 | +4.59 | 1.038 | -5.85 |
+| Same-pool class prior | 19 | 0.14 | +1.52 | 1.152 | +0.89 |
+
+Logistic has lower probability error than the eight-neighbor fractions, but
+slightly worse error than the feature-free prior, with an adjusted interval
+excluding zero. Neither paired PnL improvement is statistically established.
+Its 82 executed gold shorts have 40.24% label precision and lose -10.89R;
+125 longs supply +15.49R. This is not a successful short-model repair.
+
+With $3,000/1% and executable sizing, gold logistic finishes **$2,945.42** at
+base costs and **$2,737.56** at stress costs. Two minimum-lot skips remove
+about +4.50R of hypothetical winners. On SP500, logistic loses -6.52R versus
+the unchanged Lorentzian runner's +72.77R. A comparator weekend gap also
+demonstrates that nominal risk and a 24h exit deadline are not hard loss or
+holding-time guarantees when the market is closed.
+
+Verdict: `MODEL_REPLACEMENT_NOT_SUPPORTED`. The prior's sparse 19 gold / 6 SP500
+trades are not a promoted strategy. No model, threshold or timeframe was selected
+after inspection; no change to main or permission to trade live follows.
+
+Read the [frozen plan](docs/TECHNICAL_PLAN_MODEL_ABLATION.md) and
+[complete result, prediction/PnL decomposition and account caveats](docs/RESULT_MODEL_ABLATION.md).
+All 43 tests and saved-artifact validation pass; the original 1,433 M30 trades
+remain identical. Install the `research` extra for this branch's new diagnostics.
+
 ## Direct prediction audit: gold shorts are weak on the learned target
 
 The latest diagnosis tests the exact target, sign(close[i+4] - close[i]), not
@@ -512,6 +546,7 @@ evidence/runner_entry_comparison/ Same-runner four-policy comparison, both asset
 evidence/trade_path_audit/       Frozen-trade excursions, timing and shadow windows
 evidence/trend_diagnosis/        Causal daily trend, directional replay, matched controls
 evidence/prediction_audit/       Exact-label accuracy, simple forecasts and PnL linkage
+evidence/model_ablation/         Same-pool learners, probability errors and runner/account replay
 scripts/                        Portable figure generator
 src/lorentzian_audit/           Research, execution, sizing and validation code
 tests/                          Unit and invariant tests
@@ -539,7 +574,7 @@ cd lorentzian-classifier-audit
 python3 -m venv .venv
 source .venv/bin/activate
 python -m pip install --upgrade pip
-python -m pip install -e '.[dev]'
+python -m pip install -e '.[dev,research]'
 PYTHONPATH=src:vendor python -m pytest
 python -m ruff check src tests scripts
 python scripts/generate_readme_figures.py
@@ -551,7 +586,7 @@ python scripts/generate_readme_figures.py
 py -3.12 -m venv .venv
 & '.\.venv\Scripts\Activate.ps1'
 python -m pip install --upgrade pip
-python -m pip install -e '.[dev]'
+python -m pip install -e '.[dev,research]'
 $env:PYTHONPATH='src;vendor'
 python -m pytest
 python -m ruff check src tests scripts

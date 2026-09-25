@@ -1,0 +1,141 @@
+{
+  "contract_sha256": "fbf804bd619c26f62eefa0356d04db693e3ccdd7f5e86d38046888f0d0259f76",
+  "sklearn_version": "1.9.1",
+  "primary_comparisons": [
+    {
+      "asset": "xauusd",
+      "control": "prior",
+      "brier_improvement": {
+        "estimate": -0.001315934029920618,
+        "ci95": [
+          -0.0020961092403872167,
+          -0.0004935505025157074
+        ],
+        "adjusted_ci": [
+          -0.0022775432042376744,
+          -0.0002870244591535754
+        ]
+      },
+      "monthly_r_improvement": {
+        "mean_monthly_difference_r": 0.09611826258695721,
+        "ci95": [
+          -1.1279673123372307,
+          1.4004812026956794
+        ],
+        "family_adjusted_ci": [
+          -1.4310240111887083,
+          1.7755382227565661
+        ],
+        "months": 32
+      }
+    },
+    {
+      "asset": "xauusd",
+      "control": "lorentzian",
+      "brier_improvement": {
+        "estimate": 0.07237655785199287,
+        "ci95": [
+          0.06826258212781841,
+          0.07642762965522834
+        ],
+        "adjusted_ci": [
+          0.06728069364786392,
+          0.07754320184464313
+        ]
+      },
+      "monthly_r_improvement": {
+        "mean_monthly_difference_r": 1.1585610101065589,
+        "ci95": [
+          -1.6590528682668466,
+          4.031069758432345
+        ],
+        "family_adjusted_ci": [
+          -2.3806277460783076,
+          4.746459902353373
+        ],
+        "months": 32
+      }
+    },
+    {
+      "asset": "sp500",
+      "control": "prior",
+      "brier_improvement": {
+        "estimate": -0.0023043520858967944,
+        "ci95": [
+          -0.0031964818857840647,
+          -0.0014987633163786778
+        ],
+        "adjusted_ci": [
+          -0.003446206142236814,
+          -0.001300430875713668
+        ]
+      },
+      "monthly_r_improvement": {
+        "mean_monthly_difference_r": -0.3650243728888316,
+        "ci95": [
+          -1.3574350583515633,
+          0.6671075734157443
+        ],
+        "family_adjusted_ci": [
+          -1.6202183324928743,
+          0.9387695329383198
+        ],
+        "months": 32
+      }
+    },
+    {
+      "asset": "sp500",
+      "control": "lorentzian",
+      "brier_improvement": {
+        "estimate": 0.07722114543759163,
+        "ci95": [
+          0.07103168707397144,
+          0.08280057565635987
+        ],
+        "adjusted_ci": [
+          0.0693846374916289,
+          0.08406472043130382
+        ]
+      },
+      "monthly_r_improvement": {
+        "mean_monthly_difference_r": -2.477799246503,
+        "ci95": [
+          -4.936913775501804,
+          -0.11903518239923469
+        ],
+        "family_adjusted_ci": [
+          -5.674995039014155,
+          0.4381096682562313
+        ],
+        "months": 32
+      }
+    }
+  ],
+  "checks": {
+    "xauusd": {
+      "source_hash_parity": true,
+      "original_vote_parity": true,
+      "original_trade_ledger_parity": true,
+      "causal_training": true,
+      "probabilities_valid": true,
+      "nonconvergence": 0,
+      "maximum_iterations": 80,
+      "scored": 31506,
+      "censored": 3
+    },
+    "sp500": {
+      "source_hash_parity": true,
+      "original_vote_parity": true,
+      "original_trade_ledger_parity": true,
+      "causal_training": true,
+      "probabilities_valid": true,
+      "nonconvergence": 0,
+      "maximum_iterations": 86,
+      "scored": 31312,
+      "censored": 3
+    }
+  },
+  "verdict": "MODEL_REPLACEMENT_NOT_SUPPORTED",
+  "untouched_holdout": false,
+  "promotion": false
+}
