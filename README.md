@@ -36,6 +36,35 @@ The honest verdict is therefore:
 
 `TAIL_STRUCTURE_SUPPORTED_EDGE_UNCONFIRMED`
 
+## Direct prediction audit: gold shorts are weak on the learned target
+
+The latest diagnosis tests the exact target, sign(close[i+4] - close[i]), not
+trade win rate. Four observed M30 bars can exceed two clock hours across gaps.
+No model or trading rules were changed.
+
+| Short forecast stage | Gold correct / total | Gold precision | SP500 precision |
+|---|---:|---:|---:|
+| Raw negative vote | 4,689 / 9,888 | 47.42% | 46.20% |
+| Qualified start | 163 / 373 | 43.70% | 47.64% |
+| Executed original trade | 155 / 355 | 43.66% | 47.89% |
+
+On matched raw-short decision rows, a causal rolling historical-majority
+forecast achieves 53.34%, versus 47.41% for the classifier. The model-minus-prior
+accuracy difference is -5.94 percentage points, with a three-comparison-adjusted
+block-bootstrap interval [-9.81, -2.32] pp. This is conditional retrospective
+evidence, not an untouched test or a correction for the entire research history.
+
+Gold's 155 correct-direction shorts contribute +102.87R; 200 incorrect ones
+contribute -177.97R. Of the 45 correct-but-losing trades, 21 hit initial SL
+before the target matured. Thus weak direction forecasts and path-dependent
+target/PnL mismatch coexist. Larger vote magnitude does not monotonically
+improve short precision. No automatic signal inversion, threshold tuning or
+stop change follows from this audit.
+
+See [exact-label technical plan](docs/TECHNICAL_PLAN_PREDICTION_AUDIT.md) and
+[full prediction/PnL report](docs/RESULT_PREDICTION_AUDIT.md). All 34 tests and
+saved-artifact checks pass; all 1,433 original trade records are preserved.
+
 ## Gold loss diagnosis branch: trend and matched entries
 
 All investigations into the gold/index gap are collected on
@@ -482,6 +511,7 @@ evidence/xauusd_capital_sizing/ XAUUSD M30 accounts including USD 3,000
 evidence/runner_entry_comparison/ Same-runner four-policy comparison, both assets
 evidence/trade_path_audit/       Frozen-trade excursions, timing and shadow windows
 evidence/trend_diagnosis/        Causal daily trend, directional replay, matched controls
+evidence/prediction_audit/       Exact-label accuracy, simple forecasts and PnL linkage
 scripts/                        Portable figure generator
 src/lorentzian_audit/           Research, execution, sizing and validation code
 tests/                          Unit and invariant tests

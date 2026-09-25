@@ -12,7 +12,12 @@ git fetch origin
 git switch --track origin/research/xauusd-loss-diagnostics
 ```
 
-Read `docs/RESULT_TREND_DIAGNOSIS.md` first. Gold long-only is retrospectively
+Read `docs/RESULT_PREDICTION_AUDIT.md` and `docs/RESULT_TREND_DIAGNOSIS.md` first.
+The direct-label audit finds weak gold-short precision versus a causal majority
+baseline, plus a distinct endpoint-label/PnL mismatch. No classifier changes
+were made. `python -m lorentzian_audit.validate_predictions` checks the saved
+evidence without raw archives; `audit_predictions` regenerates from raw M1.
+Gold long-only is retrospectively
 positive, but matched controls do not establish incremental entry edge. The
 original SP500 demo candidate remains unchanged. The entry-mask addition to
 the runner defaults to unrestricted and preserves all original opposite exits.

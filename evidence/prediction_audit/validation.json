@@ -1,0 +1,14 @@
+{
+  "passed": true,
+  "original_trades_preserved": 1433,
+  "prediction_rows": 62824,
+  "cohorts": 12,
+  "checks": [
+    "target maturity and censoring",
+    "saved price target reconstruction",
+    "matured prior on full internal windows",
+    "confusion/cohort accounting",
+    "paired baseline bootstrap",
+    "original PnL and outcome reconciliation"
+  ]
+}

@@ -1,0 +1,507 @@
+{
+  "contract_sha256": "67273646f9403c56e168c55f158dbf33ba32a4ecbc9bf275d52691553b1df695",
+  "parent_ledger_sha256": "20e8819c7ca94bd3217ac63dba0b5504c75810ab39dc189f19fda1666b72287d",
+  "universe": [
+    {
+      "asset": "xauusd",
+      "evaluation_rows": 31509,
+      "scoreable": 31506,
+      "censored": 3,
+      "abstentions": 7514,
+      "down_prevalence": 0.4674347743286993,
+      "up_prevalence": 0.5324700057131975,
+      "directional_covered_accuracy": 0.5130054189245519
+    },
+    {
+      "asset": "sp500",
+      "evaluation_rows": 31315,
+      "scoreable": 31312,
+      "censored": 3,
+      "abstentions": 7204,
+      "down_prevalence": 0.4589294839039346,
+      "up_prevalence": 0.5396972406745018,
+      "directional_covered_accuracy": 0.5092631054249398
+    }
+  ],
+  "cohorts": [
+    {
+      "asset": "xauusd",
+      "side": "short",
+      "scope": "raw",
+      "rows": 9888,
+      "correct": 4689,
+      "precision": 0.4742111650485437,
+      "flat_targets": 0,
+      "median_label_minutes": 120.0,
+      "labels_over_120_minutes": 845,
+      "precision_ci95": [
+        0.4538119373452164,
+        0.4961551742406309
+      ]
+    },
+    {
+      "asset": "xauusd",
+      "side": "short",
+      "scope": "qualified_start",
+      "rows": 373,
+      "correct": 163,
+      "precision": 0.43699731903485256,
+      "flat_targets": 0,
+      "median_label_minutes": 120.0,
+      "labels_over_120_minutes": 5,
+      "precision_ci95": [
+        0.3784530386740331,
+        0.4972681307911618
+      ]
+    },
+    {
+      "asset": "xauusd",
+      "side": "short",
+      "scope": "executed",
+      "rows": 355,
+      "correct": 155,
+      "precision": 0.43661971830985913,
+      "flat_targets": 0,
+      "median_label_minutes": 120.0,
+      "labels_over_120_minutes": 5,
+      "precision_ci95": [
+        0.3736551754696916,
+        0.5013264367816092
+      ]
+    },
+    {
+      "asset": "xauusd",
+      "side": "long",
+      "scope": "raw",
+      "rows": 14104,
+      "correct": 7618,
+      "precision": 0.5401304594441293,
+      "flat_targets": 2,
+      "median_label_minutes": 120.0,
+      "labels_over_120_minutes": 1267,
+      "precision_ci95": [
+        0.5226718215736532,
+        0.5563447074360691
+      ]
+    },
+    {
+      "asset": "xauusd",
+      "side": "long",
+      "scope": "qualified_start",
+      "rows": 417,
+      "correct": 221,
+      "precision": 0.5299760191846523,
+      "flat_targets": 0,
+      "median_label_minutes": 120.0,
+      "labels_over_120_minutes": 7,
+      "precision_ci95": [
+        0.4860804989791345,
+        0.577671160521153
+      ]
+    },
+    {
+      "asset": "xauusd",
+      "side": "long",
+      "scope": "executed",
+      "rows": 390,
+      "correct": 208,
+      "precision": 0.5333333333333333,
+      "flat_targets": 0,
+      "median_label_minutes": 120.0,
+      "labels_over_120_minutes": 6,
+      "precision_ci95": [
+        0.4861443420591143,
+        0.5858337236035421
+      ]
+    },
+    {
+      "asset": "sp500",
+      "side": "short",
+      "scope": "raw",
+      "rows": 9495,
+      "correct": 4387,
+      "precision": 0.4620326487625066,
+      "flat_targets": 14,
+      "median_label_minutes": 120.0,
+      "labels_over_120_minutes": 817,
+      "precision_ci95": [
+        0.4492345912720824,
+        0.4754641452768282
+      ]
+    },
+    {
+      "asset": "sp500",
+      "side": "short",
+      "scope": "qualified_start",
+      "rows": 403,
+      "correct": 192,
+      "precision": 0.47642679900744417,
+      "flat_targets": 0,
+      "median_label_minutes": 120.0,
+      "labels_over_120_minutes": 28,
+      "precision_ci95": [
+        0.44063324538258575,
+        0.5130219158254157
+      ]
+    },
+    {
+      "asset": "sp500",
+      "side": "short",
+      "scope": "executed",
+      "rows": 380,
+      "correct": 182,
+      "precision": 0.4789473684210526,
+      "flat_targets": 0,
+      "median_label_minutes": 120.0,
+      "labels_over_120_minutes": 27,
+      "precision_ci95": [
+        0.4373259052924791,
+        0.5229129875762927
+      ]
+    },
+    {
+      "asset": "sp500",
+      "side": "long",
+      "scope": "raw",
+      "rows": 14613,
+      "correct": 7873,
+      "precision": 0.538766851433655,
+      "flat_targets": 20,
+      "median_label_minutes": 120.0,
+      "labels_over_120_minutes": 1326,
+      "precision_ci95": [
+        0.5244632915448971,
+        0.5536184142681249
+      ]
+    },
+    {
+      "asset": "sp500",
+      "side": "long",
+      "scope": "qualified_start",
+      "rows": 320,
+      "correct": 186,
+      "precision": 0.58125,
+      "flat_targets": 0,
+      "median_label_minutes": 120.0,
+      "labels_over_120_minutes": 31,
+      "precision_ci95": [
+        0.5479876160990712,
+        0.6158730158730159
+      ]
+    },
+    {
+      "asset": "sp500",
+      "side": "long",
+      "scope": "executed",
+      "rows": 308,
+      "correct": 181,
+      "precision": 0.5876623376623377,
+      "flat_targets": 0,
+      "median_label_minutes": 120.0,
+      "labels_over_120_minutes": 30,
+      "precision_ci95": [
+        0.5526315789473685,
+        0.623418698234099
+      ]
+    }
+  ],
+  "paired_raw_short_accuracy": [
+    {
+      "asset": "xauusd",
+      "baseline": "always_long",
+      "rows": 9888,
+      "baseline_abstentions": 0,
+      "model_accuracy": 0.4742111650485437,
+      "baseline_accuracy": 0.5257888349514563,
+      "estimate": -0.05157766990291262,
+      "ci95": [
+        -0.09237612530956722,
+        -0.007689651518738258
+      ],
+      "adjusted_ci": [
+        -0.09938863002125725,
+        0.0022978166298432416
+      ]
+    },
+    {
+      "asset": "xauusd",
+      "baseline": "momentum4",
+      "rows": 9887,
+      "baseline_abstentions": 1,
+      "model_accuracy": 0.47425912814807325,
+      "baseline_accuracy": 0.5026802872458784,
+      "estimate": -0.0284211590978052,
+      "ci95": [
+        -0.05223804078995912,
+        -0.004864759919473239
+      ],
+      "adjusted_ci": [
+        -0.057086007696851425,
+        -0.00042635232892942787
+      ]
+    },
+    {
+      "asset": "xauusd",
+      "baseline": "matured_rolling_prior",
+      "rows": 9872,
+      "baseline_abstentions": 16,
+      "model_accuracy": 0.4740680713128039,
+      "baseline_accuracy": 0.5334278768233387,
+      "estimate": -0.059359805510534845,
+      "ci95": [
+        -0.09144798102026751,
+        -0.02974298433995345
+      ],
+      "adjusted_ci": [
+        -0.09811603508878294,
+        -0.02324220378065451
+      ]
+    },
+    {
+      "asset": "sp500",
+      "baseline": "always_long",
+      "rows": 9481,
+      "baseline_abstentions": 0,
+      "model_accuracy": 0.46271490349119293,
+      "baseline_accuracy": 0.5372850965088071,
+      "estimate": -0.07457019301761418,
+      "ci95": [
+        -0.10024927198573093,
+        -0.04745465305562249
+      ],
+      "adjusted_ci": [
+        -0.10474660921122203,
+        -0.04127246136864793
+      ]
+    },
+    {
+      "asset": "sp500",
+      "baseline": "momentum4",
+      "rows": 9470,
+      "baseline_abstentions": 11,
+      "model_accuracy": 0.4624076029567054,
+      "baseline_accuracy": 0.5,
+      "estimate": -0.03759239704329462,
+      "ci95": [
+        -0.053253246498711174,
+        -0.020688847100481363
+      ],
+      "adjusted_ci": [
+        -0.056573929340741194,
+        -0.01667960473238541
+      ]
+    },
+    {
+      "asset": "sp500",
+      "baseline": "matured_rolling_prior",
+      "rows": 9479,
+      "baseline_abstentions": 2,
+      "model_accuracy": 0.4628125329676126,
+      "baseline_accuracy": 0.5344445616626227,
+      "estimate": -0.07163202869501002,
+      "ci95": [
+        -0.09824505618147639,
+        -0.04398244756437221
+      ],
+      "adjusted_ci": [
+        -0.10301839844037657,
+        -0.03759834565980608
+      ]
+    }
+  ],
+  "pnl_quadrants": [
+    {
+      "asset": "xauusd",
+      "side": "short",
+      "outcome": "correct_nonwin",
+      "trades": 45,
+      "total_r": -44.61984009892043,
+      "mean_r": -0.9915520021982317,
+      "initial_stops": 44,
+      "initial_stops_before_label": 21,
+      "exits_before_label": 21,
+      "nonpositive_target_mark": 1
+    },
+    {
+      "asset": "xauusd",
+      "side": "short",
+      "outcome": "correct_win",
+      "trades": 110,
+      "total_r": 147.48969184293185,
+      "mean_r": 1.3408153803902896,
+      "initial_stops": 0,
+      "initial_stops_before_label": 0,
+      "exits_before_label": 30,
+      "nonpositive_target_mark": 2
+    },
+    {
+      "asset": "xauusd",
+      "side": "short",
+      "outcome": "wrong_nonwin",
+      "trades": 188,
+      "total_r": -187.17960760173486,
+      "mean_r": -0.9956362106475258,
+      "initial_stops": 186,
+      "initial_stops_before_label": 144,
+      "exits_before_label": 144,
+      "nonpositive_target_mark": 188
+    },
+    {
+      "asset": "xauusd",
+      "side": "short",
+      "outcome": "wrong_win",
+      "trades": 12,
+      "total_r": 9.213077560990595,
+      "mean_r": 0.7677564634158829,
+      "initial_stops": 0,
+      "initial_stops_before_label": 0,
+      "exits_before_label": 9,
+      "nonpositive_target_mark": 12
+    },
+    {
+      "asset": "xauusd",
+      "side": "long",
+      "outcome": "correct_nonwin",
+      "trades": 50,
+      "total_r": -49.73002397031597,
+      "mean_r": -0.9946004794063193,
+      "initial_stops": 49,
+      "initial_stops_before_label": 25,
+      "exits_before_label": 25,
+      "nonpositive_target_mark": 2
+    },
+    {
+      "asset": "xauusd",
+      "side": "long",
+      "outcome": "correct_win",
+      "trades": 158,
+      "total_r": 246.8551379455584,
+      "mean_r": 1.5623742907946734,
+      "initial_stops": 0,
+      "initial_stops_before_label": 0,
+      "exits_before_label": 31,
+      "nonpositive_target_mark": 1
+    },
+    {
+      "asset": "xauusd",
+      "side": "long",
+      "outcome": "wrong_nonwin",
+      "trades": 167,
+      "total_r": -166.2403399911991,
+      "mean_r": -0.9954511376718509,
+      "initial_stops": 166,
+      "initial_stops_before_label": 131,
+      "exits_before_label": 131,
+      "nonpositive_target_mark": 167
+    },
+    {
+      "asset": "xauusd",
+      "side": "long",
+      "outcome": "wrong_win",
+      "trades": 15,
+      "total_r": 11.732910742633676,
+      "mean_r": 0.7821940495089117,
+      "initial_stops": 0,
+      "initial_stops_before_label": 0,
+      "exits_before_label": 6,
+      "nonpositive_target_mark": 15
+    },
+    {
+      "asset": "sp500",
+      "side": "short",
+      "outcome": "correct_nonwin",
+      "trades": 62,
+      "total_r": -61.43404517496331,
+      "mean_r": -0.990871696370376,
+      "initial_stops": 60,
+      "initial_stops_before_label": 42,
+      "exits_before_label": 42,
+      "nonpositive_target_mark": 3
+    },
+    {
+      "asset": "sp500",
+      "side": "short",
+      "outcome": "correct_win",
+      "trades": 120,
+      "total_r": 232.34203821120076,
+      "mean_r": 1.9361836517600064,
+      "initial_stops": 0,
+      "initial_stops_before_label": 0,
+      "exits_before_label": 45,
+      "nonpositive_target_mark": 3
+    },
+    {
+      "asset": "sp500",
+      "side": "short",
+      "outcome": "wrong_nonwin",
+      "trades": 188,
+      "total_r": -188.0242343079998,
+      "mean_r": -1.0001289058936158,
+      "initial_stops": 188,
+      "initial_stops_before_label": 163,
+      "exits_before_label": 163,
+      "nonpositive_target_mark": 188
+    },
+    {
+      "asset": "sp500",
+      "side": "short",
+      "outcome": "wrong_win",
+      "trades": 10,
+      "total_r": 14.553309157523442,
+      "mean_r": 1.4553309157523442,
+      "initial_stops": 0,
+      "initial_stops_before_label": 0,
+      "exits_before_label": 6,
+      "nonpositive_target_mark": 10
+    },
+    {
+      "asset": "sp500",
+      "side": "long",
+      "outcome": "correct_nonwin",
+      "trades": 57,
+      "total_r": -56.9049991411644,
+      "mean_r": -0.9983333182660421,
+      "initial_stops": 56,
+      "initial_stops_before_label": 35,
+      "exits_before_label": 35,
+      "nonpositive_target_mark": 1
+    },
+    {
+      "asset": "sp500",
+      "side": "long",
+      "outcome": "correct_win",
+      "trades": 124,
+      "total_r": 241.41432079231308,
+      "mean_r": 1.9468896838089764,
+      "initial_stops": 0,
+      "initial_stops_before_label": 0,
+      "exits_before_label": 32,
+      "nonpositive_target_mark": 2
+    },
+    {
+      "asset": "sp500",
+      "side": "long",
+      "outcome": "wrong_nonwin",
+      "trades": 116,
+      "total_r": -116.05456128032068,
+      "mean_r": -1.0004703558648336,
+      "initial_stops": 116,
+      "initial_stops_before_label": 90,
+      "exits_before_label": 90,
+      "nonpositive_target_mark": 116
+    },
+    {
+      "asset": "sp500",
+      "side": "long",
+      "outcome": "wrong_win",
+      "trades": 11,
+      "total_r": 6.874961915353845,
+      "mean_r": 0.6249965377594404,
+      "initial_stops": 0,
+      "initial_stops_before_label": 0,
+      "exits_before_label": 7,
+      "nonpositive_target_mark": 11
+    }
+  ],
+  "verdict": "DIRECT_PREDICTION_DIAGNOSTIC_NO_MODEL_CHANGE"
+}
