@@ -1,0 +1,33 @@
+{
+  "study": "SAME_FEATURE_TARGET_MODEL_ABLATION",
+  "status": "FROZEN_BEFORE_RESULTS_RETROSPECTIVE",
+  "parent_v3_sha256": "873a16495f7e0b2bb4fb8e45c253d974e7051eb147d6512764b63d6e88ba3872",
+  "assets": ["xauusd", "sp500"],
+  "primary_asset": "xauusd",
+  "timeframe": "30min",
+  "models": ["lorentzian", "logistic", "prior"],
+  "training": {
+    "window": 2000,
+    "horizon": 4,
+    "minimum": 200,
+    "eligibility": "max(0,i-2000) <= j <= i-4; j % 4 != 0; finite features; exact same candidate pool for all models",
+    "refit": "every observed bar, from scratch, including pre-evaluation context",
+    "features": "unchanged f1..f5; existing causal normalization; no additional scaling or feature engineering",
+    "labels": "sign(close[j+4]-close[j]); retain genuine flat class 0",
+    "lorentzian": "original 8-neighbor vote; probability vector is empirical class fraction among those 8, not calibrated",
+    "logistic": {"C": 1.0, "solver": "lbfgs", "l1_ratio": 0.0, "max_iter": 500, "tol": 0.000001, "class_weight": null},
+    "prior": "empirical class frequencies in identical eligible pool; no features",
+    "single_class": "logistic uses empirical prior if only one training class exists",
+    "forecast": "sign(p_up-p_down); exact ties abstain and retain existing signal-state semantics"
+  },
+  "evaluation": "v3 period 2024-01-01 to 2026-09-01 exclusive; score labels only when matured by data end; last unknown targets censored",
+  "probability_metric": "multiclass Brier=sum_k (p_k-1[y=k])^2, including genuine flat; lower is better; no calibration claimed",
+  "primary_family": ["gold prior Brier minus logistic Brier", "gold Lorentzian Brier minus logistic Brier", "gold logistic minus prior monthly net R", "gold logistic minus Lorentzian monthly net R"],
+  "bootstrap": {"replicates": 10000, "seed": 20260929, "circular_block_months": 3, "family": 4},
+  "secondary": ["confusion including abstention", "short and long precision and recall", "balanced accuracy with abstention counted as missed class", "matched original Lorentzian negative-vote and executed-short cohorts", "annual splits", "probability reliability bins", "coefficients sampled monthly not interpreted causally", "trade label correctness versus PnL"],
+  "runner": "unchanged v3 runner and filter/state-change/kernel code; each model supplies its own signals including opposite-start exits; one position, 1 ATR stop, 1R activation/distance trail, no fixed TP, 24h cap",
+  "cost_profiles": ["base", "stress"],
+  "account": {"initial_balance_usd": 3000, "risk_percent": 1},
+  "promotion": "none; already-inspected history, no untouched holdout; all four adjusted primary lower bounds >0 required even for preliminary incremental support",
+  "forbidden": ["hyperparameter or threshold search", "change original features/labels/exits", "merge main", "place orders", "claim calibrated probabilities or untouched validation", "infer no information exists from one failed learner"]
+}
