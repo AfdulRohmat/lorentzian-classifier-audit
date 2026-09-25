@@ -1,0 +1,17 @@
+{
+  "study": "DIRECT_LABEL_PREDICTION_AND_PNL_AUDIT",
+  "status": "FROZEN_BEFORE_DIRECT_LABEL_RESULTS_RETROSPECTIVE",
+  "parent_v3_sha256": "873a16495f7e0b2bb4fb8e45c253d974e7051eb147d6512764b63d6e88ba3872",
+  "primary_asset": "xauusd",
+  "secondary_asset": "sp500",
+  "timeframe": "30min",
+  "target": "sign(close[i+4] - close[i]); four observed M30 bars, not guaranteed 120 wall-clock minutes",
+  "evaluation": "signal bar end >= 2024-01-01 UTC and < 2026-09-01 UTC; target bar end <= 2026-09-01 UTC; censor unmatured targets, never label them zero",
+  "cohorts": ["raw_vote_negative", "qualified_short_start", "executed_baseline_short", "corresponding_long_cohorts"],
+  "baselines": ["always_long", "momentum4", "matured_rolling_prior"],
+  "rolling_prior": "sign(mean of latest 2000 labels matured by decision i, truth.shift(4), minimum 200); ties abstain",
+  "metrics": ["coverage and confusion by raw vote sign", "directional precision including flat outcomes as not correct", "annual and causal daily regime splits", "vote-strength diagnostics without treating vote as probability", "correct-label versus trade-PnL quadrants", "correct but stopped before target maturity", "net liquidation mark at target close, explicitly not a new backtest"],
+  "statistics": {"replicates": 10000, "seed": 20260928, "circular_block_months": 3, "primary_comparisons": 3, "description": "Gold raw-short paired accuracy differences against each baseline on identical nonflat target rows where the baseline does not abstain; 98.333 percent Bonferroni intervals. Precision 95 percent intervals descriptive only. Resample 32 calendar-month sufficient-statistic blocks; preserve pairings and overlap clustering."},
+  "controls_note": "Always-short equals every prediction in the raw-short cohort, so it is not independent evidence of skill. Report whole-universe down prevalence for context, not a time/regime-matched null.",
+  "forbidden": ["change classifier features, neighbors, labels, filters or exits", "use zero-placeholder final labels", "call trade win rate model accuracy", "call target-close mark an executable strategy return", "claim untouched validation or calibrated vote probabilities", "merge main or place orders"]
+}
