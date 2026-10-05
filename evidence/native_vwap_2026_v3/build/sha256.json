@@ -1,0 +1,17 @@
+{
+  "mql5/Experts/LorentzianVWAPAudit.mq5": "9a404f24e0ba864c8d2743fc0e77e229b9646c6f0065616c187bbf2754215d91",
+  "mql5/Include/LorentzianCore.mqh": "ecbe722a8ed9813a057ab381ff0a0d5842e489a4e7e8cf911f98d818b731c6b6",
+  "mql5/Include/LorentzianExecution.mqh": "49595a1c3e56e7f6cf9ad4d26f926915a0f5048ed7a27b78b32ef77ace0583d4",
+  "mql5/Include/LorentzianVWAP.mqh": "d7a8f9a3aed2028415b5aef67ab1dfb80f6d74a5f2d639b0c8b8184e79485f34",
+  "vendor/official_mql5/LICENSE.md": "2883fe6f46d598cb0b53468bec13a9b29a182f12dd55e20dd02ed09c86efc0dd",
+  "vendor/official_mql5/UPSTREAM.md": "050f49fe92f2b9e874d0d2fbd787fe571f37ad7f8be98dc163b4a580f8937217",
+  "vendor/official_mql5/indicators/LorentzianClassification/LorentzianClassification.mq5": "d8290e42adf0b3ea074bfd680812ff824526b9519e75df6c8beeab682e6347e4",
+  "vendor/official_mql5/indicators/LorentzianClassification/PORTING_NOTES.md": "8c22711b1e0e7b4e3964e4f69dee916e2e0d9fdfa9c4626cfaa7776645c6309f",
+  "vendor/official_mql5/indicators/LorentzianClassification/Include/ANN.mqh": "1b585847beb1e4e4f03f685cf3a97fab19023abef57b3f99f664f902b4b5a559",
+  "vendor/official_mql5/indicators/LorentzianClassification/Include/Backtest.mqh": "d9dfa4a8e7671c424739a3c1371b53f9f8a2953cd983a0fa7fac042d48faa509",
+  "vendor/official_mql5/indicators/LorentzianClassification/Include/Filters.mqh": "8fea020bc753023c29a0c875260c647a0110e212ea29b8f88f92ce3a6789cf89",
+  "vendor/official_mql5/indicators/LorentzianClassification/Include/KernelFunctions.mqh": "db931564a2c60b5c2b648a0aa7b7ce12fe61cede43deb0384c453246f473685d",
+  "vendor/official_mql5/indicators/LorentzianClassification/Include/MLFeatures.mqh": "f2d980783905bcac8a553fa1d89c9fbe60fba39de9c0191e947535fa3f074ef5",
+  "mql5/Experts/LorentzianVWAPAudit.ex5": "72bcb7808286f60a86dca5bada05445c55f79c4dd42531b6ec1a90078e53a538",
+  "vendor/official_mql5/indicators/LorentzianClassification/LorentzianClassification.ex5": "8bfa2546ed1c110ce5842cc35c83b5cb002cdbaeb78577e16ed216fffbceb980"
+}

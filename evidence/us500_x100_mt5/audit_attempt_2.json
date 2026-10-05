@@ -1,0 +1,10 @@
+{
+  "captured_utc": "2026-10-04T23:52:40.368002+00:00",
+  "read_only": true,
+  "status": "NOT_CONNECTED",
+  "orders_submitted": 0,
+  "error": [
+    -6,
+    "Terminal: Authorization failed"
+  ]
+}

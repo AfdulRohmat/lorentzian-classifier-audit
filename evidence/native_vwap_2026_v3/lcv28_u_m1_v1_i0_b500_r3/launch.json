@@ -1,0 +1,10 @@
+{
+  "started_utc": "2026-10-05T21:29:28.399752+00:00",
+  "config_sha256": "9bd299a5ace3593843aa27f4d9c73730bc713dac54e234fc0699e50d5d96c402",
+  "status": "PROCESS_EXITED_NOT_YET_VALIDATED",
+  "live_orders_authorized": false,
+  "terminal_timeout_seconds": 900,
+  "model": "4 real ticks requested",
+  "exit_code": 0,
+  "finished_utc": "2026-10-05T21:30:15.229613+00:00"
+}

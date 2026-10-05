@@ -1,0 +1,24 @@
+{
+  "verdict": "CLASSIFIER_PARITY_PASS_NATIVE_EXECUTION_BLOCKED",
+  "native_backtest_completed": false,
+  "native_performance_metrics_available": false,
+  "connection_attempts": 2,
+  "connection_error_code": -6,
+  "connection_error": "Terminal: Authorization failed",
+  "terminal_log_markers": [
+    {"local_time": "2026-10-05 06:54:01.678", "message": "not synchronized with trade server"},
+    {"local_time": "2026-10-05 06:54:01.956", "message": "terminal is not synchronized with the trade server before start automatic testing [0]"}
+  ],
+  "agent_log_markers": [
+    {"local_time": "2026-10-05 06:54:07.965", "message": "initial deposit 3000.00 USD, leverage 1:400"},
+    {"local_time": "2026-10-05 06:54:41.989", "message": "unexpected end of testing"}
+  ],
+  "cached_history": {
+    "symbol": "US500_x100", "timeframe": "M30", "rows": 14319,
+    "first_terminal_time": "2025-06-15 22:00", "last_terminal_time": "2026-08-31 23:30",
+    "full_anchor_available": false, "clock_alignment_verified": false
+  },
+  "cache_not_live_spec": true,
+  "broker_orders_submitted": 0,
+  "observation_or_forward_test_started": false
+}

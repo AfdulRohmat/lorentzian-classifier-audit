@@ -1,0 +1,30 @@
+[
+  {
+    "model": 0,
+    "overlap_bars": 7861,
+    "us500_bars": 7861,
+    "x100_bars": 7861,
+    "open_differences": 6,
+    "high_differences": 0,
+    "low_differences": 0,
+    "close_differences": 6,
+    "tick_volume_differences": 16,
+    "prediction_differences": 2444,
+    "direction_differences": 716,
+    "start_differences": 53
+  },
+  {
+    "model": 1,
+    "overlap_bars": 7861,
+    "us500_bars": 7861,
+    "x100_bars": 7861,
+    "open_differences": 6,
+    "high_differences": 0,
+    "low_differences": 0,
+    "close_differences": 6,
+    "tick_volume_differences": 16,
+    "prediction_differences": 2903,
+    "direction_differences": 135,
+    "start_differences": 18
+  }
+]

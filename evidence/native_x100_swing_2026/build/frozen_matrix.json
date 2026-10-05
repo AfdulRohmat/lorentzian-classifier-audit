@@ -1,0 +1,1542 @@
+[
+  {
+    "balance": 3000,
+    "risk": 1,
+    "smoke": true,
+    "stop_atr_multiplier": 10,
+    "max_holding_hours": 0,
+    "control": false,
+    "tag": "lcs26_smoke",
+    "minimum_lot_fallback": true
+  },
+  {
+    "balance": 500,
+    "risk": 1,
+    "smoke": false,
+    "stop_atr_multiplier": 1,
+    "max_holding_hours": 24,
+    "control": true,
+    "tag": "lcs26_control_b500",
+    "minimum_lot_fallback": true
+  },
+  {
+    "balance": 1000,
+    "risk": 1,
+    "smoke": false,
+    "stop_atr_multiplier": 1,
+    "max_holding_hours": 24,
+    "control": true,
+    "tag": "lcs26_control_b1000",
+    "minimum_lot_fallback": true
+  },
+  {
+    "balance": 3000,
+    "risk": 1,
+    "smoke": false,
+    "stop_atr_multiplier": 1,
+    "max_holding_hours": 24,
+    "control": true,
+    "tag": "lcs26_control_b3000",
+    "minimum_lot_fallback": true
+  },
+  {
+    "balance": 500,
+    "risk": 1,
+    "smoke": false,
+    "stop_atr_multiplier": 1,
+    "max_holding_hours": 0,
+    "control": false,
+    "tag": "lcs26_k1_b500_r1",
+    "minimum_lot_fallback": true
+  },
+  {
+    "balance": 500,
+    "risk": 2,
+    "smoke": false,
+    "stop_atr_multiplier": 1,
+    "max_holding_hours": 0,
+    "control": false,
+    "tag": "lcs26_k1_b500_r2",
+    "minimum_lot_fallback": false
+  },
+  {
+    "balance": 500,
+    "risk": 3,
+    "smoke": false,
+    "stop_atr_multiplier": 1,
+    "max_holding_hours": 0,
+    "control": false,
+    "tag": "lcs26_k1_b500_r3",
+    "minimum_lot_fallback": false
+  },
+  {
+    "balance": 500,
+    "risk": 4,
+    "smoke": false,
+    "stop_atr_multiplier": 1,
+    "max_holding_hours": 0,
+    "control": false,
+    "tag": "lcs26_k1_b500_r4",
+    "minimum_lot_fallback": false
+  },
+  {
+    "balance": 500,
+    "risk": 5,
+    "smoke": false,
+    "stop_atr_multiplier": 1,
+    "max_holding_hours": 0,
+    "control": false,
+    "tag": "lcs26_k1_b500_r5",
+    "minimum_lot_fallback": false
+  },
+  {
+    "balance": 1000,
+    "risk": 1,
+    "smoke": false,
+    "stop_atr_multiplier": 1,
+    "max_holding_hours": 0,
+    "control": false,
+    "tag": "lcs26_k1_b1000_r1",
+    "minimum_lot_fallback": true
+  },
+  {
+    "balance": 1000,
+    "risk": 2,
+    "smoke": false,
+    "stop_atr_multiplier": 1,
+    "max_holding_hours": 0,
+    "control": false,
+    "tag": "lcs26_k1_b1000_r2",
+    "minimum_lot_fallback": false
+  },
+  {
+    "balance": 1000,
+    "risk": 3,
+    "smoke": false,
+    "stop_atr_multiplier": 1,
+    "max_holding_hours": 0,
+    "control": false,
+    "tag": "lcs26_k1_b1000_r3",
+    "minimum_lot_fallback": false
+  },
+  {
+    "balance": 1000,
+    "risk": 4,
+    "smoke": false,
+    "stop_atr_multiplier": 1,
+    "max_holding_hours": 0,
+    "control": false,
+    "tag": "lcs26_k1_b1000_r4",
+    "minimum_lot_fallback": false
+  },
+  {
+    "balance": 1000,
+    "risk": 5,
+    "smoke": false,
+    "stop_atr_multiplier": 1,
+    "max_holding_hours": 0,
+    "control": false,
+    "tag": "lcs26_k1_b1000_r5",
+    "minimum_lot_fallback": false
+  },
+  {
+    "balance": 3000,
+    "risk": 1,
+    "smoke": false,
+    "stop_atr_multiplier": 1,
+    "max_holding_hours": 0,
+    "control": false,
+    "tag": "lcs26_k1_b3000_r1",
+    "minimum_lot_fallback": true
+  },
+  {
+    "balance": 3000,
+    "risk": 2,
+    "smoke": false,
+    "stop_atr_multiplier": 1,
+    "max_holding_hours": 0,
+    "control": false,
+    "tag": "lcs26_k1_b3000_r2",
+    "minimum_lot_fallback": false
+  },
+  {
+    "balance": 3000,
+    "risk": 3,
+    "smoke": false,
+    "stop_atr_multiplier": 1,
+    "max_holding_hours": 0,
+    "control": false,
+    "tag": "lcs26_k1_b3000_r3",
+    "minimum_lot_fallback": false
+  },
+  {
+    "balance": 3000,
+    "risk": 4,
+    "smoke": false,
+    "stop_atr_multiplier": 1,
+    "max_holding_hours": 0,
+    "control": false,
+    "tag": "lcs26_k1_b3000_r4",
+    "minimum_lot_fallback": false
+  },
+  {
+    "balance": 3000,
+    "risk": 5,
+    "smoke": false,
+    "stop_atr_multiplier": 1,
+    "max_holding_hours": 0,
+    "control": false,
+    "tag": "lcs26_k1_b3000_r5",
+    "minimum_lot_fallback": false
+  },
+  {
+    "balance": 500,
+    "risk": 1,
+    "smoke": false,
+    "stop_atr_multiplier": 2,
+    "max_holding_hours": 0,
+    "control": false,
+    "tag": "lcs26_k2_b500_r1",
+    "minimum_lot_fallback": true
+  },
+  {
+    "balance": 500,
+    "risk": 2,
+    "smoke": false,
+    "stop_atr_multiplier": 2,
+    "max_holding_hours": 0,
+    "control": false,
+    "tag": "lcs26_k2_b500_r2",
+    "minimum_lot_fallback": false
+  },
+  {
+    "balance": 500,
+    "risk": 3,
+    "smoke": false,
+    "stop_atr_multiplier": 2,
+    "max_holding_hours": 0,
+    "control": false,
+    "tag": "lcs26_k2_b500_r3",
+    "minimum_lot_fallback": false
+  },
+  {
+    "balance": 500,
+    "risk": 4,
+    "smoke": false,
+    "stop_atr_multiplier": 2,
+    "max_holding_hours": 0,
+    "control": false,
+    "tag": "lcs26_k2_b500_r4",
+    "minimum_lot_fallback": false
+  },
+  {
+    "balance": 500,
+    "risk": 5,
+    "smoke": false,
+    "stop_atr_multiplier": 2,
+    "max_holding_hours": 0,
+    "control": false,
+    "tag": "lcs26_k2_b500_r5",
+    "minimum_lot_fallback": false
+  },
+  {
+    "balance": 1000,
+    "risk": 1,
+    "smoke": false,
+    "stop_atr_multiplier": 2,
+    "max_holding_hours": 0,
+    "control": false,
+    "tag": "lcs26_k2_b1000_r1",
+    "minimum_lot_fallback": true
+  },
+  {
+    "balance": 1000,
+    "risk": 2,
+    "smoke": false,
+    "stop_atr_multiplier": 2,
+    "max_holding_hours": 0,
+    "control": false,
+    "tag": "lcs26_k2_b1000_r2",
+    "minimum_lot_fallback": false
+  },
+  {
+    "balance": 1000,
+    "risk": 3,
+    "smoke": false,
+    "stop_atr_multiplier": 2,
+    "max_holding_hours": 0,
+    "control": false,
+    "tag": "lcs26_k2_b1000_r3",
+    "minimum_lot_fallback": false
+  },
+  {
+    "balance": 1000,
+    "risk": 4,
+    "smoke": false,
+    "stop_atr_multiplier": 2,
+    "max_holding_hours": 0,
+    "control": false,
+    "tag": "lcs26_k2_b1000_r4",
+    "minimum_lot_fallback": false
+  },
+  {
+    "balance": 1000,
+    "risk": 5,
+    "smoke": false,
+    "stop_atr_multiplier": 2,
+    "max_holding_hours": 0,
+    "control": false,
+    "tag": "lcs26_k2_b1000_r5",
+    "minimum_lot_fallback": false
+  },
+  {
+    "balance": 3000,
+    "risk": 1,
+    "smoke": false,
+    "stop_atr_multiplier": 2,
+    "max_holding_hours": 0,
+    "control": false,
+    "tag": "lcs26_k2_b3000_r1",
+    "minimum_lot_fallback": true
+  },
+  {
+    "balance": 3000,
+    "risk": 2,
+    "smoke": false,
+    "stop_atr_multiplier": 2,
+    "max_holding_hours": 0,
+    "control": false,
+    "tag": "lcs26_k2_b3000_r2",
+    "minimum_lot_fallback": false
+  },
+  {
+    "balance": 3000,
+    "risk": 3,
+    "smoke": false,
+    "stop_atr_multiplier": 2,
+    "max_holding_hours": 0,
+    "control": false,
+    "tag": "lcs26_k2_b3000_r3",
+    "minimum_lot_fallback": false
+  },
+  {
+    "balance": 3000,
+    "risk": 4,
+    "smoke": false,
+    "stop_atr_multiplier": 2,
+    "max_holding_hours": 0,
+    "control": false,
+    "tag": "lcs26_k2_b3000_r4",
+    "minimum_lot_fallback": false
+  },
+  {
+    "balance": 3000,
+    "risk": 5,
+    "smoke": false,
+    "stop_atr_multiplier": 2,
+    "max_holding_hours": 0,
+    "control": false,
+    "tag": "lcs26_k2_b3000_r5",
+    "minimum_lot_fallback": false
+  },
+  {
+    "balance": 500,
+    "risk": 1,
+    "smoke": false,
+    "stop_atr_multiplier": 3,
+    "max_holding_hours": 0,
+    "control": false,
+    "tag": "lcs26_k3_b500_r1",
+    "minimum_lot_fallback": true
+  },
+  {
+    "balance": 500,
+    "risk": 2,
+    "smoke": false,
+    "stop_atr_multiplier": 3,
+    "max_holding_hours": 0,
+    "control": false,
+    "tag": "lcs26_k3_b500_r2",
+    "minimum_lot_fallback": false
+  },
+  {
+    "balance": 500,
+    "risk": 3,
+    "smoke": false,
+    "stop_atr_multiplier": 3,
+    "max_holding_hours": 0,
+    "control": false,
+    "tag": "lcs26_k3_b500_r3",
+    "minimum_lot_fallback": false
+  },
+  {
+    "balance": 500,
+    "risk": 4,
+    "smoke": false,
+    "stop_atr_multiplier": 3,
+    "max_holding_hours": 0,
+    "control": false,
+    "tag": "lcs26_k3_b500_r4",
+    "minimum_lot_fallback": false
+  },
+  {
+    "balance": 500,
+    "risk": 5,
+    "smoke": false,
+    "stop_atr_multiplier": 3,
+    "max_holding_hours": 0,
+    "control": false,
+    "tag": "lcs26_k3_b500_r5",
+    "minimum_lot_fallback": false
+  },
+  {
+    "balance": 1000,
+    "risk": 1,
+    "smoke": false,
+    "stop_atr_multiplier": 3,
+    "max_holding_hours": 0,
+    "control": false,
+    "tag": "lcs26_k3_b1000_r1",
+    "minimum_lot_fallback": true
+  },
+  {
+    "balance": 1000,
+    "risk": 2,
+    "smoke": false,
+    "stop_atr_multiplier": 3,
+    "max_holding_hours": 0,
+    "control": false,
+    "tag": "lcs26_k3_b1000_r2",
+    "minimum_lot_fallback": false
+  },
+  {
+    "balance": 1000,
+    "risk": 3,
+    "smoke": false,
+    "stop_atr_multiplier": 3,
+    "max_holding_hours": 0,
+    "control": false,
+    "tag": "lcs26_k3_b1000_r3",
+    "minimum_lot_fallback": false
+  },
+  {
+    "balance": 1000,
+    "risk": 4,
+    "smoke": false,
+    "stop_atr_multiplier": 3,
+    "max_holding_hours": 0,
+    "control": false,
+    "tag": "lcs26_k3_b1000_r4",
+    "minimum_lot_fallback": false
+  },
+  {
+    "balance": 1000,
+    "risk": 5,
+    "smoke": false,
+    "stop_atr_multiplier": 3,
+    "max_holding_hours": 0,
+    "control": false,
+    "tag": "lcs26_k3_b1000_r5",
+    "minimum_lot_fallback": false
+  },
+  {
+    "balance": 3000,
+    "risk": 1,
+    "smoke": false,
+    "stop_atr_multiplier": 3,
+    "max_holding_hours": 0,
+    "control": false,
+    "tag": "lcs26_k3_b3000_r1",
+    "minimum_lot_fallback": true
+  },
+  {
+    "balance": 3000,
+    "risk": 2,
+    "smoke": false,
+    "stop_atr_multiplier": 3,
+    "max_holding_hours": 0,
+    "control": false,
+    "tag": "lcs26_k3_b3000_r2",
+    "minimum_lot_fallback": false
+  },
+  {
+    "balance": 3000,
+    "risk": 3,
+    "smoke": false,
+    "stop_atr_multiplier": 3,
+    "max_holding_hours": 0,
+    "control": false,
+    "tag": "lcs26_k3_b3000_r3",
+    "minimum_lot_fallback": false
+  },
+  {
+    "balance": 3000,
+    "risk": 4,
+    "smoke": false,
+    "stop_atr_multiplier": 3,
+    "max_holding_hours": 0,
+    "control": false,
+    "tag": "lcs26_k3_b3000_r4",
+    "minimum_lot_fallback": false
+  },
+  {
+    "balance": 3000,
+    "risk": 5,
+    "smoke": false,
+    "stop_atr_multiplier": 3,
+    "max_holding_hours": 0,
+    "control": false,
+    "tag": "lcs26_k3_b3000_r5",
+    "minimum_lot_fallback": false
+  },
+  {
+    "balance": 500,
+    "risk": 1,
+    "smoke": false,
+    "stop_atr_multiplier": 4,
+    "max_holding_hours": 0,
+    "control": false,
+    "tag": "lcs26_k4_b500_r1",
+    "minimum_lot_fallback": true
+  },
+  {
+    "balance": 500,
+    "risk": 2,
+    "smoke": false,
+    "stop_atr_multiplier": 4,
+    "max_holding_hours": 0,
+    "control": false,
+    "tag": "lcs26_k4_b500_r2",
+    "minimum_lot_fallback": false
+  },
+  {
+    "balance": 500,
+    "risk": 3,
+    "smoke": false,
+    "stop_atr_multiplier": 4,
+    "max_holding_hours": 0,
+    "control": false,
+    "tag": "lcs26_k4_b500_r3",
+    "minimum_lot_fallback": false
+  },
+  {
+    "balance": 500,
+    "risk": 4,
+    "smoke": false,
+    "stop_atr_multiplier": 4,
+    "max_holding_hours": 0,
+    "control": false,
+    "tag": "lcs26_k4_b500_r4",
+    "minimum_lot_fallback": false
+  },
+  {
+    "balance": 500,
+    "risk": 5,
+    "smoke": false,
+    "stop_atr_multiplier": 4,
+    "max_holding_hours": 0,
+    "control": false,
+    "tag": "lcs26_k4_b500_r5",
+    "minimum_lot_fallback": false
+  },
+  {
+    "balance": 1000,
+    "risk": 1,
+    "smoke": false,
+    "stop_atr_multiplier": 4,
+    "max_holding_hours": 0,
+    "control": false,
+    "tag": "lcs26_k4_b1000_r1",
+    "minimum_lot_fallback": true
+  },
+  {
+    "balance": 1000,
+    "risk": 2,
+    "smoke": false,
+    "stop_atr_multiplier": 4,
+    "max_holding_hours": 0,
+    "control": false,
+    "tag": "lcs26_k4_b1000_r2",
+    "minimum_lot_fallback": false
+  },
+  {
+    "balance": 1000,
+    "risk": 3,
+    "smoke": false,
+    "stop_atr_multiplier": 4,
+    "max_holding_hours": 0,
+    "control": false,
+    "tag": "lcs26_k4_b1000_r3",
+    "minimum_lot_fallback": false
+  },
+  {
+    "balance": 1000,
+    "risk": 4,
+    "smoke": false,
+    "stop_atr_multiplier": 4,
+    "max_holding_hours": 0,
+    "control": false,
+    "tag": "lcs26_k4_b1000_r4",
+    "minimum_lot_fallback": false
+  },
+  {
+    "balance": 1000,
+    "risk": 5,
+    "smoke": false,
+    "stop_atr_multiplier": 4,
+    "max_holding_hours": 0,
+    "control": false,
+    "tag": "lcs26_k4_b1000_r5",
+    "minimum_lot_fallback": false
+  },
+  {
+    "balance": 3000,
+    "risk": 1,
+    "smoke": false,
+    "stop_atr_multiplier": 4,
+    "max_holding_hours": 0,
+    "control": false,
+    "tag": "lcs26_k4_b3000_r1",
+    "minimum_lot_fallback": true
+  },
+  {
+    "balance": 3000,
+    "risk": 2,
+    "smoke": false,
+    "stop_atr_multiplier": 4,
+    "max_holding_hours": 0,
+    "control": false,
+    "tag": "lcs26_k4_b3000_r2",
+    "minimum_lot_fallback": false
+  },
+  {
+    "balance": 3000,
+    "risk": 3,
+    "smoke": false,
+    "stop_atr_multiplier": 4,
+    "max_holding_hours": 0,
+    "control": false,
+    "tag": "lcs26_k4_b3000_r3",
+    "minimum_lot_fallback": false
+  },
+  {
+    "balance": 3000,
+    "risk": 4,
+    "smoke": false,
+    "stop_atr_multiplier": 4,
+    "max_holding_hours": 0,
+    "control": false,
+    "tag": "lcs26_k4_b3000_r4",
+    "minimum_lot_fallback": false
+  },
+  {
+    "balance": 3000,
+    "risk": 5,
+    "smoke": false,
+    "stop_atr_multiplier": 4,
+    "max_holding_hours": 0,
+    "control": false,
+    "tag": "lcs26_k4_b3000_r5",
+    "minimum_lot_fallback": false
+  },
+  {
+    "balance": 500,
+    "risk": 1,
+    "smoke": false,
+    "stop_atr_multiplier": 5,
+    "max_holding_hours": 0,
+    "control": false,
+    "tag": "lcs26_k5_b500_r1",
+    "minimum_lot_fallback": true
+  },
+  {
+    "balance": 500,
+    "risk": 2,
+    "smoke": false,
+    "stop_atr_multiplier": 5,
+    "max_holding_hours": 0,
+    "control": false,
+    "tag": "lcs26_k5_b500_r2",
+    "minimum_lot_fallback": false
+  },
+  {
+    "balance": 500,
+    "risk": 3,
+    "smoke": false,
+    "stop_atr_multiplier": 5,
+    "max_holding_hours": 0,
+    "control": false,
+    "tag": "lcs26_k5_b500_r3",
+    "minimum_lot_fallback": false
+  },
+  {
+    "balance": 500,
+    "risk": 4,
+    "smoke": false,
+    "stop_atr_multiplier": 5,
+    "max_holding_hours": 0,
+    "control": false,
+    "tag": "lcs26_k5_b500_r4",
+    "minimum_lot_fallback": false
+  },
+  {
+    "balance": 500,
+    "risk": 5,
+    "smoke": false,
+    "stop_atr_multiplier": 5,
+    "max_holding_hours": 0,
+    "control": false,
+    "tag": "lcs26_k5_b500_r5",
+    "minimum_lot_fallback": false
+  },
+  {
+    "balance": 1000,
+    "risk": 1,
+    "smoke": false,
+    "stop_atr_multiplier": 5,
+    "max_holding_hours": 0,
+    "control": false,
+    "tag": "lcs26_k5_b1000_r1",
+    "minimum_lot_fallback": true
+  },
+  {
+    "balance": 1000,
+    "risk": 2,
+    "smoke": false,
+    "stop_atr_multiplier": 5,
+    "max_holding_hours": 0,
+    "control": false,
+    "tag": "lcs26_k5_b1000_r2",
+    "minimum_lot_fallback": false
+  },
+  {
+    "balance": 1000,
+    "risk": 3,
+    "smoke": false,
+    "stop_atr_multiplier": 5,
+    "max_holding_hours": 0,
+    "control": false,
+    "tag": "lcs26_k5_b1000_r3",
+    "minimum_lot_fallback": false
+  },
+  {
+    "balance": 1000,
+    "risk": 4,
+    "smoke": false,
+    "stop_atr_multiplier": 5,
+    "max_holding_hours": 0,
+    "control": false,
+    "tag": "lcs26_k5_b1000_r4",
+    "minimum_lot_fallback": false
+  },
+  {
+    "balance": 1000,
+    "risk": 5,
+    "smoke": false,
+    "stop_atr_multiplier": 5,
+    "max_holding_hours": 0,
+    "control": false,
+    "tag": "lcs26_k5_b1000_r5",
+    "minimum_lot_fallback": false
+  },
+  {
+    "balance": 3000,
+    "risk": 1,
+    "smoke": false,
+    "stop_atr_multiplier": 5,
+    "max_holding_hours": 0,
+    "control": false,
+    "tag": "lcs26_k5_b3000_r1",
+    "minimum_lot_fallback": true
+  },
+  {
+    "balance": 3000,
+    "risk": 2,
+    "smoke": false,
+    "stop_atr_multiplier": 5,
+    "max_holding_hours": 0,
+    "control": false,
+    "tag": "lcs26_k5_b3000_r2",
+    "minimum_lot_fallback": false
+  },
+  {
+    "balance": 3000,
+    "risk": 3,
+    "smoke": false,
+    "stop_atr_multiplier": 5,
+    "max_holding_hours": 0,
+    "control": false,
+    "tag": "lcs26_k5_b3000_r3",
+    "minimum_lot_fallback": false
+  },
+  {
+    "balance": 3000,
+    "risk": 4,
+    "smoke": false,
+    "stop_atr_multiplier": 5,
+    "max_holding_hours": 0,
+    "control": false,
+    "tag": "lcs26_k5_b3000_r4",
+    "minimum_lot_fallback": false
+  },
+  {
+    "balance": 3000,
+    "risk": 5,
+    "smoke": false,
+    "stop_atr_multiplier": 5,
+    "max_holding_hours": 0,
+    "control": false,
+    "tag": "lcs26_k5_b3000_r5",
+    "minimum_lot_fallback": false
+  },
+  {
+    "balance": 500,
+    "risk": 1,
+    "smoke": false,
+    "stop_atr_multiplier": 6,
+    "max_holding_hours": 0,
+    "control": false,
+    "tag": "lcs26_k6_b500_r1",
+    "minimum_lot_fallback": true
+  },
+  {
+    "balance": 500,
+    "risk": 2,
+    "smoke": false,
+    "stop_atr_multiplier": 6,
+    "max_holding_hours": 0,
+    "control": false,
+    "tag": "lcs26_k6_b500_r2",
+    "minimum_lot_fallback": false
+  },
+  {
+    "balance": 500,
+    "risk": 3,
+    "smoke": false,
+    "stop_atr_multiplier": 6,
+    "max_holding_hours": 0,
+    "control": false,
+    "tag": "lcs26_k6_b500_r3",
+    "minimum_lot_fallback": false
+  },
+  {
+    "balance": 500,
+    "risk": 4,
+    "smoke": false,
+    "stop_atr_multiplier": 6,
+    "max_holding_hours": 0,
+    "control": false,
+    "tag": "lcs26_k6_b500_r4",
+    "minimum_lot_fallback": false
+  },
+  {
+    "balance": 500,
+    "risk": 5,
+    "smoke": false,
+    "stop_atr_multiplier": 6,
+    "max_holding_hours": 0,
+    "control": false,
+    "tag": "lcs26_k6_b500_r5",
+    "minimum_lot_fallback": false
+  },
+  {
+    "balance": 1000,
+    "risk": 1,
+    "smoke": false,
+    "stop_atr_multiplier": 6,
+    "max_holding_hours": 0,
+    "control": false,
+    "tag": "lcs26_k6_b1000_r1",
+    "minimum_lot_fallback": true
+  },
+  {
+    "balance": 1000,
+    "risk": 2,
+    "smoke": false,
+    "stop_atr_multiplier": 6,
+    "max_holding_hours": 0,
+    "control": false,
+    "tag": "lcs26_k6_b1000_r2",
+    "minimum_lot_fallback": false
+  },
+  {
+    "balance": 1000,
+    "risk": 3,
+    "smoke": false,
+    "stop_atr_multiplier": 6,
+    "max_holding_hours": 0,
+    "control": false,
+    "tag": "lcs26_k6_b1000_r3",
+    "minimum_lot_fallback": false
+  },
+  {
+    "balance": 1000,
+    "risk": 4,
+    "smoke": false,
+    "stop_atr_multiplier": 6,
+    "max_holding_hours": 0,
+    "control": false,
+    "tag": "lcs26_k6_b1000_r4",
+    "minimum_lot_fallback": false
+  },
+  {
+    "balance": 1000,
+    "risk": 5,
+    "smoke": false,
+    "stop_atr_multiplier": 6,
+    "max_holding_hours": 0,
+    "control": false,
+    "tag": "lcs26_k6_b1000_r5",
+    "minimum_lot_fallback": false
+  },
+  {
+    "balance": 3000,
+    "risk": 1,
+    "smoke": false,
+    "stop_atr_multiplier": 6,
+    "max_holding_hours": 0,
+    "control": false,
+    "tag": "lcs26_k6_b3000_r1",
+    "minimum_lot_fallback": true
+  },
+  {
+    "balance": 3000,
+    "risk": 2,
+    "smoke": false,
+    "stop_atr_multiplier": 6,
+    "max_holding_hours": 0,
+    "control": false,
+    "tag": "lcs26_k6_b3000_r2",
+    "minimum_lot_fallback": false
+  },
+  {
+    "balance": 3000,
+    "risk": 3,
+    "smoke": false,
+    "stop_atr_multiplier": 6,
+    "max_holding_hours": 0,
+    "control": false,
+    "tag": "lcs26_k6_b3000_r3",
+    "minimum_lot_fallback": false
+  },
+  {
+    "balance": 3000,
+    "risk": 4,
+    "smoke": false,
+    "stop_atr_multiplier": 6,
+    "max_holding_hours": 0,
+    "control": false,
+    "tag": "lcs26_k6_b3000_r4",
+    "minimum_lot_fallback": false
+  },
+  {
+    "balance": 3000,
+    "risk": 5,
+    "smoke": false,
+    "stop_atr_multiplier": 6,
+    "max_holding_hours": 0,
+    "control": false,
+    "tag": "lcs26_k6_b3000_r5",
+    "minimum_lot_fallback": false
+  },
+  {
+    "balance": 500,
+    "risk": 1,
+    "smoke": false,
+    "stop_atr_multiplier": 7,
+    "max_holding_hours": 0,
+    "control": false,
+    "tag": "lcs26_k7_b500_r1",
+    "minimum_lot_fallback": true
+  },
+  {
+    "balance": 500,
+    "risk": 2,
+    "smoke": false,
+    "stop_atr_multiplier": 7,
+    "max_holding_hours": 0,
+    "control": false,
+    "tag": "lcs26_k7_b500_r2",
+    "minimum_lot_fallback": false
+  },
+  {
+    "balance": 500,
+    "risk": 3,
+    "smoke": false,
+    "stop_atr_multiplier": 7,
+    "max_holding_hours": 0,
+    "control": false,
+    "tag": "lcs26_k7_b500_r3",
+    "minimum_lot_fallback": false
+  },
+  {
+    "balance": 500,
+    "risk": 4,
+    "smoke": false,
+    "stop_atr_multiplier": 7,
+    "max_holding_hours": 0,
+    "control": false,
+    "tag": "lcs26_k7_b500_r4",
+    "minimum_lot_fallback": false
+  },
+  {
+    "balance": 500,
+    "risk": 5,
+    "smoke": false,
+    "stop_atr_multiplier": 7,
+    "max_holding_hours": 0,
+    "control": false,
+    "tag": "lcs26_k7_b500_r5",
+    "minimum_lot_fallback": false
+  },
+  {
+    "balance": 1000,
+    "risk": 1,
+    "smoke": false,
+    "stop_atr_multiplier": 7,
+    "max_holding_hours": 0,
+    "control": false,
+    "tag": "lcs26_k7_b1000_r1",
+    "minimum_lot_fallback": true
+  },
+  {
+    "balance": 1000,
+    "risk": 2,
+    "smoke": false,
+    "stop_atr_multiplier": 7,
+    "max_holding_hours": 0,
+    "control": false,
+    "tag": "lcs26_k7_b1000_r2",
+    "minimum_lot_fallback": false
+  },
+  {
+    "balance": 1000,
+    "risk": 3,
+    "smoke": false,
+    "stop_atr_multiplier": 7,
+    "max_holding_hours": 0,
+    "control": false,
+    "tag": "lcs26_k7_b1000_r3",
+    "minimum_lot_fallback": false
+  },
+  {
+    "balance": 1000,
+    "risk": 4,
+    "smoke": false,
+    "stop_atr_multiplier": 7,
+    "max_holding_hours": 0,
+    "control": false,
+    "tag": "lcs26_k7_b1000_r4",
+    "minimum_lot_fallback": false
+  },
+  {
+    "balance": 1000,
+    "risk": 5,
+    "smoke": false,
+    "stop_atr_multiplier": 7,
+    "max_holding_hours": 0,
+    "control": false,
+    "tag": "lcs26_k7_b1000_r5",
+    "minimum_lot_fallback": false
+  },
+  {
+    "balance": 3000,
+    "risk": 1,
+    "smoke": false,
+    "stop_atr_multiplier": 7,
+    "max_holding_hours": 0,
+    "control": false,
+    "tag": "lcs26_k7_b3000_r1",
+    "minimum_lot_fallback": true
+  },
+  {
+    "balance": 3000,
+    "risk": 2,
+    "smoke": false,
+    "stop_atr_multiplier": 7,
+    "max_holding_hours": 0,
+    "control": false,
+    "tag": "lcs26_k7_b3000_r2",
+    "minimum_lot_fallback": false
+  },
+  {
+    "balance": 3000,
+    "risk": 3,
+    "smoke": false,
+    "stop_atr_multiplier": 7,
+    "max_holding_hours": 0,
+    "control": false,
+    "tag": "lcs26_k7_b3000_r3",
+    "minimum_lot_fallback": false
+  },
+  {
+    "balance": 3000,
+    "risk": 4,
+    "smoke": false,
+    "stop_atr_multiplier": 7,
+    "max_holding_hours": 0,
+    "control": false,
+    "tag": "lcs26_k7_b3000_r4",
+    "minimum_lot_fallback": false
+  },
+  {
+    "balance": 3000,
+    "risk": 5,
+    "smoke": false,
+    "stop_atr_multiplier": 7,
+    "max_holding_hours": 0,
+    "control": false,
+    "tag": "lcs26_k7_b3000_r5",
+    "minimum_lot_fallback": false
+  },
+  {
+    "balance": 500,
+    "risk": 1,
+    "smoke": false,
+    "stop_atr_multiplier": 8,
+    "max_holding_hours": 0,
+    "control": false,
+    "tag": "lcs26_k8_b500_r1",
+    "minimum_lot_fallback": true
+  },
+  {
+    "balance": 500,
+    "risk": 2,
+    "smoke": false,
+    "stop_atr_multiplier": 8,
+    "max_holding_hours": 0,
+    "control": false,
+    "tag": "lcs26_k8_b500_r2",
+    "minimum_lot_fallback": false
+  },
+  {
+    "balance": 500,
+    "risk": 3,
+    "smoke": false,
+    "stop_atr_multiplier": 8,
+    "max_holding_hours": 0,
+    "control": false,
+    "tag": "lcs26_k8_b500_r3",
+    "minimum_lot_fallback": false
+  },
+  {
+    "balance": 500,
+    "risk": 4,
+    "smoke": false,
+    "stop_atr_multiplier": 8,
+    "max_holding_hours": 0,
+    "control": false,
+    "tag": "lcs26_k8_b500_r4",
+    "minimum_lot_fallback": false
+  },
+  {
+    "balance": 500,
+    "risk": 5,
+    "smoke": false,
+    "stop_atr_multiplier": 8,
+    "max_holding_hours": 0,
+    "control": false,
+    "tag": "lcs26_k8_b500_r5",
+    "minimum_lot_fallback": false
+  },
+  {
+    "balance": 1000,
+    "risk": 1,
+    "smoke": false,
+    "stop_atr_multiplier": 8,
+    "max_holding_hours": 0,
+    "control": false,
+    "tag": "lcs26_k8_b1000_r1",
+    "minimum_lot_fallback": true
+  },
+  {
+    "balance": 1000,
+    "risk": 2,
+    "smoke": false,
+    "stop_atr_multiplier": 8,
+    "max_holding_hours": 0,
+    "control": false,
+    "tag": "lcs26_k8_b1000_r2",
+    "minimum_lot_fallback": false
+  },
+  {
+    "balance": 1000,
+    "risk": 3,
+    "smoke": false,
+    "stop_atr_multiplier": 8,
+    "max_holding_hours": 0,
+    "control": false,
+    "tag": "lcs26_k8_b1000_r3",
+    "minimum_lot_fallback": false
+  },
+  {
+    "balance": 1000,
+    "risk": 4,
+    "smoke": false,
+    "stop_atr_multiplier": 8,
+    "max_holding_hours": 0,
+    "control": false,
+    "tag": "lcs26_k8_b1000_r4",
+    "minimum_lot_fallback": false
+  },
+  {
+    "balance": 1000,
+    "risk": 5,
+    "smoke": false,
+    "stop_atr_multiplier": 8,
+    "max_holding_hours": 0,
+    "control": false,
+    "tag": "lcs26_k8_b1000_r5",
+    "minimum_lot_fallback": false
+  },
+  {
+    "balance": 3000,
+    "risk": 1,
+    "smoke": false,
+    "stop_atr_multiplier": 8,
+    "max_holding_hours": 0,
+    "control": false,
+    "tag": "lcs26_k8_b3000_r1",
+    "minimum_lot_fallback": true
+  },
+  {
+    "balance": 3000,
+    "risk": 2,
+    "smoke": false,
+    "stop_atr_multiplier": 8,
+    "max_holding_hours": 0,
+    "control": false,
+    "tag": "lcs26_k8_b3000_r2",
+    "minimum_lot_fallback": false
+  },
+  {
+    "balance": 3000,
+    "risk": 3,
+    "smoke": false,
+    "stop_atr_multiplier": 8,
+    "max_holding_hours": 0,
+    "control": false,
+    "tag": "lcs26_k8_b3000_r3",
+    "minimum_lot_fallback": false
+  },
+  {
+    "balance": 3000,
+    "risk": 4,
+    "smoke": false,
+    "stop_atr_multiplier": 8,
+    "max_holding_hours": 0,
+    "control": false,
+    "tag": "lcs26_k8_b3000_r4",
+    "minimum_lot_fallback": false
+  },
+  {
+    "balance": 3000,
+    "risk": 5,
+    "smoke": false,
+    "stop_atr_multiplier": 8,
+    "max_holding_hours": 0,
+    "control": false,
+    "tag": "lcs26_k8_b3000_r5",
+    "minimum_lot_fallback": false
+  },
+  {
+    "balance": 500,
+    "risk": 1,
+    "smoke": false,
+    "stop_atr_multiplier": 9,
+    "max_holding_hours": 0,
+    "control": false,
+    "tag": "lcs26_k9_b500_r1",
+    "minimum_lot_fallback": true
+  },
+  {
+    "balance": 500,
+    "risk": 2,
+    "smoke": false,
+    "stop_atr_multiplier": 9,
+    "max_holding_hours": 0,
+    "control": false,
+    "tag": "lcs26_k9_b500_r2",
+    "minimum_lot_fallback": false
+  },
+  {
+    "balance": 500,
+    "risk": 3,
+    "smoke": false,
+    "stop_atr_multiplier": 9,
+    "max_holding_hours": 0,
+    "control": false,
+    "tag": "lcs26_k9_b500_r3",
+    "minimum_lot_fallback": false
+  },
+  {
+    "balance": 500,
+    "risk": 4,
+    "smoke": false,
+    "stop_atr_multiplier": 9,
+    "max_holding_hours": 0,
+    "control": false,
+    "tag": "lcs26_k9_b500_r4",
+    "minimum_lot_fallback": false
+  },
+  {
+    "balance": 500,
+    "risk": 5,
+    "smoke": false,
+    "stop_atr_multiplier": 9,
+    "max_holding_hours": 0,
+    "control": false,
+    "tag": "lcs26_k9_b500_r5",
+    "minimum_lot_fallback": false
+  },
+  {
+    "balance": 1000,
+    "risk": 1,
+    "smoke": false,
+    "stop_atr_multiplier": 9,
+    "max_holding_hours": 0,
+    "control": false,
+    "tag": "lcs26_k9_b1000_r1",
+    "minimum_lot_fallback": true
+  },
+  {
+    "balance": 1000,
+    "risk": 2,
+    "smoke": false,
+    "stop_atr_multiplier": 9,
+    "max_holding_hours": 0,
+    "control": false,
+    "tag": "lcs26_k9_b1000_r2",
+    "minimum_lot_fallback": false
+  },
+  {
+    "balance": 1000,
+    "risk": 3,
+    "smoke": false,
+    "stop_atr_multiplier": 9,
+    "max_holding_hours": 0,
+    "control": false,
+    "tag": "lcs26_k9_b1000_r3",
+    "minimum_lot_fallback": false
+  },
+  {
+    "balance": 1000,
+    "risk": 4,
+    "smoke": false,
+    "stop_atr_multiplier": 9,
+    "max_holding_hours": 0,
+    "control": false,
+    "tag": "lcs26_k9_b1000_r4",
+    "minimum_lot_fallback": false
+  },
+  {
+    "balance": 1000,
+    "risk": 5,
+    "smoke": false,
+    "stop_atr_multiplier": 9,
+    "max_holding_hours": 0,
+    "control": false,
+    "tag": "lcs26_k9_b1000_r5",
+    "minimum_lot_fallback": false
+  },
+  {
+    "balance": 3000,
+    "risk": 1,
+    "smoke": false,
+    "stop_atr_multiplier": 9,
+    "max_holding_hours": 0,
+    "control": false,
+    "tag": "lcs26_k9_b3000_r1",
+    "minimum_lot_fallback": true
+  },
+  {
+    "balance": 3000,
+    "risk": 2,
+    "smoke": false,
+    "stop_atr_multiplier": 9,
+    "max_holding_hours": 0,
+    "control": false,
+    "tag": "lcs26_k9_b3000_r2",
+    "minimum_lot_fallback": false
+  },
+  {
+    "balance": 3000,
+    "risk": 3,
+    "smoke": false,
+    "stop_atr_multiplier": 9,
+    "max_holding_hours": 0,
+    "control": false,
+    "tag": "lcs26_k9_b3000_r3",
+    "minimum_lot_fallback": false
+  },
+  {
+    "balance": 3000,
+    "risk": 4,
+    "smoke": false,
+    "stop_atr_multiplier": 9,
+    "max_holding_hours": 0,
+    "control": false,
+    "tag": "lcs26_k9_b3000_r4",
+    "minimum_lot_fallback": false
+  },
+  {
+    "balance": 3000,
+    "risk": 5,
+    "smoke": false,
+    "stop_atr_multiplier": 9,
+    "max_holding_hours": 0,
+    "control": false,
+    "tag": "lcs26_k9_b3000_r5",
+    "minimum_lot_fallback": false
+  },
+  {
+    "balance": 500,
+    "risk": 1,
+    "smoke": false,
+    "stop_atr_multiplier": 10,
+    "max_holding_hours": 0,
+    "control": false,
+    "tag": "lcs26_k10_b500_r1",
+    "minimum_lot_fallback": true
+  },
+  {
+    "balance": 500,
+    "risk": 2,
+    "smoke": false,
+    "stop_atr_multiplier": 10,
+    "max_holding_hours": 0,
+    "control": false,
+    "tag": "lcs26_k10_b500_r2",
+    "minimum_lot_fallback": false
+  },
+  {
+    "balance": 500,
+    "risk": 3,
+    "smoke": false,
+    "stop_atr_multiplier": 10,
+    "max_holding_hours": 0,
+    "control": false,
+    "tag": "lcs26_k10_b500_r3",
+    "minimum_lot_fallback": false
+  },
+  {
+    "balance": 500,
+    "risk": 4,
+    "smoke": false,
+    "stop_atr_multiplier": 10,
+    "max_holding_hours": 0,
+    "control": false,
+    "tag": "lcs26_k10_b500_r4",
+    "minimum_lot_fallback": false
+  },
+  {
+    "balance": 500,
+    "risk": 5,
+    "smoke": false,
+    "stop_atr_multiplier": 10,
+    "max_holding_hours": 0,
+    "control": false,
+    "tag": "lcs26_k10_b500_r5",
+    "minimum_lot_fallback": false
+  },
+  {
+    "balance": 1000,
+    "risk": 1,
+    "smoke": false,
+    "stop_atr_multiplier": 10,
+    "max_holding_hours": 0,
+    "control": false,
+    "tag": "lcs26_k10_b1000_r1",
+    "minimum_lot_fallback": true
+  },
+  {
+    "balance": 1000,
+    "risk": 2,
+    "smoke": false,
+    "stop_atr_multiplier": 10,
+    "max_holding_hours": 0,
+    "control": false,
+    "tag": "lcs26_k10_b1000_r2",
+    "minimum_lot_fallback": false
+  },
+  {
+    "balance": 1000,
+    "risk": 3,
+    "smoke": false,
+    "stop_atr_multiplier": 10,
+    "max_holding_hours": 0,
+    "control": false,
+    "tag": "lcs26_k10_b1000_r3",
+    "minimum_lot_fallback": false
+  },
+  {
+    "balance": 1000,
+    "risk": 4,
+    "smoke": false,
+    "stop_atr_multiplier": 10,
+    "max_holding_hours": 0,
+    "control": false,
+    "tag": "lcs26_k10_b1000_r4",
+    "minimum_lot_fallback": false
+  },
+  {
+    "balance": 1000,
+    "risk": 5,
+    "smoke": false,
+    "stop_atr_multiplier": 10,
+    "max_holding_hours": 0,
+    "control": false,
+    "tag": "lcs26_k10_b1000_r5",
+    "minimum_lot_fallback": false
+  },
+  {
+    "balance": 3000,
+    "risk": 1,
+    "smoke": false,
+    "stop_atr_multiplier": 10,
+    "max_holding_hours": 0,
+    "control": false,
+    "tag": "lcs26_k10_b3000_r1",
+    "minimum_lot_fallback": true
+  },
+  {
+    "balance": 3000,
+    "risk": 2,
+    "smoke": false,
+    "stop_atr_multiplier": 10,
+    "max_holding_hours": 0,
+    "control": false,
+    "tag": "lcs26_k10_b3000_r2",
+    "minimum_lot_fallback": false
+  },
+  {
+    "balance": 3000,
+    "risk": 3,
+    "smoke": false,
+    "stop_atr_multiplier": 10,
+    "max_holding_hours": 0,
+    "control": false,
+    "tag": "lcs26_k10_b3000_r3",
+    "minimum_lot_fallback": false
+  },
+  {
+    "balance": 3000,
+    "risk": 4,
+    "smoke": false,
+    "stop_atr_multiplier": 10,
+    "max_holding_hours": 0,
+    "control": false,
+    "tag": "lcs26_k10_b3000_r4",
+    "minimum_lot_fallback": false
+  },
+  {
+    "balance": 3000,
+    "risk": 5,
+    "smoke": false,
+    "stop_atr_multiplier": 10,
+    "max_holding_hours": 0,
+    "control": false,
+    "tag": "lcs26_k10_b3000_r5",
+    "minimum_lot_fallback": false
+  }
+]

@@ -12,8 +12,201 @@ robustness.
 > is not approved for live money. The original two-sided XAUUSD and cross-asset
 > claims failed. On `research/xauusd-loss-diagnostics`, gold long-only is positive
 > retrospectively, but incremental entry edge is unconfirmed. No new promotion.
+>
+> **Latest native update:** 288 January-August 2026 US500/US500_x100 scenarios
+> now compare the modified model and untouched official MQL5 source, with/without
+> VWAP and swing/intraday exits. Results are mixed: the filter improves some
+> historical outcomes but sharply reduces frequency. No robust upgrade or
+> production promotion is established. Full results and limitations are below.
 
 ## Executive conclusion
+
+### Latest: native MT5 Lorentzian + VWAP comparison (6 October 2026)
+
+**288 account scenarios, four smoke tests and two restart diagnostics are complete.**
+The VWAP entry-location filter improves some historical outcomes, but it is not
+a demonstrated robust upgrade. In particular, original-model intraday results
+deteriorate in many configurations, and filtering greatly reduces trade frequency.
+Verdict: `VWAP_UPGRADE_NOT_CONFIRMED`. No baseline replacement or automated
+demo/live deployment has been approved by this study.
+
+The grid covers Exness **US500 and US500_x100**, January-August 2026, **M30**,
+capital **$500 / $1,000 / $3,000**, fixed broker-minimum volume or **strict 1%-5%**
+risk, VWAP on/off, and swing/intraday. There are **133 positive, 115 negative and
+40 no-trade cases**. These rows share market history and are not independent
+confirmations. Two $500 fixed-minimum x100 cases ended in native insolvency;
+their verified early stops are retained, not dropped as incomplete losers.
+
+The existing causal exact-KNN model is compared with the **unchanged official
+MQL5 v1.00 source**, pinned to release `mql5-v1.00` / commit
+`a23a2301bbad66a6136ffa4b838eceb46ae2db1f`. The original indicator is consumed through
+closed-bar `iCustom` buffers, not rewritten or traded from final-chart arrows.
+This is the published-source version associated with the
+[official Market listing](https://www.mql5.com/en/market/product/185048), not
+verified binary parity with Market or the supplied TradingView chart. The model's
+own algorithms/default predictive inputs are preserved; both models use our
+same risk/exit wrapper. [Source and license provenance](vendor/official_mql5/UPSTREAM.md).
+
+Frozen execution rules:
+
+- Initial SL **3 x ATR14(M30)**; trailing activates at +1R and follows at 1R;
+  no fixed TP. Stops tighten using completed-bar executable quotes. Native tick
+  stop fills, commission and swap remain in PnL.
+- VWAP uses HLC3 and **broker tick volume**, reset at **00:00 UTC**. Both directions
+  are allowed within 1 sigma; only buys below -1 to -3 sigma and sells above
+  +1 to +3 sigma. Beyond 3 sigma or undefined bands: skip. Raw opposite model
+  starts still close positions even when the reverse entry fails the VWAP gate.
+- Swing can hold overnight/weekends. Intraday requires in-session closed bars,
+  entries before 15:30 New York and flattening at **15:45 New York**, excluding
+  NYSE holidays. DST is handled explicitly.
+- Strict percentage sizing compounds from closed balance and skips trades below
+  minimum volume. Fixed-minimum sizing has **no percentage risk ceiling**:
+  US500 is 0.14 lot, x100 is 0.01 lot on the connected account. Minimum volume is
+  not a broker guarantee of safe risk.
+
+For a consistent illustration, **$3,000 and strict 2% risk** are shown below.
+These are not the best rows selected from the grid. M = modified model,
+A = official author source. PF is calculated after position-level costs.
+
+| Symbol | Model/style | Trades off -> on | Return without VWAP | Return with VWAP | Net PF with VWAP | Equity DD with VWAP |
+|---|---|---:|---:|---:|---:|---:|
+| US500 | M / Swing | 119 -> 22 | +4.13% | +7.06% | 1.340 | 12.60% |
+| US500 | M / Intraday | 61 -> 10 | -2.33% | +3.02% | 1.561 | 4.57% |
+| US500 | A / Swing | 237 -> 46 | -20.49% | +4.31% | 1.083 | 17.55% |
+| US500 | A / Intraday | 89 -> 21 | +2.37% | -6.37% | 0.495 | 10.32% |
+| US500_x100 | M / Swing | 116 -> 24 | -4.89% | +3.30% | 1.181 | 7.65% |
+| US500_x100 | M / Intraday | 63 -> 15 | +4.19% | +4.59% | 2.126 | 3.83% |
+| US500_x100 | A / Swing | 206 -> 42 | -18.40% | +7.76% | 1.215 | 13.77% |
+| US500_x100 | A / Intraday | 85 -> 18 | -0.78% | -4.02% | 0.531 | 7.15% |
+
+Filtered frequency in this illustration is only **0.29-1.33 trades/week**.
+The modified x100 intraday row, for example, has 15 trades, +$137.65 net, an
+average +$17.21 cash PnL/month and a 0.56% geometric monthly equivalent. This is
+an eight-month historical result, not regular or expected monthly income.
+
+What matters beyond the positive rows:
+
+- At $3,000 fixed minimum volume, the modified model's four filtered portfolios
+  are positive, while the author's four are negative. Percentage sizing and
+  minimum-lot eligibility can change that ranking; they cannot be treated as
+  simple return multipliers. On x100 author/VWAP/swing, $500 at 4% takes zero
+  trades but 5% takes 16 and returns +53.13%: a sizing-path sensitivity, not a
+  promoted setting.
+- **The band-reversion idea has only one distinct observed event** in the
+  fixed-minimum references: the same 4 June 2026 short on both symbols. Modified
+  filtered entries are all in the central band. Positive totals therefore do
+  not establish that the 1-3 sigma reversal mechanism works.
+- All eight descriptive 95% paired block-bootstrap intervals for the fixed-lot
+  filter difference include zero. The evaluation history was already inspected;
+  there is no unseen holdout. Lower DD also partly reflects reduced exposure;
+  a frequency-matched random-gate control was not run.
+- US500 has native prehistory from January 2025, whereas x100 starts in June
+  2025. Models share identical market/ATR/VWAP inputs **within** each symbol,
+  but cross-symbol signal streams differ: this is not a pure contract-multiplier
+  experiment. The M15 Pepperstone screenshot and its unidentified VWAP anchor
+  have not been exactly replicated.
+
+Engineering checks: **106 Python tests pass**, zero compiler errors/warnings,
+all reports state 100% real ticks over their tested coverage, native ledgers and
+risk/stop/trailing paths reconcile, and 12 legacy x100 deal regressions are exact.
+January-only prefixes match full runs. The official model also passes the tested
+February cold restart: **6,903 overlapping bars per symbol, zero prediction,
+direction or start mismatches**. Live every-tick calculation parity remains a
+separate unverified gate. No account orders were submitted; the terminal is
+connected to demo with Algo Trading disabled, zero positions and zero pending orders.
+
+Read the [Indonesian discussion, frequency and monthly tables](docs/DISCUSSION_NATIVE_VWAP.md),
+[complete 288-case report](docs/RESULT_NATIVE_VWAP.md),
+[matrix CSV](evidence/native_vwap_2026_v3/matrix_summary.csv),
+[2,304 monthly cash records](evidence/native_vwap_2026_v3/monthly_results.csv),
+[frozen plan](docs/TECH_PLAN_NATIVE_VWAP.md),
+[restart diagnostic](docs/RESULT_NATIVE_VWAP_RESTART.md), and
+[engineering notes](docs/NATIVE_VWAP_ENGINEERING_NOTES.md).
+
+Next steps are for discussion, not already authorized deployment: decide whether
+the central-location filter's lower frequency is acceptable; freeze one candidate
+instead of promoting the best grid row; check live calculation/state behavior and
+matched-exposure controls; then reserve genuinely new observations for demo.
+Source and exact native evidence are archived; native replay requires Windows MT5,
+while evidence-only validation can run on macOS/Linux. See the updated
+[runbook](docs/MT5_AUDIT_RUNBOOK.md). Earlier results below are retained as history.
+
+### US500 x100 swing exit experiment
+
+The user-approved swing experiment is complete: no 24 hour deadline, opposite
+setup exits only, no fixed TP, and initial stop plus trailing width varied
+together from 1 to 10 entry ATR. Entry/classifier logic is unchanged. The
+January-August 2026 native MT5 grid has **150 scenarios: 22 positive, 82 negative,
+46 without trades**, plus three exact legacy regression controls and one smoke
+test. Four negative scenarios stopped early after native insolvency; they are
+retained as economic failures. No accounts were traded by the EA.
+
+There are exploratory positive pockets, not a blanket improvement:
+
+| Capital | ATR | Strict risk target | Trades | Total return | Native PF | Max equity DD |
+|---|---:|---:|---:|---:|---:|---:|
+| $1,000 | 3 | 4% | 87 | +36.77% | 1.223 | 22.56% |
+| $3,000 | 8 | 3% | 61 | +15.45% | 1.420 | 8.76% |
+| $3,000 | 10 | 4% | 64 | +24.85% | 1.618 | 9.90% |
+
+The 10 ATR row averages 1.84 trades/week and 59.17 hours holding, with 42.19%
+win rate. Its equivalent compounded monthly return is 2.81%, not regular income.
+Most exits are opposite setups, not trailing stops. Minimum-lot constraints and
+compounding change the trade sample: these results cannot be attributed to stop
+width alone. The 1% rows retain the earlier user-authorized minimum-lot fallback
+and are **not strict 1% risk**; all 30 of those rows are negative. Wider stops
+can make that policy particularly dangerous on $500.
+
+No parameter has been promoted. The window was already inspected, and the
+highlighted rows were selected after the grid. Old evidence and EA defaults are
+preserved. Compilation has zero errors/warnings; 87 Python tests pass; native
+ledgers and execution paths reconcile. The terminal was restored with Algo
+Trading disabled and no open positions or pending orders.
+
+Read the [Indonesian discussion and monthly candidate results](docs/DISCUSSION_NATIVE_SWING.md),
+[complete grid and monthly results](docs/RESULT_NATIVE_SWING.md), and
+[frozen swing contract](docs/TECH_PLAN_NATIVE_SWING.md).
+
+### US500 x100 native MT5 results
+
+The account connection issue is resolved. **18 full native MT5 tests completed**:
+15 strict account/risk combinations plus three user-requested minimum-lot
+fallback variations. Warm-up uses June–December 2025; evaluation is January–August
+2026. All reports indicate 100% real ticks and native deal ledgers reconcile to
+final balances. This is not an unseen holdout or the old 2022-anchored baseline.
+
+With a 1% target plus 0.01-lot fallback, $500 ends at **$259.47**, $1,000 at
+**$759.47**, and $3,000 at **$2,830.94**. Each executes 167 trades (4.81/week).
+Maximum equity drawdowns are 76.45%, 46.18% and 29.51%. On $500 the fallback raises
+mean planned risk to 2.96% and maximum to 8.74%: it is **not strict 1% risk**.
+
+The strict matrix has three positive pockets, eleven negative scenarios and one
+no-trade scenario. The updated grid replacing strict 1% with fallback leaves two
+positive pockets; their drawdowns remain substantial. No production or forward
+trading was activated. Read [native results and the minimum-lot variation](docs/RESULT_NATIVE_X100_MINIMUM_LOT.md),
+[all strict scenarios and monthly returns](docs/RESULT_NATIVE_X100_2026.md), and
+[the frozen native plan](docs/TECH_PLAN_NATIVE_X100_2026.md).
+
+### Earlier US500 x100 porting audit
+
+On `research/us500-x100-mt5-audit`, the independently calculated MQL5 classifier
+matches Python on **53,774 archived M30 bars**: zero prediction, filter, direction
+or entry-start mismatches. The tester-only EA compiles; 17 MQL self-checks and
+50 Python tests pass. This is **classifier parity**, not a native profitability result.
+
+At the earlier audit, native execution was blocked: MT5 returned `Authorization failed`, and the
+Strategy Tester could not synchronize with the trade server. Cached x100 history
+starts in June 2025 rather than the required January 2022 anchor. Cached minimum
+lot is 0.01 versus the old sizing assumption of 0.03, but the cache is **not an
+active-account specification**. No old account returns or skip counts have been
+replaced on that basis. No demo/real orders, Telegram or forward test were started.
+
+Historical audit verdict: `CLASSIFIER_PARITY_PASS_NATIVE_EXECUTION_BLOCKED`. Read the
+[four-stage result and pending gates](docs/RESULT_US500_X100_MT5.md),
+[technical plan](docs/TECH_PLAN_US500_X100_MT5.md) and
+[reproduction runbook](docs/MT5_AUDIT_RUNBOOK.md).
+
+### Historical research conclusion
 
 The Lorentzian classifier itself did **not** demonstrate a robust, transferable
 edge. Lower timeframes increased activity but did not improve classifier quality.

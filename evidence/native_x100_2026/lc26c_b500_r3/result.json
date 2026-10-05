@@ -1,0 +1,118 @@
+{
+  "failed": 0.0,
+  "ready": 1.0,
+  "first_tick": 1767308401.0,
+  "last_tick": 1788220798.0,
+  "tick_count": 28855530.0,
+  "classifier_bars": 14318.0,
+  "risk_percent": 3.0,
+  "deposit": 500.0,
+  "net_profit": -86.80999999999995,
+  "final_balance": 413.19,
+  "final_equity": 413.19,
+  "trades": 116.0,
+  "winners": 39.0,
+  "profit_factor": 0.907428339873742,
+  "balance_dd_percent": 49.94087332291925,
+  "equity_dd_percent": 52.09732373856616,
+  "max_loss_trade": -19.41,
+  "max_win_trade": 120.43,
+  "max_consecutive_losses": 9.0,
+  "min_margin_level": 1049.6915167095117,
+  "return_percent": -17.362,
+  "commission": -17.009999999999994,
+  "fee": 0.0,
+  "swap": -14.84,
+  "gross_price_profit": -54.95999999999995,
+  "trades_per_week": 3.3415637860082303,
+  "trades_per_month": 14.5,
+  "mean_monthly_profit_usd": -10.85125,
+  "mean_monthly_return_percent": -1.2409936015154468,
+  "geometric_monthly_return_percent": -2.3555699619425607,
+  "win_rate_percent": 33.62068965517241,
+  "positive_months": 3,
+  "stopout_deals": 0,
+  "skips": {
+    "below_minimum": 54
+  },
+  "failure_events": 0,
+  "long_trades": 57,
+  "short_trades": 59,
+  "long_net": -12.410000000000016,
+  "short_net": -74.40000000000003,
+  "reconciliation": "PASS",
+  "losses_exceeding_nominal_budget": 4,
+  "tag": "lc26c_b500_r3",
+  "balance": 500,
+  "risk": 3,
+  "smoke": false,
+  "report_sha256": "db7b3de452bc11ccfff53e6ca0afcd5f14880b48303732cd4a51e85aa5ac5892",
+  "report_100_percent_real_ticks": true,
+  "monthly": [
+    {
+      "month": "2026-01",
+      "opening_balance": 500.0,
+      "net_profit": -32.37000000000001,
+      "return_percent": -6.474000000000002,
+      "ending_balance": 467.63,
+      "entries": 17
+    },
+    {
+      "month": "2026-02",
+      "opening_balance": 467.63,
+      "net_profit": 88.92999999999999,
+      "return_percent": 19.01717169557128,
+      "ending_balance": 556.56,
+      "entries": 12
+    },
+    {
+      "month": "2026-03",
+      "opening_balance": 556.56,
+      "net_profit": -3.329999999999993,
+      "return_percent": -0.5983182406209561,
+      "ending_balance": 553.2299999999999,
+      "entries": 13
+    },
+    {
+      "month": "2026-04",
+      "opening_balance": 553.2299999999999,
+      "net_profit": 17.190000000000023,
+      "return_percent": 3.1072067675288806,
+      "ending_balance": 570.42,
+      "entries": 23
+    },
+    {
+      "month": "2026-05",
+      "opening_balance": 570.42,
+      "net_profit": -140.84,
+      "return_percent": -24.690578871708567,
+      "ending_balance": 429.5799999999999,
+      "entries": 20
+    },
+    {
+      "month": "2026-06",
+      "opening_balance": 429.5799999999999,
+      "net_profit": -14.8,
+      "return_percent": -3.445225569160576,
+      "ending_balance": 414.7799999999999,
+      "entries": 4
+    },
+    {
+      "month": "2026-07",
+      "opening_balance": 414.7799999999999,
+      "net_profit": -71.76,
+      "return_percent": -17.300737740488938,
+      "ending_balance": 343.0199999999999,
+      "entries": 8
+    },
+    {
+      "month": "2026-08",
+      "opening_balance": 343.0199999999999,
+      "net_profit": 70.17000000000002,
+      "return_percent": 20.4565331467553,
+      "ending_balance": 413.18999999999994,
+      "entries": 19
+    }
+  ],
+  "ea_sha256": "056beaee375559ac8094120c254ae67285d892d6f5d9a6f16e90db4c71a71e8a"
+}

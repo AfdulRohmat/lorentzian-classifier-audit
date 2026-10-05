@@ -1,0 +1,36 @@
+{
+  "audit_date_local": "2026-10-06",
+  "connection_evidence": "audit_new_demo_20261006.json",
+  "read_only": true,
+  "broker_orders_submitted": 0,
+  "requested_timeframe": "M30",
+  "requested_start_utc": "2022-01-01T00:00:00Z",
+  "requested_end_utc": "2026-08-31T23:59:59Z",
+  "returned_history": [
+    {
+      "symbol": "US500_x100",
+      "rows": 14319,
+      "first_utc": "2025-06-15T22:00:00Z",
+      "last_utc": "2026-08-31T23:30:00Z"
+    },
+    {
+      "symbol": "US500",
+      "rows": 53774,
+      "first_utc": "2022-01-02T00:00:00Z",
+      "last_utc": "2026-08-31T23:30:00Z"
+    }
+  ],
+  "older_history_probe": {
+    "symbol": "US500_x100",
+    "requested_start_utc": "2024-01-01T00:00:00Z",
+    "requested_end_utc": "2024-01-31T23:59:59Z",
+    "raw_returned_rows": 1,
+    "raw_first_utc": "2025-06-15T22:00:00Z",
+    "rows_inside_requested_window": 0,
+    "api_reported_success": true,
+    "warning": "API returned an out-of-window row; it is not accepted as January 2024 history."
+  },
+  "verdict": "CONNECTION_RESOLVED_NATIVE_ANCHORED_HISTORY_STILL_UNAVAILABLE",
+  "native_backtest_started_this_retry": false,
+  "user_terminal_left_running": true
+}

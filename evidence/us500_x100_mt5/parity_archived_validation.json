@@ -1,0 +1,57 @@
+{
+  "status": "PASS",
+  "bars": 53774,
+  "fields": {
+    "f1": {
+      "mismatches": 0,
+      "max_abs_error": 2.220446049250313e-16
+    },
+    "f2": {
+      "mismatches": 0,
+      "max_abs_error": 4.440892098500626e-16
+    },
+    "f3": {
+      "mismatches": 0,
+      "max_abs_error": 2.1316282072803006e-13
+    },
+    "f4": {
+      "mismatches": 0,
+      "max_abs_error": 4.440892098500626e-16
+    },
+    "f5": {
+      "mismatches": 0,
+      "max_abs_error": 2.220446049250313e-16
+    },
+    "kernel": {
+      "mismatches": 0,
+      "max_abs_error": 1.8189894035458565e-12
+    },
+    "atr": {
+      "mismatches": 0,
+      "max_abs_error": 2.842170943040401e-14
+    },
+    "filter": {
+      "mismatches": 0,
+      "first_mismatch": null
+    },
+    "prediction": {
+      "mismatches": 0,
+      "first_mismatch": null
+    },
+    "direction": {
+      "mismatches": 0,
+      "first_mismatch": null
+    },
+    "start": {
+      "mismatches": 0,
+      "first_mismatch": null
+    }
+  },
+  "start_long": 600,
+  "start_short": 693,
+  "boundary_tie_rows": 0,
+  "hashes": {
+    "reference": "21d5c1079ed13458d527c2fd00ba1dfa957eb470a86aaa9d76b6c09593b10957",
+    "actual": "add8428e74a0ca952ddec9178a0503625dead00bcf11cae54fd5cb7124853bf5"
+  }
+}

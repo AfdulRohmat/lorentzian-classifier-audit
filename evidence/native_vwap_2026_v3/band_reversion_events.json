@@ -1,0 +1,33 @@
+{
+  "unique_entry_events": 1,
+  "executions": [
+    {
+      "tag": "lcv28_u_m1_v1_i0_b3000_r0",
+      "symbol": "US500",
+      "model": 1,
+      "entry_time": 1780612200,
+      "exit_time": 1780876056,
+      "side": -1,
+      "volume": 0.14,
+      "net": 25.27,
+      "r": 5.790824510747513,
+      "z": 1.0563191366809332,
+      "bucket": "toward_vwap",
+      "gate_allowed": true
+    },
+    {
+      "tag": "lcv28_x_m1_v1_i0_b3000_r0",
+      "symbol": "US500_x100",
+      "model": 1,
+      "entry_time": 1780612200,
+      "exit_time": 1780876056,
+      "side": -1,
+      "volume": 0.01,
+      "net": 180.53,
+      "r": 5.791786974655117,
+      "z": 1.0563191366809332,
+      "bucket": "toward_vwap",
+      "gate_allowed": true
+    }
+  ]
+}

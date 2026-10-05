@@ -4,3 +4,9 @@
 *.py text eol=lf
 *.csv text eol=lf
 *.gz -text
+*.mq5 text eol=lf
+*.mqh text eol=lf
+*.ini text eol=lf
+evidence/**/config.ini -text -whitespace
+evidence/**/config.set -text -whitespace
+vendor/official_mql5/** -text -whitespace

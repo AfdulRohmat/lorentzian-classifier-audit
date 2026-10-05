@@ -1,0 +1,56 @@
+{
+  "files": {
+    "mql_parity.csv.gz": {
+      "sha256": "add8428e74a0ca952ddec9178a0503625dead00bcf11cae54fd5cb7124853bf5",
+      "uncompressed_sha256": "c67f21074069a190f9bca7063f4ad48de3e3900e33d7be068022d2d875baf531",
+      "bytes": 3628740
+    },
+    "symbol_audit_cached.csv": {
+      "sha256": "3c30ce0dad2436499b7aa8452f37f42d899efce143265e5c244a65155c2594fe",
+      "uncompressed_sha256": "3c30ce0dad2436499b7aa8452f37f42d899efce143265e5c244a65155c2594fe",
+      "bytes": 772
+    },
+    "mql_self_test_final.csv": {
+      "sha256": "ed9a27a0e3824935946e31eef718c1d0ba15e52162b32a7762ddc96f4f24e096",
+      "uncompressed_sha256": "ed9a27a0e3824935946e31eef718c1d0ba15e52162b32a7762ddc96f4f24e096",
+      "bytes": 442
+    },
+    "python_reference.csv.gz": {
+      "sha256": "21d5c1079ed13458d527c2fd00ba1dfa957eb470a86aaa9d76b6c09593b10957",
+      "uncompressed_sha256": "75ad4ee4b41f2fd62180de2d48c7cbac26b619815384c376184114758038aa45",
+      "bytes": 3767946
+    },
+    "native_smoke_launch.json": {
+      "sha256": "b92ec6d0152cd3d758066ac84d85bc6d460ddb75b1c5e893a786af15a5707d7a",
+      "uncompressed_sha256": "b92ec6d0152cd3d758066ac84d85bc6d460ddb75b1c5e893a786af15a5707d7a",
+      "bytes": 361
+    }
+  },
+  "source_anchor": "2022-01-01",
+  "broker_connection_verified": false,
+  "native_backtest_completed": false,
+  "forward_test_started": false,
+  "broker_orders_submitted": 0,
+  "compile": {
+    "parity": "Result: 0 errors, 0 warnings, 736 ms elapsed, cpu='X64 Regular'",
+    "ea": "Result: 0 errors, 0 warnings, 858 ms elapsed, cpu='X64 Regular'",
+    "symbol": "Result: 0 errors, 0 warnings, 480 ms elapsed, cpu='X64 Regular'",
+    "selftest": "Result: 0 errors, 0 warnings, 654 ms elapsed, cpu='X64 Regular'"
+  },
+  "source_sha256": {
+    "mql5/Experts/LorentzianX100Audit.ex5": "d53b5bd8eb944084ae93e4a6dda36b02bf2536d1222aea528d69a542eacd02d1",
+    "mql5/Experts/LorentzianX100Audit.mq5": "4ae9a94b52959701385a334205faa468e72f7fde69b75018dff867b44cf189f1",
+    "mql5/Include/LorentzianCore.mqh": "ecbe722a8ed9813a057ab381ff0a0d5842e489a4e7e8cf911f98d818b731c6b6",
+    "mql5/Include/LorentzianExecution.mqh": "49595a1c3e56e7f6cf9ad4d26f926915a0f5048ed7a27b78b32ef77ace0583d4",
+    "mql5/Scripts/LorentzianParity.ex5": "74cf3365c357b6a3aca6541d7bd672f4d32ccdcd3bb95acf18021bd039bf51d0",
+    "mql5/Scripts/LorentzianParity.mq5": "1f95547ca62ea7dc2ad2d183421e0cb22fc847d6f3159daf248cbc8fa9b4f5a9",
+    "mql5/Scripts/LorentzianSelfTest.ex5": "7ec7e9a8049e1a37c44e4c94e4bdc115d40a88fec5eae69061d054cbc9c6347c",
+    "mql5/Scripts/LorentzianSelfTest.mq5": "5cb8797e2938be0e3473bcbb6a60addf23cae019974e6090a23fd319a7d8a72d",
+    "mql5/Scripts/LorentzianSymbolAudit.ex5": "38f93d72778cdeda6cefb1d4cc1b871854965db168ade7363fb246229068bb8c",
+    "mql5/Scripts/LorentzianSymbolAudit.mq5": "b86703df9d895ca70d6553c83ea9d74fc38f7df0f63a15947e6e017e32925f5e"
+  },
+  "baseline_sha256": {
+    "config/contract_v3_atr_runner_sizing.json": "873a16495f7e0b2bb4fb8e45c253d974e7051eb147d6512764b63d6e88ba3872",
+    "evidence/v3_atr_runner_sizing/trades.csv.gz": "20e8819c7ca94bd3217ac63dba0b5504c75810ab39dc189f19fda1666b72287d"
+  }
+}

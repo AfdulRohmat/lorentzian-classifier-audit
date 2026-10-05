@@ -1,0 +1,62 @@
+[
+  {
+    "entry":1770391800,
+    "exit_old":1770591601,
+    "net_old":57.25,
+    "volume_old":0.01,
+    "exit_swing":1770616854,
+    "net_swing":51.88,
+    "volume_swing":0.01,
+    "old_hours":55.5002777778,
+    "swing_hours":62.515,
+    "entry_label":"2026-02-06 15:30:00+00:00"
+  },
+  {
+    "entry":1775840401,
+    "exit_old":1776031200,
+    "net_old":74.2,
+    "volume_old":0.01,
+    "exit_swing":1776038143,
+    "net_swing":71.91,
+    "volume_swing":0.01,
+    "old_hours":52.9997222222,
+    "swing_hours":54.9283333333,
+    "entry_label":"2026-04-10 17:00:01+00:00"
+  },
+  {
+    "entry":1776097800,
+    "exit_old":1776184200,
+    "net_old":120.3,
+    "volume_old":0.01,
+    "exit_swing":1776190884,
+    "net_swing":108.78,
+    "volume_swing":0.01,
+    "old_hours":24.0,
+    "swing_hours":25.8566666667,
+    "entry_label":"2026-04-13 16:30:00+00:00"
+  },
+  {
+    "entry":1782505800,
+    "exit_old":1782684001,
+    "net_old":9.95,
+    "volume_old":0.01,
+    "exit_swing":1782687832,
+    "net_swing":-25.92,
+    "volume_swing":0.01,
+    "old_hours":49.5002777778,
+    "swing_hours":50.5644444444,
+    "entry_label":"2026-06-26 20:30:00+00:00"
+  },
+  {
+    "entry":1784316600,
+    "exit_old":1784498401,
+    "net_old":6.68,
+    "volume_old":0.01,
+    "exit_swing":1784506037,
+    "net_swing":-17.58,
+    "volume_swing":0.01,
+    "old_hours":50.5002777778,
+    "swing_hours":52.6213888889,
+    "entry_label":"2026-07-17 19:30:00+00:00"
+  }
+]

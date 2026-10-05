@@ -1,0 +1,12 @@
+{
+  "captured_utc": "2026-10-05T22:55:15.902197+00:00",
+  "read_only": true,
+  "connected": true,
+  "algo_trading_enabled": false,
+  "demo_account": true,
+  "currency": "USD",
+  "positions_count": 0,
+  "pending_orders_count": 0,
+  "build": 6230,
+  "status": "PASS"
+}
