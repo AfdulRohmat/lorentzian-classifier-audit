@@ -84,6 +84,49 @@ The modified x100 intraday row, for example, has 15 trades, +$137.65 net, an
 average +$17.21 cash PnL/month and a 0.56% geometric monthly equivalent. This is
 an eight-month historical result, not regular or expected monthly income.
 
+#### Why did the VWAP filter cut trade frequency so sharply?
+
+The entry gate evaluates the **completed M30 signal bar's close** against a
+tick-volume-weighted HLC3 VWAP and its weighted standard deviation, reset at
+00:00 UTC. It accepts either direction inside +/-1 sigma, only buys from the
+lower 1-3 sigma band, and only sells from the upper 1-3 sigma band. It rejects
+the opposite direction in those outer bands, locations beyond +/-3 sigma, and
+bars without a valid band. A rejected signal is not queued for later entry.
+An opposite raw signal can still close an existing position even when VWAP
+rejects the reverse entry.
+
+The saved chronological signal stream for **US500, official author model,
+M30 swing, January-August 2026** gives the following entry funnel. The trade
+counts use the **$3,000 fixed broker-minimum lot** reference, not the 2% sizing
+illustration above; both happen to have 237 unfiltered and 46 filtered trades.
+
+| Raw author signal location and direction | Signals | VWAP decision |
+|---|---:|---|
+| Inside +/-1 sigma | 48 | Allow either direction |
+| Upper +1 to +3 sigma, sell | 1 | Allow |
+| Upper +1 to +3 sigma, buy | 83 | Reject |
+| Lower -3 to -1 sigma, sell | 78 | Reject |
+| Beyond +/-3 sigma | 21 | Reject |
+| Undefined band | 9 | Reject |
+| **Total raw starts** | **240** | **49 allowed; 191 rejected** |
+
+The unfiltered run executed **237 trades**. With VWAP, **49 raw starts passed**
+and **46 trades executed**; the remaining three entry attempts were rejected by
+the native trade server. Most lost frequency therefore comes from **161 buy
+signals in the upper band and sell signals in the lower band**. In this specific
+feed and implementation, the hypothesized band-to-VWAP entries occurred only
+once as an upper-band sell; no lower-band buy start qualified. This is a signal
+location diagnosis, not proof that rejecting those trades adds predictive edge.
+
+The user's TradingView charts show **M15/M30 Pepperstone** signals and a VWAP
+whose calculation and anchor have not yet been matched to ours. The official
+MQL5 source is also not verified as signal-identical to the Pine script shown
+there. The next audit should compare timestamped Pine arrows with M15 and M30
+MT5 raw starts, VWAP/band values, skip reasons, and actual orders on the same
+sample days before changing the gate or claiming the chart's apparent daily
+frequency transfers to Exness. After any parity work, compare the retained
+trades with a frequency-matched random gate and new unseen observations.
+
 What matters beyond the positive rows:
 
 - At $3,000 fixed minimum volume, the modified model's four filtered portfolios
