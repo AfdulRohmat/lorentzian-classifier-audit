@@ -12,15 +12,15 @@ def validate_tester_config(text: str) -> None:
         raise ValueError("Only Experts and Tester sections are permitted")
     vwap = config["Tester"].get("Expert") == r"LorentzianAudit\LorentzianVWAPAudit.ex5"
     symbol = config["Tester"].get("Symbol")
-    if vwap and symbol not in {"US500", "US500_x100"}:
-        raise ValueError("VWAP research permits only the two explicit symbols")
+    if symbol not in {"US500", "US500_x100"}:
+        raise ValueError("Research tester permits only the two explicit symbols")
     expected = {
         "Experts": {"AllowLiveTrading": "0", "AllowDllImport": "0", "Enabled": "1"},
         "Tester": {
             "Expert": r"LorentzianAudit\LorentzianVWAPAudit.ex5"
             if vwap
             else r"LorentzianAudit\LorentzianX100Audit.ex5",
-            "Symbol": symbol if vwap else "US500_x100",
+            "Symbol": symbol,
             "Period": "M30",
             "UseCloud": "0",
             "UseRemote": "0",

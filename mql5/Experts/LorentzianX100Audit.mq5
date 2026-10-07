@@ -149,7 +149,8 @@ void Enter(int side,double atr) {
    if(!OrderCalcProfit(type,_Symbol,PositionGetDouble(POSITION_VOLUME),entry_fill,stop-side*friction,actual_risk)) {
       Close("risk_calc_failed"); Fail("post_fill_risk_calculation"); return;
    }
-   if(-actual_risk>allowed_budget+1e-6) { Close("risk_overshoot"); Fail("post_fill_risk_overshoot"); }
+   // OrderCalcProfit reports USD to cents; permit only half-cent conversion rounding.
+   if(-actual_risk>allowed_budget+0.005001) { Close("risk_overshoot"); Fail("post_fill_risk_overshoot"); }
 }
 void Trail(datetime closed_bar) {
    if(!OwnPosition() || failed || risk_price<=0) return;
@@ -188,7 +189,7 @@ void RecordSignal(datetime stamp,const LCPoint &p) {
 }
 int OnInit() {
    if(!MQLInfoInteger(MQL_TESTER)) { Print("Tester only: no account trading permitted"); return INIT_FAILED; }
-   if(_Symbol!="US500_x100" || _Period!=PERIOD_M30 || AccountInfoString(ACCOUNT_CURRENCY)!="USD") return INIT_PARAMETERS_INCORRECT;
+   if((_Symbol!="US500_x100" && _Symbol!="US500") || _Period!=PERIOD_M30 || AccountInfoString(ACCOUNT_CURRENCY)!="USD") return INIT_PARAMETERS_INCORRECT;
    if(RiskPercent<=0 || RiskPercent>5 || HistoryAnchor>=EvaluationStart || EvaluationStart>=EvaluationEnd
       || ExitSlippageReserve<0 || RoundTripCommissionPrice<0
       || StopATRMultiplier<1 || StopATRMultiplier>10

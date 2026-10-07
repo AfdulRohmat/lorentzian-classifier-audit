@@ -64,6 +64,14 @@ def test_tester_config_disallows_wrong_ea_live_trading_and_cloud():
             validate_tester_config(text.replace(before, after))
 
 
+def test_tester_config_allows_exact_us500_but_not_other_symbols():
+    root = Path(__file__).resolve().parents[1]
+    text = (root / "config/mt5_native_smoke.ini").read_text()
+    validate_tester_config(text.replace("Symbol=US500_x100", "Symbol=US500"))
+    with pytest.raises(ValueError):
+        validate_tester_config(text.replace("Symbol=US500_x100", "Symbol=XAUUSD"))
+
+
 def test_ea_has_non_optional_tester_guards_and_no_network_calls():
     root = Path(__file__).resolve().parents[1]
     ea = (root / "mql5/Experts/LorentzianX100Audit.mq5").read_text()

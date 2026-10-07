@@ -19,6 +19,14 @@ robustness.
 > historical outcomes but sharply reduces frequency. No robust upgrade or
 > production promotion is established. Full results and limitations are below.
 
+> **New native US500 check (7 October 2026):** the previously positive Python
+> M30 1-ATR / 24-hour runner was replayed in MT5 on US500, January-August 2026.
+> All six strict/minimum-fallback account cases were negative. At $1,000 and
+> strict 1%, 167 trades returned -8.60%, net PF 0.924 and max equity DD 36.11%.
+> This is a shorter, already-inspected native window with a different history
+> anchor; it is not an exact replay of the 2024-2026 Python study. See the
+> [full native US500 report](docs/RESULT_NATIVE_US500_1ATR24H.md).
+
 ## Executive conclusion
 
 ### Latest: native MT5 Lorentzian + VWAP comparison (6 October 2026)

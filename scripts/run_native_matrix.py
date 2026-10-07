@@ -130,7 +130,7 @@ def main() -> None:
             result.update(
                 audit_swing(stats, deals, events, pd.read_csv(output / "signals.csv.gz"))
             )
-            if not scenario["smoke"]:
+            if not scenario["smoke"] and scenario.get("symbol", "US500_x100") == "US500_x100":
                 baseline = (
                     root / f"evidence/native_x100_2026_minimum/lc26m_b{scenario['balance']}_r1"
                 )
